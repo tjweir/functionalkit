@@ -2,8 +2,8 @@
 #import "NSArray+Motive.h"
 #import "FKFunction.h"
 #import "FKEffect.h"
-#import "MVLog.h"
-#import "MVNewtype.h"
+#import "FKLog.h"
+#import "FKNewtype.h"
 
 @interface TestEffect : NSObject <FKEffect> {
 	id arg;
@@ -19,12 +19,12 @@
 }
 @end
 
-@interface MVFunctionUnitTest : GTMTestCase {
+@interface FKFunctionUnitTest : GTMTestCase {
     NSObject *object;
 }
 @end
 
-@implementation MVFunctionUnitTest
+@implementation FKFunctionUnitTest
 
 - (void)setUp {
 	object = [[[NSObject alloc] init] autorelease];

@@ -2,7 +2,7 @@
 
 // Represents a non-blocking future value. Products, functions, and actors, given to the methods on this class, are executed concurrently, and the
 // Promise serves as a handle on the result of the computation.
-@interface MVPromise : NSObject {
+@interface FKPromise : NSObject {
 }
 
 // Waits if necessary for the computation to complete, and then retrieves its result.

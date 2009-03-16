@@ -1,6 +1,6 @@
-#import "MVPromise.h"
+#import "FKPromise.h"
 
-@implementation MVPromise
+@implementation FKPromise
 
 - (id)claim {
     return nil;

@@ -1,15 +1,15 @@
 #import "GTMSenTestCase.h"
-#import "MVNewtype.h"
+#import "FKNewtype.h"
 NEWTYPE(Age, NSString, age);
 NEWTYPE(Name, NSString, name);
 NEWTYPE2(Person, Age, age, Name, name);
 
 NEWTYPE3(Position, Person, occupier, NSString, title, NSDate, started);
 
-@interface MVNewtypeTests : GTMTestCase
+@interface FKNewtypeTests : GTMTestCase
 @end
 
-@implementation MVNewtypeTests
+@implementation FKNewtypeTests
 - (void)testTypes {
 	Age *age = [Age age:@"54"];
 	Name *name = [Name name:@"Nick"];

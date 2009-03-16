@@ -1,15 +1,15 @@
-#import "MVP3.h"
+#import "FKP3.h"
 #import <objc/runtime.h>
 
-@interface MVP3 (MVP3Private)
+@interface FKP3 (FKP3Private)
 @end
 
-@implementation MVP3
+@implementation FKP3
 
 @synthesize _1, _2, _3;
 
-+ (MVP3 *)p3With_1:(id)_1 _2:(id)_2 _3:(id)_3 {
-    return [[[MVP3 alloc] initWith_1:_1 _2:_2 _3:_3] autorelease];
++ (FKP3 *)p3With_1:(id)_1 _2:(id)_2 _3:(id)_3 {
+    return [[[FKP3 alloc] initWith_1:_1 _2:_2 _3:_3] autorelease];
 }
 
 - (void) dealloc {

@@ -1,15 +1,15 @@
-#import "MVP1.h"
+#import "FKP1.h"
 
-@interface MVP1 (MVP1Private)
-- (MVP1 *)initWith_1:(id)new_1;
+@interface FKP1 (FKP1Private)
+- (FKP1 *)initWith_1:(id)new_1;
 @end
 
-@implementation MVP1
+@implementation FKP1
 
 @synthesize _1;
 
-+ (MVP1 *)p1With_1:(id)_1 {
-    return [[[MVP1 alloc] initWith_1:_1] autorelease];
++ (FKP1 *)p1With_1:(id)_1 {
+    return [[[FKP1 alloc] initWith_1:_1] autorelease];
 }
 
 - (void) dealloc {

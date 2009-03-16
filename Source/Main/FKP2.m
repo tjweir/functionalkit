@@ -1,15 +1,15 @@
-#import "MVP2.h"
+#import "FKP2.h"
 #import <objc/runtime.h>
 
-@interface MVP2 (MVP2Private)
+@interface FKP2 (FKP2Private)
 @end
 
-@implementation MVP2
+@implementation FKP2
 
 @synthesize _1, _2;
 
-+ (MVP2 *)p2With_1:(id)_1 _2:(id)_2 {
-    return [[[MVP2 alloc] initWith_1:_1 _2:_2] autorelease];
++ (FKP2 *)p2With_1:(id)_1 _2:(id)_2 {
+    return [[[FKP2 alloc] initWith_1:_1 _2:_2] autorelease];
 }
 
 - (void) dealloc {

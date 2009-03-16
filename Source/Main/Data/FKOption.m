@@ -1,13 +1,13 @@
-#import "MVOption.h"
+#import "FKOption.h"
 
-@implementation MVNone
+@implementation FKNone
 @end
 
-@interface MVSome (MVSomePrivate)
-- (MVSome *)initWithSome:(id)someObject;
+@interface FKSome (FKSomePrivate)
+- (FKSome *)initWithSome:(id)someObject;
 @end
 
-@implementation MVSome
+@implementation FKSome
 
 - (id)some {
     return someObject;
@@ -19,7 +19,7 @@
 }
 
 #pragma mark Private methods.
-- (MVSome *)initWithSome:(id)newSomeObject {
+- (FKSome *)initWithSome:(id)newSomeObject {
     if (self = [super init]) {
         someObject = [newSomeObject retain];
     }
@@ -28,38 +28,38 @@
 
 @end
 
-@implementation MVOption
+@implementation FKOption
 
-+ (MVOption *)fromNil:(id)maybeNil {
-    return maybeNil == nil ? [MVOption none] : [MVOption some:maybeNil];
++ (FKOption *)fromNil:(id)maybeNil {
+    return maybeNil == nil ? [FKOption none] : [FKOption some:maybeNil];
 }
 
-+ (MVOption *)fromNil:(id)maybeNil ofType:(Class)cls {
++ (FKOption *)fromNil:(id)maybeNil ofType:(Class)cls {
 	//TODO add bind and re-use fromNil
-	return (maybeNil != nil && [maybeNil isKindOfClass:cls]) ? [MVOption some:maybeNil] : [MVOption none];
+	return (maybeNil != nil && [maybeNil isKindOfClass:cls]) ? [FKOption some:maybeNil] : [FKOption none];
 }
 
-+ (MVOption *)none {
-    return [[[MVNone alloc] init] autorelease];
++ (FKOption *)none {
+    return [[[FKNone alloc] init] autorelease];
 }
 
-+ (MVOption *)some:(id)someObject {
-    return [[[MVSome alloc] initWithSome:someObject] autorelease];
++ (FKOption *)some:(id)someObject {
+    return [[[FKSome alloc] initWithSome:someObject] autorelease];
 }
 
 - (BOOL)isNone {
-    return [self isKindOfClass:[MVNone class]];
+    return [self isKindOfClass:[FKNone class]];
 }
 
 - (BOOL)isSome {
-    return [self isKindOfClass:[MVSome class]];
+    return [self isKindOfClass:[FKSome class]];
 }
 
 - (id)some {
     return nil;
 }
 
-- (MVOption *)orElse:(MVOption *)other {
+- (FKOption *)orElse:(FKOption *)other {
     return [self isSome] ? self : other;
 }
 
@@ -67,16 +67,16 @@
     return [self isSome] ? [self some] : some;
 }
 
-- (MVOption *)mapWithSelector:(SEL)selector {
-	return [self isSome] && [[self some] respondsToSelector:selector] ? [MVOption some:[[self some] performSelector:selector]] : self;
+- (FKOption *)mapWithSelector:(SEL)selector {
+	return [self isSome] && [[self some] respondsToSelector:selector] ? [FKOption some:[[self some] performSelector:selector]] : self;
 }
 
-- (MVOption *)mapWithSelector:(SEL)selector onObject:(id)object {
-	return [self isSome] && [object respondsToSelector:selector] ? [MVOption some:[object performSelector:selector withObject:[self some]]] : self;
+- (FKOption *)mapWithSelector:(SEL)selector onObject:(id)object {
+	return [self isSome] && [object respondsToSelector:selector] ? [FKOption some:[object performSelector:selector withObject:[self some]]] : self;
 }
 
-- (MVOption *)map:(id <FKFunction>)f {
-	return [self isSome] ? [MVOption some:[f :[self  some]]] : self;
+- (FKOption *)map:(id <FKFunction>)f {
+	return [self isSome] ? [FKOption some:[f :[self  some]]] : self;
 }
 
 @end

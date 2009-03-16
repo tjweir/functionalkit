@@ -1,8 +1,8 @@
 #import <Foundation/Foundation.h>
 
 // The unit type which has only one value.
-@interface MVUnit : NSObject
+@interface FKUnit : NSObject
 
-+ (MVUnit *)unit;
++ (FKUnit *)unit;
 
 @end

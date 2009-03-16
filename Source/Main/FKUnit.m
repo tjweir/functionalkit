@@ -1,14 +1,14 @@
-#import "MVUnit.h"
+#import "FKUnit.h"
 
-@implementation MVUnit
+@implementation FKUnit
 
-+ (MVUnit *)unit {
-    return [[[MVUnit alloc] init] autorelease];
++ (FKUnit *)unit {
+    return [[[FKUnit alloc] init] autorelease];
 }
 
 #pragma mark NSObject methods.
 - (BOOL)isEqual:(id)object {
-    return object == nil || ![[object class] isEqual:[MVUnit class]] ? NO : YES;
+    return object == nil || ![[object class] isEqual:[FKUnit class]] ? NO : YES;
 }
 
 - (NSUInteger)hash {
@@ -16,7 +16,7 @@
 }
 
 - (NSString *)description {
-    return @"<MVUnit>";
+    return @"<FKUnit>";
 }
 
 @end

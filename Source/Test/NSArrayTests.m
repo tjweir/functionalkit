@@ -1,6 +1,6 @@
 #import "GTMSenTestCase.h"
 #import "NSArray+Motive.h"
-#import "MVMacros.h"
+#import "FKMacros.h"
 
 @interface NSArrayTests : GTMTestCase
 @end

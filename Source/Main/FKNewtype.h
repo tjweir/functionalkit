@@ -15,15 +15,15 @@
  .m => NewTypeImplementation(MyNewType, NSString);
  */
 
-#import "MVP1.h"
-#import "MVP2.h"
-#import "MVP3.h"
+#import "FKP1.h"
+#import "FKP2.h"
+#import "FKP3.h"
 
 // TODO make the contructors type check harder, so that 'id' can't be passed in
 
 // P1 newtype
 #define NewTypeInterface(newtype, wrappedtype, accessor) \
-@interface newtype : MVP1 \
+@interface newtype : FKP1 \
 + (newtype *)accessor:(wrappedtype *)thing; \
 @property (readonly) wrappedtype *accessor; \
 @end
@@ -37,7 +37,7 @@
 
 // P2 newtype
 #define NewType2Interface(newtype, wrappedtype1, acc1, wrappedtype2, acc2) \
-@interface newtype : MVP2 \
+@interface newtype : FKP2 \
 + (newtype *)acc1:(wrappedtype1 *)acc1 acc2:(wrappedtype2 *)acc2; \
 @property (readonly) wrappedtype1 *acc1; @property (readonly) wrappedtype2 *acc2; \
 @end
@@ -51,7 +51,7 @@
 
 // P3 newtype
 #define NewType3Interface(newtype, wrappedtype1, acc1, wrappedtype2, acc2, wrappedtype3, acc3) \
-@interface newtype : MVP3 \
+@interface newtype : FKP3 \
 + (newtype *)acc1:(wrappedtype1 *)acc1 acc2:(wrappedtype2 *)acc2 acc3:(wrappedtype3 *)acc3; \
 @property (readonly) wrappedtype1 *acc1; @property (readonly) wrappedtype2 *acc2; @property (readonly) wrappedtype3 *acc3; \
 @end

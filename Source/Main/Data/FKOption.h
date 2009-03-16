@@ -1,15 +1,15 @@
 #import <Foundation/Foundation.h>
 #import "FKFunction.h"
 
-@interface MVOption : NSObject
+@interface FKOption : NSObject
 
-+ (MVOption *)fromNil:(id)maybeNil;
++ (FKOption *)fromNil:(id)maybeNil;
 
-+ (MVOption *)fromNil:(id)maybeNil ofType:(Class)cls;
++ (FKOption *)fromNil:(id)maybeNil ofType:(Class)cls;
 
-+ (MVOption *)none;
++ (FKOption *)none;
 
-+ (MVOption *)some:(id)someObject;
++ (FKOption *)some:(id)someObject;
 
 - (BOOL)isNone;
 
@@ -18,27 +18,27 @@
 - (id)some;
 
 // Returns this optional value if there is one, otherwise, returns the argument optional value.
-- (MVOption *)orElse:(MVOption *)other;
+- (FKOption *)orElse:(FKOption *)other;
 
 // Returns the value of this optional value or the given argument.
 - (id)orSome:(id)some;
 
 // Maps the given selector across this option by invoking |selector| on value contained in |some|.
-- (MVOption *)mapWithSelector:(SEL)selector;
+- (FKOption *)mapWithSelector:(SEL)selector;
 
 // Maps the given selector across this option by invoking |selector| on |object| passing the value contained in |some| as an argument.
 // |selector| should be a method taking a single argument of type |id| and return |id|.
 // Note. Returns this either (i.e. self) if the given |object| does not response to |selector|.
-- (MVOption *)mapWithSelector:(SEL)selector onObject:(id)object;
+- (FKOption *)mapWithSelector:(SEL)selector onObject:(id)object;
 
 // Maps the given function across the option
-- (MVOption *)map:(id <FKFunction>)f;
+- (FKOption *)map:(id <FKFunction>)f;
 @end
 
-@interface MVNone : MVOption
+@interface FKNone : FKOption
 @end
 
-@interface MVSome : MVOption {
+@interface FKSome : FKOption {
     id someObject;
 }
 @end

@@ -7,6 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E234315F0F6E72C90018BE5D /* FKPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = E23431420F6E72C90018BE5D /* FKPromise.h */; };
+		E23431600F6E72C90018BE5D /* FKPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = E23431430F6E72C90018BE5D /* FKPromise.m */; };
+		E23431610F6E72C90018BE5D /* FKEither.h in Headers */ = {isa = PBXBuildFile; fileRef = E23431450F6E72C90018BE5D /* FKEither.h */; };
+		E23431620F6E72C90018BE5D /* FKEither.m in Sources */ = {isa = PBXBuildFile; fileRef = E23431460F6E72C90018BE5D /* FKEither.m */; };
+		E23431630F6E72C90018BE5D /* FKOption.h in Headers */ = {isa = PBXBuildFile; fileRef = E23431470F6E72C90018BE5D /* FKOption.h */; };
+		E23431640F6E72C90018BE5D /* FKOption.m in Sources */ = {isa = PBXBuildFile; fileRef = E23431480F6E72C90018BE5D /* FKOption.m */; };
+		E23431650F6E72C90018BE5D /* FKEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = E23431490F6E72C90018BE5D /* FKEffect.h */; };
+		E23431660F6E72C90018BE5D /* FKEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = E234314A0F6E72C90018BE5D /* FKEffect.m */; };
+		E23431670F6E72C90018BE5D /* FKFunction.h in Headers */ = {isa = PBXBuildFile; fileRef = E234314B0F6E72C90018BE5D /* FKFunction.h */; };
+		E23431680F6E72C90018BE5D /* FKFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = E234314C0F6E72C90018BE5D /* FKFunction.m */; };
+		E23431690F6E72C90018BE5D /* FKNewtype.h in Headers */ = {isa = PBXBuildFile; fileRef = E234314D0F6E72C90018BE5D /* FKNewtype.h */; };
+		E234316A0F6E72C90018BE5D /* FKP1.h in Headers */ = {isa = PBXBuildFile; fileRef = E234314E0F6E72C90018BE5D /* FKP1.h */; };
+		E234316B0F6E72C90018BE5D /* FKP1.m in Sources */ = {isa = PBXBuildFile; fileRef = E234314F0F6E72C90018BE5D /* FKP1.m */; };
+		E234316C0F6E72C90018BE5D /* FKP2.h in Headers */ = {isa = PBXBuildFile; fileRef = E23431500F6E72C90018BE5D /* FKP2.h */; };
+		E234316D0F6E72C90018BE5D /* FKP2.m in Sources */ = {isa = PBXBuildFile; fileRef = E23431510F6E72C90018BE5D /* FKP2.m */; };
+		E234316E0F6E72C90018BE5D /* FKP3.h in Headers */ = {isa = PBXBuildFile; fileRef = E23431520F6E72C90018BE5D /* FKP3.h */; };
+		E234316F0F6E72C90018BE5D /* FKP3.m in Sources */ = {isa = PBXBuildFile; fileRef = E23431530F6E72C90018BE5D /* FKP3.m */; };
+		E23431700F6E72C90018BE5D /* FKUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = E23431540F6E72C90018BE5D /* FKUnit.h */; };
+		E23431710F6E72C90018BE5D /* FKUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = E23431550F6E72C90018BE5D /* FKUnit.m */; };
+		E23431720F6E72C90018BE5D /* functionalkit_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = E23431560F6E72C90018BE5D /* functionalkit_Prefix.pch */; };
+		E23431730F6E72C90018BE5D /* FKEitherUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E23431590F6E72C90018BE5D /* FKEitherUnitTest.m */; };
+		E23431740F6E72C90018BE5D /* FKOptionUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E234315A0F6E72C90018BE5D /* FKOptionUnitTest.m */; };
+		E23431750F6E72C90018BE5D /* FKFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E234315B0F6E72C90018BE5D /* FKFunctionTests.m */; };
+		E23431760F6E72C90018BE5D /* FKNewtypeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E234315C0F6E72C90018BE5D /* FKNewtypeTests.m */; };
+		E23431780F6E72C90018BE5D /* NSArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E234315E0F6E72C90018BE5D /* NSArrayTests.m */; };
+		E23431790F6E72F20018BE5D /* FKEitherUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E23431590F6E72C90018BE5D /* FKEitherUnitTest.m */; };
+		E234317A0F6E72F30018BE5D /* FKFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E234315B0F6E72C90018BE5D /* FKFunctionTests.m */; };
+		E234317B0F6E72F40018BE5D /* FKNewtypeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E234315C0F6E72C90018BE5D /* FKNewtypeTests.m */; };
+		E234317C0F6E72F50018BE5D /* FKOptionUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E234315A0F6E72C90018BE5D /* FKOptionUnitTest.m */; };
+		E234317E0F6E72F60018BE5D /* NSArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E234315E0F6E72C90018BE5D /* NSArrayTests.m */; };
+		E23431810F6E73A50018BE5D /* FKLog.h in Headers */ = {isa = PBXBuildFile; fileRef = E234317F0F6E73A50018BE5D /* FKLog.h */; };
+		E23431820F6E73A50018BE5D /* FKMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = E23431800F6E73A50018BE5D /* FKMacros.h */; };
 		E23DB6E90F4D0263005C8EDA /* GTMDebugSelectorValidation.h in Headers */ = {isa = PBXBuildFile; fileRef = E23DB5F90F4D0262005C8EDA /* GTMDebugSelectorValidation.h */; };
 		E23DB7310F4D0263005C8EDA /* GTM_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = E23DB6490F4D0262005C8EDA /* GTM_Prefix.pch */; };
 		E23DB7320F4D0263005C8EDA /* GTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = E23DB64A0F4D0262005C8EDA /* GTMDefines.h */; };
@@ -18,85 +50,38 @@
 		E23DBF6D0F4E2817005C8EDA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E23DBF6C0F4E2817005C8EDA /* UIKit.framework */; };
 		E23DBF6E0F4E2817005C8EDA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E23DBF6C0F4E2817005C8EDA /* UIKit.framework */; };
 		E23DC0050F4E2852005C8EDA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0867D69BFE84028FC02AAC07 /* Foundation.framework */; };
-		E265014A0F6A313B00F49983 /* FKEffect+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = E26501450F6A313B00F49983 /* FKEffect+Notification.m */; };
-		E265014B0F6A313B00F49983 /* NSNotification+Payload.m in Sources */ = {isa = PBXBuildFile; fileRef = E26501470F6A313B00F49983 /* NSNotification+Payload.m */; };
-		E265014C0F6A313B00F49983 /* NSNotificationCenter+Payload.m in Sources */ = {isa = PBXBuildFile; fileRef = E26501490F6A313B00F49983 /* NSNotificationCenter+Payload.m */; };
-		E265014D0F6A313B00F49983 /* FKEffect+Notification.h in Headers */ = {isa = PBXBuildFile; fileRef = E26501440F6A313B00F49983 /* FKEffect+Notification.h */; };
-		E265014E0F6A313B00F49983 /* FKEffect+Notification.m in Sources */ = {isa = PBXBuildFile; fileRef = E26501450F6A313B00F49983 /* FKEffect+Notification.m */; };
-		E265014F0F6A313B00F49983 /* NSNotification+Payload.h in Headers */ = {isa = PBXBuildFile; fileRef = E26501460F6A313B00F49983 /* NSNotification+Payload.h */; };
-		E26501500F6A313B00F49983 /* NSNotification+Payload.m in Sources */ = {isa = PBXBuildFile; fileRef = E26501470F6A313B00F49983 /* NSNotification+Payload.m */; };
-		E26501510F6A313B00F49983 /* NSNotificationCenter+Payload.h in Headers */ = {isa = PBXBuildFile; fileRef = E26501480F6A313B00F49983 /* NSNotificationCenter+Payload.h */; };
-		E26501520F6A313B00F49983 /* NSNotificationCenter+Payload.m in Sources */ = {isa = PBXBuildFile; fileRef = E26501490F6A313B00F49983 /* NSNotificationCenter+Payload.m */; };
-		E26501590F6A318D00F49983 /* PXAccountService.m in Sources */ = {isa = PBXBuildFile; fileRef = E26501560F6A318D00F49983 /* PXAccountService.m */; };
-		E265015A0F6A318D00F49983 /* PXConfigurationService.m in Sources */ = {isa = PBXBuildFile; fileRef = E26501580F6A318D00F49983 /* PXConfigurationService.m */; };
-		E265015B0F6A318D00F49983 /* phoenix_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = E26501530F6A318D00F49983 /* phoenix_Prefix.pch */; };
-		E265015C0F6A318D00F49983 /* PXAccountService.h in Headers */ = {isa = PBXBuildFile; fileRef = E26501550F6A318D00F49983 /* PXAccountService.h */; };
-		E265015D0F6A318D00F49983 /* PXAccountService.m in Sources */ = {isa = PBXBuildFile; fileRef = E26501560F6A318D00F49983 /* PXAccountService.m */; };
-		E265015E0F6A318D00F49983 /* PXConfigurationService.h in Headers */ = {isa = PBXBuildFile; fileRef = E26501570F6A318D00F49983 /* PXConfigurationService.h */; };
-		E265015F0F6A318D00F49983 /* PXConfigurationService.m in Sources */ = {isa = PBXBuildFile; fileRef = E26501580F6A318D00F49983 /* PXConfigurationService.m */; };
-		E265034F0F6A352400F49983 /* AdMobHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E26502710F6A352400F49983 /* AdMobHelper.m */; };
-		E26503500F6A352400F49983 /* AVAudioPlayer+Motive.m in Sources */ = {isa = PBXBuildFile; fileRef = E26502740F6A352400F49983 /* AVAudioPlayer+Motive.m */; };
-		E26503510F6A352400F49983 /* NSArray+Motive.m in Sources */ = {isa = PBXBuildFile; fileRef = E26502770F6A352400F49983 /* NSArray+Motive.m */; };
-		E26503520F6A352400F49983 /* NSDictionary+Motive.m in Sources */ = {isa = PBXBuildFile; fileRef = E26502790F6A352400F49983 /* NSDictionary+Motive.m */; };
-		E26503530F6A352400F49983 /* NSString+Motive.m in Sources */ = {isa = PBXBuildFile; fileRef = E265027B0F6A352400F49983 /* NSString+Motive.m */; };
-		E26503540F6A352400F49983 /* MVPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = E26502800F6A352400F49983 /* MVPromise.m */; };
-		E26503550F6A352400F49983 /* MVEither.m in Sources */ = {isa = PBXBuildFile; fileRef = E26502830F6A352400F49983 /* MVEither.m */; };
-		E26503560F6A352400F49983 /* MVOption.m in Sources */ = {isa = PBXBuildFile; fileRef = E26502850F6A352400F49983 /* MVOption.m */; };
-		E26503570F6A352400F49983 /* FKEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = E26502870F6A352400F49983 /* FKEffect.m */; };
-		E26503580F6A352400F49983 /* FKFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = E26502890F6A352400F49983 /* FKFunction.m */; };
-		E26503590F6A352400F49983 /* MVP1.m in Sources */ = {isa = PBXBuildFile; fileRef = E265028C0F6A352400F49983 /* MVP1.m */; };
-		E265035A0F6A352400F49983 /* MVP2.m in Sources */ = {isa = PBXBuildFile; fileRef = E265028E0F6A352400F49983 /* MVP2.m */; };
-		E265035B0F6A352400F49983 /* MVP3.m in Sources */ = {isa = PBXBuildFile; fileRef = E26502900F6A352400F49983 /* MVP3.m */; };
-		E265035C0F6A352400F49983 /* MVUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = E26502920F6A352400F49983 /* MVUnit.m */; };
-		E265035D0F6A352400F49983 /* NSString+File.m in Sources */ = {isa = PBXBuildFile; fileRef = E26502950F6A352400F49983 /* NSString+File.m */; };
-		E265035E0F6A352400F49983 /* MVHttp.m in Sources */ = {isa = PBXBuildFile; fileRef = E265029C0F6A352400F49983 /* MVHttp.m */; };
-		E26503710F6A352400F49983 /* SynthesizeSingleton.h in Headers */ = {isa = PBXBuildFile; fileRef = E26501A40F6A352400F49983 /* SynthesizeSingleton.h */; };
-		E26503EC0F6A352500F49983 /* AdMobHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = E26502700F6A352400F49983 /* AdMobHelper.h */; };
-		E26503ED0F6A352500F49983 /* AdMobHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E26502710F6A352400F49983 /* AdMobHelper.m */; };
-		E26503EE0F6A352500F49983 /* AVAudioPlayer+Motive.h in Headers */ = {isa = PBXBuildFile; fileRef = E26502730F6A352400F49983 /* AVAudioPlayer+Motive.h */; };
-		E26503EF0F6A352500F49983 /* AVAudioPlayer+Motive.m in Sources */ = {isa = PBXBuildFile; fileRef = E26502740F6A352400F49983 /* AVAudioPlayer+Motive.m */; };
-		E26503F00F6A352500F49983 /* NSArray+Motive.h in Headers */ = {isa = PBXBuildFile; fileRef = E26502760F6A352400F49983 /* NSArray+Motive.h */; };
-		E26503F10F6A352500F49983 /* NSArray+Motive.m in Sources */ = {isa = PBXBuildFile; fileRef = E26502770F6A352400F49983 /* NSArray+Motive.m */; };
-		E26503F20F6A352500F49983 /* NSDictionary+Motive.h in Headers */ = {isa = PBXBuildFile; fileRef = E26502780F6A352400F49983 /* NSDictionary+Motive.h */; };
-		E26503F30F6A352500F49983 /* NSDictionary+Motive.m in Sources */ = {isa = PBXBuildFile; fileRef = E26502790F6A352400F49983 /* NSDictionary+Motive.m */; };
-		E26503F40F6A352500F49983 /* NSString+Motive.h in Headers */ = {isa = PBXBuildFile; fileRef = E265027A0F6A352400F49983 /* NSString+Motive.h */; };
-		E26503F50F6A352500F49983 /* NSString+Motive.m in Sources */ = {isa = PBXBuildFile; fileRef = E265027B0F6A352400F49983 /* NSString+Motive.m */; };
-		E26503F60F6A352500F49983 /* MVPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = E265027F0F6A352400F49983 /* MVPromise.h */; };
-		E26503F70F6A352500F49983 /* MVPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = E26502800F6A352400F49983 /* MVPromise.m */; };
-		E26503F80F6A352500F49983 /* MVEither.h in Headers */ = {isa = PBXBuildFile; fileRef = E26502820F6A352400F49983 /* MVEither.h */; };
-		E26503F90F6A352500F49983 /* MVEither.m in Sources */ = {isa = PBXBuildFile; fileRef = E26502830F6A352400F49983 /* MVEither.m */; };
-		E26503FA0F6A352500F49983 /* MVOption.h in Headers */ = {isa = PBXBuildFile; fileRef = E26502840F6A352400F49983 /* MVOption.h */; };
-		E26503FB0F6A352500F49983 /* MVOption.m in Sources */ = {isa = PBXBuildFile; fileRef = E26502850F6A352400F49983 /* MVOption.m */; };
-		E26503FC0F6A352500F49983 /* FKEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = E26502860F6A352400F49983 /* FKEffect.h */; };
-		E26503FD0F6A352500F49983 /* FKEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = E26502870F6A352400F49983 /* FKEffect.m */; };
-		E26503FE0F6A352500F49983 /* FKFunction.h in Headers */ = {isa = PBXBuildFile; fileRef = E26502880F6A352400F49983 /* FKFunction.h */; };
-		E26503FF0F6A352500F49983 /* FKFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = E26502890F6A352400F49983 /* FKFunction.m */; };
-		E26504000F6A352500F49983 /* MVNewtype.h in Headers */ = {isa = PBXBuildFile; fileRef = E265028A0F6A352400F49983 /* MVNewtype.h */; };
-		E26504010F6A352500F49983 /* MVP1.h in Headers */ = {isa = PBXBuildFile; fileRef = E265028B0F6A352400F49983 /* MVP1.h */; };
-		E26504020F6A352500F49983 /* MVP1.m in Sources */ = {isa = PBXBuildFile; fileRef = E265028C0F6A352400F49983 /* MVP1.m */; };
-		E26504030F6A352500F49983 /* MVP2.h in Headers */ = {isa = PBXBuildFile; fileRef = E265028D0F6A352400F49983 /* MVP2.h */; };
-		E26504040F6A352500F49983 /* MVP2.m in Sources */ = {isa = PBXBuildFile; fileRef = E265028E0F6A352400F49983 /* MVP2.m */; };
-		E26504050F6A352500F49983 /* MVP3.h in Headers */ = {isa = PBXBuildFile; fileRef = E265028F0F6A352400F49983 /* MVP3.h */; };
-		E26504060F6A352500F49983 /* MVP3.m in Sources */ = {isa = PBXBuildFile; fileRef = E26502900F6A352400F49983 /* MVP3.m */; };
-		E26504070F6A352500F49983 /* MVUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = E26502910F6A352400F49983 /* MVUnit.h */; };
-		E26504080F6A352500F49983 /* MVUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = E26502920F6A352400F49983 /* MVUnit.m */; };
-		E26504090F6A352500F49983 /* NSString+File.h in Headers */ = {isa = PBXBuildFile; fileRef = E26502940F6A352400F49983 /* NSString+File.h */; };
-		E265040A0F6A352500F49983 /* NSString+File.m in Sources */ = {isa = PBXBuildFile; fileRef = E26502950F6A352400F49983 /* NSString+File.m */; };
-		E265040B0F6A352500F49983 /* Motive.h in Headers */ = {isa = PBXBuildFile; fileRef = E26502960F6A352400F49983 /* Motive.h */; };
-		E265040C0F6A352500F49983 /* motive_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = E26502970F6A352400F49983 /* motive_Prefix.pch */; };
-		E265040D0F6A352500F49983 /* MVLog.h in Headers */ = {isa = PBXBuildFile; fileRef = E26502980F6A352400F49983 /* MVLog.h */; };
-		E265040E0F6A352500F49983 /* MVMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = E26502990F6A352400F49983 /* MVMacros.h */; };
-		E265040F0F6A352500F49983 /* MVHttp.h in Headers */ = {isa = PBXBuildFile; fileRef = E265029B0F6A352400F49983 /* MVHttp.h */; };
-		E26504100F6A352500F49983 /* MVHttp.m in Sources */ = {isa = PBXBuildFile; fileRef = E265029C0F6A352400F49983 /* MVHttp.m */; };
-		E26504450F6A358000F49983 /* PXTemplateUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E26504440F6A358000F49983 /* PXTemplateUnitTest.m */; };
-		E26504870F6A747900F49983 /* PXEffectExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = E26504860F6A747900F49983 /* PXEffectExecutor.m */; };
-		E26504880F6A747900F49983 /* PXEffectExecutor.h in Headers */ = {isa = PBXBuildFile; fileRef = E26504850F6A747900F49983 /* PXEffectExecutor.h */; };
-		E26504890F6A747900F49983 /* PXEffectExecutor.m in Sources */ = {isa = PBXBuildFile; fileRef = E26504860F6A747900F49983 /* PXEffectExecutor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		D2AAC07E0554694100DB518D /* libphoenix.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libphoenix.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2AAC07E0554694100DB518D /* libfunctionalkit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libfunctionalkit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E23431420F6E72C90018BE5D /* FKPromise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKPromise.h; sourceTree = "<group>"; };
+		E23431430F6E72C90018BE5D /* FKPromise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKPromise.m; sourceTree = "<group>"; };
+		E23431450F6E72C90018BE5D /* FKEither.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKEither.h; sourceTree = "<group>"; };
+		E23431460F6E72C90018BE5D /* FKEither.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKEither.m; sourceTree = "<group>"; };
+		E23431470F6E72C90018BE5D /* FKOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKOption.h; sourceTree = "<group>"; };
+		E23431480F6E72C90018BE5D /* FKOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKOption.m; sourceTree = "<group>"; };
+		E23431490F6E72C90018BE5D /* FKEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKEffect.h; sourceTree = "<group>"; };
+		E234314A0F6E72C90018BE5D /* FKEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKEffect.m; sourceTree = "<group>"; };
+		E234314B0F6E72C90018BE5D /* FKFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKFunction.h; sourceTree = "<group>"; };
+		E234314C0F6E72C90018BE5D /* FKFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKFunction.m; sourceTree = "<group>"; };
+		E234314D0F6E72C90018BE5D /* FKNewtype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKNewtype.h; sourceTree = "<group>"; };
+		E234314E0F6E72C90018BE5D /* FKP1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKP1.h; sourceTree = "<group>"; };
+		E234314F0F6E72C90018BE5D /* FKP1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKP1.m; sourceTree = "<group>"; };
+		E23431500F6E72C90018BE5D /* FKP2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKP2.h; sourceTree = "<group>"; };
+		E23431510F6E72C90018BE5D /* FKP2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKP2.m; sourceTree = "<group>"; };
+		E23431520F6E72C90018BE5D /* FKP3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKP3.h; sourceTree = "<group>"; };
+		E23431530F6E72C90018BE5D /* FKP3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKP3.m; sourceTree = "<group>"; };
+		E23431540F6E72C90018BE5D /* FKUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKUnit.h; sourceTree = "<group>"; };
+		E23431550F6E72C90018BE5D /* FKUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKUnit.m; sourceTree = "<group>"; };
+		E23431560F6E72C90018BE5D /* functionalkit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = functionalkit_Prefix.pch; sourceTree = "<group>"; };
+		E23431590F6E72C90018BE5D /* FKEitherUnitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKEitherUnitTest.m; sourceTree = "<group>"; };
+		E234315A0F6E72C90018BE5D /* FKOptionUnitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKOptionUnitTest.m; sourceTree = "<group>"; };
+		E234315B0F6E72C90018BE5D /* FKFunctionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKFunctionTests.m; sourceTree = "<group>"; };
+		E234315C0F6E72C90018BE5D /* FKNewtypeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKNewtypeTests.m; sourceTree = "<group>"; };
+		E234315E0F6E72C90018BE5D /* NSArrayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayTests.m; sourceTree = "<group>"; };
+		E234317F0F6E73A50018BE5D /* FKLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKLog.h; sourceTree = "<group>"; };
+		E23431800F6E73A50018BE5D /* FKMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKMacros.h; sourceTree = "<group>"; };
 		E23DB5F90F4D0262005C8EDA /* GTMDebugSelectorValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDebugSelectorValidation.h; sourceTree = "<group>"; };
 		E23DB6490F4D0262005C8EDA /* GTM_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTM_Prefix.pch; sourceTree = "<group>"; };
 		E23DB64A0F4D0262005C8EDA /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
@@ -107,58 +92,6 @@
 		E23DB6610F4D0262005C8EDA /* GTMSenTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMSenTestCase.m; sourceTree = "<group>"; };
 		E23DBE720F4E2549005C8EDA /* Unit Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Unit Tests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E23DBF6C0F4E2817005C8EDA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		E26501440F6A313B00F49983 /* FKEffect+Notification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FKEffect+Notification.h"; sourceTree = "<group>"; };
-		E26501450F6A313B00F49983 /* FKEffect+Notification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FKEffect+Notification.m"; sourceTree = "<group>"; };
-		E26501460F6A313B00F49983 /* NSNotification+Payload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotification+Payload.h"; sourceTree = "<group>"; };
-		E26501470F6A313B00F49983 /* NSNotification+Payload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNotification+Payload.m"; sourceTree = "<group>"; };
-		E26501480F6A313B00F49983 /* NSNotificationCenter+Payload.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+Payload.h"; sourceTree = "<group>"; };
-		E26501490F6A313B00F49983 /* NSNotificationCenter+Payload.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNotificationCenter+Payload.m"; sourceTree = "<group>"; };
-		E26501530F6A318D00F49983 /* phoenix_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = phoenix_Prefix.pch; sourceTree = "<group>"; };
-		E26501550F6A318D00F49983 /* PXAccountService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXAccountService.h; sourceTree = "<group>"; };
-		E26501560F6A318D00F49983 /* PXAccountService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXAccountService.m; sourceTree = "<group>"; };
-		E26501570F6A318D00F49983 /* PXConfigurationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXConfigurationService.h; sourceTree = "<group>"; };
-		E26501580F6A318D00F49983 /* PXConfigurationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXConfigurationService.m; sourceTree = "<group>"; };
-		E26501A40F6A352400F49983 /* SynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynthesizeSingleton.h; sourceTree = "<group>"; };
-		E26502700F6A352400F49983 /* AdMobHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdMobHelper.h; sourceTree = "<group>"; };
-		E26502710F6A352400F49983 /* AdMobHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdMobHelper.m; sourceTree = "<group>"; };
-		E26502730F6A352400F49983 /* AVAudioPlayer+Motive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AVAudioPlayer+Motive.h"; sourceTree = "<group>"; };
-		E26502740F6A352400F49983 /* AVAudioPlayer+Motive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AVAudioPlayer+Motive.m"; sourceTree = "<group>"; };
-		E26502760F6A352400F49983 /* NSArray+Motive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Motive.h"; sourceTree = "<group>"; };
-		E26502770F6A352400F49983 /* NSArray+Motive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Motive.m"; sourceTree = "<group>"; };
-		E26502780F6A352400F49983 /* NSDictionary+Motive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Motive.h"; sourceTree = "<group>"; };
-		E26502790F6A352400F49983 /* NSDictionary+Motive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Motive.m"; sourceTree = "<group>"; };
-		E265027A0F6A352400F49983 /* NSString+Motive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Motive.h"; sourceTree = "<group>"; };
-		E265027B0F6A352400F49983 /* NSString+Motive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Motive.m"; sourceTree = "<group>"; };
-		E265027F0F6A352400F49983 /* MVPromise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVPromise.h; sourceTree = "<group>"; };
-		E26502800F6A352400F49983 /* MVPromise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVPromise.m; sourceTree = "<group>"; };
-		E26502820F6A352400F49983 /* MVEither.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVEither.h; sourceTree = "<group>"; };
-		E26502830F6A352400F49983 /* MVEither.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVEither.m; sourceTree = "<group>"; };
-		E26502840F6A352400F49983 /* MVOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVOption.h; sourceTree = "<group>"; };
-		E26502850F6A352400F49983 /* MVOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVOption.m; sourceTree = "<group>"; };
-		E26502860F6A352400F49983 /* FKEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKEffect.h; sourceTree = "<group>"; };
-		E26502870F6A352400F49983 /* FKEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKEffect.m; sourceTree = "<group>"; };
-		E26502880F6A352400F49983 /* FKFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKFunction.h; sourceTree = "<group>"; };
-		E26502890F6A352400F49983 /* FKFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKFunction.m; sourceTree = "<group>"; };
-		E265028A0F6A352400F49983 /* MVNewtype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVNewtype.h; sourceTree = "<group>"; };
-		E265028B0F6A352400F49983 /* MVP1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVP1.h; sourceTree = "<group>"; };
-		E265028C0F6A352400F49983 /* MVP1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVP1.m; sourceTree = "<group>"; };
-		E265028D0F6A352400F49983 /* MVP2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVP2.h; sourceTree = "<group>"; };
-		E265028E0F6A352400F49983 /* MVP2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVP2.m; sourceTree = "<group>"; };
-		E265028F0F6A352400F49983 /* MVP3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVP3.h; sourceTree = "<group>"; };
-		E26502900F6A352400F49983 /* MVP3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVP3.m; sourceTree = "<group>"; };
-		E26502910F6A352400F49983 /* MVUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVUnit.h; sourceTree = "<group>"; };
-		E26502920F6A352400F49983 /* MVUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVUnit.m; sourceTree = "<group>"; };
-		E26502940F6A352400F49983 /* NSString+File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+File.h"; sourceTree = "<group>"; };
-		E26502950F6A352400F49983 /* NSString+File.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+File.m"; sourceTree = "<group>"; };
-		E26502960F6A352400F49983 /* Motive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Motive.h; sourceTree = "<group>"; };
-		E26502970F6A352400F49983 /* motive_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = motive_Prefix.pch; sourceTree = "<group>"; };
-		E26502980F6A352400F49983 /* MVLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVLog.h; sourceTree = "<group>"; };
-		E26502990F6A352400F49983 /* MVMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVMacros.h; sourceTree = "<group>"; };
-		E265029B0F6A352400F49983 /* MVHttp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVHttp.h; sourceTree = "<group>"; };
-		E265029C0F6A352400F49983 /* MVHttp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVHttp.m; sourceTree = "<group>"; };
-		E26504440F6A358000F49983 /* PXTemplateUnitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXTemplateUnitTest.m; sourceTree = "<group>"; };
-		E26504850F6A747900F49983 /* PXEffectExecutor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PXEffectExecutor.h; sourceTree = "<group>"; };
-		E26504860F6A747900F49983 /* PXEffectExecutor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PXEffectExecutor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,20 +118,20 @@
 		034768DFFF38A50411DB9C8B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D2AAC07E0554694100DB518D /* libphoenix.a */,
+				D2AAC07E0554694100DB518D /* libfunctionalkit.a */,
 				E23DBE720F4E2549005C8EDA /* Unit Tests.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0867D691FE84028FC02AAC07 /* phoenix */ = {
+		0867D691FE84028FC02AAC07 /* functionalkit */ = {
 			isa = PBXGroup;
 			children = (
 				4784B29E0F368E2E00D331F4 /* Source */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
 				034768DFFF38A50411DB9C8B /* Products */,
 			);
-			name = phoenix;
+			name = functionalkit;
 			sourceTree = "<group>";
 		};
 		0867D69AFE84028FC02AAC07 /* Frameworks */ = {
@@ -214,16 +147,88 @@
 			isa = PBXGroup;
 			children = (
 				E23DB5C30F4D0262005C8EDA /* External */,
-				E23DB69E0F4D0262005C8EDA /* Main */,
-				E23DB6BC0F4D0263005C8EDA /* Test */,
+				E234313F0F6E72C90018BE5D /* Main */,
+				E23431570F6E72C90018BE5D /* Test */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		E234313F0F6E72C90018BE5D /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				E23431400F6E72C90018BE5D /* Control */,
+				E23431440F6E72C90018BE5D /* Data */,
+				E23431490F6E72C90018BE5D /* FKEffect.h */,
+				E234314A0F6E72C90018BE5D /* FKEffect.m */,
+				E234314B0F6E72C90018BE5D /* FKFunction.h */,
+				E234314C0F6E72C90018BE5D /* FKFunction.m */,
+				E234317F0F6E73A50018BE5D /* FKLog.h */,
+				E23431800F6E73A50018BE5D /* FKMacros.h */,
+				E234314D0F6E72C90018BE5D /* FKNewtype.h */,
+				E234314E0F6E72C90018BE5D /* FKP1.h */,
+				E234314F0F6E72C90018BE5D /* FKP1.m */,
+				E23431500F6E72C90018BE5D /* FKP2.h */,
+				E23431510F6E72C90018BE5D /* FKP2.m */,
+				E23431520F6E72C90018BE5D /* FKP3.h */,
+				E23431530F6E72C90018BE5D /* FKP3.m */,
+				E23431540F6E72C90018BE5D /* FKUnit.h */,
+				E23431550F6E72C90018BE5D /* FKUnit.m */,
+				E23431560F6E72C90018BE5D /* functionalkit_Prefix.pch */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		E23431400F6E72C90018BE5D /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				E23431410F6E72C90018BE5D /* Parallel */,
+			);
+			path = Control;
+			sourceTree = "<group>";
+		};
+		E23431410F6E72C90018BE5D /* Parallel */ = {
+			isa = PBXGroup;
+			children = (
+				E23431420F6E72C90018BE5D /* FKPromise.h */,
+				E23431430F6E72C90018BE5D /* FKPromise.m */,
+			);
+			path = Parallel;
+			sourceTree = "<group>";
+		};
+		E23431440F6E72C90018BE5D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E23431450F6E72C90018BE5D /* FKEither.h */,
+				E23431460F6E72C90018BE5D /* FKEither.m */,
+				E23431470F6E72C90018BE5D /* FKOption.h */,
+				E23431480F6E72C90018BE5D /* FKOption.m */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		E23431570F6E72C90018BE5D /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				E23431580F6E72C90018BE5D /* Data */,
+				E234315B0F6E72C90018BE5D /* FKFunctionTests.m */,
+				E234315C0F6E72C90018BE5D /* FKNewtypeTests.m */,
+				E234315E0F6E72C90018BE5D /* NSArrayTests.m */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		E23431580F6E72C90018BE5D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				E23431590F6E72C90018BE5D /* FKEitherUnitTest.m */,
+				E234315A0F6E72C90018BE5D /* FKOptionUnitTest.m */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		E23DB5C30F4D0262005C8EDA /* External */ = {
 			isa = PBXGroup;
 			children = (
-				E26501620F6A352400F49983 /* motive */,
 				E23DB5D50F4D0262005C8EDA /* google-toolbox-for-mac-1-5-1 */,
 			);
 			path = External;
@@ -260,215 +265,6 @@
 			path = UnitTesting;
 			sourceTree = "<group>";
 		};
-		E23DB69E0F4D0262005C8EDA /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				E26504750F6A73AB00F49983 /* Control */,
-				E26BBECE0F5BEE870079EC67 /* Extensions */,
-				E26501540F6A318D00F49983 /* Services */,
-				E26501530F6A318D00F49983 /* phoenix_Prefix.pch */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		E23DB6BC0F4D0263005C8EDA /* Test */ = {
-			isa = PBXGroup;
-			children = (
-				E26504440F6A358000F49983 /* PXTemplateUnitTest.m */,
-			);
-			path = Test;
-			sourceTree = "<group>";
-		};
-		E26501540F6A318D00F49983 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				E26501550F6A318D00F49983 /* PXAccountService.h */,
-				E26501560F6A318D00F49983 /* PXAccountService.m */,
-				E26501570F6A318D00F49983 /* PXConfigurationService.h */,
-				E26501580F6A318D00F49983 /* PXConfigurationService.m */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		E26501620F6A352400F49983 /* motive */ = {
-			isa = PBXGroup;
-			children = (
-				E26501920F6A352400F49983 /* Source */,
-			);
-			path = motive;
-			sourceTree = "<group>";
-		};
-		E26501920F6A352400F49983 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				E26501930F6A352400F49983 /* External */,
-				E265026E0F6A352400F49983 /* Main */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
-		E26501930F6A352400F49983 /* External */ = {
-			isa = PBXGroup;
-			children = (
-				E26501A30F6A352400F49983 /* Gallagher */,
-			);
-			path = External;
-			sourceTree = "<group>";
-		};
-		E26501A30F6A352400F49983 /* Gallagher */ = {
-			isa = PBXGroup;
-			children = (
-				E26501A40F6A352400F49983 /* SynthesizeSingleton.h */,
-			);
-			path = Gallagher;
-			sourceTree = "<group>";
-		};
-		E265026E0F6A352400F49983 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				E265026F0F6A352400F49983 /* AdMob */,
-				E26502720F6A352400F49983 /* AV */,
-				E26502750F6A352400F49983 /* Extensions */,
-				E265027C0F6A352400F49983 /* FObjC */,
-				E26502930F6A352400F49983 /* IO */,
-				E26502960F6A352400F49983 /* Motive.h */,
-				E26502970F6A352400F49983 /* motive_Prefix.pch */,
-				E26502980F6A352400F49983 /* MVLog.h */,
-				E26502990F6A352400F49983 /* MVMacros.h */,
-				E265029A0F6A352400F49983 /* Network */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		E265026F0F6A352400F49983 /* AdMob */ = {
-			isa = PBXGroup;
-			children = (
-				E26502700F6A352400F49983 /* AdMobHelper.h */,
-				E26502710F6A352400F49983 /* AdMobHelper.m */,
-			);
-			path = AdMob;
-			sourceTree = "<group>";
-		};
-		E26502720F6A352400F49983 /* AV */ = {
-			isa = PBXGroup;
-			children = (
-				E26502730F6A352400F49983 /* AVAudioPlayer+Motive.h */,
-				E26502740F6A352400F49983 /* AVAudioPlayer+Motive.m */,
-			);
-			path = AV;
-			sourceTree = "<group>";
-		};
-		E26502750F6A352400F49983 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				E26502760F6A352400F49983 /* NSArray+Motive.h */,
-				E26502770F6A352400F49983 /* NSArray+Motive.m */,
-				E26502780F6A352400F49983 /* NSDictionary+Motive.h */,
-				E26502790F6A352400F49983 /* NSDictionary+Motive.m */,
-				E265027A0F6A352400F49983 /* NSString+Motive.h */,
-				E265027B0F6A352400F49983 /* NSString+Motive.m */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		E265027C0F6A352400F49983 /* FObjC */ = {
-			isa = PBXGroup;
-			children = (
-				E265027D0F6A352400F49983 /* Control */,
-				E26502810F6A352400F49983 /* Data */,
-				E26502860F6A352400F49983 /* FKEffect.h */,
-				E26502870F6A352400F49983 /* FKEffect.m */,
-				E26502880F6A352400F49983 /* FKFunction.h */,
-				E26502890F6A352400F49983 /* FKFunction.m */,
-				E265028A0F6A352400F49983 /* MVNewtype.h */,
-				E265028B0F6A352400F49983 /* MVP1.h */,
-				E265028C0F6A352400F49983 /* MVP1.m */,
-				E265028D0F6A352400F49983 /* MVP2.h */,
-				E265028E0F6A352400F49983 /* MVP2.m */,
-				E265028F0F6A352400F49983 /* MVP3.h */,
-				E26502900F6A352400F49983 /* MVP3.m */,
-				E26502910F6A352400F49983 /* MVUnit.h */,
-				E26502920F6A352400F49983 /* MVUnit.m */,
-			);
-			path = FObjC;
-			sourceTree = "<group>";
-		};
-		E265027D0F6A352400F49983 /* Control */ = {
-			isa = PBXGroup;
-			children = (
-				E265027E0F6A352400F49983 /* Parallel */,
-			);
-			path = Control;
-			sourceTree = "<group>";
-		};
-		E265027E0F6A352400F49983 /* Parallel */ = {
-			isa = PBXGroup;
-			children = (
-				E265027F0F6A352400F49983 /* MVPromise.h */,
-				E26502800F6A352400F49983 /* MVPromise.m */,
-			);
-			path = Parallel;
-			sourceTree = "<group>";
-		};
-		E26502810F6A352400F49983 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				E26502820F6A352400F49983 /* MVEither.h */,
-				E26502830F6A352400F49983 /* MVEither.m */,
-				E26502840F6A352400F49983 /* MVOption.h */,
-				E26502850F6A352400F49983 /* MVOption.m */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		E26502930F6A352400F49983 /* IO */ = {
-			isa = PBXGroup;
-			children = (
-				E26502940F6A352400F49983 /* NSString+File.h */,
-				E26502950F6A352400F49983 /* NSString+File.m */,
-			);
-			path = IO;
-			sourceTree = "<group>";
-		};
-		E265029A0F6A352400F49983 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				E265029B0F6A352400F49983 /* MVHttp.h */,
-				E265029C0F6A352400F49983 /* MVHttp.m */,
-			);
-			path = Network;
-			sourceTree = "<group>";
-		};
-		E26504750F6A73AB00F49983 /* Control */ = {
-			isa = PBXGroup;
-			children = (
-				E26504760F6A73AB00F49983 /* Parallel */,
-			);
-			path = Control;
-			sourceTree = "<group>";
-		};
-		E26504760F6A73AB00F49983 /* Parallel */ = {
-			isa = PBXGroup;
-			children = (
-				E26504850F6A747900F49983 /* PXEffectExecutor.h */,
-				E26504860F6A747900F49983 /* PXEffectExecutor.m */,
-			);
-			path = Parallel;
-			sourceTree = "<group>";
-		};
-		E26BBECE0F5BEE870079EC67 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				E26501440F6A313B00F49983 /* FKEffect+Notification.h */,
-				E26501450F6A313B00F49983 /* FKEffect+Notification.m */,
-				E26501460F6A313B00F49983 /* NSNotification+Payload.h */,
-				E26501470F6A313B00F49983 /* NSNotification+Payload.m */,
-				E26501480F6A313B00F49983 /* NSNotificationCenter+Payload.h */,
-				E26501490F6A313B00F49983 /* NSNotificationCenter+Payload.m */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -481,44 +277,28 @@
 				E23DB7320F4D0263005C8EDA /* GTMDefines.h in Headers */,
 				E23DB7380F4D0263005C8EDA /* GTMIPhoneUnitTestDelegate.h in Headers */,
 				E23DB73F0F4D0263005C8EDA /* GTMSenTestCase.h in Headers */,
-				E265014D0F6A313B00F49983 /* FKEffect+Notification.h in Headers */,
-				E265014F0F6A313B00F49983 /* NSNotification+Payload.h in Headers */,
-				E26501510F6A313B00F49983 /* NSNotificationCenter+Payload.h in Headers */,
-				E265015B0F6A318D00F49983 /* phoenix_Prefix.pch in Headers */,
-				E265015C0F6A318D00F49983 /* PXAccountService.h in Headers */,
-				E265015E0F6A318D00F49983 /* PXConfigurationService.h in Headers */,
-				E26503710F6A352400F49983 /* SynthesizeSingleton.h in Headers */,
-				E26503EC0F6A352500F49983 /* AdMobHelper.h in Headers */,
-				E26503EE0F6A352500F49983 /* AVAudioPlayer+Motive.h in Headers */,
-				E26503F00F6A352500F49983 /* NSArray+Motive.h in Headers */,
-				E26503F20F6A352500F49983 /* NSDictionary+Motive.h in Headers */,
-				E26503F40F6A352500F49983 /* NSString+Motive.h in Headers */,
-				E26503F60F6A352500F49983 /* MVPromise.h in Headers */,
-				E26503F80F6A352500F49983 /* MVEither.h in Headers */,
-				E26503FA0F6A352500F49983 /* MVOption.h in Headers */,
-				E26503FC0F6A352500F49983 /* FKEffect.h in Headers */,
-				E26503FE0F6A352500F49983 /* FKFunction.h in Headers */,
-				E26504000F6A352500F49983 /* MVNewtype.h in Headers */,
-				E26504010F6A352500F49983 /* MVP1.h in Headers */,
-				E26504030F6A352500F49983 /* MVP2.h in Headers */,
-				E26504050F6A352500F49983 /* MVP3.h in Headers */,
-				E26504070F6A352500F49983 /* MVUnit.h in Headers */,
-				E26504090F6A352500F49983 /* NSString+File.h in Headers */,
-				E265040B0F6A352500F49983 /* Motive.h in Headers */,
-				E265040C0F6A352500F49983 /* motive_Prefix.pch in Headers */,
-				E265040D0F6A352500F49983 /* MVLog.h in Headers */,
-				E265040E0F6A352500F49983 /* MVMacros.h in Headers */,
-				E265040F0F6A352500F49983 /* MVHttp.h in Headers */,
-				E26504880F6A747900F49983 /* PXEffectExecutor.h in Headers */,
+				E234315F0F6E72C90018BE5D /* FKPromise.h in Headers */,
+				E23431610F6E72C90018BE5D /* FKEither.h in Headers */,
+				E23431630F6E72C90018BE5D /* FKOption.h in Headers */,
+				E23431650F6E72C90018BE5D /* FKEffect.h in Headers */,
+				E23431670F6E72C90018BE5D /* FKFunction.h in Headers */,
+				E23431690F6E72C90018BE5D /* FKNewtype.h in Headers */,
+				E234316A0F6E72C90018BE5D /* FKP1.h in Headers */,
+				E234316C0F6E72C90018BE5D /* FKP2.h in Headers */,
+				E234316E0F6E72C90018BE5D /* FKP3.h in Headers */,
+				E23431700F6E72C90018BE5D /* FKUnit.h in Headers */,
+				E23431720F6E72C90018BE5D /* functionalkit_Prefix.pch in Headers */,
+				E23431810F6E73A50018BE5D /* FKLog.h in Headers */,
+				E23431820F6E73A50018BE5D /* FKMacros.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		D2AAC07D0554694100DB518D /* phoenix */ = {
+		D2AAC07D0554694100DB518D /* functionalkit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "phoenix" */;
+			buildConfigurationList = 1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "functionalkit" */;
 			buildPhases = (
 				D2AAC07A0554694100DB518D /* Headers */,
 				D2AAC07B0554694100DB518D /* Sources */,
@@ -528,9 +308,9 @@
 			);
 			dependencies = (
 			);
-			name = phoenix;
-			productName = phoenix;
-			productReference = D2AAC07E0554694100DB518D /* libphoenix.a */;
+			name = functionalkit;
+			productName = functionalkit;
+			productReference = D2AAC07E0554694100DB518D /* libfunctionalkit.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		E23DBE710F4E2549005C8EDA /* Unit Tests */ = {
@@ -556,15 +336,15 @@
 /* Begin PBXProject section */
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "phoenix" */;
+			buildConfigurationList = 1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "functionalkit" */;
 			compatibilityVersion = "Xcode 3.1";
 			hasScannedForEncodings = 1;
-			mainGroup = 0867D691FE84028FC02AAC07 /* phoenix */;
+			mainGroup = 0867D691FE84028FC02AAC07 /* functionalkit */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D2AAC07D0554694100DB518D /* phoenix */,
+				D2AAC07D0554694100DB518D /* functionalkit */,
 				E23DBE710F4E2549005C8EDA /* Unit Tests */,
 			);
 		};
@@ -601,28 +381,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E265014E0F6A313B00F49983 /* FKEffect+Notification.m in Sources */,
-				E26501500F6A313B00F49983 /* NSNotification+Payload.m in Sources */,
-				E26501520F6A313B00F49983 /* NSNotificationCenter+Payload.m in Sources */,
-				E265015D0F6A318D00F49983 /* PXAccountService.m in Sources */,
-				E265015F0F6A318D00F49983 /* PXConfigurationService.m in Sources */,
-				E26503ED0F6A352500F49983 /* AdMobHelper.m in Sources */,
-				E26503EF0F6A352500F49983 /* AVAudioPlayer+Motive.m in Sources */,
-				E26503F10F6A352500F49983 /* NSArray+Motive.m in Sources */,
-				E26503F30F6A352500F49983 /* NSDictionary+Motive.m in Sources */,
-				E26503F50F6A352500F49983 /* NSString+Motive.m in Sources */,
-				E26503F70F6A352500F49983 /* MVPromise.m in Sources */,
-				E26503F90F6A352500F49983 /* MVEither.m in Sources */,
-				E26503FB0F6A352500F49983 /* MVOption.m in Sources */,
-				E26503FD0F6A352500F49983 /* FKEffect.m in Sources */,
-				E26503FF0F6A352500F49983 /* FKFunction.m in Sources */,
-				E26504020F6A352500F49983 /* MVP1.m in Sources */,
-				E26504040F6A352500F49983 /* MVP2.m in Sources */,
-				E26504060F6A352500F49983 /* MVP3.m in Sources */,
-				E26504080F6A352500F49983 /* MVUnit.m in Sources */,
-				E265040A0F6A352500F49983 /* NSString+File.m in Sources */,
-				E26504100F6A352500F49983 /* MVHttp.m in Sources */,
-				E26504890F6A747900F49983 /* PXEffectExecutor.m in Sources */,
+				E23431600F6E72C90018BE5D /* FKPromise.m in Sources */,
+				E23431620F6E72C90018BE5D /* FKEither.m in Sources */,
+				E23431640F6E72C90018BE5D /* FKOption.m in Sources */,
+				E23431660F6E72C90018BE5D /* FKEffect.m in Sources */,
+				E23431680F6E72C90018BE5D /* FKFunction.m in Sources */,
+				E234316B0F6E72C90018BE5D /* FKP1.m in Sources */,
+				E234316D0F6E72C90018BE5D /* FKP2.m in Sources */,
+				E234316F0F6E72C90018BE5D /* FKP3.m in Sources */,
+				E23431710F6E72C90018BE5D /* FKUnit.m in Sources */,
+				E23431730F6E72C90018BE5D /* FKEitherUnitTest.m in Sources */,
+				E23431740F6E72C90018BE5D /* FKOptionUnitTest.m in Sources */,
+				E23431750F6E72C90018BE5D /* FKFunctionTests.m in Sources */,
+				E23431760F6E72C90018BE5D /* FKNewtypeTests.m in Sources */,
+				E23431780F6E72C90018BE5D /* NSArrayTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,29 +405,11 @@
 				E23DBE8F0F4E25F3005C8EDA /* GTMIPhoneUnitTestDelegate.m in Sources */,
 				E23DBE900F4E25F3005C8EDA /* GTMIPhoneUnitTestMain.m in Sources */,
 				E23DBE910F4E25F3005C8EDA /* GTMSenTestCase.m in Sources */,
-				E265014A0F6A313B00F49983 /* FKEffect+Notification.m in Sources */,
-				E265014B0F6A313B00F49983 /* NSNotification+Payload.m in Sources */,
-				E265014C0F6A313B00F49983 /* NSNotificationCenter+Payload.m in Sources */,
-				E26501590F6A318D00F49983 /* PXAccountService.m in Sources */,
-				E265015A0F6A318D00F49983 /* PXConfigurationService.m in Sources */,
-				E265034F0F6A352400F49983 /* AdMobHelper.m in Sources */,
-				E26503500F6A352400F49983 /* AVAudioPlayer+Motive.m in Sources */,
-				E26503510F6A352400F49983 /* NSArray+Motive.m in Sources */,
-				E26503520F6A352400F49983 /* NSDictionary+Motive.m in Sources */,
-				E26503530F6A352400F49983 /* NSString+Motive.m in Sources */,
-				E26503540F6A352400F49983 /* MVPromise.m in Sources */,
-				E26503550F6A352400F49983 /* MVEither.m in Sources */,
-				E26503560F6A352400F49983 /* MVOption.m in Sources */,
-				E26503570F6A352400F49983 /* FKEffect.m in Sources */,
-				E26503580F6A352400F49983 /* FKFunction.m in Sources */,
-				E26503590F6A352400F49983 /* MVP1.m in Sources */,
-				E265035A0F6A352400F49983 /* MVP2.m in Sources */,
-				E265035B0F6A352400F49983 /* MVP3.m in Sources */,
-				E265035C0F6A352400F49983 /* MVUnit.m in Sources */,
-				E265035D0F6A352400F49983 /* NSString+File.m in Sources */,
-				E265035E0F6A352400F49983 /* MVHttp.m in Sources */,
-				E26504450F6A358000F49983 /* PXTemplateUnitTest.m in Sources */,
-				E26504870F6A747900F49983 /* PXEffectExecutor.m in Sources */,
+				E23431790F6E72F20018BE5D /* FKEitherUnitTest.m in Sources */,
+				E234317A0F6E72F30018BE5D /* FKFunctionTests.m in Sources */,
+				E234317B0F6E72F40018BE5D /* FKNewtypeTests.m in Sources */,
+				E234317C0F6E72F50018BE5D /* FKOptionUnitTest.m in Sources */,
+				E234317E0F6E72F60018BE5D /* NSArrayTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -673,15 +427,14 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/Source/Main/phoenix_Prefix.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Source/Main/functionalkit_Prefix.pch";
 				INSTALL_PATH = /usr/local/lib;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Source/External/google-toolbox-for-mac-1-5-1/TigerGcov\"",
-					"\"$(SRCROOT)/Source/External/motive/Source/External/google-toolbox-for-mac-1-5-1/TigerGcov\"",
 				);
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = phoenix;
+				PRODUCT_NAME = functionalkit;
 			};
 			name = Debug;
 		};
@@ -693,14 +446,13 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/Source/Main/phoenix_Prefix.pch";
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Source/Main/functionalkit_Prefix.pch";
 				INSTALL_PATH = /usr/local/lib;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/Source/External/google-toolbox-for-mac-1-5-1/TigerGcov\"",
-					"\"$(SRCROOT)/Source/External/motive/Source/External/google-toolbox-for-mac-1-5-1/TigerGcov\"",
 				);
-				PRODUCT_NAME = phoenix;
+				PRODUCT_NAME = functionalkit;
 			};
 			name = Release;
 		};
@@ -743,7 +495,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Source/External/motive/Source/External/google-toolbox-for-mac-1-5-1/TigerGcov\"",
+					"\"$(SRCROOT)/Source/External/google-toolbox-for-mac-1-5-1/TigerGcov\"",
 				);
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -770,7 +522,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/Source/External/motive/Source/External/google-toolbox-for-mac-1-5-1/TigerGcov\"",
+					"\"$(SRCROOT)/Source/External/google-toolbox-for-mac-1-5-1/TigerGcov\"",
 				);
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -788,7 +540,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "phoenix" */ = {
+		1DEB921E08733DC00010E9CD /* Build configuration list for PBXNativeTarget "functionalkit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB921F08733DC00010E9CD /* Debug */,
@@ -797,7 +549,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "phoenix" */ = {
+		1DEB922208733DC00010E9CD /* Build configuration list for PBXProject "functionalkit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1DEB922308733DC00010E9CD /* Debug */,

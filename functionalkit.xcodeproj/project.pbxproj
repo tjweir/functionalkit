@@ -39,6 +39,18 @@
 		E234317E0F6E72F60018BE5D /* NSArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E234315E0F6E72C90018BE5D /* NSArrayTests.m */; };
 		E23431810F6E73A50018BE5D /* FKLog.h in Headers */ = {isa = PBXBuildFile; fileRef = E234317F0F6E73A50018BE5D /* FKLog.h */; };
 		E23431820F6E73A50018BE5D /* FKMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = E23431800F6E73A50018BE5D /* FKMacros.h */; };
+		E23431DB0F6F0D360018BE5D /* NSArray+FunctionalKit.h in Headers */ = {isa = PBXBuildFile; fileRef = E23431D90F6F0D360018BE5D /* NSArray+FunctionalKit.h */; };
+		E23431DC0F6F0D360018BE5D /* NSArray+FunctionalKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E23431DA0F6F0D360018BE5D /* NSArray+FunctionalKit.m */; };
+		E23431DD0F6F0D360018BE5D /* NSArray+FunctionalKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E23431DA0F6F0D360018BE5D /* NSArray+FunctionalKit.m */; };
+		E23431E10F6F0DE00018BE5D /* FKEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = E234314A0F6E72C90018BE5D /* FKEffect.m */; };
+		E23431E20F6F0DE00018BE5D /* FKEither.m in Sources */ = {isa = PBXBuildFile; fileRef = E23431460F6E72C90018BE5D /* FKEither.m */; };
+		E23431E30F6F0DE10018BE5D /* FKFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = E234314C0F6E72C90018BE5D /* FKFunction.m */; };
+		E23431E40F6F0DE20018BE5D /* FKOption.m in Sources */ = {isa = PBXBuildFile; fileRef = E23431480F6E72C90018BE5D /* FKOption.m */; };
+		E23431E50F6F0DE30018BE5D /* FKP1.m in Sources */ = {isa = PBXBuildFile; fileRef = E234314F0F6E72C90018BE5D /* FKP1.m */; };
+		E23431E60F6F0DE40018BE5D /* FKP2.m in Sources */ = {isa = PBXBuildFile; fileRef = E23431510F6E72C90018BE5D /* FKP2.m */; };
+		E23431E70F6F0DE50018BE5D /* FKP3.m in Sources */ = {isa = PBXBuildFile; fileRef = E23431530F6E72C90018BE5D /* FKP3.m */; };
+		E23431E80F6F0DE60018BE5D /* FKPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = E23431430F6E72C90018BE5D /* FKPromise.m */; };
+		E23431E90F6F0DE70018BE5D /* FKUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = E23431550F6E72C90018BE5D /* FKUnit.m */; };
 		E23DB6E90F4D0263005C8EDA /* GTMDebugSelectorValidation.h in Headers */ = {isa = PBXBuildFile; fileRef = E23DB5F90F4D0262005C8EDA /* GTMDebugSelectorValidation.h */; };
 		E23DB7310F4D0263005C8EDA /* GTM_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = E23DB6490F4D0262005C8EDA /* GTM_Prefix.pch */; };
 		E23DB7320F4D0263005C8EDA /* GTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = E23DB64A0F4D0262005C8EDA /* GTMDefines.h */; };
@@ -82,6 +94,8 @@
 		E234315E0F6E72C90018BE5D /* NSArrayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayTests.m; sourceTree = "<group>"; };
 		E234317F0F6E73A50018BE5D /* FKLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKLog.h; sourceTree = "<group>"; };
 		E23431800F6E73A50018BE5D /* FKMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKMacros.h; sourceTree = "<group>"; };
+		E23431D90F6F0D360018BE5D /* NSArray+FunctionalKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+FunctionalKit.h"; sourceTree = "<group>"; };
+		E23431DA0F6F0D360018BE5D /* NSArray+FunctionalKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+FunctionalKit.m"; sourceTree = "<group>"; };
 		E23DB5F90F4D0262005C8EDA /* GTMDebugSelectorValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDebugSelectorValidation.h; sourceTree = "<group>"; };
 		E23DB6490F4D0262005C8EDA /* GTM_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTM_Prefix.pch; sourceTree = "<group>"; };
 		E23DB64A0F4D0262005C8EDA /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
@@ -158,6 +172,7 @@
 			children = (
 				E23431400F6E72C90018BE5D /* Control */,
 				E23431440F6E72C90018BE5D /* Data */,
+				E23431D30F6E75770018BE5D /* Extensions */,
 				E23431490F6E72C90018BE5D /* FKEffect.h */,
 				E234314A0F6E72C90018BE5D /* FKEffect.m */,
 				E234314B0F6E72C90018BE5D /* FKFunction.h */,
@@ -226,6 +241,15 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
+		E23431D30F6E75770018BE5D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E23431D90F6F0D360018BE5D /* NSArray+FunctionalKit.h */,
+				E23431DA0F6F0D360018BE5D /* NSArray+FunctionalKit.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		E23DB5C30F4D0262005C8EDA /* External */ = {
 			isa = PBXGroup;
 			children = (
@@ -290,6 +314,7 @@
 				E23431720F6E72C90018BE5D /* functionalkit_Prefix.pch in Headers */,
 				E23431810F6E73A50018BE5D /* FKLog.h in Headers */,
 				E23431820F6E73A50018BE5D /* FKMacros.h in Headers */,
+				E23431DB0F6F0D360018BE5D /* NSArray+FunctionalKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +420,7 @@
 				E23431750F6E72C90018BE5D /* FKFunctionTests.m in Sources */,
 				E23431760F6E72C90018BE5D /* FKNewtypeTests.m in Sources */,
 				E23431780F6E72C90018BE5D /* NSArrayTests.m in Sources */,
+				E23431DC0F6F0D360018BE5D /* NSArray+FunctionalKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +436,16 @@
 				E234317B0F6E72F40018BE5D /* FKNewtypeTests.m in Sources */,
 				E234317C0F6E72F50018BE5D /* FKOptionUnitTest.m in Sources */,
 				E234317E0F6E72F60018BE5D /* NSArrayTests.m in Sources */,
+				E23431DD0F6F0D360018BE5D /* NSArray+FunctionalKit.m in Sources */,
+				E23431E10F6F0DE00018BE5D /* FKEffect.m in Sources */,
+				E23431E20F6F0DE00018BE5D /* FKEither.m in Sources */,
+				E23431E30F6F0DE10018BE5D /* FKFunction.m in Sources */,
+				E23431E40F6F0DE20018BE5D /* FKOption.m in Sources */,
+				E23431E50F6F0DE30018BE5D /* FKP1.m in Sources */,
+				E23431E60F6F0DE40018BE5D /* FKP2.m in Sources */,
+				E23431E70F6F0DE50018BE5D /* FKP3.m in Sources */,
+				E23431E80F6F0DE60018BE5D /* FKPromise.m in Sources */,
+				E23431E90F6F0DE70018BE5D /* FKUnit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

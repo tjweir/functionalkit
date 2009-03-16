@@ -1,6 +1,16 @@
 #import "GTMSenTestCase.h"
-#import "NSArray+Motive.h"
+#import "NSArray+FunctionalKit.h"
 #import "FKMacros.h"
+
+@interface NSArray (extns)
+- (BOOL)isNotEmpty;
+@end
+
+@implementation NSArray (extns)
+- (BOOL)isNotEmpty {
+    return [self count] != 0;
+}
+@end
 
 @interface NSArrayTests : GTMTestCase
 @end
@@ -9,7 +19,7 @@
 - (void)testAll {
 	BOOL r = [NSARRAY(NSARRAY(@"1")) all:@selector(isNotEmpty)];
 	STAssertTrue(r, nil);
-	BOOL v = [NSARRAY([NSArray array]) all:@selector(isNotEmpty)];
+	BOOL v = [NSARRAY(EMPTY_ARRAY) all:@selector(isNotEmpty)];
 	STAssertFalse(v, nil);
 }
 

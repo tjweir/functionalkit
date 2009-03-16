@@ -1,5 +1,5 @@
 #import "GTMSenTestCase.h"
-#import "NSArray+Motive.h"
+#import "NSArray+FunctionalKit.h"
 #import "FKFunction.h"
 #import "FKEffect.h"
 #import "FKLog.h"

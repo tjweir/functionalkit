@@ -1,0 +1,102 @@
+# FunctionalKit: It's Functional for Objective-C.
+
+FunctionalKit is an attempt to use functional paradigms in Objective-C. It is a set of low level 
+functional types & APIs. It contains types such as either, option, etc. that allow your to write
+correct, clean, tight, succinct and (where possible) typesafe code. It also provides more advanced
+concepts such as lifting functions into monads.
+
+FunctionalKit is loosely modelled on Functional Java.
+
+
+## Setup
+
+1. Clone the project into your project somewhere, we use Source/External/functionalkit.
+1. Add the Source/Main directory into your Xcode project.
+1. Rock!
+
+
+## Examples
+
+### Function creation
+
+Create a function from a selector.
+
+    id <FKFunction> doSomethingFunction = [FKFunction functionFromSelector:@selector(doSomething:) target:self];
+
+### Mapping
+
+Map across the elements of an array of names and turn them into people.
+
+    NSArray *names = [NSArray arrayWithObject:@"Fred", @"Mary", @"Pete", nil];
+    NSArray *people = [names map:[FKFunction functionFromSelector:@selector(makePersonFromName:) target:self]];
+
+### Nil values
+
+Handle a possibly nil value safely.
+
+    NSDictionary *dict = ...;
+    FKOption *couldBeNil = [KFOption fromNil:[dict objectForKey:@"SomeKey"]];
+
+### Handling failures
+
+Construct an either representing failure.
+
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObject:@"Credentials have not been saved" forKey:NSLocalizedDescriptionKey];
+    FKEither *failed = [FKEither leftWithValue:[NSError errorWithDomain:@"InvalidOperation" code:0 userInfo:userInfo]];
+
+Perform an operation that may fail, apply a selector on success, otherwise on failure propagate the error.
+
+    MVEither *maybeResponse = [HttpApi makeRequestToUrl:@"http://www.foo.com/json-api"];
+    MVEither *maybeParsedJson = [maybeResponse mapRightWithSelector:@selector(JSONValue)];
+
+### Validate parsed values, turn them into a domain model class on success
+
+Note. This is a bit messy, could be cleaner.
+
+    FKOption *maybeTitle = [FKOption fromNil:[dictionary objectForKey:@"title"] ofType:[NSString class]];
+    FKOption *maybeOwnerName = [FKOption fromNil:[dictionary objectForKey:@"owner_name"] ofType:[NSString class]];
+    FKOption *maybeHeadlineImgId = [FKOption fromNil:[dictionary objectForKey:@"headline_img_id"] ofType:[NSString class]];
+    if ([NSARRAY(maybeTitle, maybeOwnerName, maybeHeadlineImgId) all:@selector(isSome)]) {
+    	return [FKOption some:[FlickrGallery galleryWithTitle:[maybeTitle some] ownerName:[maybeOwnerName some] sampleImgId:[maybeHeadlineImgId some]]];
+    } else {
+    	return [FKOption none];
+    }
+
+### Side effects
+
+Comap a function with an effect, to have the function execute then perform a side effect using the function's result.
+
+    id <FKFunction> getPhotosF = [FKFunction functionFromSelector:@selector(photos)];
+    id <FKEffect> galleriesOp = [FKEffect comap:[self effectThatDoesSomethingWithPhotos] :getPhotosF];
+
+### Lifting
+
+The following example lifts a function into the array monad, applying the function to each element of the array.
+
+    // Parse a photo's details out of a dictionary, return Some(FlickrPhoto) on success or None on failure.
+    - (FKOption *)parsePhotoForDictionary:(NSDictionary *)dictionary {
+    	FKOption *maybeTitle = [FKOption fromNil:[dictionary objectForKey:@"title"] ofType:[NSString class]];
+    	FKOption *maybeId = [FKOption fromNil:[dictionary objectForKey:@"photo_id"] ofType:[NSString class]];
+    	if ([NSARRAY(maybeTitle, maybeId) all:@selector(isSome)]) {
+    		return [FKOption some:[FlickrPhoto photoWithId:[maybeId some] title:[maybeTitle some]]];
+    	} else {
+    		return [FKOption none];
+    	}
+    }
+
+    // Retrieve the array of photos.
+	FKOption *maybePhotos = [FKOption fromNil:[dictionary objectForKey:@"photos"] ofType:[NSArray class]];
+    
+    // Still within the option monad, lift the parse function (above) into the array monad and map across the option.
+    id <FKFunction> parsePhotoF = [FKFunction functionFromSelector:@selector(parsePhotoForDictionary:) target:self];
+    FKOption *maybeParsedPhotos = [maybePhotos map:[NSArray liftFunction:parsePhotoF]];
+
+
+## Other Work
+
+Here's some other work we know of that does similar things to FunctionalKit.
+
+* http://asg.unige.ch/site/papers/Dami91a.pdf
+* http://seriot.ch/blog.php?article=20090109
+* http://www.metaobject.com/blog/2009/01/simple-hom.html
+* http://cocoadev.com/index.pl?HigherOrderMessaging

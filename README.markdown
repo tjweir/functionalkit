@@ -90,3 +90,13 @@ The following example lifts a function into the array monad, applying the functi
     // Still within the option monad, lift the parse function (above) into the array monad and map across the option.
     id <FKFunction> parsePhotoF = [FKFunction functionFromSelector:@selector(parsePhotoForDictionary:) target:self];
     FKOption *maybeParsedPhotos = [maybePhotos map:[NSArray liftFunction:parsePhotoF]];
+
+
+## Other Work
+
+Here's some other work we know of that does similar things to FunctionalKit.
+
+* http://asg.unige.ch/site/papers/Dami91a.pdf
+* http://seriot.ch/blog.php?article=20090109
+* http://www.metaobject.com/blog/2009/01/simple-hom.html
+* http://cocoadev.com/index.pl?HigherOrderMessaging

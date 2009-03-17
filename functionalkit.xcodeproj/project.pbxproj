@@ -50,7 +50,6 @@
 		E23431E70F6F0DE50018BE5D /* FKP3.m in Sources */ = {isa = PBXBuildFile; fileRef = E23431530F6E72C90018BE5D /* FKP3.m */; };
 		E23431E80F6F0DE60018BE5D /* FKPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = E23431430F6E72C90018BE5D /* FKPromise.m */; };
 		E23431E90F6F0DE70018BE5D /* FKUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = E23431550F6E72C90018BE5D /* FKUnit.m */; };
-		E234320D0F6F113B0018BE5D /* README in Resources */ = {isa = PBXBuildFile; fileRef = E234320C0F6F113B0018BE5D /* README */; };
 		E23DB6E90F4D0263005C8EDA /* GTMDebugSelectorValidation.h in Headers */ = {isa = PBXBuildFile; fileRef = E23DB5F90F4D0262005C8EDA /* GTMDebugSelectorValidation.h */; };
 		E23DB7310F4D0263005C8EDA /* GTM_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = E23DB6490F4D0262005C8EDA /* GTM_Prefix.pch */; };
 		E23DB7320F4D0263005C8EDA /* GTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = E23DB64A0F4D0262005C8EDA /* GTMDefines.h */; };
@@ -95,7 +94,7 @@
 		E23431800F6E73A50018BE5D /* FKMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKMacros.h; sourceTree = "<group>"; };
 		E23431D90F6F0D360018BE5D /* NSArray+FunctionalKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+FunctionalKit.h"; sourceTree = "<group>"; };
 		E23431DA0F6F0D360018BE5D /* NSArray+FunctionalKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+FunctionalKit.m"; sourceTree = "<group>"; };
-		E234320C0F6F113B0018BE5D /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		E234361C0F6F38B10018BE5D /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
 		E23DB5F90F4D0262005C8EDA /* GTMDebugSelectorValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDebugSelectorValidation.h; sourceTree = "<group>"; };
 		E23DB6490F4D0262005C8EDA /* GTM_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTM_Prefix.pch; sourceTree = "<group>"; };
 		E23DB64A0F4D0262005C8EDA /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
@@ -141,7 +140,7 @@
 		0867D691FE84028FC02AAC07 /* functionalkit */ = {
 			isa = PBXGroup;
 			children = (
-				E234320C0F6F113B0018BE5D /* README */,
+				E234361C0F6F38B10018BE5D /* README.markdown */,
 				4784B29E0F368E2E00D331F4 /* Source */,
 				0867D69AFE84028FC02AAC07 /* Frameworks */,
 				034768DFFF38A50411DB9C8B /* Products */,
@@ -379,7 +378,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E234320D0F6F113B0018BE5D /* README in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

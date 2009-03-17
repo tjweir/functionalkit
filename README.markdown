@@ -84,4 +84,4 @@ The following example lifts a function into the array monad, applying the functi
     }
 
     id <FKFunction> parsePhotosF = [FKFunction functionFromSelector:@selector(:) target:self];
-    FKOption *maybeParsedPhotos = [maybePhotos map:[NSArray parsePhotosF]];
+    FKOption *maybeParsedPhotos = [maybePhotos map:[NSArray liftFunction:parsePhotosF]];

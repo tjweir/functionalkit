@@ -2,8 +2,8 @@
 
 FunctionalKit is an attempt to use functional paradigms in Objective-C. It is a set of low level 
 functional types & APIs. It contains types such as either, option, etc. that allow your to write
-correct, clean, tight, succinct and (where possible) typesafe code. It also provides some more
-advanced stuff such as lifting functions into monads.
+correct, clean, tight, succinct and (where possible) typesafe code. It also provides more advanced
+concepts such as lifting functions into monads.
 
 FunctionalKit is loosely modelled on Functional Java.
 

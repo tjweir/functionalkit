@@ -68,3 +68,20 @@ Comap a function with an effect, to have the function execute then perform a sid
 
     id <FKFunction> getPhotosF = [FKFunction functionFromSelector:@selector(photos)];
     id <FKEffect> galleriesOp = [FKEffect comap:[self effectThatDoesSomethingWithPhotos] :getPhotosF];
+
+### Lifting
+
+The following example lifts a function into the array monad, applying the function to each element of the array.
+
+    - (FKOption *):(NSDictionary *)dictionary {
+    	FKOption *maybeTitle = [FKOption fromNil:[dictionary objectForKey:@"title"] ofType:[NSString class]];
+    	FKOption *maybeId = [FKOption fromNil:[dictionary objectForKey:@"photo_id"] ofType:[NSString class]];
+    	if ([NSARRAY(maybeTitle, maybeId) all:@selector(isSome)]) {
+    		return [FKOption some:[FlickrPhoto photoWithId:[maybeId some] title:[maybeTitle some]]];
+    	} else {
+    		return [FKOption none];
+    	}
+    }
+
+    id <FKFunction> parsePhotosF = [FKFunction functionFromSelector:@selector(:) target:self];
+    FKOption *maybeParsedPhotos = [maybePhotos map:[NSArray parsePhotosF]];

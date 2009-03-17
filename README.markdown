@@ -73,8 +73,8 @@ Comap a function with an effect, to have the function execute then perform a sid
 
 The following example lifts a function into the array monad, applying the function to each element of the array.
 
-    // Parse an individual photo's details out of a dictionary, return Some(Photo) or None on failure.
-    - (FKOption *):(NSDictionary *)dictionary {
+    // Parse a photo's details out of a dictionary, return Some(FlickrPhoto) on success or None on failure.
+    - (FKOption *)parsePhotoForDictionary:(NSDictionary *)dictionary {
     	FKOption *maybeTitle = [FKOption fromNil:[dictionary objectForKey:@"title"] ofType:[NSString class]];
     	FKOption *maybeId = [FKOption fromNil:[dictionary objectForKey:@"photo_id"] ofType:[NSString class]];
     	if ([NSARRAY(maybeTitle, maybeId) all:@selector(isSome)]) {
@@ -88,4 +88,5 @@ The following example lifts a function into the array monad, applying the functi
 	FKOption *maybePhotos = [FKOption fromNil:[dictionary objectForKey:@"photos"] ofType:[NSArray class]];
     
     // Still within the option monad, lift the parse function (above) into the array monad and map across the option.
-    FKOption *maybeParsedPhotos = [maybePhotos map:[NSArray liftFunction:[FKFunction functionFromSelector:@selector(:) target:self]]];
+    id <FKFunction> parsePhotoF = [FKFunction functionFromSelector:@selector(parsePhotoForDictionary:) target:self];
+    FKOption *maybeParsedPhotos = [maybePhotos map:[NSArray liftFunction:parsePhotoF]];

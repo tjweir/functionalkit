@@ -67,4 +67,4 @@ Note. This is a bit messy, could be cleaner.
 Comap a function with an effect, to have the function execute then perform a side effect using the function's result.
 
     id <FKFunction> getPhotosF = [FKFunction functionFromSelector:@selector(photos)];
-    id <FKEffect> galleriesOp = [FKEffect comap:[FKEffect effectToPostNotification:@"Test"] :getPhotosF];
+    id <FKEffect> galleriesOp = [FKEffect comap:[self effectThatDoesSomethingWithPhotos] :getPhotosF];

@@ -17,22 +17,27 @@ FunctionalKit is loosely modelled on Functional Java.
 
 ## Examples
 
-    // Create a function from a selector. 
+### Create a function from a selector. 
+
     id <FKFunction> doSomethingFunction = [FKFunction functionFromSelector:@selector(doSomething:) target:self];
 
-    // Map across the elements of an array of names and turn them into people.
+### Map across the elements of an array of names and turn them into people.
+
     NSArray *names = [NSArray arrayWithObject:@"Fred", @"Mary", @"Pete", nil];
     NSArray *people = [names map:[FKFunction functionFromSelector:@selector(makePersonFromName:) target:self]];
 
-    // Handle a possibly nil value safely.
+### Handle a possibly nil value safely.
+
     NSDictionary *dict = ...;
     FKOption *couldBeNil = [KFOption fromNil:[dict objectForKey:@"SomeKey"]];
 
-    // Construct an either representing failure.
+### Construct an either representing failure.
+
     NSDictionary *userInfo = [NSDictionary dictionaryWithObject:@"Credentials have not been saved" forKey:NSLocalizedDescriptionKey];
     FKEither *failed = [FKEither leftWithValue:[NSError errorWithDomain:@"InvalidOperation" code:0 userInfo:userInfo]];
 
-    // Validate parsed values, turn them into a domain model class on success (note. this is a bit messy, could be cleaner).
+### Validate parsed values, turn them into a domain model class on success (note. this is a bit messy, could be cleaner).
+
     FKOption *maybeTitle = [FKOption fromNil:[dictionary objectForKey:@"title"] ofType:[NSString class]];
     FKOption *maybeOwnerName = [FKOption fromNil:[dictionary objectForKey:@"owner_name"] ofType:[NSString class]];
     FKOption *maybeHeadlineImgId = [FKOption fromNil:[dictionary objectForKey:@"headline_img_id"] ofType:[NSString class]];
@@ -42,10 +47,12 @@ FunctionalKit is loosely modelled on Functional Java.
     	return [FKOption none];
     }
 
-    // Perform an operation that may fail. Apply a selector on success, otherwise on failure propagate the error.
+### Perform an operation that may fail. Apply a selector on success, otherwise on failure propagate the error.
+
     MVEither *maybeResponse = [HttpApi makeRequestToUrl:@"http://www.foo.com/json-api"];
     MVEither *maybeParsedJson = [maybeResponse mapRightWithSelector:@selector(JSONValue)];
 
-    // Comap a function with an effect, to have the function execute then perform a side effect using the function's result.
+
+### Comap a function with an effect, to have the function execute then perform a side effect using the function's result.
     id <FKFunction> getPhotosF = [FKFunction functionFromSelector:@selector(photos)];
     id <FKEffect> galleriesOp = [FKEffect comap:[FKEffect effectToPostNotification:@"Test"] :getPhotosF];

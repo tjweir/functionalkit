@@ -22,7 +22,7 @@
     if (either.isLeft) {
         return [either value];
     } else {
-        @throw [NSException exceptionWithName:@"InvalidOperation" reason:errorMessage userInfo:EMPTY_DICT];
+        @throw [NSException exceptionWithName:NSInvalidArgumentException reason:errorMessage userInfo:EMPTY_DICT];
     }
 }
 
@@ -69,7 +69,7 @@
     if (either.isRight) {
         return [either value];
     } else {
-        @throw [NSException exceptionWithName:@"InvalidOperation" reason:errorMessage userInfo:EMPTY_DICT];
+        @throw [NSException exceptionWithName:NSInvalidArgumentException reason:errorMessage userInfo:EMPTY_DICT];
     }
 }
 
@@ -111,6 +111,11 @@
 
 + (FKEither *)rightWithValue:(id)value {
     return [[[FKEither alloc] initWithValue:value isLeft:NO] autorelease];
+}
+
++ (FKEither *)errorUsingReason:(NSString *)reason {
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObject:reason forKey:NSLocalizedDescriptionKey];
+    return [FKEither leftWithValue:[NSError errorWithDomain:@"InvalidOperation" code:0 userInfo:userInfo]];
 }
 
 - (BOOL)isRight {

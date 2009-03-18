@@ -1,4 +1,5 @@
 #import "FKFunction.h"
+#import "MVMacros.h"
 
 @interface FKFunctionFromSelector : NSObject <FKFunction> {
 	SEL selector;
@@ -29,7 +30,7 @@
 @implementation FKFunctionFromSelectorWithTarget
 - (FKFunctionFromSelectorWithTarget *)initWithSelector:(SEL)s target:(NSObject *)nTarget {
 	if (![nTarget respondsToSelector:s]) {
-		@throw [NSException exceptionWithName:@"InvalidOperation" reason:[NSString stringWithFormat:@"target %@ does not respond to selector %s", nTarget, sel_getName(s)] userInfo:[NSDictionary dictionary]];
+		@throw [NSException exceptionWithName:NSInvalidArgumentException reason:[NSString stringWithFormat:@"target %@ does not respond to selector %s", nTarget, sel_getName(s)] userInfo:EMPTY_DICT];
 	}
 	if ((self = [super init])) {
 		selector = s;

@@ -113,7 +113,7 @@
     return [[[FKEither alloc] initWithValue:value isLeft:NO] autorelease];
 }
 
-+ (FKEither *)errorUsingReason:(NSString *)reason {
++ (FKEither *)errorWithReason:(NSString *)reason {
     NSDictionary *userInfo = [NSDictionary dictionaryWithObject:reason forKey:NSLocalizedDescriptionKey];
     return [FKEither leftWithValue:[NSError errorWithDomain:@"InvalidOperation" code:0 userInfo:userInfo]];
 }

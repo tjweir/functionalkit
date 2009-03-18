@@ -60,8 +60,11 @@ READ FKRightProjection *right;
 // Construct a right value of either.
 + (FKEither *)rightWithValue:(id)value;
 
-// Construct an NSError on the left using |reason| as the NSLocalizedDescriptionKey.
-+ (FKEither *)errorUsingReason:(NSString *)reason;
+// Construct an NSError on the left using |reason| as the NSLocalizedDescriptionKey of the error's userInfo dictionary.
+// Example:
+// FKEither *maybeFailed = [FKEither errorWithReason:@"FTL"];
+// NSString *reason = [maybeFailed.left.value localizedDescription];
++ (FKEither *)errorWithReason:(NSString *)reason;
 
 // If this is a left, then return the left value in right, or vice versa.
 - (FKEither *)swap;

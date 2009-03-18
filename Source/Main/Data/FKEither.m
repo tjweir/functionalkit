@@ -114,7 +114,12 @@
 }
 
 + (FKEither *)errorWithReason:(NSString *)reason {
-    NSDictionary *userInfo = [NSDictionary dictionaryWithObject:reason forKey:NSLocalizedDescriptionKey];
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObject:reason forKey:NSLocalizedFailureReasonErrorKey];
+    return [FKEither leftWithValue:[NSError errorWithDomain:@"InvalidOperation" code:0 userInfo:userInfo]];
+}
+
++ (FKEither *)errorWithReason:(NSString *)reason description:(NSString *)description {
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:reason, NSLocalizedFailureReasonErrorKey, description, NSLocalizedDescriptionKey];
     return [FKEither leftWithValue:[NSError errorWithDomain:@"InvalidOperation" code:0 userInfo:userInfo]];
 }
 

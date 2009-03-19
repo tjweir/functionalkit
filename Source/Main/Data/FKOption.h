@@ -20,7 +20,7 @@
 // Returns this optional value if there is one, otherwise, returns the argument optional value.
 - (FKOption *)orElse:(FKOption *)other;
 
-// Returns the value of this optional value or the given argument.
+// Returns the value in the some of this option or if none, the given argument.
 - (id)orSome:(id)some;
 
 // Maps the given selector across this option by invoking |selector| on value contained in |some|.

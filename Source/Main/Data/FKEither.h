@@ -2,6 +2,9 @@
 #import "FKMacros.h"
 #import "FKFunction.h"
 
+// TODO Move this somewhere better.
+extern NSString *FKFunctionalKitErrorDomain;
+
 @class FKEither;
 
 @protocol FKEitherProjection <NSObject>
@@ -13,7 +16,7 @@ READ FKEither *either;
 READ id value;
 
 // Returns the value of this projection or fails (throws an NSException) with the given error message.
-- (id)valueOrMessage:(NSString*)errorMessage;
+- (id)valueOrMessage:(NSString *)errorMessage;
 
 // Maps the given selector across the value in this either.
 // Note. Returns this either (i.e. self) if the value in this either does not response to |selector|.
@@ -72,6 +75,10 @@ READ FKRightProjection *right;
 // NSString *ftl = [maybeFailed.left.value localizedFailureReason];
 // NSString *itSucks = [maybeFailed.left.value localizedDescription];
 + (FKEither *)errorWithReason:(NSString *)reason description:(NSString *)description;
+
+// Construct an NSError on the left using |reason| as the NSLocalizedFailureReasonErrorKey and |error| as the NSUnderlyingErrorKey of the error's 
+// userInfo dictionary.
++ (FKEither *)errorWithReason:(NSString *)reason underlyingError:(NSError *)error;
 
 // If this is a left, then return the left value in right, or vice versa.
 - (FKEither *)swap;

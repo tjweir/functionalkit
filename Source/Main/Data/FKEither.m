@@ -1,5 +1,7 @@
 #import "FKEither.h"
 
+NSString *FKFunctionalKitErrorDomain = @"FunctionalKit";
+
 @interface FKEither (FKEitherPrivate)
 - (FKEither *)initWithValue:(id)value isLeft:(BOOL)newIsLeft;
 // Note. This is private to allow projections to get access to value, but not calling code, as it must come via a projection.
@@ -65,7 +67,7 @@
     return [self valueOrMessage:@"Attempt to access a left value but value is on the right"];
 }
 
-- (id)valueOrMessage:(NSString*)errorMessage {
+- (id)valueOrMessage:(NSString *)errorMessage {
     if (either.isRight) {
         return [either value];
     } else {
@@ -115,12 +117,17 @@
 
 + (FKEither *)errorWithReason:(NSString *)reason {
     NSDictionary *userInfo = [NSDictionary dictionaryWithObject:reason forKey:NSLocalizedFailureReasonErrorKey];
-    return [FKEither leftWithValue:[NSError errorWithDomain:@"InvalidOperation" code:0 userInfo:userInfo]];
+    return [FKEither leftWithValue:[NSError errorWithDomain:FKFunctionalKitErrorDomain code:0 userInfo:userInfo]];
 }
 
 + (FKEither *)errorWithReason:(NSString *)reason description:(NSString *)description {
     NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:reason, NSLocalizedFailureReasonErrorKey, description, NSLocalizedDescriptionKey];
-    return [FKEither leftWithValue:[NSError errorWithDomain:@"InvalidOperation" code:0 userInfo:userInfo]];
+    return [FKEither leftWithValue:[NSError errorWithDomain:FKFunctionalKitErrorDomain code:0 userInfo:userInfo]];
+}
+
++ (FKEither *)errorWithReason:(NSString *)reason underlyingError:(NSError *)error {
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:reason, NSLocalizedFailureReasonErrorKey, error, NSUnderlyingErrorKey];
+    return [FKEither leftWithValue:[NSError errorWithDomain:FKFunctionalKitErrorDomain code:0 userInfo:userInfo]];
 }
 
 - (BOOL)isRight {

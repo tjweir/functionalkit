@@ -186,5 +186,4 @@ NSString *FKFunctionalKitErrorDomain = @"FunctionalKit";
     return value;
 }
 
-// TODO DELETE BELOW HERE. THESE BELONG IN PROJECTIONS.
 @end

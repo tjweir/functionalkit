@@ -1,6 +1,8 @@
 #import "FKP3.h"
 #import <objc/runtime.h>
 
+// TODO Add has, isEqual.
+
 @interface FKP3 (FKP3Private)
 @end
 

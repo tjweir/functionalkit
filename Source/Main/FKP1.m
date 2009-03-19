@@ -1,5 +1,7 @@
 #import "FKP1.h"
 
+// TODO Add has, isEqual.
+
 @interface FKP1 (FKP1Private)
 - (FKP1 *)initWith_1:(id)new_1;
 @end

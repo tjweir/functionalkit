@@ -1,4 +1,5 @@
 #import "NSArray+FunctionalKit.h"
+#import "FKMacros.h"
 
 // TODO - Add stuff like these
 //@interface NSArray (FK)
@@ -18,14 +19,22 @@
 //@end
 
 @interface FKLiftedFunction : NSObject <FKFunction> {
-	id <FKFunction> f;
+	id <FKFunction> wrappedF;
 }
-- (FKLiftedFunction *)initWithF:(FKFunction *)f;
+
+READ id <FKFunction> wrappedF;
+
+- (FKLiftedFunction *)initWithF:(FKFunction *)wrappedF;
+
 @end
+
 @implementation FKLiftedFunction
-- (FKLiftedFunction *)initWithF:(FKFunction *)inF {
+
+@synthesize wrappedF;
+
+- (FKLiftedFunction *)initWithF:(FKFunction *)inWrappedF {
 	if ((self = [super init])) {
-		f = [inF retain];
+		wrappedF = [inWrappedF retain];
 	}
 	return self;
 }
@@ -35,9 +44,27 @@
 	NSArray *argArray = arg;
 	NSMutableArray *arr = [NSMutableArray arrayWithCapacity:[arg count]];
 	for (id obj in argArray) {
-		[arr addObject:[f :obj]];
+		[arr addObject:[wrappedF :obj]];
 	}
 	return arr;
+}
+
+#pragma mark NSObject methods.
+- (void) dealloc {
+    [wrappedF release];
+    [super dealloc];
+}
+
+- (BOOL)isEqual:(id)object {
+    return object == nil || ![[object class] isEqual:[FKFunction class]] ? NO : [wrappedF isEqual:((FKLiftedFunction *) object).wrappedF];
+}
+
+- (NSUInteger)hash {
+    return 42;
+}
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"<%@ wrappedF: %@>", [self className], wrappedF];
 }
 
 @end

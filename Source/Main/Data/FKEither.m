@@ -17,7 +17,7 @@ NSString *FKFunctionalKitErrorDomain = @"FunctionalKit";
 @synthesize either;
 
 - (id)value {
-    return [self valueOrMessage:@"Attempt to access a right value but value is on the left"];
+    return [self valueOrMessage:@"Attempt to access a left value but value is on the right"];
 }
 
 - (id)valueOrMessage:(NSString*)errorMessage {
@@ -64,7 +64,7 @@ NSString *FKFunctionalKitErrorDomain = @"FunctionalKit";
 @synthesize either;
 
 - (id)value {
-    return [self valueOrMessage:@"Attempt to access a left value but value is on the right"];
+    return [self valueOrMessage:@"Attempt to access a right value but value is on the left"];
 }
 
 - (id)valueOrMessage:(NSString *)errorMessage {

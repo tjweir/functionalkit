@@ -59,7 +59,7 @@
 		return [FKOption none]; \
 	} \
 	NSArray *keys = NSARRAY([NSString stringWithCString:#accessor]);\
-	NSArray *values = [dict objectsForKeys:keys notFoundMarker:[[NSObject new] autorelease]]; \
+	NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
 	id <FKFunction> arrayToType = [NSArrayTo##newtype new]; \
 	FKOption *result = [arrayToType :values]; \
 	[arrayToType release]; \
@@ -101,7 +101,7 @@
 		return [FKOption none]; \
 	} \
 	NSArray *keys = NSARRAY([NSString stringWithCString:#acc1], [NSString stringWithCString:#acc2]);\
-	NSArray *values = [dict objectsForKeys:keys notFoundMarker:[[NSObject new] autorelease]]; \
+	NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
 	id <FKFunction> arrayToType = [NSArrayTo##newtype new]; \
 	FKOption *result = [arrayToType :values]; \
 	[arrayToType release]; \
@@ -145,7 +145,7 @@
 		return [FKOption none]; \
 	} \
 	NSArray *keys = NSARRAY([NSString stringWithCString:#acc1], [NSString stringWithCString:#acc2], [NSString stringWithCString:#acc3]);\
-	NSArray *values = [dict objectsForKeys:keys notFoundMarker:[[NSObject new] autorelease]]; \
+	NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
 	id <FKFunction> arrayToType = [NSArrayTo##newtype new]; \
 	FKOption *result = [arrayToType :values]; \
 	[arrayToType release]; \

@@ -1,6 +1,7 @@
 #import "FKUnit.h"
 
 @implementation FKUnit
+//TODO make this a singleton
 
 + (FKUnit *)unit {
     return [[[FKUnit alloc] init] autorelease];

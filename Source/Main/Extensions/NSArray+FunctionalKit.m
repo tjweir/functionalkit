@@ -3,7 +3,6 @@
 
 // TODO - Add stuff like these
 //@interface NSArray (FK)
-//- (NSArray *)map:(id <FKFunction>)f;
 //- (NSArray *)zip:(NSArray *)other;
 //@end
 //
@@ -64,7 +63,7 @@ READ id <FKFunction> wrappedF;
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"<%@ wrappedF: %@>", [self className], wrappedF];
+    return [NSString stringWithFormat:@"<%s wrappedF: %@>", class_getName([self class]), wrappedF];
 }
 
 @end

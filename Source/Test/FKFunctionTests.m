@@ -2,7 +2,6 @@
 #import "NSArray+FunctionalKit.h"
 #import "FKFunction.h"
 #import "FKEffect.h"
-#import "FKLog.h"
 #import "FKNewtype.h"
 
 @interface TestEffect : NSObject <FKEffect> {
@@ -56,7 +55,7 @@
 		STAssertTrue(NO, nil);
 	}
 	@catch (NSException * e) {
-		STAssertEqualObjects([e name], @"InvalidOperation", nil);
+		STAssertEqualObjects([e name], NSInvalidArgumentException, nil);
 	}
 }
 

@@ -1,5 +1,4 @@
 #import "FKFunction.h"
-#import "MVMacros.h"
 #import "FKMacros.h"
 
 @interface FKFunctionFromSelector : NSObject <FKFunction> {
@@ -36,7 +35,7 @@ READ SEL selector;
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"<%@ selector: %s>", [self className], sel_getName(selector)];
+    return [NSString stringWithFormat:@"<%s selector: %s>", class_getName([self class]), sel_getName(selector)];
 }
 
 @end

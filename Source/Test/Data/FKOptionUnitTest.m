@@ -1,6 +1,5 @@
 #import "GTMSenTestCase.h"
 #import "FKOption.h"
-#import "FKLog.h"
 
 @interface FKOptionUnitTest : GTMTestCase {
     NSObject *object;

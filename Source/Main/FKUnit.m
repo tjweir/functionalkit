@@ -8,7 +8,7 @@
 
 #pragma mark NSObject methods.
 - (BOOL)isEqual:(id)object {
-    return object == nil || ![[object class] isEqual:[FKUnit class]] ? NO : YES;
+    return object == nil || ![[object class] isEqual:[self class]] ? NO : YES;
 }
 
 - (NSUInteger)hash {

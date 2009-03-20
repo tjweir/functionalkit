@@ -36,4 +36,18 @@
 	return [NSString stringWithFormat:@"<%s: _1=%@ _2=%@ _3=%@>", class_getName([self class]), _1, _2, _3];
 }
 
+#pragma mark NSObject methods.
+- (BOOL)isEqual:(id)object {
+    if (object == nil || ![[object class] isEqual:[self class]]) {
+        return NO;
+    } else {
+        FKP3 *other = (FKP3 *)object;
+		return [_1 isEqual:other._1] && [_2 isEqual:other._2] && [_3 isEqual:other._3];
+    }
+}
+
+- (NSUInteger)hash {
+    return [_1 hash] + [_2 hash] + [_3 hash];
+}
+
 @end

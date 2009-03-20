@@ -27,7 +27,7 @@ READ SEL selector;
 
 #pragma mark NSObject methods.
 - (BOOL)isEqual:(id)object {
-    return object == nil || ![[object class] isEqual:[FKFunctionFromSelector class]] ? NO : FKEqualSelectors(self.selector, ((FKFunctionFromSelector *) object).selector);
+    return object == nil || ![[object class] isEqual:[self class]] ? NO : FKEqualSelectors(self.selector, ((FKFunctionFromSelector *) object).selector);
 }
 
 - (NSUInteger)hash {
@@ -78,7 +78,7 @@ READ NSObject *target;
 }
 
 - (BOOL)isEqual:(id)object {
-    if (object == nil || ![[object class] isEqual:[FKFunctionFromSelectorWithTarget class]]) {
+    if (object == nil || ![[object class] isEqual:[self class]]) {
         return NO;
     } else {
         FKFunctionFromSelectorWithTarget *other = (FKFunctionFromSelectorWithTarget *) object;

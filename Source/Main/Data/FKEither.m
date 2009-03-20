@@ -148,7 +148,7 @@ NSString *FKFunctionalKitErrorDomain = @"FunctionalKit";
 
 #pragma mark NSObject methods.
 - (BOOL)isEqual:(id)object {
-    if (object == nil || ![[object class] isEqual:[FKEither class]]) {
+    if (object == nil || ![[object class] isEqual:[self class]]) {
         return NO;
     } else {
         FKEither *other = (FKEither *) object;

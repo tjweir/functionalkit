@@ -9,6 +9,8 @@ NEWTYPE2(Person, Age, age, Name, name);
 
 NEWTYPE3(Position, Person, occupier, NSString, title, NSDate, started);
 
+NEWTYPE3(Simple3, NSString, a, NSString, b, NSString, c); 
+
 @interface FKNewtypeTests : GTMTestCase
 @end
 
@@ -28,6 +30,16 @@ NEWTYPE3(Position, Person, occupier, NSString, title, NSDate, started);
 	id fromValid = [fromArray :[NSArray arrayWithObject:@"54"]];
 	STAssertTrue([fromValid isSome], nil);
 	STAssertEqualObjects([fromValid some], [Age age:@"54"], nil);
+	
+	id <FKFunction> fromArray2 = [[[NSArrayToPerson alloc] init] autorelease];
+	id fromValid2 = [fromArray2 :[NSArray arrayWithObjects:[Age age:@"54"], [Name name:@"Nick"], nil]];
+	STAssertTrue([fromValid2 isSome], nil);
+	STAssertEqualObjects([fromValid2 some], [Person age:[Age age:@"54"] name:[Name name:@"Nick"]], nil);
+	
+	id <FKFunction> fromArray3 = [[[NSArrayToSimple3 alloc] init] autorelease];
+	id fromValid3 = [fromArray3 :[NSArray arrayWithObjects:@"a", @"b", @"c",nil]];
+	STAssertTrue([fromValid3 isSome], nil);
+	STAssertEqualObjects([fromValid3 some], [Simple3 a:@"a" b:@"b" c:@"c"], nil);
 }
 
 - (void)testWrongSizeArrayCreation {

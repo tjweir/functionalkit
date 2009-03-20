@@ -55,7 +55,7 @@ READ id <FKFunction> wrappedF;
 }
 
 - (BOOL)isEqual:(id)object {
-    return object == nil || ![[object class] isEqual:[FKFunction class]] ? NO : [wrappedF isEqual:((FKLiftedFunction *) object).wrappedF];
+    return object == nil || ![[object class] isEqual:[self class]] ? NO : [wrappedF isEqual:((FKLiftedFunction *) object).wrappedF];
 }
 
 - (NSUInteger)hash {

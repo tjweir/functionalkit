@@ -34,4 +34,17 @@
 	return [NSString stringWithFormat:@"<%s: _1=%@ _2=%@>", class_getName([self class]), _1, _2];
 }
 
+#pragma mark NSObject methods.
+- (BOOL)isEqual:(id)object {
+    if (object == nil || ![[object class] isEqual:[self class]]) {
+        return NO;
+    } else {
+        FKP2 *other = (FKP2 *) object;
+		return [_1 isEqual:other._1] && [_2 isEqual:other._2];
+    }
+}
+
+- (NSUInteger)hash {
+    return [_1 hash] + [_2 hash];
+}
 @end

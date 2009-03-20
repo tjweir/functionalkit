@@ -15,6 +15,9 @@
  .m => NewTypeImplementation(MyNewType, NSString);
  */
 
+#import "FKFunction.h"
+#import "FKOption.h"
+
 #import "FKP1.h"
 #import "FKP2.h"
 #import "FKP3.h"
@@ -26,13 +29,28 @@
 @interface newtype : FKP1 \
 + (newtype *)accessor:(wrappedtype *)thing; \
 @property (readonly) wrappedtype *accessor; \
-@end
+@end \
+\
+@interface NSArrayTo##newtype : NSObject <FKFunction> @end \
 
 #define NewTypeImplementation(newtype, wrappedtype, accessor) \
 @implementation newtype \
 @synthesize accessor=_1; \
 - (newtype *)initWith_1:(wrappedtype *)new_1 { return ((self = [super initWith_1:new_1])); } \
 + (newtype *)accessor:(wrappedtype *)thing { return [[[self alloc] initWith_1:thing] autorelease]; } \
+@end \
+\
+@implementation NSArrayTo##newtype \
+- (id):(id)arg { \
+	if (![arg isKindOfClass:[NSArray class]] || ([arg count] != 1)) { \
+		return [FKOption none]; \
+	} \
+	id _1 = [arg objectAtIndex:0]; \
+	if ([_1 isKindOfClass:[wrappedtype class]]) { \
+		return [FKOption some:[newtype accessor:_1]]; \
+	} \
+	return [FKOption none]; \
+} \
 @end
 
 // P2 newtype

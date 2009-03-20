@@ -11,5 +11,5 @@ READ id _1;
 + (FKP1 *)p1With_1:(id)_1;
 - (id)initWith_1:(id)new_1;
 
-//TODO isEqual, hash, description
+//TODO isEqual, hash
 @end

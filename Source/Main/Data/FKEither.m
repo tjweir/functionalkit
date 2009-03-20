@@ -17,10 +17,10 @@ NSString *FKFunctionalKitErrorDomain = @"FunctionalKit";
 @synthesize either;
 
 - (id)value {
-    return [self valueOrMessage:@"Attempt to access a left value but value is on the right"];
+    return [self valueOrFailWithMessage:@"Attempt to access a left value but value is on the right"];
 }
 
-- (id)valueOrMessage:(NSString*)errorMessage {
+- (id)valueOrFailWithMessage:(NSString*)errorMessage {
     if (either.isLeft) {
         return [either value];
     } else {
@@ -38,6 +38,10 @@ NSString *FKFunctionalKitErrorDomain = @"FunctionalKit";
 
 - (FKEither *)map:(id <FKFunction>)f {
 	return either.isLeft ? [FKEither leftWithValue:[f :either.value]] : either;
+}
+
+- (id)orValue:(id)value {
+	return either.isLeft? either.value : value;
 }
 
 - (void)dealloc {
@@ -64,10 +68,10 @@ NSString *FKFunctionalKitErrorDomain = @"FunctionalKit";
 @synthesize either;
 
 - (id)value {
-    return [self valueOrMessage:@"Attempt to access a right value but value is on the left"];
+    return [self valueOrFailWithMessage:@"Attempt to access a right value but value is on the left"];
 }
 
-- (id)valueOrMessage:(NSString *)errorMessage {
+- (id)valueOrFailWithMessage:(NSString *)errorMessage {
     if (either.isRight) {
         return [either value];
     } else {
@@ -85,6 +89,10 @@ NSString *FKFunctionalKitErrorDomain = @"FunctionalKit";
 
 - (FKEither *)map:(id <FKFunction>)f {
 	return either.isRight ? [FKEither rightWithValue:[f :either.value]] : either;
+}
+
+- (id)orValue:(id)value {
+	return either.isRight? either.value : value;
 }
 
 - (void)dealloc {

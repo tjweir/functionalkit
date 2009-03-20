@@ -81,6 +81,15 @@
     }
 }
 
+- (void)testAccessingTheLeftOrValue {
+	FKEither *left = [FKEither leftWithValue:o1];
+	FKEither *right = [FKEither rightWithValue:o1];
+	STAssertEqualObjects([left.right orValue:@"54"], @"54", nil);
+	STAssertEqualObjects([right.left orValue:@"54"], @"54", nil);
+	STAssertEqualObjects([left.left orValue:@"54"], o1, nil);
+	STAssertEqualObjects([right.right orValue:@"54"], o1, nil);
+}
+
 - (void)testMappingAcrossTheLeft {
 	FKEither *either = [FKEither leftWithValue:[NSNumber numberWithInt:54]];
 	FKEither *mapped = [either.left mapWithSelector:@selector(description)];

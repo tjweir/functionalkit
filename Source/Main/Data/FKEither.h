@@ -16,7 +16,9 @@ READ FKEither *either;
 READ id value;
 
 // Returns the value of this projection or fails (throws an NSException) with the given error message.
-- (id)valueOrMessage:(NSString *)errorMessage;
+- (id)valueOrFailWithMessage:(NSString *)errorMessage;
+
+- (id)orValue:(id)other;
 
 // Maps the given selector across the value in this either.
 // Note. Returns this either (i.e. self) if the value in this either does not response to |selector|.
@@ -28,6 +30,7 @@ READ id value;
 - (FKEither *)mapWithSelector:(SEL)selector onObject:(id)object;
 
 - (FKEither *)map:(id <FKFunction>)f;
+
 @end
 
 @interface FKLeftProjection : NSObject <FKEitherProjection> {

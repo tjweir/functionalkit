@@ -29,7 +29,11 @@ READ id value;
 // Note. Returns this either (i.e. self) if the given |object| does not response to |selector|.
 - (FKEither *)mapWithSelector:(SEL)selector onObject:(id)object;
 
+// Maps the given function across the value of the projection
 - (FKEither *)map:(id <FKFunction>)f;
+
+// Binds the given function across the projection
+- (FKEither *)bind:(id <FKFunction>)f;
 
 @end
 

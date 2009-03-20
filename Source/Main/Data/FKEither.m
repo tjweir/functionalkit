@@ -40,6 +40,10 @@ NSString *FKFunctionalKitErrorDomain = @"FunctionalKit";
 	return either.isLeft ? [FKEither leftWithValue:[f :either.value]] : either;
 }
 
+- (FKEither *)bind:(id <FKFunction>)f {
+	return either.isLeft ? [f :either.value] : either;
+}
+
 - (id)orValue:(id)value {
 	return either.isLeft? either.value : value;
 }
@@ -89,6 +93,10 @@ NSString *FKFunctionalKitErrorDomain = @"FunctionalKit";
 
 - (FKEither *)map:(id <FKFunction>)f {
 	return either.isRight ? [FKEither rightWithValue:[f :either.value]] : either;
+}
+
+- (FKEither *)bind:(id <FKFunction>)f {
+	return either.isRight ? [f :either.value] : either;
 }
 
 - (id)orValue:(id)value {

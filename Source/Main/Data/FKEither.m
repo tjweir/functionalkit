@@ -45,7 +45,7 @@ NSString *FKFunctionalKitErrorDomain = @"FunctionalKit";
 }
 
 - (id)orValue:(id)value {
-	return either.isLeft? either.value : value;
+	return either.isLeft ? either.value : value;
 }
 
 - (void)dealloc {
@@ -100,7 +100,7 @@ NSString *FKFunctionalKitErrorDomain = @"FunctionalKit";
 }
 
 - (id)orValue:(id)value {
-	return either.isRight? either.value : value;
+	return either.isRight ? either.value : value;
 }
 
 - (void)dealloc {

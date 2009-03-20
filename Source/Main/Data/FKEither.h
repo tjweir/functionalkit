@@ -18,6 +18,7 @@ READ id value;
 // Returns the value of this projection or fails (throws an NSException) with the given error message.
 - (id)valueOrFailWithMessage:(NSString *)errorMessage;
 
+// Returns the value of this projection or, if the value is on the other side, |other|.
 - (id)orValue:(id)other;
 
 // Maps the given selector across the value in this either.
@@ -29,26 +30,26 @@ READ id value;
 // Note. Returns this either (i.e. self) if the given |object| does not response to |selector|.
 - (FKEither *)mapWithSelector:(SEL)selector onObject:(id)object;
 
-// Maps the given function across the value of the projection
+// Maps the given function across the value of the projection.
+// f should be a fucntion with the following type: a -> b.
 - (FKEither *)map:(id <FKFunction>)f;
 
-// Binds the given function across the projection
+// Binds the given function across the projection.
+// f should be a fucntion with the following type: a -> FKEither b.
 - (FKEither *)bind:(id <FKFunction>)f;
 
 @end
 
+// A left projection of an either value.
 @interface FKLeftProjection : NSObject <FKEitherProjection> {
     FKEither *either;
 }
-
 @end
 
 // A right projection of an either value.
 @interface FKRightProjection : NSObject <FKEitherProjection> {
     FKEither *either;
 }
-
-// TODO Look at FJ projections for a better way to return an error, so we don't need to do: [(NSError *)[result value]  localizedDescription].
 @end
 
 // The Either type represents a value of one of two possible types (a disjoint union).

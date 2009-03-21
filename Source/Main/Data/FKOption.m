@@ -1,6 +1,20 @@
 #import "FKOption.h"
 
 @implementation FKNone
+
+#pragma mark NSObject methods.
+- (BOOL)isEqual:(id)object {
+    return object == nil || ![[object class] isEqual:[self class]] ? NO : YES;
+}
+
+- (NSUInteger)hash {
+    return 42;
+}
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"<%s>", class_getName([self class]), self.some];
+}
+
 @end
 
 @interface FKSome (FKSomePrivate)
@@ -16,6 +30,19 @@
 - (void) dealloc {
     [someObject release];
     [super dealloc];
+}
+
+#pragma mark NSObject methods.
+- (BOOL)isEqual:(id)object {
+    return object == nil || ![[object class] isEqual:[self class]] ? NO : [self.some isEqual:((FKSome *) object).some];
+}
+
+- (NSUInteger)hash {
+    return [self.some hash];
+}
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"<%s some: %@>", class_getName([self class]), self.some];
 }
 
 #pragma mark Private methods.

@@ -56,27 +56,32 @@
 }
 
 - (id)some {
-    return nil;
+    NSString *message = @"Attempt to access some but this is None";
+    @throw [NSException exceptionWithName:NSInvalidArgumentException reason:message userInfo:EMPTY_DICT];
 }
 
 - (FKOption *)orElse:(FKOption *)other {
-    return [self isSome] ? self : other;
+    return self.isSome ? self : other;
 }
 
 - (id)orSome:(id)some {
-    return [self isSome] ? [self some] : some;
+    return self.isSome ? [self some] : some;
 }
 
 - (FKOption *)mapWithSelector:(SEL)selector {
-	return [self isSome] && [[self some] respondsToSelector:selector] ? [FKOption some:[[self some] performSelector:selector]] : self;
+	return self.isSome && [[self some] respondsToSelector:selector] ? [FKOption some:[[self some] performSelector:selector]] : self;
 }
 
 - (FKOption *)mapWithSelector:(SEL)selector onObject:(id)object {
-	return [self isSome] && [object respondsToSelector:selector] ? [FKOption some:[object performSelector:selector withObject:[self some]]] : self;
+	return self.isSome && [object respondsToSelector:selector] ? [FKOption some:[object performSelector:selector withObject:[self some]]] : self;
 }
 
 - (FKOption *)map:(id <FKFunction>)f {
-	return [self isSome] ? [FKOption some:[f :[self  some]]] : self;
+	return self.isSome ? [FKOption some:[f :self.some]] : self;
+}
+
+- (FKEither *)toEither:(id)left {
+	return self.isSome ? [FKEither rightWithValue:self.some] : [FKEither leftWithValue:left];
 }
 
 @end

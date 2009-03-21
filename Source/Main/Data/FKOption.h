@@ -1,7 +1,14 @@
 #import <Foundation/Foundation.h>
 #import "FKFunction.h"
+#import "FKEither.h"
+#import "FKMacros.h"
 
+// An optional value that may be none (no value) or some (a value). This type is a replacement for the use of nil to denote non-existence.
 @interface FKOption : NSObject
+
+READ id some;
+READ BOOL isNone;
+READ BOOL isSome;
 
 + (FKOption *)fromNil:(id)maybeNil;
 
@@ -10,12 +17,6 @@
 + (FKOption *)none;
 
 + (FKOption *)some:(id)someObject;
-
-- (BOOL)isNone;
-
-- (BOOL)isSome;
-
-- (id)some;
 
 // Returns this optional value if there is one, otherwise, returns the argument optional value.
 - (FKOption *)orElse:(FKOption *)other;
@@ -33,6 +34,10 @@
 
 // Maps the given function across the option
 - (FKOption *)map:(id <FKFunction>)f;
+
+// Returns an either projection of this optional value; |left| in a Left if this optional holds no value, or this optional's value in Right.
+- (FKEither *)toEither:(id)left;
+
 @end
 
 @interface FKNone : FKOption

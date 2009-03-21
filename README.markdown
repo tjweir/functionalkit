@@ -41,13 +41,19 @@ Handle a possibly nil value safely.
 
 Construct an either representing failure.
 
-    NSDictionary *userInfo = [NSDictionary dictionaryWithObject:@"Credentials have not been saved" forKey:NSLocalizedDescriptionKey];
-    FKEither *failed = [FKEither leftWithValue:[NSError errorWithDomain:@"InvalidOperation" code:0 userInfo:userInfo]];
+    FKEither *failed = [FKEither errorWithReason:@"Credentials have not been saved"];
 
-Perform an operation that may fail, apply a selector on success, otherwise on failure propagate the error.
+Perform an operation that may fail, apply a selector to the result if successful, otherwise on failure propagate the error.
 
     MVEither *maybeResponse = [HttpApi makeRequestToUrl:@"http://www.foo.com/json-api"];
-    MVEither *maybeParsedJson = [maybeResponse mapRightWithSelector:@selector(JSONValue)];
+    MVEither *maybeParsedJson = [maybeResponse.right mapWithSelector:@selector(JSONValue)];
+
+Perform an operation that returns nil & an error on failue. Return the error on the left on failure or the returned object on the right.
+
+    NSError *error;
+    SBJSON *parser = [[SBJSON new] autorelease];
+    id parsedObject = [parser objectWithString:self error:&error];
+    FKEither maybeParsedObject = [[FKOption fromNil:parsedObject] toEither:error];
 
 ### Validate parsed values, turn them into a domain model class on success
 

@@ -18,11 +18,15 @@ READ BOOL isSome;
 
 + (FKOption *)some:(id)someObject;
 
+// Takes an array of options, and returns an array of all the Some values
++ (NSArray *)somes:(NSArray *)options;
+
 // Returns this optional value if there is one, otherwise, returns the argument optional value.
 - (FKOption *)orElse:(FKOption *)other;
 
 // Returns the value in the some of this option or if none, the given argument.
 - (id)orSome:(id)some;
+
 
 // Maps the given selector across this option by invoking |selector| on value contained in |some|.
 - (FKOption *)mapWithSelector:(SEL)selector;

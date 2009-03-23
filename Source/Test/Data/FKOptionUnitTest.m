@@ -1,5 +1,6 @@
 #import "GTMSenTestCase.h"
 #import "FKOption.h"
+#import "FKMacros.h"
 
 @interface FKOptionUnitTest : GTMTestCase {
     NSObject *object;
@@ -43,6 +44,12 @@
 	STAssertTrue([[FKOption fromNil:@"54" ofType:[NSString class]] isSome], nil);
 	STAssertTrue([[FKOption fromNil:nil ofType:[NSString class]] isNone], nil);
 	STAssertTrue([[FKOption fromNil:@"54" ofType:[NSArray class]] isNone], nil);
+}
+
+- (void)testSomes {
+	NSArray *options = NSARRAY([FKOption some:@"54"], [FKOption none]);
+	NSArray *somes = [FKOption somes:options];
+	STAssertEqualObjects(NSARRAY(@"54"), somes, nil);
 }
 
 @end

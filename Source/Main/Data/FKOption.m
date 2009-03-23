@@ -74,6 +74,17 @@
     return [[[FKSome alloc] initWithSome:someObject] autorelease];
 }
 
+// Takes an array of options, and returns an array of all the Some values
++ (NSArray *)somes:(NSArray *)options {
+	NSMutableArray *result = [NSMutableArray array];
+	for (FKOption *o in options) {
+		if ([o isSome]) {
+			[result addObject:[o some]];
+		}
+	}
+	return [NSArray arrayWithArray:result];
+}
+
 - (BOOL)isNone {
     return [self isKindOfClass:[FKNone class]];
 }

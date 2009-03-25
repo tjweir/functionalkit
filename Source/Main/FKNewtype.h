@@ -31,8 +31,8 @@
 @property (readonly) wrappedtype *accessor; \
 @end \
 \
-@interface NSArrayTo##newtype : NSObject <FKFunction> @end \
-@interface NSDictionaryTo##newtype : NSObject <FKFunction> @end
+@interface NSArrayTo##newtype : FKFunction @end \
+@interface NSDictionaryTo##newtype : FKFunction @end
 
 #define NewTypeImplementation(newtype, wrappedtype, accessor) \
 @implementation newtype \
@@ -73,8 +73,8 @@
 + (newtype *)acc1:(wrappedtype1 *)acc1 acc2:(wrappedtype2 *)acc2; \
 @property (readonly) wrappedtype1 *acc1; @property (readonly) wrappedtype2 *acc2; \
 @end \
-@interface NSArrayTo##newtype : NSObject <FKFunction> @end \
-@interface NSDictionaryTo##newtype : NSObject <FKFunction> @end
+@interface NSArrayTo##newtype : FKFunction @end \
+@interface NSDictionaryTo##newtype : FKFunction @end
 
 #define NewType2Implementation(newtype, wrappedtype1, acc1, wrappedtype2, acc2) \
 @implementation newtype \
@@ -116,8 +116,8 @@
 + (newtype *)acc1:(wrappedtype1 *)acc1 acc2:(wrappedtype2 *)acc2 acc3:(wrappedtype3 *)acc3; \
 @property (readonly) wrappedtype1 *acc1; @property (readonly) wrappedtype2 *acc2; @property (readonly) wrappedtype3 *acc3; \
 @end \
-@interface NSArrayTo##newtype : NSObject <FKFunction> @end \
-@interface NSDictionaryTo##newtype : NSObject <FKFunction> @end
+@interface NSArrayTo##newtype : FKFunction @end \
+@interface NSDictionaryTo##newtype : FKFunction @end
 
 #define NewType3Implementation(newtype, wrappedtype1, acc1, wrappedtype2, acc2, wrappedtype3, acc3) \
 @implementation newtype \

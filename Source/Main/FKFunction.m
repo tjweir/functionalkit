@@ -1,7 +1,7 @@
 #import "FKFunction.h"
 #import "FKMacros.h"
 
-@interface FKFunctionFromSelector : NSObject <FKFunction> {
+@interface FKFunctionFromSelector : FKFunction {
 	SEL selector;
 }
 
@@ -40,7 +40,7 @@ READ SEL selector;
 
 @end
 
-@interface FKFunctionFromSelectorWithTarget : NSObject <FKFunction> {
+@interface FKFunctionFromSelectorWithTarget : FKFunction {
 	SEL selector;
 	NSObject *target;
 }
@@ -91,7 +91,7 @@ READ NSObject *target;
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"<%@ selector: %s; target: %@>", [self className], sel_getName(selector), target];
+    return [NSString stringWithFormat:@"<%s selector: %s; target: %@>", class_getName([self class]), sel_getName(selector), target];
 }
 
 @end
@@ -102,6 +102,10 @@ READ NSObject *target;
 }
 + (id <FKFunction>)functionFromSelector:(SEL)s target:(NSObject *)target {
 	return [[[FKFunctionFromSelectorWithTarget alloc] initWithSelector:s target:target] autorelease];
+}
+
+- (id):(id)arg {
+	@throw [NSException exceptionWithName:@"InvalidOperation" reason:@"Must override -(id):(id) in FKFunction" userInfo:nil];
 }
 @end
 

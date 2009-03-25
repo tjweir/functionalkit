@@ -6,7 +6,7 @@
 - (id):(id)arg;
 @end
 
-@interface FKFunction : NSObject
+@interface FKFunction : NSObject <FKFunction>
 
 // On application, the selector will be sent to the argument
 // eg. [arg selector]

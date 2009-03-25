@@ -17,7 +17,7 @@
 //}
 //@end
 
-@interface FKLiftedFunction : NSObject <FKFunction> {
+@interface FKLiftedFunction : FKFunction {
 	id <FKFunction> wrappedF;
 }
 

@@ -44,4 +44,9 @@
 - (NSUInteger)hash {
     return [_1 hash];
 }
+
+#pragma mark NSCopying
+- (id)copyWithZone:(NSZone *)zone {
+	return [self retain];
+}
 @end

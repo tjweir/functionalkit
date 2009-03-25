@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 #import "FKMacros.h"
 
-@interface FKP2 : NSObject {
+@interface FKP2 : NSObject <NSCopying> {
     id _1;
     id _2;
 }

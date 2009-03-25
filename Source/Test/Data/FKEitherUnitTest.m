@@ -1,5 +1,6 @@
 #import "GTMSenTestCase.h"
 #import "FKEither.h"
+#import "FKOption.h"
 #import "FKFunction.h"
 
 @interface FKEitherUnitTest : GTMTestCase {
@@ -120,6 +121,12 @@
 	FKEither *either = [FKEither rightWithValue:[NSNumber numberWithInt:54]];
 	FKEither *mapped = [either.right map:[FKFunction functionFromSelector:@selector(description)]];
 	STAssertEqualObjects(mapped.right.value, @"54", nil);
+}
+
+- (void)testToOption {
+	FKEither *either = [FKEither rightWithValue:@"v"];
+	STAssertTrue([[either.right toOption] isSome], nil);
+	STAssertTrue([[either.left toOption] isNone], nil);
 }
 
 @end

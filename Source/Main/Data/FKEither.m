@@ -1,4 +1,5 @@
 #import "FKEither.h"
+#import "FKOption.h"
 
 NSString *FKFunctionalKitErrorDomain = @"FunctionalKit";
 
@@ -42,6 +43,10 @@ NSString *FKFunctionalKitErrorDomain = @"FunctionalKit";
 
 - (FKEither *)bind:(id <FKFunction>)f {
 	return either.isLeft ? [f :either.value] : either;
+}
+
+- (FKOption *)toOption {
+	return either.isLeft? [FKOption some:either.value] : [FKOption none];
 }
 
 - (id)orValue:(id)value {
@@ -97,6 +102,10 @@ NSString *FKFunctionalKitErrorDomain = @"FunctionalKit";
 
 - (FKEither *)bind:(id <FKFunction>)f {
 	return either.isRight ? [f :either.value] : either;
+}
+
+- (FKOption *)toOption {
+	return either.isRight? [FKOption some:either.value] : [FKOption none];
 }
 
 - (id)orValue:(id)value {

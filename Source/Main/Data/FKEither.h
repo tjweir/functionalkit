@@ -6,6 +6,7 @@
 extern NSString *FKFunctionalKitErrorDomain;
 
 @class FKEither;
+@class FKOption;
 
 @protocol FKEitherProjection <NSObject>
 
@@ -38,6 +39,8 @@ READ id value;
 // f should be a fucntion with the following type: a -> FKEither b.
 - (FKEither *)bind:(id <FKFunction>)f;
 
+// Returns Some value if either is of this projection, else returns None
+- (FKOption *)toOption;
 @end
 
 // A left projection of an either value.

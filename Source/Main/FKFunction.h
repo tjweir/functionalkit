@@ -16,4 +16,6 @@
 // eg. [target selector:arg]
 + (id <FKFunction>)functionFromSelector:(SEL)s target:(NSObject *)target;
 
+- (FKFunction *)andThen:(FKFunction *)other;
+- (FKFunction *)composeWith:(FKFunction *)other;
 @end

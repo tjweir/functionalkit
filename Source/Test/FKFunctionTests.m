@@ -66,4 +66,28 @@
 	NSArray *result = [lifted :a];
 	STAssertEqualObjects(NSARRAY(@"FIRST"), result, nil);
 }
+
+- (id)a:(id)arg {
+	NSString *s = arg;
+	return [s stringByAppendingString:@"a"];
+}
+
+- (id)b:(id)arg {
+	return [arg stringByAppendingString:@"b"];
+}
+
+- (void)testComposeWith {
+	FKFunction *a = [FKFunction functionFromSelector:@selector(a:) target:self];
+	FKFunction *b = [FKFunction functionFromSelector:@selector(b:) target:self];
+	FKFunction *composed = [a composeWith:b];
+	STAssertEqualObjects(@"ba", [composed :@""], nil);
+}
+
+- (void)testAndThen {
+	FKFunction *a = [FKFunction functionFromSelector:@selector(a:) target:self];
+	FKFunction *b = [FKFunction functionFromSelector:@selector(b:) target:self];
+	FKFunction *andThen = [a andThen:b];
+	STAssertEqualObjects(@"ab", [andThen :@""], nil);	
+}
+
 @end

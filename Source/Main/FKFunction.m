@@ -96,6 +96,36 @@ READ NSObject *target;
 
 @end
 
+@interface FKFunctionComposition : FKFunction {
+	FKFunction *f;
+	FKFunction *g;
+}
+
+- (FKFunctionComposition *)initWithF:(FKFunction *)anF andG:(FKFunction *)aG;
+@end
+
+@implementation FKFunctionComposition
+
+- (FKFunctionComposition *)initWithF:(FKFunction *)anF andG:(FKFunction *)aG {
+	if ((self = [super init])) {
+		f = [anF retain];
+		g = [aG retain];
+	}
+	return self;
+}
+
+- (void)dealloc {
+	[f release];
+	[g release];
+	[super dealloc];
+}
+
+- (id):(id)arg {
+	return [f :[g :arg]];
+}
+
+@end
+
 @implementation FKFunction
 + (id <FKFunction>)functionFromSelector:(SEL)s {
 	return [[[FKFunctionFromSelector alloc] initWithSelector:s] autorelease];
@@ -106,6 +136,14 @@ READ NSObject *target;
 
 - (id):(id)arg {
 	@throw [NSException exceptionWithName:@"InvalidOperation" reason:@"Must override -(id):(id) in FKFunction" userInfo:nil];
+}
+
+- (FKFunction *)andThen:(FKFunction *)other {
+	return [other composeWith:self];
+}
+
+- (FKFunction *)composeWith:(FKFunction *)other {
+	return [[FKFunctionComposition alloc] initWithF:self andG:other];
 }
 @end
 

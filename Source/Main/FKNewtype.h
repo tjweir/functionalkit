@@ -4,15 +4,15 @@
  Provides somewhat typesafe contructors and accessors.
  
  If the type is local to a .m, then you can do this: 
- NEWTYPE(MyNewType, NSString);
+ NEWTYPE(MyNewType, NSString, fieldName);
  
  Later...
- MyNewType *instance = [MyNewType value:@"foobar"];
- [instance value]; // @foobar
+ MyNewType *instance = [MyNewType fieldName:@"foobar"];
+ [instance fieldName]; // @foobar
  
  This won't work in a header though, as the implementation can't be defined in the .h.
- .h => NewTypeInterface(MyNewType, NSString);
- .m => NewTypeImplementation(MyNewType, NSString);
+ .h => NewTypeInterface(MyNewType, NSString, fieldName);
+ .m => NewTypeImplementation(MyNewType, NSString, fieldName);
  */
 
 #import "FKFunction.h"

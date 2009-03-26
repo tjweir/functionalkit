@@ -87,6 +87,12 @@ READ id <FKFunction> wrappedF;
 	return [NSArray arrayWithArray:r];
 }
 
+- (void)foreach:(id <FKFunction>)f {
+	for (id o in self) {
+		[f :o];
+	}
+}
+
 + (id <FKFunction>)liftFunction:(id <FKFunction>)f {
 	return [[[FKLiftedFunction alloc] initWithF:f] autorelease];
 }

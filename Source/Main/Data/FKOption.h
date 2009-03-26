@@ -27,7 +27,6 @@ READ BOOL isSome;
 // Returns the value in the some of this option or if none, the given argument.
 - (id)orSome:(id)some;
 
-
 // Maps the given selector across this option by invoking |selector| on value contained in |some|.
 - (FKOption *)mapWithSelector:(SEL)selector;
 

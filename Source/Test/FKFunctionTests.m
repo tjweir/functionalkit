@@ -90,4 +90,13 @@
 	STAssertEqualObjects(@"ab", [andThen :@""], nil);	
 }
 
+id myFunc(id arg) {
+	return [arg description];
+}
+
+- (void)testFunctionPointer {
+	FKFunction *f = [FKFunction functionFromPointer:(*myFunc)];
+	STAssertEqualObjects([f :[NSNumber numberWithInt:54]], @"54", nil);
+}
+
 @end

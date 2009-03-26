@@ -1,12 +1,12 @@
 #import "FKFunction.h"
 #import "FKMacros.h"
 
+#pragma mark FKFunctionFromSelector
 @interface FKFunctionFromSelector : FKFunction {
 	SEL selector;
 }
 
 READ SEL selector;
-
 - (FKFunctionFromSelector *)initWithSelector:(SEL)s;
 @end
 
@@ -40,16 +40,14 @@ READ SEL selector;
 
 @end
 
+#pragma mark FKFunctionFromSelectorWithTarget
 @interface FKFunctionFromSelectorWithTarget : FKFunction {
 	SEL selector;
 	NSObject *target;
 }
-
 READ SEL selector;
 READ NSObject *target;
-
 - (FKFunctionFromSelectorWithTarget *)initWithSelector:(SEL)s target:(NSObject *)target;
-
 @end
 
 @implementation FKFunctionFromSelectorWithTarget
@@ -96,6 +94,7 @@ READ NSObject *target;
 
 @end
 
+#pragma mark FKFunctionComposition
 @interface FKFunctionComposition : FKFunction {
 	FKFunction *f;
 	FKFunction *g;
@@ -126,12 +125,35 @@ READ NSObject *target;
 
 @end
 
+#pragma mark FKFunctionFromPointer
+@interface FKFunctionFromPointer : FKFunction {
+	fkFunction theFunction;
+}
+- (FKFunction *)initWithPointer:(fkFunction)fp;
+@end
+
+@implementation FKFunctionFromPointer
+- (FKFunction *)initWithPointer:(fkFunction)fp {
+	if ((self = [super init])) {
+		theFunction = fp;
+	}
+	return self;
+}
+- (id):(id)arg {
+	return (*theFunction)(arg);
+}
+@end
+
 @implementation FKFunction
-+ (id <FKFunction>)functionFromSelector:(SEL)s {
++ (FKFunction *)functionFromSelector:(SEL)s {
 	return [[[FKFunctionFromSelector alloc] initWithSelector:s] autorelease];
 }
-+ (id <FKFunction>)functionFromSelector:(SEL)s target:(NSObject *)target {
++ (FKFunction *)functionFromSelector:(SEL)s target:(NSObject *)target {
 	return [[[FKFunctionFromSelectorWithTarget alloc] initWithSelector:s target:target] autorelease];
+}
+
++ (FKFunction *)functionFromPointer:(fkFunction)f {
+	return [[FKFunctionFromPointer alloc] initWithPointer:f];
 }
 
 - (id):(id)arg {

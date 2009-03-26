@@ -74,7 +74,7 @@
     return [[[FKSome alloc] initWithSome:someObject] autorelease];
 }
 
-// Takes an array of options, and returns an array of all the Some values
+// TODO Replace this implementation with filter.
 + (NSArray *)somes:(NSArray *)options {
 	NSMutableArray *result = [NSMutableArray array];
 	for (FKOption *o in options) {

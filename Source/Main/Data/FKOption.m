@@ -47,7 +47,7 @@
 
 #pragma mark Private methods.
 - (FKSome *)initWithSome:(id)newSomeObject {
-    if (self = [super init]) {
+    if ((self = [super init])) {
         someObject = [newSomeObject retain];
     }
     return self;

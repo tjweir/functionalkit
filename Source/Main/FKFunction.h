@@ -1,11 +1,17 @@
 #import <Foundation/Foundation.h>
 
-// TODO Add in F2, F3, etc.
+#define FKS(sel) [FKFunction functionFromSelector:@selector(sel)]
+#define FKTS(tgt, sel) [FKFunction functionFromSelector:@selector(sel) target:tgt]
+#define FKP(fp) [FKFunction functionFromPointer:fp]
 
+#define functionS(sel) FKS(sel)
+#define functionP(fp) FKP(sel)
+#define functionTS(tgt, sel) FKTS(tgt, sel)
+
+// TODO Add in F2, F3, etc.
 @protocol FKFunction <NSObject>
 - (id):(id)arg;
 @end
-
 
 typedef id (*fkFunction)(id);
 
@@ -24,3 +30,4 @@ typedef id (*fkFunction)(id);
 - (FKFunction *)andThen:(FKFunction *)other;
 - (FKFunction *)composeWith:(FKFunction *)other;
 @end
+

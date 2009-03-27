@@ -38,6 +38,7 @@ READ id <FKFunction> wrappedF;
 	return self;
 }
 
+// TODO This is just a map. Fix it.
 - (id):(id)arg {
 	assert([arg isKindOfClass:[NSArray class]]);
 	NSArray *argArray = arg;
@@ -70,6 +71,22 @@ READ id <FKFunction> wrappedF;
 
 @implementation NSArray (FunctionalKitExtensions)
 
+- (id)head {
+    if ([self count] == 0) {
+        @throw [NSException exceptionWithName:NSInvalidArgumentException reason:@"Cannot get the head of an empty array" userInfo:EMPTY_DICT];
+    } else {
+        return [self objectAtIndex:0];
+    }
+}
+
+- (NSArray *)tail {
+    if ([self count] == 0) {
+        @throw [NSException exceptionWithName:NSInvalidArgumentException reason:@"Cannot get the tail of an empty array" userInfo:EMPTY_DICT];
+    } else {
+        return [self subarrayWithRange:NSMakeRange(1, [self count] - 1)];
+    }
+}
+
 - (BOOL)all:(id <FKFunction>)f {
 	for (id item in self) {
 		if (![f :item]) {
@@ -89,8 +106,17 @@ READ id <FKFunction> wrappedF;
     return filtered;
 }
 
-- (NSArray *)groupBy:(id <FKFunction>)f {
-    return nil;
+- (NSArray *)group:(id <FKFunction>)f {
+    
+	NSMutableArray *grouped = [NSMutableArray array];
+	for (id item in self) {
+		if ([f :item]) {
+            
+            [grouped addObject:item];
+		}
+	}    
+    
+    return grouped;
 }
 
 - (NSArray *)map:(id <FKFunction>)f {

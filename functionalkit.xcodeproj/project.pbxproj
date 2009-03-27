@@ -31,16 +31,11 @@
 		E23431740F6E72C90018BE5D /* FKOptionUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E234315A0F6E72C90018BE5D /* FKOptionUnitTest.m */; };
 		E23431750F6E72C90018BE5D /* FKFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E234315B0F6E72C90018BE5D /* FKFunctionTests.m */; };
 		E23431760F6E72C90018BE5D /* FKNewtypeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E234315C0F6E72C90018BE5D /* FKNewtypeTests.m */; };
-		E23431780F6E72C90018BE5D /* NSArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E234315E0F6E72C90018BE5D /* NSArrayTests.m */; };
 		E23431790F6E72F20018BE5D /* FKEitherUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E23431590F6E72C90018BE5D /* FKEitherUnitTest.m */; };
 		E234317A0F6E72F30018BE5D /* FKFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E234315B0F6E72C90018BE5D /* FKFunctionTests.m */; };
 		E234317B0F6E72F40018BE5D /* FKNewtypeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E234315C0F6E72C90018BE5D /* FKNewtypeTests.m */; };
 		E234317C0F6E72F50018BE5D /* FKOptionUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E234315A0F6E72C90018BE5D /* FKOptionUnitTest.m */; };
-		E234317E0F6E72F60018BE5D /* NSArrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E234315E0F6E72C90018BE5D /* NSArrayTests.m */; };
 		E23431820F6E73A50018BE5D /* FKMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = E23431800F6E73A50018BE5D /* FKMacros.h */; };
-		E23431DB0F6F0D360018BE5D /* NSArray+FunctionalKit.h in Headers */ = {isa = PBXBuildFile; fileRef = E23431D90F6F0D360018BE5D /* NSArray+FunctionalKit.h */; };
-		E23431DC0F6F0D360018BE5D /* NSArray+FunctionalKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E23431DA0F6F0D360018BE5D /* NSArray+FunctionalKit.m */; };
-		E23431DD0F6F0D360018BE5D /* NSArray+FunctionalKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E23431DA0F6F0D360018BE5D /* NSArray+FunctionalKit.m */; };
 		E23431E10F6F0DE00018BE5D /* FKEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = E234314A0F6E72C90018BE5D /* FKEffect.m */; };
 		E23431E20F6F0DE00018BE5D /* FKEither.m in Sources */ = {isa = PBXBuildFile; fileRef = E23431460F6E72C90018BE5D /* FKEither.m */; };
 		E23431E30F6F0DE10018BE5D /* FKFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = E234314C0F6E72C90018BE5D /* FKFunction.m */; };
@@ -61,6 +56,13 @@
 		E23DBF6D0F4E2817005C8EDA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E23DBF6C0F4E2817005C8EDA /* UIKit.framework */; };
 		E23DBF6E0F4E2817005C8EDA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E23DBF6C0F4E2817005C8EDA /* UIKit.framework */; };
 		E23DC0050F4E2852005C8EDA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0867D69BFE84028FC02AAC07 /* Foundation.framework */; };
+		E2843E650F7C6433004D8369 /* NSObject+FunctionalKit.h in Headers */ = {isa = PBXBuildFile; fileRef = E2843E630F7C6433004D8369 /* NSObject+FunctionalKit.h */; };
+		E2843E660F7C6433004D8369 /* NSObject+FunctionalKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E2843E640F7C6433004D8369 /* NSObject+FunctionalKit.m */; };
+		E2843E670F7C6433004D8369 /* NSObject+FunctionalKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E2843E640F7C6433004D8369 /* NSObject+FunctionalKit.m */; };
+		E2843EB60F7C6FFC004D8369 /* NSArrayExtensionsUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E2843EB50F7C6FFC004D8369 /* NSArrayExtensionsUnitTest.m */; };
+		E2843EB90F7C7004004D8369 /* NSArray+FunctionalKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E2843EB80F7C7004004D8369 /* NSArray+FunctionalKit.m */; };
+		E2843EBA0F7C7004004D8369 /* NSArray+FunctionalKit.h in Headers */ = {isa = PBXBuildFile; fileRef = E2843EB70F7C7004004D8369 /* NSArray+FunctionalKit.h */; };
+		E2843EBB0F7C7004004D8369 /* NSArray+FunctionalKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E2843EB80F7C7004004D8369 /* NSArray+FunctionalKit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -101,10 +103,7 @@
 		E234315A0F6E72C90018BE5D /* FKOptionUnitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKOptionUnitTest.m; sourceTree = "<group>"; };
 		E234315B0F6E72C90018BE5D /* FKFunctionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKFunctionTests.m; sourceTree = "<group>"; };
 		E234315C0F6E72C90018BE5D /* FKNewtypeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKNewtypeTests.m; sourceTree = "<group>"; };
-		E234315E0F6E72C90018BE5D /* NSArrayTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayTests.m; sourceTree = "<group>"; };
 		E23431800F6E73A50018BE5D /* FKMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKMacros.h; sourceTree = "<group>"; };
-		E23431D90F6F0D360018BE5D /* NSArray+FunctionalKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+FunctionalKit.h"; sourceTree = "<group>"; };
-		E23431DA0F6F0D360018BE5D /* NSArray+FunctionalKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+FunctionalKit.m"; sourceTree = "<group>"; };
 		E234361C0F6F38B10018BE5D /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
 		E23DB5F90F4D0262005C8EDA /* GTMDebugSelectorValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDebugSelectorValidation.h; sourceTree = "<group>"; };
 		E23DB6490F4D0262005C8EDA /* GTM_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTM_Prefix.pch; sourceTree = "<group>"; };
@@ -116,6 +115,11 @@
 		E23DB6610F4D0262005C8EDA /* GTMSenTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMSenTestCase.m; sourceTree = "<group>"; };
 		E23DBE720F4E2549005C8EDA /* Unit Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Unit Tests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E23DBF6C0F4E2817005C8EDA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E2843E630F7C6433004D8369 /* NSObject+FunctionalKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+FunctionalKit.h"; sourceTree = "<group>"; };
+		E2843E640F7C6433004D8369 /* NSObject+FunctionalKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FunctionalKit.m"; sourceTree = "<group>"; };
+		E2843EB50F7C6FFC004D8369 /* NSArrayExtensionsUnitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayExtensionsUnitTest.m; sourceTree = "<group>"; };
+		E2843EB70F7C7004004D8369 /* NSArray+FunctionalKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+FunctionalKit.h"; sourceTree = "<group>"; };
+		E2843EB80F7C7004004D8369 /* NSArray+FunctionalKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+FunctionalKit.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,9 +239,9 @@
 			isa = PBXGroup;
 			children = (
 				E23431580F6E72C90018BE5D /* Data */,
+				E2843E6B0F7C6823004D8369 /* Extensions */,
 				E234315B0F6E72C90018BE5D /* FKFunctionTests.m */,
 				E234315C0F6E72C90018BE5D /* FKNewtypeTests.m */,
-				E234315E0F6E72C90018BE5D /* NSArrayTests.m */,
 			);
 			path = Test;
 			sourceTree = "<group>";
@@ -254,8 +258,10 @@
 		E23431D30F6E75770018BE5D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				E23431D90F6F0D360018BE5D /* NSArray+FunctionalKit.h */,
-				E23431DA0F6F0D360018BE5D /* NSArray+FunctionalKit.m */,
+				E2843EB70F7C7004004D8369 /* NSArray+FunctionalKit.h */,
+				E2843EB80F7C7004004D8369 /* NSArray+FunctionalKit.m */,
+				E2843E630F7C6433004D8369 /* NSObject+FunctionalKit.h */,
+				E2843E640F7C6433004D8369 /* NSObject+FunctionalKit.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -299,6 +305,14 @@
 			path = UnitTesting;
 			sourceTree = "<group>";
 		};
+		E2843E6B0F7C6823004D8369 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E2843EB50F7C6FFC004D8369 /* NSArrayExtensionsUnitTest.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -323,7 +337,8 @@
 				E23431700F6E72C90018BE5D /* FKUnit.h in Headers */,
 				E23431720F6E72C90018BE5D /* functionalkit_Prefix.pch in Headers */,
 				E23431820F6E73A50018BE5D /* FKMacros.h in Headers */,
-				E23431DB0F6F0D360018BE5D /* NSArray+FunctionalKit.h in Headers */,
+				E2843E650F7C6433004D8369 /* NSObject+FunctionalKit.h in Headers */,
+				E2843EBA0F7C7004004D8369 /* NSArray+FunctionalKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,8 +444,8 @@
 				E23431740F6E72C90018BE5D /* FKOptionUnitTest.m in Sources */,
 				E23431750F6E72C90018BE5D /* FKFunctionTests.m in Sources */,
 				E23431760F6E72C90018BE5D /* FKNewtypeTests.m in Sources */,
-				E23431780F6E72C90018BE5D /* NSArrayTests.m in Sources */,
-				E23431DC0F6F0D360018BE5D /* NSArray+FunctionalKit.m in Sources */,
+				E2843E660F7C6433004D8369 /* NSObject+FunctionalKit.m in Sources */,
+				E2843EBB0F7C7004004D8369 /* NSArray+FunctionalKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -445,8 +460,6 @@
 				E234317A0F6E72F30018BE5D /* FKFunctionTests.m in Sources */,
 				E234317B0F6E72F40018BE5D /* FKNewtypeTests.m in Sources */,
 				E234317C0F6E72F50018BE5D /* FKOptionUnitTest.m in Sources */,
-				E234317E0F6E72F60018BE5D /* NSArrayTests.m in Sources */,
-				E23431DD0F6F0D360018BE5D /* NSArray+FunctionalKit.m in Sources */,
 				E23431E10F6F0DE00018BE5D /* FKEffect.m in Sources */,
 				E23431E20F6F0DE00018BE5D /* FKEither.m in Sources */,
 				E23431E30F6F0DE10018BE5D /* FKFunction.m in Sources */,
@@ -456,6 +469,9 @@
 				E23431E70F6F0DE50018BE5D /* FKP3.m in Sources */,
 				E23431E80F6F0DE60018BE5D /* FKPromise.m in Sources */,
 				E23431E90F6F0DE70018BE5D /* FKUnit.m in Sources */,
+				E2843E670F7C6433004D8369 /* NSObject+FunctionalKit.m in Sources */,
+				E2843EB60F7C6FFC004D8369 /* NSArrayExtensionsUnitTest.m in Sources */,
+				E2843EB90F7C7004004D8369 /* NSArray+FunctionalKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

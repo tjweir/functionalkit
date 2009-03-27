@@ -70,19 +70,33 @@ READ id <FKFunction> wrappedF;
 
 @implementation NSArray (FunctionalKitExtensions)
 
-- (BOOL)all:(SEL)predicate {
-	for (id object in self) {
-		if (![object performSelector:predicate]) {
+- (BOOL)all:(id <FKFunction>)f {
+	for (id item in self) {
+		if (![f :item]) {
 			return NO;
 		}
 	}
-	return YES;
+	return YES;    
+}
+
+- (NSArray *)filter:(id <FKFunction>)f {
+    NSMutableArray *filtered = [NSMutableArray arrayWithCapacity:[self count]];
+	for (id item in self) {
+		if ([f :item]) {
+            [filtered addObject:item];
+		}
+	}
+    return filtered;
+}
+
+- (NSArray *)groupBy:(id <FKFunction>)f {
+    return nil;
 }
 
 - (NSArray *)map:(id <FKFunction>)f {
 	NSMutableArray *r = [NSMutableArray arrayWithCapacity:[self count]];
-	for (id o in self) {
-		[r addObject:[f :o]];
+	for (id item in self) {
+		[r addObject:[f :item]];
 	}
 	return [NSArray arrayWithArray:r];
 }

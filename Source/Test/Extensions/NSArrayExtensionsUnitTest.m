@@ -2,6 +2,7 @@
 #import "FKMacros.h"
 #import "FKFunction.h"
 #import "NSArray+FunctionalKit.h"
+#import "FKP2.h"
 
 @interface NSArray (extns)
 - (BOOL)isNotEmpty;
@@ -26,6 +27,12 @@
 - (void)testCanGetTheTailOfAnArray {
     NSArray *source = NSARRAY(@"1", @"2", @"3", @"4");
     STAssertEqualObjects(NSARRAY(@"2", @"3", @"4"), source.tail, nil);
+}
+
+- (void)testCanGetASpanMatchingAPredicate {
+    NSArray *source = NSARRAY(@"1", @"1", @"2", @"4");
+    FKP2 *span = [source span:functionTS(self, isStringContainingOne:)];
+    STAssertEqualObjects([FKP2 p2With_1:NSARRAY(@"1", @"1") _2:NSARRAY(@"2", @"4")], span, nil);
 }
 
 - (void)testCanTestAPredicateAgainstAllItems {

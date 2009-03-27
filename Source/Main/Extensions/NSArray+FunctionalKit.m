@@ -87,13 +87,26 @@ READ id <FKFunction> wrappedF;
     }
 }
 
+- (FKP2 *)span:(id <FKFunction>)f {
+    NSMutableArray *matching = [NSMutableArray array];
+    NSMutableArray *rest = [NSMutableArray array];
+	for (id item in self) {
+		if ([f :item]) {
+            [matching addObject:item];
+		} else {
+            [rest addObject:item];
+        }
+	}
+    return [FKP2 p2With_1:matching _2:rest];
+}
+
 - (BOOL)all:(id <FKFunction>)f {
 	for (id item in self) {
 		if (![f :item]) {
 			return NO;
 		}
 	}
-	return YES;    
+	return YES;
 }
 
 - (NSArray *)filter:(id <FKFunction>)f {

@@ -119,17 +119,19 @@ READ id <FKFunction> wrappedF;
     return filtered;
 }
 
-- (NSArray *)group:(id <FKFunction>)f {
-    
-	NSMutableArray *grouped = [NSMutableArray array];
+- (NSDictionary *)groupByKey:(id <FKFunction>)f {
+    NSMutableDictionary *grouped = [NSMutableDictionary dictionary];
 	for (id item in self) {
-		if ([f :item]) {
-            
-            [grouped addObject:item];
-		}
-	}    
-    
+        id key = [f :item];
+        NSMutableArray *values = [grouped objectForKey:key];
+        if (values == nil) {
+            values = [NSMutableArray array];
+            [grouped setObject:values forKey:key];
+        }
+        [values addObject:item];
+	}   
     return grouped;
+    
 }
 
 - (NSArray *)map:(id <FKFunction>)f {
@@ -141,8 +143,8 @@ READ id <FKFunction> wrappedF;
 }
 
 - (void)foreach:(id <FKFunction>)f {
-	for (id o in self) {
-		[f :o];
+	for (id item in self) {
+		[f :item];
 	}
 }
 

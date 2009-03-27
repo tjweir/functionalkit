@@ -4,16 +4,6 @@
 #import "NSArray+FunctionalKit.h"
 #import "FKP2.h"
 
-@interface NSArray (extns)
-- (BOOL)isNotEmpty;
-@end
-
-@implementation NSArray (extns)
-- (BOOL)isNotEmpty {
-    return [self count] != 0;
-}
-@end
-
 @interface NSArrayExtensionsUnitTest : GTMTestCase
 @end
 
@@ -47,10 +37,10 @@
     STAssertEqualObjects(NSARRAY(@"1", @"1", @"1"), onlyOnes, nil);
 }
 
-- (void)testCanGroupItemsUsingAFunction {
-    NSArray *source = NSARRAY(@"1", @"1", @"2", @"1");
-    NSArray *onlyOnes = [source group:functionTS(self, isStringContainingOne:)];
-    STAssertEqualObjects(NSARRAY(@"1", @"1", @"1"), onlyOnes, nil);
+- (void)testCanGroupItemsUsingAKeyFunctionIntoADictionary {
+    NSArray *source = NSARRAY(@"1", @"1", @"2", @"1", @"3", @"3", @"4");
+    NSDictionary *grouped = [source groupByKey:functionS(description)];
+    STAssertEqualObjects(NSDICT(NSARRAY(@"1", @"1", @"1"), @"1", NSARRAY(@"2"), @"2", NSARRAY(@"3", @"3"), @"3", NSARRAY(@"4"), @"4"), grouped, nil);
 }
 
 - (void)testCanMapAFunctionAcrossAnArray {

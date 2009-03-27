@@ -25,9 +25,97 @@ READ SEL selector;
 	return [arg performSelector:selector];
 }
 
-#pragma mark NSObject methods.
 - (BOOL)isEqual:(id)object {
     return object == nil || ![[object class] isEqual:[self class]] ? NO : FKEqualSelectors(self.selector, ((FKFunctionFromSelector *) object).selector);
+}
+
+- (NSUInteger)hash {
+    return 42;
+}
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"<%s selector: %s>", class_getName([self class]), sel_getName(selector)];
+}
+
+@end
+
+#pragma mark FKFunction2FromSelector
+@interface FKFunction2FromSelector : FKFunction2 {
+	SEL selector;
+}
+
+READ SEL selector;
+- (FKFunction2FromSelector *)initWithSelector:(SEL)s;
+@end
+
+@implementation FKFunction2FromSelector
+
+@synthesize selector;
+
+- (FKFunction2FromSelector *)initWithSelector:(SEL)s {
+	if ((self = [super init])) {
+		selector = s;
+	}
+	return self;
+}
+
+- (id):(id)arg1 :(id)arg2 {
+	return [arg1 performSelector:selector withObject:arg2];
+}
+
+- (BOOL)isEqual:(id)object {
+    return object == nil || ![[object class] isEqual:[self class]] ? NO : FKEqualSelectors(self.selector, ((FKFunction2FromSelector *) object).selector);
+}
+
+- (NSUInteger)hash {
+    return 42;
+}
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"<%s selector: %s>", class_getName([self class]), sel_getName(selector)];
+}
+
+@end
+
+#pragma mark FKFunctionFromSelectorWithArgument
+@interface FKFunctionFromSelectorWithArgument : FKFunction {
+	SEL selector;
+    id argument;
+}
+
+READ SEL selector;
+READ id argument;
+- (FKFunctionFromSelectorWithArgument *)initWithSelector:(SEL)s argument:(id)argument;
+@end
+
+@implementation FKFunctionFromSelectorWithArgument
+
+@synthesize selector, argument;
+
+- (FKFunctionFromSelectorWithArgument *)initWithSelector:(SEL)newS argument:(id)newArgument {
+	if ((self = [super init])) {
+		selector = newS;
+        argument = [newArgument retain];
+	}
+	return self;
+}
+
+- (id):(id)arg {
+	return [arg performSelector:selector withObject:argument];
+}
+
+- (void) dealloc {
+    [argument release];
+    [super dealloc];
+}
+
+- (BOOL)isEqual:(id)object {
+    if (object == nil || ![[object class] isEqual:[self class]]) {
+        return NO;
+    } else {
+        FKFunctionFromSelectorWithArgument *other = (FKFunctionFromSelectorWithArgument *) object;
+        return FKEqualSelectors(self.selector, other.selector) && [self.argument isEqual:other.argument];
+    }
 }
 
 - (NSUInteger)hash {
@@ -69,7 +157,6 @@ READ NSObject *target;
 	return [target performSelector:selector withObject:arg];
 }
 
-#pragma mark NSObject methods.
 - (void) dealloc {
     [target release];
     [super dealloc];
@@ -145,9 +232,15 @@ READ NSObject *target;
 @end
 
 @implementation FKFunction
+
 + (FKFunction *)functionFromSelector:(SEL)s {
 	return [[[FKFunctionFromSelector alloc] initWithSelector:s] autorelease];
 }
+
++ (FKFunction *)functionFromSelector:(SEL)s withArgument:(id)argument {
+	return [[[FKFunctionFromSelectorWithArgument alloc] initWithSelector:s argument:argument] autorelease];
+}
+
 + (FKFunction *)functionFromSelector:(SEL)s target:(NSObject *)target {
 	return [[[FKFunctionFromSelectorWithTarget alloc] initWithSelector:s target:target] autorelease];
 }
@@ -168,4 +261,17 @@ READ NSObject *target;
 	return [[FKFunctionComposition alloc] initWithF:self andG:other];
 }
 @end
+
+@implementation FKFunction2
+
++ (FKFunction2 *)functionFromSelector:(SEL)s {
+	return [[[FKFunction2FromSelector alloc] initWithSelector:s] autorelease];
+}
+
+- (id):(id)arg1 :(id)arg2 {
+    @throw [NSException exceptionWithName:@"InvalidOperation" reason:@"Must override -(id):(id):(id) in FKFunction2" userInfo:nil];
+}    
+
+@end
+
 

@@ -28,9 +28,13 @@ READ NSArray *tail;
 // f :: id -> BOOL
 - (NSArray *)filter:(id <FKFunction>)f;
 
-// Groups the items in this array using the given function. Equal objects are placed in the same array.
-// f :: id -> id -> BOOL
-- (NSArray *)group:(id <FKFunction>)f;
+// TODO Add one like FJ's: group :: (id -> id -> BOOL) -> NSArray (takes an equality function).
+// Groups the items in this array using the given |equal|, equal objects are placed in the same array.
+//- (NSArray *)group:(id <FKEqual>)equal;
+
+// Groups the items in this array using the given function to determine the key. Equal objects are placed in the same array.
+// f :: id -> id
+- (NSDictionary *)groupByKey:(id <FKFunction>)f;
 
 // Maps the given function across every item in this array.
 // f :: id -> id

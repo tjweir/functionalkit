@@ -2,6 +2,7 @@
 #import "FKFunction.h"
 #import "FKMacros.h"
 #import "FKP2.h"
+#import "FKOption.h"
 
 @interface NSArray (FunctionalKitExtensions)
 
@@ -43,5 +44,8 @@ READ NSArray *tail;
 // Applies to given function to each item in this array. If the function returns a value it is ignored, it is assumed to be side-effecting.
 // f :: id -> void
 - (void)foreach:(id <FKFunction>)f;
+
+// Returns an option projection of this array; None if empty, or the first element in Some.
+- (FKOption *)toOption;
 
 @end

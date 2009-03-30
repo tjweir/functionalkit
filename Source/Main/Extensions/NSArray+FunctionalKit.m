@@ -71,6 +71,10 @@ READ id <FKFunction> wrappedF;
 
 @implementation NSArray (FunctionalKitExtensions)
 
++ (id <FKFunction>)liftFunction:(id <FKFunction>)f {
+	return [[[FKLiftedFunction alloc] initWithF:f] autorelease];
+}
+
 - (id)head {
     if ([self count] == 0) {
         @throw [NSException exceptionWithName:NSInvalidArgumentException reason:@"Cannot get the head of an empty array" userInfo:EMPTY_DICT];
@@ -148,8 +152,8 @@ READ id <FKFunction> wrappedF;
 	}
 }
 
-+ (id <FKFunction>)liftFunction:(id <FKFunction>)f {
-	return [[[FKLiftedFunction alloc] initWithF:f] autorelease];
+- (FKOption *)toOption {
+    return  [self count] == 0 ? [FKOption none] : [FKOption some:[self objectAtIndex:0]];
 }
 
 @end

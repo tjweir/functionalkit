@@ -10,6 +10,10 @@
 // f :: id -> id
 + (id <FKFunction>)liftFunction:(id <FKFunction>)f;
 
+// Concatenates an array of arrays of items into an array of items. Will fail if any item is not an array.
+// concat :: [[a]] -> [a]
++ (NSArray *)concat:(NSArray *)nested;
+
 // The first element of the array or fails for the empty array.
 READ id head;
 

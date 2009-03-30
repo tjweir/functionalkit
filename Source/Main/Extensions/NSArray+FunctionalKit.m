@@ -75,6 +75,19 @@ READ id <FKFunction> wrappedF;
 	return [[[FKLiftedFunction alloc] initWithF:f] autorelease];
 }
 
++ (NSArray *)concat:(NSArray *)nested {
+    NSMutableArray *concatenated = [NSMutableArray array];
+    for (id item in nested) {
+        if ([item isKindOfClass:[NSArray class]]) {
+            [concatenated addObjectsFromArray:item];
+        } else {
+            NSString *message = @"Cannot concat a non-array value";
+            @throw [NSException exceptionWithName:NSInvalidArgumentException reason:message userInfo:EMPTY_DICT];
+        }
+    }
+    return [NSArray arrayWithArray:concatenated];
+}
+
 - (id)head {
     if ([self count] == 0) {
         @throw [NSException exceptionWithName:NSInvalidArgumentException reason:@"Cannot get the head of an empty array" userInfo:EMPTY_DICT];

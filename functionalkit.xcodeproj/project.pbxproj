@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E2065A910F8078AB0034E426 /* NSDictionaryExtensionsUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E2065A900F8078AB0034E426 /* NSDictionaryExtensionsUnitTest.m */; };
+		E2065A940F8078EA0034E426 /* NSDictionary+FunctionalKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E2065A930F8078EA0034E426 /* NSDictionary+FunctionalKit.m */; };
 		E234315F0F6E72C90018BE5D /* FKPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = E23431420F6E72C90018BE5D /* FKPromise.h */; };
 		E23431600F6E72C90018BE5D /* FKPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = E23431430F6E72C90018BE5D /* FKPromise.m */; };
 		E23431610F6E72C90018BE5D /* FKEither.h in Headers */ = {isa = PBXBuildFile; fileRef = E23431450F6E72C90018BE5D /* FKEither.h */; };
@@ -79,6 +81,10 @@
 /* Begin PBXFileReference section */
 		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		D2AAC07E0554694100DB518D /* libfunctionalkit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libfunctionalkit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2065A900F8078AB0034E426 /* NSDictionaryExtensionsUnitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionaryExtensionsUnitTest.m; sourceTree = "<group>"; };
+		E2065A920F8078EA0034E426 /* NSDictionary+FunctionalKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+FunctionalKit.h"; sourceTree = "<group>"; };
+		E2065A930F8078EA0034E426 /* NSDictionary+FunctionalKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+FunctionalKit.m"; sourceTree = "<group>"; };
+		E2065A960F807C1B0034E426 /* FKPrelude.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKPrelude.h; sourceTree = "<group>"; };
 		E23431420F6E72C90018BE5D /* FKPromise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKPromise.h; sourceTree = "<group>"; };
 		E23431430F6E72C90018BE5D /* FKPromise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKPromise.m; sourceTree = "<group>"; };
 		E23431450F6E72C90018BE5D /* FKEither.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKEither.h; sourceTree = "<group>"; };
@@ -200,6 +206,7 @@
 				E23431510F6E72C90018BE5D /* FKP2.m */,
 				E23431520F6E72C90018BE5D /* FKP3.h */,
 				E23431530F6E72C90018BE5D /* FKP3.m */,
+				E2065A960F807C1B0034E426 /* FKPrelude.h */,
 				E23431540F6E72C90018BE5D /* FKUnit.h */,
 				E23431550F6E72C90018BE5D /* FKUnit.m */,
 				E23431560F6E72C90018BE5D /* functionalkit_Prefix.pch */,
@@ -260,6 +267,8 @@
 			children = (
 				E2843EB70F7C7004004D8369 /* NSArray+FunctionalKit.h */,
 				E2843EB80F7C7004004D8369 /* NSArray+FunctionalKit.m */,
+				E2065A920F8078EA0034E426 /* NSDictionary+FunctionalKit.h */,
+				E2065A930F8078EA0034E426 /* NSDictionary+FunctionalKit.m */,
 				E2843E630F7C6433004D8369 /* NSObject+FunctionalKit.h */,
 				E2843E640F7C6433004D8369 /* NSObject+FunctionalKit.m */,
 			);
@@ -309,6 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				E2843EB50F7C6FFC004D8369 /* NSArrayExtensionsUnitTest.m */,
+				E2065A900F8078AB0034E426 /* NSDictionaryExtensionsUnitTest.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -472,6 +482,8 @@
 				E2843E670F7C6433004D8369 /* NSObject+FunctionalKit.m in Sources */,
 				E2843EB60F7C6FFC004D8369 /* NSArrayExtensionsUnitTest.m in Sources */,
 				E2843EB90F7C7004004D8369 /* NSArray+FunctionalKit.m in Sources */,
+				E2065A910F8078AB0034E426 /* NSDictionaryExtensionsUnitTest.m in Sources */,
+				E2065A940F8078EA0034E426 /* NSDictionary+FunctionalKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

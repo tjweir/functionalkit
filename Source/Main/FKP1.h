@@ -2,6 +2,8 @@
 #import "FKMacros.h"
 #import <objc/runtime.h>
 
+#define pair1(a) [FKP1 p1With_1:a]
+
 @interface FKP1 : NSObject <NSCopying> {
     id _1;
 }

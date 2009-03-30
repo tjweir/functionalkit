@@ -46,7 +46,7 @@ READ id <FKFunction> wrappedF;
 	for (id obj in argArray) {
 		[arr addObject:[wrappedF :obj]];
 	}
-	return arr;
+	return [NSArray arrayWithArray:arr];
 }
 
 #pragma mark NSObject methods.
@@ -97,7 +97,7 @@ READ id <FKFunction> wrappedF;
             [rest addObject:item];
         }
 	}
-    return [FKP2 p2With_1:matching _2:rest];
+    return [FKP2 p2With_1:[NSArray arrayWithArray:matching] _2:[NSArray arrayWithArray:rest]];
 }
 
 - (BOOL)all:(id <FKFunction>)f {
@@ -116,7 +116,7 @@ READ id <FKFunction> wrappedF;
             [filtered addObject:item];
 		}
 	}
-    return filtered;
+    return [NSArray arrayWithArray:filtered];
 }
 
 - (NSDictionary *)groupByKey:(id <FKFunction>)f {
@@ -130,8 +130,7 @@ READ id <FKFunction> wrappedF;
         }
         [values addObject:item];
 	}   
-    return grouped;
-    
+    return [NSDictionary dictionaryWithDictionary:grouped];
 }
 
 - (NSArray *)map:(id <FKFunction>)f {

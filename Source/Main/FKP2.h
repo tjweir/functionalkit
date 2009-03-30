@@ -1,6 +1,8 @@
 #import <Foundation/Foundation.h>
 #import "FKMacros.h"
 
+#define pair2(a, b) [FKP2 p2With_1:a _2:b]
+
 @interface FKP2 : NSObject <NSCopying> {
     id _1;
     id _2;

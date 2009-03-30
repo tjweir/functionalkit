@@ -47,6 +47,22 @@
 	STAssertEqualObjects([NSARRAY(@"test") map:functionS(uppercaseString)], NSARRAY(@"TEST"), nil); 
 }
 
+- (void)testCanCreateANewArrayByConcatenatingAnotherOne {
+    NSArray *source = NSARRAY(NSARRAY(@"1", @"2"), NSARRAY(@"3", @"4"));
+    STAssertEqualObjects(NSARRAY(@"1", @"2", @"3", @"4"), [NSArray concat:source], nil);     
+}
+
+- (void)testConcatFailsOnNonArray {
+    NSArray *source = NSARRAY(NSARRAY(@"1", @"2"), @"3");
+    @try {
+        [NSArray concat:source];
+        STFail(@"Expected concat to fail with no-array argument", nil);
+    }
+    @catch (NSException * e) {
+        // expected
+    }
+}
+
 - (BOOL)isStringContainingOne:(id)string {
     return [string isEqual:@"1"];
 }

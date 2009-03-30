@@ -6,7 +6,7 @@
 - (NSArray *)toArray {
     NSMutableArray *pairs = [NSMutableArray arrayWithCapacity:[self count]];
     for (id key in self) {
-        [pairs addObject:[FKP2 p2With_1:key _2:[self objectForKey:key]]];
+        [pairs addObject:pair2(key, [self objectForKey:key])];
     }    
     return [NSArray arrayWithArray:pairs];
 }

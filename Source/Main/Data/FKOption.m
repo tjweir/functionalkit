@@ -12,7 +12,7 @@
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"<%s>", class_getName([self class]), self.some];
+    return [NSString stringWithFormat:@"<%s>", class_getName([self class])];
 }
 
 @end

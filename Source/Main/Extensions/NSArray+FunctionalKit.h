@@ -33,11 +33,12 @@ READ NSArray *tail;
 // Groups the items in this array using the given |equal|, equal objects are placed in the same array.
 //- (NSArray *)group:(id <FKEqual>)equal;
 
-// Groups the items in this array using the given function to determine the key. Equal objects are placed in the same array.
+// Groups the items in this array using the given function to determine the key. Equal objects are placed in the same array. The value returned by
+// |f| will be used as a key in an NSDictionary so must conform to the key requirements of that class (conform to the NSCopying protocol).
 // f :: id -> id
 - (NSDictionary *)groupByKey:(id <FKFunction>)f;
 
-// Maps the given function across every item in this array.
+// Maps the given function across every item in this array. You should ensure that you return an autoreleased object from |f|.
 // f :: id -> id
 - (NSArray *)map:(id <FKFunction>)f;
 

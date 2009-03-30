@@ -1,5 +1,7 @@
 #import <Foundation/Foundation.h>
 
+// TODO Make these macros (i.e. the constructors) fail harder if given bad data.
+
 #define FKS(sel) [FKFunction functionFromSelector:@selector(sel)]
 #define FKSA(sel, arg) [FKFunction functionFromSelector:@selector(sel) withArgument:arg]
 #define FKTS(tgt, sel) [FKFunction functionFromSelector:@selector(sel) target:tgt]

@@ -107,6 +107,7 @@ id myFunc(id arg) {
 	NSInvocation *inv = [NSInvocation invocationWithSelector:@selector(add:to:) target:self arguments:NSARRAY([NSNull null], @"start")];
 	FKFunction *f = [FKFunction functionFromInvocation:inv parameterIndex:0];
 	STAssertEqualObjects(@"startend", [f :@"end"], nil);
+	STAssertEqualObjects(@"startfoo", [f :@"foo"], nil);
 }
 
 @end

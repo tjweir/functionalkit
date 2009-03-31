@@ -3,7 +3,7 @@
 #import "FKFunction.h"
 #import "FKEffect.h"
 #import "FKNewtype.h"
-
+#import "NSInvocation+FunctionalKit.h"
 @interface TestEffect : NSObject <FKEffect> {
 	id arg;
 }
@@ -97,6 +97,16 @@ id myFunc(id arg) {
 - (void)testFunctionPointer {
 	FKFunction *f = [FKFunction functionFromPointer:(*myFunc)];
 	STAssertEqualObjects([f :[NSNumber numberWithInt:54]], @"54", nil);
+}
+
+- (NSString *)add:(NSString *)a to:(NSString *)b {
+	return [b stringByAppendingString:a];
+}
+
+- (void)testInvocation {
+	NSInvocation *inv = [NSInvocation invocationWithSelector:@selector(add:to:) target:self arguments:NSARRAY([NSNull null], @"start")];
+	FKFunction *f = [FKFunction functionFromInvocation:inv parameterIndex:0];
+	STAssertEqualObjects(@"startend", [f :@"end"], nil);
 }
 
 @end

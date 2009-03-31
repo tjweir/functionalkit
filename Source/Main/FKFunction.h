@@ -44,6 +44,8 @@ typedef id (*fkFunction)(id);
 
 + (FKFunction *)functionFromPointer:(fkFunction)f;
 
++ (FKFunction *)functionFromInvocation:(NSInvocation *)invocation appliedIndex:(NSUInteger)index;
+
 - (FKFunction *)andThen:(FKFunction *)other;
 
 - (FKFunction *)composeWith:(FKFunction *)other;

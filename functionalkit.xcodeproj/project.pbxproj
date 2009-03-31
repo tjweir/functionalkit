@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		47F1FA0E0F81E1C800239B9F /* NSInvocation+FunctionalKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F1FA0D0F81E1C800239B9F /* NSInvocation+FunctionalKit.m */; };
+		47F1FA0F0F81E1CF00239B9F /* NSInvocation+FunctionalKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 47F1FA0C0F81E1C800239B9F /* NSInvocation+FunctionalKit.h */; };
+		47F1FA100F81E1CF00239B9F /* NSInvocation+FunctionalKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F1FA0D0F81E1C800239B9F /* NSInvocation+FunctionalKit.m */; };
 		E2065A910F8078AB0034E426 /* NSDictionaryExtensionsUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E2065A900F8078AB0034E426 /* NSDictionaryExtensionsUnitTest.m */; };
 		E2065A940F8078EA0034E426 /* NSDictionary+FunctionalKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E2065A930F8078EA0034E426 /* NSDictionary+FunctionalKit.m */; };
 		E234315F0F6E72C90018BE5D /* FKPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = E23431420F6E72C90018BE5D /* FKPromise.h */; };
@@ -80,6 +83,8 @@
 
 /* Begin PBXFileReference section */
 		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		47F1FA0C0F81E1C800239B9F /* NSInvocation+FunctionalKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+FunctionalKit.h"; sourceTree = "<group>"; };
+		47F1FA0D0F81E1C800239B9F /* NSInvocation+FunctionalKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+FunctionalKit.m"; sourceTree = "<group>"; };
 		D2AAC07E0554694100DB518D /* libfunctionalkit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libfunctionalkit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2065A900F8078AB0034E426 /* NSDictionaryExtensionsUnitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionaryExtensionsUnitTest.m; sourceTree = "<group>"; };
 		E2065A920F8078EA0034E426 /* NSDictionary+FunctionalKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+FunctionalKit.h"; sourceTree = "<group>"; };
@@ -271,6 +276,8 @@
 				E2065A930F8078EA0034E426 /* NSDictionary+FunctionalKit.m */,
 				E2843E630F7C6433004D8369 /* NSObject+FunctionalKit.h */,
 				E2843E640F7C6433004D8369 /* NSObject+FunctionalKit.m */,
+				47F1FA0C0F81E1C800239B9F /* NSInvocation+FunctionalKit.h */,
+				47F1FA0D0F81E1C800239B9F /* NSInvocation+FunctionalKit.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -349,6 +356,7 @@
 				E23431820F6E73A50018BE5D /* FKMacros.h in Headers */,
 				E2843E650F7C6433004D8369 /* NSObject+FunctionalKit.h in Headers */,
 				E2843EBA0F7C7004004D8369 /* NSArray+FunctionalKit.h in Headers */,
+				47F1FA0F0F81E1CF00239B9F /* NSInvocation+FunctionalKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -456,6 +464,7 @@
 				E23431760F6E72C90018BE5D /* FKNewtypeTests.m in Sources */,
 				E2843E660F7C6433004D8369 /* NSObject+FunctionalKit.m in Sources */,
 				E2843EBB0F7C7004004D8369 /* NSArray+FunctionalKit.m in Sources */,
+				47F1FA100F81E1CF00239B9F /* NSInvocation+FunctionalKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +493,7 @@
 				E2843EB90F7C7004004D8369 /* NSArray+FunctionalKit.m in Sources */,
 				E2065A910F8078AB0034E426 /* NSDictionaryExtensionsUnitTest.m in Sources */,
 				E2065A940F8078EA0034E426 /* NSDictionary+FunctionalKit.m in Sources */,
+				47F1FA0E0F81E1C800239B9F /* NSInvocation+FunctionalKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

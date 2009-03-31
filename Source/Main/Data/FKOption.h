@@ -21,6 +21,11 @@ READ BOOL isSome;
 // Takes an array of options, and returns an array of all the Some values
 + (NSArray *)somes:(NSArray *)options;
 
+// TODO Add identity function, then do concat.
+// Concatenates an option containing an option into an option. Will fail if any item is not an FKOption.
+// concat :: FKOption[FKOption[a]] -> FKOption[a]
+//+ (FKOption *)concat:(FKOption *)nested;
+
 // Returns this optional value if there is one, otherwise, returns the argument optional value.
 - (FKOption *)orElse:(FKOption *)other;
 

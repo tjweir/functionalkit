@@ -47,10 +47,37 @@
 	STAssertTrue([[FKOption fromNil:@"54" ofType:[NSArray class]] isNone], nil);
 }
 
+- (void)testBindingAcrossANoneGivesANone {
+    id result = [[FKOption none] bind:functionTS(self, givesANone:)];
+    STAssertTrue([result isKindOfClass:[FKOption class]], nil);
+    STAssertTrue([result isNone], nil);
+}
+
+- (void)testBindingAcrossASomeWithANoneGivesANone {
+    id result = [[FKOption some:@"foo"] bind:functionTS(self, givesANone:)];
+    STAssertTrue([result isKindOfClass:[FKOption class]], nil);
+    STAssertTrue([result isNone], nil);
+}
+
+- (void)testBindingAcrossASomeWithASomeGivesANone {
+    id result = [[FKOption some:@"foo"] bind:functionTS(self, givesASome:)];
+    STAssertTrue([result isKindOfClass:[FKOption class]], nil);
+    STAssertTrue([result isSome], nil);
+    STAssertEqualObjects(@"foo", [result some], nil);
+}
+
 - (void)testSomes {
 	NSArray *options = NSARRAY([FKOption some:@"54"], [FKOption none]);
 	NSArray *somes = [FKOption somes:options];
 	STAssertEqualObjects(NSARRAY(@"54"), somes, nil);
+}
+
+- (FKOption *)givesANone:(NSString *)str {
+    return [FKOption none];
+}
+
+- (FKOption *)givesASome:(NSString *)str {
+    return [FKOption some:str];
 }
 
 @end

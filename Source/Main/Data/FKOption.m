@@ -85,6 +85,13 @@
 	return [NSArray arrayWithArray:result];
 }
 
+// TODO Add identity function.
+//+ (FKOption *)concat:(FKOption *)nested {
+//    if (nested.isSome) {
+//    } else {
+//    }
+//}
+
 - (BOOL)isNone {
     return [self isKindOfClass:[FKNone class]];
 }

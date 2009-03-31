@@ -27,16 +27,12 @@ READ BOOL isSome;
 // Returns the value in the some of this option or if none, the given argument.
 - (id)orSome:(id)some;
 
-// Maps the given selector across this option by invoking |selector| on value contained in |some|.
-- (FKOption *)mapWithSelector:(SEL)selector;
-
-// Maps the given selector across this option by invoking |selector| on |object| passing the value contained in |some| as an argument.
-// |selector| should be a method taking a single argument of type |id| and return |id|.
-// Note. Returns this either (i.e. self) if the given |object| does not response to |selector|.
-- (FKOption *)mapWithSelector:(SEL)selector onObject:(id)object;
-
 // Maps the given function across the option
 - (FKOption *)map:(id <FKFunction>)f;
+
+// Binds the given function across the projection.
+// f should be a fucntion with the following type: a -> FKOption[b].
+- (FKOption *)bind:(id <FKFunction>)f;
 
 // Returns an either projection of this optional value; |left| in a Left if this optional holds no value, or this optional's value in Right.
 - (FKEither *)toEither:(id)left;

@@ -106,16 +106,12 @@
     return self.isSome ? [self some] : some;
 }
 
-- (FKOption *)mapWithSelector:(SEL)selector {
-	return self.isSome && [[self some] respondsToSelector:selector] ? [FKOption some:[[self some] performSelector:selector]] : self;
-}
-
-- (FKOption *)mapWithSelector:(SEL)selector onObject:(id)object {
-	return self.isSome && [object respondsToSelector:selector] ? [FKOption some:[object performSelector:selector withObject:[self some]]] : self;
-}
-
 - (FKOption *)map:(id <FKFunction>)f {
 	return self.isSome ? [FKOption some:[f :self.some]] : self;
+}
+
+- (FKOption *)bind:(id <FKFunction>)f {
+	return self.isSome ? [f :self.some] : self;
 }
 
 - (FKEither *)toEither:(id)left {

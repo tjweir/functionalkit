@@ -88,14 +88,6 @@ NSString *FKFunctionalKitErrorDomain = @"FunctionalKit";
     }
 }
 
-- (FKEither *)mapWithSelector:(SEL)selector {
-    return either.isRight && [either.value respondsToSelector:selector] ? [FKEither rightWithValue:[either.value performSelector:selector]] : either;
-}
-
-- (FKEither *)mapWithSelector:(SEL)selector onObject:(id)object {
-    return either.isRight && [object respondsToSelector:selector] ? [FKEither rightWithValue:[object performSelector:selector withObject:either.value]] : either;
-}
-
 - (FKEither *)map:(id <FKFunction>)f {
 	return either.isRight ? [FKEither rightWithValue:[f :either.value]] : either;
 }

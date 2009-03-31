@@ -22,21 +22,12 @@ READ id value;
 // Returns the value of this projection or, if the value is on the other side, |other|.
 - (id)orValue:(id)other;
 
-// Maps the given selector across the value in this either.
-// Note. Returns this either (i.e. self) if the value in this either does not response to |selector|.
-- (FKEither *)mapWithSelector:(SEL)selector;
-
-// Maps the given selector across this either by invoking |selector| on |object| passing the value in the either as an argument.
-// |selector| should be a method taking a single argument of type |id| and return |id|.
-// Note. Returns this either (i.e. self) if the given |object| does not response to |selector|.
-- (FKEither *)mapWithSelector:(SEL)selector onObject:(id)object;
-
 // Maps the given function across the value of the projection.
 // f should be a fucntion with the following type: a -> b.
 - (FKEither *)map:(id <FKFunction>)f;
 
 // Binds the given function across the projection.
-// f should be a fucntion with the following type: a -> FKEither b.
+// f should be a fucntion with the following type: a -> FKEither[b].
 - (FKEither *)bind:(id <FKFunction>)f;
 
 // Returns Some value if either is of this projection, else returns None

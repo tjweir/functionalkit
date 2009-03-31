@@ -1,6 +1,7 @@
 #import "GTMSenTestCase.h"
 #import "FKOption.h"
 #import "FKMacros.h"
+#import "FKFunction.h"
 
 @interface FKOptionUnitTest : GTMTestCase {
     NSObject *object;
@@ -33,9 +34,9 @@
 }
 
 - (void)testMaps {
-	STAssertTrue([[[FKOption none] mapWithSelector:@selector(description)] isNone], nil);
+	STAssertTrue([[[FKOption none] map:functionS(description)] isNone], nil);
 	NSString *description = [object description];
-	FKOption *r = [[FKOption some:object] mapWithSelector:@selector(description)];
+	FKOption *r = [[FKOption some:object] map:functionS(description)];
 	STAssertTrue([r isSome], nil);	
 	STAssertEqualObjects([r some], description, nil);
 }

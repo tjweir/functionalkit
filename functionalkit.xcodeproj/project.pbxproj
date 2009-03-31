@@ -274,10 +274,10 @@
 				E2843EB80F7C7004004D8369 /* NSArray+FunctionalKit.m */,
 				E2065A920F8078EA0034E426 /* NSDictionary+FunctionalKit.h */,
 				E2065A930F8078EA0034E426 /* NSDictionary+FunctionalKit.m */,
-				E2843E630F7C6433004D8369 /* NSObject+FunctionalKit.h */,
-				E2843E640F7C6433004D8369 /* NSObject+FunctionalKit.m */,
 				47F1FA0C0F81E1C800239B9F /* NSInvocation+FunctionalKit.h */,
 				47F1FA0D0F81E1C800239B9F /* NSInvocation+FunctionalKit.m */,
+				E2843E630F7C6433004D8369 /* NSObject+FunctionalKit.h */,
+				E2843E640F7C6433004D8369 /* NSObject+FunctionalKit.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";

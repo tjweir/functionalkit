@@ -236,11 +236,11 @@ READ NSObject *target;
 	NSInvocation *invocation;
 	NSUInteger index;
 }
-- (FKFunction *)initWithInvocation:(NSInvocation *)inv appliedIndex:(NSUInteger)idx;
+- (FKFunction *)initWithInvocation:(NSInvocation *)inv parameterIndex:(NSUInteger)idx;
 @end
 
 @implementation FKFunctionFromInvocation
-- (FKFunction *)initWithInvocation:(NSInvocation *)inv appliedIndex:(NSUInteger)idx {
+- (FKFunction *)initWithInvocation:(NSInvocation *)inv parameterIndex:(NSUInteger)idx {
 	if ((self = [super init])) {
 		NSLog(@"inv: %@", inv);
 		invocation = [inv retain];
@@ -249,17 +249,10 @@ READ NSObject *target;
 	return self;
 }
 - (id):(id)arg {
-	NSLog(@"1");
-	[invocation setArgument:&arg atIndex:index];
-	NSLog(@"2");
+	[invocation setArgument:&arg atIndex:(index + 2)];
 	[invocation invoke];
-	NSLog(@"%@", invocation);
-	NSLog(@"3");
 	id anObject;
 	[invocation getReturnValue:&anObject];
-	NSLog(@"4");
-	NSLog(@"%@", anObject);
-	NSLog(@"5");
 	return anObject;
 }
 - (void)dealloc {
@@ -287,8 +280,8 @@ READ NSObject *target;
 	return [[[FKFunctionFromPointer alloc] initWithPointer:f] autorelease];
 }
 
-+ (FKFunction *)functionFromInvocation:(NSInvocation *)invocation appliedIndex:(NSUInteger)index {
-	return [[FKFunctionFromInvocation alloc] initWithInvocation:invocation appliedIndex:index];	
++ (FKFunction *)functionFromInvocation:(NSInvocation *)invocation parameterIndex:(NSUInteger)index {
+	return [[FKFunctionFromInvocation alloc] initWithInvocation:invocation parameterIndex:index];	
 }
 
 - (id):(id)arg {

@@ -31,7 +31,8 @@ Map across the elements of an array of names and turn them into people.
     NSArray *people = [names map:[FKFunction functionFromSelector:@selector(makePersonFromName:) target:self]];
 
     // Given each chapter has an array of pages
-	int pageCount = [[NSArray concat:[chapter map:functionS(pages)]] count];
+    NSArray *chapters = ...;
+    int pageCount = [[NSArray concat:[chapters map:functionS(pages)]] count];
 
 ### Nil values
 

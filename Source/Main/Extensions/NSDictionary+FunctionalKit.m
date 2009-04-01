@@ -11,4 +11,8 @@
     return [NSArray arrayWithArray:pairs];
 }
 
+- (FKOption *)maybeObjectForKey:(id)key {
+    return [FKOption fromNil:[self objectForKey:key]];
+}
+
 @end

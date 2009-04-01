@@ -208,6 +208,8 @@
 				E234314A0F6E72C90018BE5D /* FKEffect.m */,
 				E234314B0F6E72C90018BE5D /* FKFunction.h */,
 				E234314C0F6E72C90018BE5D /* FKFunction.m */,
+				4770AB5B0F82DAEA00F287B3 /* FKFunction+Common.h */,
+				4770AB5C0F82DAEA00F287B3 /* FKFunction+Common.m */,
 				E23431800F6E73A50018BE5D /* FKMacros.h */,
 				E234314D0F6E72C90018BE5D /* FKNewtype.h */,
 				E234314E0F6E72C90018BE5D /* FKP1.h */,
@@ -220,8 +222,6 @@
 				E23431540F6E72C90018BE5D /* FKUnit.h */,
 				E23431550F6E72C90018BE5D /* FKUnit.m */,
 				E23431560F6E72C90018BE5D /* functionalkit_Prefix.pch */,
-				4770AB5B0F82DAEA00F287B3 /* FKFunction+Common.h */,
-				4770AB5C0F82DAEA00F287B3 /* FKFunction+Common.m */,
 			);
 			path = Main;
 			sourceTree = "<group>";

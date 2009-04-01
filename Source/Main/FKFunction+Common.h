@@ -7,5 +7,4 @@
 
 + (FKFunction *)identity;
 
-+ (id)getSelf;
 @end

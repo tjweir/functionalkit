@@ -3,6 +3,7 @@
 // Core
 #import "FKEffect.h"
 #import "FKFunction.h"
+#import "FKFunction+Common.h"
 #import "FKMacros.h"
 #import "FKNewtype.h"
 #import "FKP1.h"

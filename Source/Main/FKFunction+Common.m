@@ -22,8 +22,4 @@ id IdentityF(id arg) {
 	return functionP(IdentityF);
 }
 
-+ (id)getSelf {
-	return self;
-}
-
 @end

@@ -12,5 +12,6 @@
 - (void)testConst {
 	STAssertEqualObjects(@"54", [[FKFunction const:@"54"] :@"wat"], nil);
 }
+
 @end
 

@@ -14,12 +14,16 @@ id IdentityF(id arg) {
 }
 
 + (FKFunction *)const:(id)constantReturnValue {
-	NSInvocation *inv = [NSInvocation invocationWithSelector:@selector(constHelper:b:) target:[FKFunction classAsId] arguments:NSARRAY(constantReturnValue)];
+	NSInvocation *inv = [NSInvocation invocationWithSelector:@selector(constHelper:b:) target:self arguments:NSARRAY(constantReturnValue)];
 	return [FKFunction functionFromInvocation:inv parameterIndex:1];
 }
 
 + (FKFunction *)identity {
 	return functionP(IdentityF);
+}
+
++ (id)getSelf {
+	return self;
 }
 
 @end

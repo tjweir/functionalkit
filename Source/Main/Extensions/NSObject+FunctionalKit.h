@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import "FKFunction.h"
 
 @interface NSObject (FunctionalKitExtensions)
 
@@ -10,4 +11,11 @@
 //   Function *f = functionTS([Person classAsId], name:)];
 - (id)classAsId;
 
+// Returns a partially applied function for the given selector. Pass NSNull for the argument won't be partially applied.
+// eg.
+//   FKFunction *f = [someObject functionForSelector:@selector(register:withName:) arguments:NSARRAY([NSNull null], @"name") applyIndex:0];
+//   [f :@"object"];
+// equivalent to:
+//   [someObject register:@"object" withName:@"object"];
+- (FKFunction *)functionForSelector:(SEL)selector arguments:(NSArray *)args applyIndex:(NSUInteger)i;
 @end

@@ -6,4 +6,5 @@
 + (FKFunction *)const:(id)constantReturnValue;
 
 + (FKFunction *)identity;
+
 @end

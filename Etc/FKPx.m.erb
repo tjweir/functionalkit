@@ -1,0 +1,54 @@
+#import "FKP<%= n %>.h"
+#import <objc/runtime.h>
+<% 
+macro_names = ('a'..'z').to_a[0,n]
+macro_bit = (1..n).to_a.map { |i| "_#{i}:#{macro_names[i-1]}" }.join(' ') 
+call_init_bit = (1..n).to_a.map { |i| "_#{i}:#{varnames[i-1]}" }.join(' ') 
+selector_bit = (1..n).to_a.map { |i| "_#{i}:(id)#{varnames[i-1]}" }.join(' ') 
+init_bit = (1..n).to_a.map { |i| "_#{i}:(id)new#{varnames[i-1]}" }.join(' ') 
+cls = "FKP#{n}"
+%>
+@implementation <%= cls %>
+
+@synthesize <%= varnames.join(', ') %>;
+
++ (<%= cls %> *)p<%= n %>With<%= selector_bit %> {
+    return [[[<%= cls %> alloc] initWith<%= call_init_bit %>] autorelease];
+}
+
+- (void)dealloc {
+<%= varnames.map { |i| "    [#{i} release];" }.join("\n") %>
+    [super dealloc];
+}
+
+#pragma mark Private methods.
+- (id)initWith<%= init_bit %> {
+    if (self = [super init]) {
+<%= varnames.map { |i| "        #{i} = [new#{i} retain];" }.join("\n") %>
+    }
+    return self;
+}
+
+- (NSString *)description {
+	return [NSString stringWithFormat:@"<%%s: <%= varnames.map { |i| "#{i}=%@"}.join(' ') %>>", class_getName([self class]), <%= varnames.join(', ') %>];
+}
+
+#pragma mark NSObject methods.
+- (BOOL)isEqual:(id)object {
+    if (object == nil || ![[object class] isEqual:[self class]]) {
+        return NO;
+    } else {
+        <%= cls %> *other = (<%= cls %> *) object;
+		return <%= varnames.map { |i| "[#{i} isEqual:other.#{i}]"}.join(" && ") %>;
+    }
+}
+
+- (NSUInteger)hash {
+    return <%= varnames.map { |i| "[#{i} hash]" }.join(" + ") %>;
+}
+
+#pragma mark NSCopying
+- (id)copyWithZone:(NSZone *)zone {
+	return [self retain];
+}
+@end

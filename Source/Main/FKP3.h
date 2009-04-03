@@ -7,7 +7,7 @@
 @interface FKP3 : NSObject <NSCopying> {
     id _1;
     id _2;
-	id _3;
+    id _3;
 }
 
 READ id _1;

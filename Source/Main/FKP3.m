@@ -1,11 +1,6 @@
 #import "FKP3.h"
 #import <objc/runtime.h>
 
-// TODO Add has, isEqual.
-
-@interface FKP3 (FKP3Private)
-@end
-
 @implementation FKP3
 
 @synthesize _1, _2, _3;
@@ -14,7 +9,7 @@
     return [[[FKP3 alloc] initWith_1:_1 _2:_2 _3:_3] autorelease];
 }
 
-- (void) dealloc {
+- (void)dealloc {
     [_1 release];
     [_2 release];
 	[_3 release];
@@ -31,7 +26,6 @@
     return self;
 }
 
-#pragma mark NSObject
 - (NSString *)description {
 	return [NSString stringWithFormat:@"<%s: _1=%@ _2=%@ _3=%@>", class_getName([self class]), _1, _2, _3];
 }

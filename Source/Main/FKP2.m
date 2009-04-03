@@ -1,11 +1,6 @@
 #import "FKP2.h"
 #import <objc/runtime.h>
 
-// TODO Add has, isEqual.
-
-@interface FKP2 (FKP2Private)
-@end
-
 @implementation FKP2
 
 @synthesize _1, _2;
@@ -14,7 +9,7 @@
     return [[[FKP2 alloc] initWith_1:_1 _2:_2] autorelease];
 }
 
-- (void) dealloc {
+- (void)dealloc {
     [_1 release];
     [_2 release];
     [super dealloc];
@@ -29,7 +24,6 @@
     return self;
 }
 
-#pragma mark NSObject
 - (NSString *)description {
 	return [NSString stringWithFormat:@"<%s: _1=%@ _2=%@>", class_getName([self class]), _1, _2];
 }

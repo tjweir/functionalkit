@@ -1,10 +1,5 @@
 #import "FKP1.h"
-
-// TODO Add has, isEqual.
-
-@interface FKP1 (FKP1Private)
-- (FKP1 *)initWith_1:(id)new_1;
-@end
+#import <objc/runtime.h>
 
 @implementation FKP1
 
@@ -14,7 +9,7 @@
     return [[[FKP1 alloc] initWith_1:_1] autorelease];
 }
 
-- (void) dealloc {
+- (void)dealloc {
     [_1 release];
     [super dealloc];
 }

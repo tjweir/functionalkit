@@ -41,11 +41,6 @@ READ id <FKFunction> wrappedF;
 - (id):(id)arg {
 	assert([arg isKindOfClass:[NSArray class]]);
     return [((NSArray *) arg) map:wrappedF];
-//	NSMutableArray *arr = [NSMutableArray arrayWithCapacity:[arg count]];
-//	for (id obj in argArray) {
-//		[arr addObject:[wrappedF :obj]];
-//	}
-//	return [NSArray arrayWithArray:arr];
 }
 
 #pragma mark NSObject methods.

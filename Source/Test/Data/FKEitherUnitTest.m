@@ -129,4 +129,7 @@
 	STAssertTrue([[either.left toOption] isNone], nil);
 }
 
+//- (void)testBind {
+//}
+
 @end

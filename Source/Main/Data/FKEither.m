@@ -53,6 +53,19 @@ NSString *FKFunctionalKitErrorDomain = @"FunctionalKit";
 	return either.isLeft ? either.value : value;
 }
 
+#pragma mark NSObject methods.
+- (BOOL)isEqual:(id)object {
+    return object == nil || ![[object class] isEqual:[self class]] ? NO : [self.either isEqual:((FKRightProjection *) object).either];
+}
+
+- (NSUInteger)hash {
+    return [either hash];
+}
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"<%s either: %@>", class_getName([self class]), self.either];
+}
+
 - (void)dealloc {
     [either release];
     [super dealloc];
@@ -102,6 +115,19 @@ NSString *FKFunctionalKitErrorDomain = @"FunctionalKit";
 
 - (id)orValue:(id)value {
 	return either.isRight ? either.value : value;
+}
+
+#pragma mark NSObject methods.
+- (BOOL)isEqual:(id)object {
+    return object == nil || ![[object class] isEqual:[self class]] ? NO : [self.either isEqual:((FKRightProjection *) object).either];
+}
+
+- (NSUInteger)hash {
+    return [either hash];
+}
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"<%s either: %@>", class_getName([self class]), self.either];
 }
 
 - (void)dealloc {

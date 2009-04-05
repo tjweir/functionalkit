@@ -27,7 +27,7 @@ READ id value;
 - (FKEither *)map:(id <FKFunction>)f;
 
 // Binds the given function across the projection.
-// f should be a fucntion with the following type: a -> FKEither[b].
+// f :: a -> FKEither b.
 - (FKEither *)bind:(id <FKFunction>)f;
 
 // Returns Some value if either is of this projection, else returns None

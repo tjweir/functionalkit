@@ -38,15 +38,9 @@ READ id <FKFunction> wrappedF;
 	return self;
 }
 
-// TODO This is just a map. Fix it.
 - (id):(id)arg {
 	assert([arg isKindOfClass:[NSArray class]]);
-	NSArray *argArray = arg;
-	NSMutableArray *arr = [NSMutableArray arrayWithCapacity:[arg count]];
-	for (id obj in argArray) {
-		[arr addObject:[wrappedF :obj]];
-	}
-	return [NSArray arrayWithArray:arr];
+    return [((NSArray *) arg) map:wrappedF];
 }
 
 #pragma mark NSObject methods.

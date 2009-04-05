@@ -63,6 +63,12 @@
     }
 }
 
+- (void)testCanLiftAFunctionIntoAnArray {
+    NSArray *array = NSARRAY(@"a", @"b", @"c");
+    id <FKFunction> liftedF = [NSArray liftFunction:functionS(uppercaseString)];
+    STAssertEqualObjects(NSARRAY(@"A", @"B", @"C"), [liftedF :array], nil);
+}
+
 - (BOOL)isStringContainingOne:(id)string {
     return [string isEqual:@"1"];
 }

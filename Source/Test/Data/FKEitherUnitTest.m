@@ -129,4 +129,24 @@
 	STAssertTrue([[either.left toOption] isNone], nil);
 }
 
+- (void)testBindLeftConcatentatesToProduceASingleEither {
+	FKEither *either = [FKEither leftWithValue:@"v"];
+    FKEither *afterBind = [either.left bind:functionTS(self, toLeft:)];
+    STAssertEqualObjects(either, afterBind, nil);
+}
+
+- (void)testBindRightConcatentatesToProduceASingleEither {
+	FKEither *either = [FKEither rightWithValue:@"v"];
+    FKEither *afterBind = [either.right bind:functionTS(self, toRight:)];
+    STAssertEqualObjects(either, afterBind, nil);
+}
+
+- (FKEither *)toLeft:(NSString *)string {
+    return [FKEither leftWithValue:string];
+}
+
+- (FKEither *)toRight:(NSString *)string {
+    return [FKEither rightWithValue:string];
+}
+
 @end

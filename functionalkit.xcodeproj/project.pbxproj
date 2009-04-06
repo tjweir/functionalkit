@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		474BA4E60F898AC100E41262 /* FKP4.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA4DD0F898AC100E41262 /* FKP4.m */; };
+		474BA4E70F898AC100E41262 /* FKP5.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA4DF0F898AC100E41262 /* FKP5.m */; };
+		474BA4E80F898AC100E41262 /* FKP6.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA4E10F898AC100E41262 /* FKP6.m */; };
+		474BA4E90F898AC100E41262 /* FKP7.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA4E30F898AC100E41262 /* FKP7.m */; };
+		474BA4EA0F898AC100E41262 /* FKP8.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA4E50F898AC100E41262 /* FKP8.m */; };
+		474BA4EB0F898AC100E41262 /* FKP4.h in Headers */ = {isa = PBXBuildFile; fileRef = 474BA4DC0F898AC100E41262 /* FKP4.h */; };
+		474BA4EC0F898AC100E41262 /* FKP4.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA4DD0F898AC100E41262 /* FKP4.m */; };
+		474BA4ED0F898AC100E41262 /* FKP5.h in Headers */ = {isa = PBXBuildFile; fileRef = 474BA4DE0F898AC100E41262 /* FKP5.h */; };
+		474BA4EE0F898AC100E41262 /* FKP5.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA4DF0F898AC100E41262 /* FKP5.m */; };
+		474BA4EF0F898AC100E41262 /* FKP6.h in Headers */ = {isa = PBXBuildFile; fileRef = 474BA4E00F898AC100E41262 /* FKP6.h */; };
+		474BA4F00F898AC100E41262 /* FKP6.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA4E10F898AC100E41262 /* FKP6.m */; };
+		474BA4F10F898AC100E41262 /* FKP7.h in Headers */ = {isa = PBXBuildFile; fileRef = 474BA4E20F898AC100E41262 /* FKP7.h */; };
+		474BA4F20F898AC100E41262 /* FKP7.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA4E30F898AC100E41262 /* FKP7.m */; };
+		474BA4F30F898AC100E41262 /* FKP8.h in Headers */ = {isa = PBXBuildFile; fileRef = 474BA4E40F898AC100E41262 /* FKP8.h */; };
+		474BA4F40F898AC100E41262 /* FKP8.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA4E50F898AC100E41262 /* FKP8.m */; };
 		4770AB5D0F82DAEA00F287B3 /* FKFunction+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 4770AB5C0F82DAEA00F287B3 /* FKFunction+Common.m */; };
 		4770AB670F82DCDE00F287B3 /* FKFunctionCommonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4770AB660F82DCDE00F287B3 /* FKFunctionCommonTests.m */; };
 		47F1FA0E0F81E1C800239B9F /* NSInvocation+FunctionalKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F1FA0D0F81E1C800239B9F /* NSInvocation+FunctionalKit.m */; };
@@ -85,6 +100,16 @@
 
 /* Begin PBXFileReference section */
 		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		474BA4DC0F898AC100E41262 /* FKP4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKP4.h; sourceTree = "<group>"; };
+		474BA4DD0F898AC100E41262 /* FKP4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKP4.m; sourceTree = "<group>"; };
+		474BA4DE0F898AC100E41262 /* FKP5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKP5.h; sourceTree = "<group>"; };
+		474BA4DF0F898AC100E41262 /* FKP5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKP5.m; sourceTree = "<group>"; };
+		474BA4E00F898AC100E41262 /* FKP6.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKP6.h; sourceTree = "<group>"; };
+		474BA4E10F898AC100E41262 /* FKP6.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKP6.m; sourceTree = "<group>"; };
+		474BA4E20F898AC100E41262 /* FKP7.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKP7.h; sourceTree = "<group>"; };
+		474BA4E30F898AC100E41262 /* FKP7.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKP7.m; sourceTree = "<group>"; };
+		474BA4E40F898AC100E41262 /* FKP8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKP8.h; sourceTree = "<group>"; };
+		474BA4E50F898AC100E41262 /* FKP8.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKP8.m; sourceTree = "<group>"; };
 		4770AB5B0F82DAEA00F287B3 /* FKFunction+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FKFunction+Common.h"; sourceTree = "<group>"; };
 		4770AB5C0F82DAEA00F287B3 /* FKFunction+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FKFunction+Common.m"; sourceTree = "<group>"; };
 		4770AB660F82DCDE00F287B3 /* FKFunctionCommonTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKFunctionCommonTests.m; sourceTree = "<group>"; };
@@ -218,6 +243,16 @@
 				E23431510F6E72C90018BE5D /* FKP2.m */,
 				E23431520F6E72C90018BE5D /* FKP3.h */,
 				E23431530F6E72C90018BE5D /* FKP3.m */,
+				474BA4DC0F898AC100E41262 /* FKP4.h */,
+				474BA4DD0F898AC100E41262 /* FKP4.m */,
+				474BA4DE0F898AC100E41262 /* FKP5.h */,
+				474BA4DF0F898AC100E41262 /* FKP5.m */,
+				474BA4E00F898AC100E41262 /* FKP6.h */,
+				474BA4E10F898AC100E41262 /* FKP6.m */,
+				474BA4E20F898AC100E41262 /* FKP7.h */,
+				474BA4E30F898AC100E41262 /* FKP7.m */,
+				474BA4E40F898AC100E41262 /* FKP8.h */,
+				474BA4E50F898AC100E41262 /* FKP8.m */,
 				E2065A960F807C1B0034E426 /* FKPrelude.h */,
 				E23431540F6E72C90018BE5D /* FKUnit.h */,
 				E23431550F6E72C90018BE5D /* FKUnit.m */,
@@ -365,6 +400,11 @@
 				E2843E650F7C6433004D8369 /* NSObject+FunctionalKit.h in Headers */,
 				E2843EBA0F7C7004004D8369 /* NSArray+FunctionalKit.h in Headers */,
 				47F1FA0F0F81E1CF00239B9F /* NSInvocation+FunctionalKit.h in Headers */,
+				474BA4EB0F898AC100E41262 /* FKP4.h in Headers */,
+				474BA4ED0F898AC100E41262 /* FKP5.h in Headers */,
+				474BA4EF0F898AC100E41262 /* FKP6.h in Headers */,
+				474BA4F10F898AC100E41262 /* FKP7.h in Headers */,
+				474BA4F30F898AC100E41262 /* FKP8.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +513,11 @@
 				E2843E660F7C6433004D8369 /* NSObject+FunctionalKit.m in Sources */,
 				E2843EBB0F7C7004004D8369 /* NSArray+FunctionalKit.m in Sources */,
 				47F1FA100F81E1CF00239B9F /* NSInvocation+FunctionalKit.m in Sources */,
+				474BA4EC0F898AC100E41262 /* FKP4.m in Sources */,
+				474BA4EE0F898AC100E41262 /* FKP5.m in Sources */,
+				474BA4F00F898AC100E41262 /* FKP6.m in Sources */,
+				474BA4F20F898AC100E41262 /* FKP7.m in Sources */,
+				474BA4F40F898AC100E41262 /* FKP8.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +549,11 @@
 				47F1FA0E0F81E1C800239B9F /* NSInvocation+FunctionalKit.m in Sources */,
 				4770AB5D0F82DAEA00F287B3 /* FKFunction+Common.m in Sources */,
 				4770AB670F82DCDE00F287B3 /* FKFunctionCommonTests.m in Sources */,
+				474BA4E60F898AC100E41262 /* FKP4.m in Sources */,
+				474BA4E70F898AC100E41262 /* FKP5.m in Sources */,
+				474BA4E80F898AC100E41262 /* FKP6.m in Sources */,
+				474BA4E90F898AC100E41262 /* FKP7.m in Sources */,
+				474BA4EA0F898AC100E41262 /* FKP8.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

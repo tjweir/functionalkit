@@ -2,7 +2,7 @@
 /*
  Macros for creating instant types based on P*'s.
  Provides somewhat typesafe contructors and accessors.
- 
+
  Your.h => NewTypeInterface(MyNewType, NSString, fieldName);
  Your.m => NewTypeImplementation(MyNewType, NSString, fieldName);
  
@@ -44,27 +44,27 @@
 @end \
 @implementation NSArrayTo##newtype \
 - (id):(id)arg { \
-if (![arg isKindOfClass:[NSArray class]] || ([arg count] != 1)) { \
-return [FKOption none]; \
-} \
-id _1 = [arg objectAtIndex:0]; \
-if ( [_1 isKindOfClass:[wrappedtype1 class]] ) { \
-return [FKOption some:[newtype acc1:_1]]; \
-} \
-return [FKOption none]; \
+	if (![arg isKindOfClass:[NSArray class]] || ([arg count] != 1)) { \
+		return [FKOption none]; \
+	} \
+    id _1 = [arg objectAtIndex:0]; \
+    if ( [_1 isKindOfClass:[wrappedtype1 class]] ) { \
+		return [FKOption some:[newtype acc1:_1]]; \
+	} \
+	return [FKOption none]; \
 } \
 @end \
 @implementation NSDictionaryTo##newtype \
 - (id):(id)dict { \
-if (![dict isKindOfClass:[NSDictionary class]]) { \
-return [FKOption none]; \
-} \
-NSArray *keys = NSARRAY([NSString stringWithCString:#acc1]);\
-NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
-id <FKFunction> arrayToType = [NSArrayTo##newtype new]; \
-FKOption *result = [arrayToType :values]; \
-[arrayToType release]; \
-return result; \
+	if (![dict isKindOfClass:[NSDictionary class]]) { \
+		return [FKOption none]; \
+	} \
+	NSArray *keys = NSARRAY([NSString stringWithCString:#acc1]);\
+	NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
+	id <FKFunction> arrayToType = [NSArrayTo##newtype new]; \
+	FKOption *result = [arrayToType :values]; \
+	[arrayToType release]; \
+	return result; \
 } \
 @end
 
@@ -86,28 +86,28 @@ return result; \
 @end \
 @implementation NSArrayTo##newtype \
 - (id):(id)arg { \
-if (![arg isKindOfClass:[NSArray class]] || ([arg count] != 2)) { \
-return [FKOption none]; \
-} \
-id _1 = [arg objectAtIndex:0]; \
-id _2 = [arg objectAtIndex:1]; \
-if ( [_1 isKindOfClass:[wrappedtype1 class]] && [_2 isKindOfClass:[wrappedtype2 class]] ) { \
-return [FKOption some:[newtype acc1:_1 acc2:_2]]; \
-} \
-return [FKOption none]; \
+	if (![arg isKindOfClass:[NSArray class]] || ([arg count] != 2)) { \
+		return [FKOption none]; \
+	} \
+    id _1 = [arg objectAtIndex:0]; \
+    id _2 = [arg objectAtIndex:1]; \
+    if ( [_1 isKindOfClass:[wrappedtype1 class]] && [_2 isKindOfClass:[wrappedtype2 class]] ) { \
+		return [FKOption some:[newtype acc1:_1 acc2:_2]]; \
+	} \
+	return [FKOption none]; \
 } \
 @end \
 @implementation NSDictionaryTo##newtype \
 - (id):(id)dict { \
-if (![dict isKindOfClass:[NSDictionary class]]) { \
-return [FKOption none]; \
-} \
-NSArray *keys = NSARRAY([NSString stringWithCString:#acc1], [NSString stringWithCString:#acc2]);\
-NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
-id <FKFunction> arrayToType = [NSArrayTo##newtype new]; \
-FKOption *result = [arrayToType :values]; \
-[arrayToType release]; \
-return result; \
+	if (![dict isKindOfClass:[NSDictionary class]]) { \
+		return [FKOption none]; \
+	} \
+	NSArray *keys = NSARRAY([NSString stringWithCString:#acc1], [NSString stringWithCString:#acc2]);\
+	NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
+	id <FKFunction> arrayToType = [NSArrayTo##newtype new]; \
+	FKOption *result = [arrayToType :values]; \
+	[arrayToType release]; \
+	return result; \
 } \
 @end
 
@@ -130,29 +130,29 @@ return result; \
 @end \
 @implementation NSArrayTo##newtype \
 - (id):(id)arg { \
-if (![arg isKindOfClass:[NSArray class]] || ([arg count] != 3)) { \
-return [FKOption none]; \
-} \
-id _1 = [arg objectAtIndex:0]; \
-id _2 = [arg objectAtIndex:1]; \
-id _3 = [arg objectAtIndex:2]; \
-if ( [_1 isKindOfClass:[wrappedtype1 class]] && [_2 isKindOfClass:[wrappedtype2 class]] && [_3 isKindOfClass:[wrappedtype3 class]] ) { \
-return [FKOption some:[newtype acc1:_1 acc2:_2 acc3:_3]]; \
-} \
-return [FKOption none]; \
+	if (![arg isKindOfClass:[NSArray class]] || ([arg count] != 3)) { \
+		return [FKOption none]; \
+	} \
+    id _1 = [arg objectAtIndex:0]; \
+    id _2 = [arg objectAtIndex:1]; \
+    id _3 = [arg objectAtIndex:2]; \
+    if ( [_1 isKindOfClass:[wrappedtype1 class]] && [_2 isKindOfClass:[wrappedtype2 class]] && [_3 isKindOfClass:[wrappedtype3 class]] ) { \
+		return [FKOption some:[newtype acc1:_1 acc2:_2 acc3:_3]]; \
+	} \
+	return [FKOption none]; \
 } \
 @end \
 @implementation NSDictionaryTo##newtype \
 - (id):(id)dict { \
-if (![dict isKindOfClass:[NSDictionary class]]) { \
-return [FKOption none]; \
-} \
-NSArray *keys = NSARRAY([NSString stringWithCString:#acc1], [NSString stringWithCString:#acc2], [NSString stringWithCString:#acc3]);\
-NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
-id <FKFunction> arrayToType = [NSArrayTo##newtype new]; \
-FKOption *result = [arrayToType :values]; \
-[arrayToType release]; \
-return result; \
+	if (![dict isKindOfClass:[NSDictionary class]]) { \
+		return [FKOption none]; \
+	} \
+	NSArray *keys = NSARRAY([NSString stringWithCString:#acc1], [NSString stringWithCString:#acc2], [NSString stringWithCString:#acc3]);\
+	NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
+	id <FKFunction> arrayToType = [NSArrayTo##newtype new]; \
+	FKOption *result = [arrayToType :values]; \
+	[arrayToType release]; \
+	return result; \
 } \
 @end
 
@@ -176,30 +176,30 @@ return result; \
 @end \
 @implementation NSArrayTo##newtype \
 - (id):(id)arg { \
-if (![arg isKindOfClass:[NSArray class]] || ([arg count] != 4)) { \
-return [FKOption none]; \
-} \
-id _1 = [arg objectAtIndex:0]; \
-id _2 = [arg objectAtIndex:1]; \
-id _3 = [arg objectAtIndex:2]; \
-id _4 = [arg objectAtIndex:3]; \
-if ( [_1 isKindOfClass:[wrappedtype1 class]] && [_2 isKindOfClass:[wrappedtype2 class]] && [_3 isKindOfClass:[wrappedtype3 class]] && [_4 isKindOfClass:[wrappedtype4 class]] ) { \
-return [FKOption some:[newtype acc1:_1 acc2:_2 acc3:_3 acc4:_4]]; \
-} \
-return [FKOption none]; \
+	if (![arg isKindOfClass:[NSArray class]] || ([arg count] != 4)) { \
+		return [FKOption none]; \
+	} \
+    id _1 = [arg objectAtIndex:0]; \
+    id _2 = [arg objectAtIndex:1]; \
+    id _3 = [arg objectAtIndex:2]; \
+    id _4 = [arg objectAtIndex:3]; \
+    if ( [_1 isKindOfClass:[wrappedtype1 class]] && [_2 isKindOfClass:[wrappedtype2 class]] && [_3 isKindOfClass:[wrappedtype3 class]] && [_4 isKindOfClass:[wrappedtype4 class]] ) { \
+		return [FKOption some:[newtype acc1:_1 acc2:_2 acc3:_3 acc4:_4]]; \
+	} \
+	return [FKOption none]; \
 } \
 @end \
 @implementation NSDictionaryTo##newtype \
 - (id):(id)dict { \
-if (![dict isKindOfClass:[NSDictionary class]]) { \
-return [FKOption none]; \
-} \
-NSArray *keys = NSARRAY([NSString stringWithCString:#acc1], [NSString stringWithCString:#acc2], [NSString stringWithCString:#acc3], [NSString stringWithCString:#acc4]);\
-NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
-id <FKFunction> arrayToType = [NSArrayTo##newtype new]; \
-FKOption *result = [arrayToType :values]; \
-[arrayToType release]; \
-return result; \
+	if (![dict isKindOfClass:[NSDictionary class]]) { \
+		return [FKOption none]; \
+	} \
+	NSArray *keys = NSARRAY([NSString stringWithCString:#acc1], [NSString stringWithCString:#acc2], [NSString stringWithCString:#acc3], [NSString stringWithCString:#acc4]);\
+	NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
+	id <FKFunction> arrayToType = [NSArrayTo##newtype new]; \
+	FKOption *result = [arrayToType :values]; \
+	[arrayToType release]; \
+	return result; \
 } \
 @end
 
@@ -224,31 +224,31 @@ return result; \
 @end \
 @implementation NSArrayTo##newtype \
 - (id):(id)arg { \
-if (![arg isKindOfClass:[NSArray class]] || ([arg count] != 5)) { \
-return [FKOption none]; \
-} \
-id _1 = [arg objectAtIndex:0]; \
-id _2 = [arg objectAtIndex:1]; \
-id _3 = [arg objectAtIndex:2]; \
-id _4 = [arg objectAtIndex:3]; \
-id _5 = [arg objectAtIndex:4]; \
-if ( [_1 isKindOfClass:[wrappedtype1 class]] && [_2 isKindOfClass:[wrappedtype2 class]] && [_3 isKindOfClass:[wrappedtype3 class]] && [_4 isKindOfClass:[wrappedtype4 class]] && [_5 isKindOfClass:[wrappedtype5 class]] ) { \
-return [FKOption some:[newtype acc1:_1 acc2:_2 acc3:_3 acc4:_4 acc5:_5]]; \
-} \
-return [FKOption none]; \
+	if (![arg isKindOfClass:[NSArray class]] || ([arg count] != 5)) { \
+		return [FKOption none]; \
+	} \
+    id _1 = [arg objectAtIndex:0]; \
+    id _2 = [arg objectAtIndex:1]; \
+    id _3 = [arg objectAtIndex:2]; \
+    id _4 = [arg objectAtIndex:3]; \
+    id _5 = [arg objectAtIndex:4]; \
+    if ( [_1 isKindOfClass:[wrappedtype1 class]] && [_2 isKindOfClass:[wrappedtype2 class]] && [_3 isKindOfClass:[wrappedtype3 class]] && [_4 isKindOfClass:[wrappedtype4 class]] && [_5 isKindOfClass:[wrappedtype5 class]] ) { \
+		return [FKOption some:[newtype acc1:_1 acc2:_2 acc3:_3 acc4:_4 acc5:_5]]; \
+	} \
+	return [FKOption none]; \
 } \
 @end \
 @implementation NSDictionaryTo##newtype \
 - (id):(id)dict { \
-if (![dict isKindOfClass:[NSDictionary class]]) { \
-return [FKOption none]; \
-} \
-NSArray *keys = NSARRAY([NSString stringWithCString:#acc1], [NSString stringWithCString:#acc2], [NSString stringWithCString:#acc3], [NSString stringWithCString:#acc4], [NSString stringWithCString:#acc5]);\
-NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
-id <FKFunction> arrayToType = [NSArrayTo##newtype new]; \
-FKOption *result = [arrayToType :values]; \
-[arrayToType release]; \
-return result; \
+	if (![dict isKindOfClass:[NSDictionary class]]) { \
+		return [FKOption none]; \
+	} \
+	NSArray *keys = NSARRAY([NSString stringWithCString:#acc1], [NSString stringWithCString:#acc2], [NSString stringWithCString:#acc3], [NSString stringWithCString:#acc4], [NSString stringWithCString:#acc5]);\
+	NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
+	id <FKFunction> arrayToType = [NSArrayTo##newtype new]; \
+	FKOption *result = [arrayToType :values]; \
+	[arrayToType release]; \
+	return result; \
 } \
 @end
 
@@ -274,32 +274,32 @@ return result; \
 @end \
 @implementation NSArrayTo##newtype \
 - (id):(id)arg { \
-if (![arg isKindOfClass:[NSArray class]] || ([arg count] != 6)) { \
-return [FKOption none]; \
-} \
-id _1 = [arg objectAtIndex:0]; \
-id _2 = [arg objectAtIndex:1]; \
-id _3 = [arg objectAtIndex:2]; \
-id _4 = [arg objectAtIndex:3]; \
-id _5 = [arg objectAtIndex:4]; \
-id _6 = [arg objectAtIndex:5]; \
-if ( [_1 isKindOfClass:[wrappedtype1 class]] && [_2 isKindOfClass:[wrappedtype2 class]] && [_3 isKindOfClass:[wrappedtype3 class]] && [_4 isKindOfClass:[wrappedtype4 class]] && [_5 isKindOfClass:[wrappedtype5 class]] && [_6 isKindOfClass:[wrappedtype6 class]] ) { \
-return [FKOption some:[newtype acc1:_1 acc2:_2 acc3:_3 acc4:_4 acc5:_5 acc6:_6]]; \
-} \
-return [FKOption none]; \
+	if (![arg isKindOfClass:[NSArray class]] || ([arg count] != 6)) { \
+		return [FKOption none]; \
+	} \
+    id _1 = [arg objectAtIndex:0]; \
+    id _2 = [arg objectAtIndex:1]; \
+    id _3 = [arg objectAtIndex:2]; \
+    id _4 = [arg objectAtIndex:3]; \
+    id _5 = [arg objectAtIndex:4]; \
+    id _6 = [arg objectAtIndex:5]; \
+    if ( [_1 isKindOfClass:[wrappedtype1 class]] && [_2 isKindOfClass:[wrappedtype2 class]] && [_3 isKindOfClass:[wrappedtype3 class]] && [_4 isKindOfClass:[wrappedtype4 class]] && [_5 isKindOfClass:[wrappedtype5 class]] && [_6 isKindOfClass:[wrappedtype6 class]] ) { \
+		return [FKOption some:[newtype acc1:_1 acc2:_2 acc3:_3 acc4:_4 acc5:_5 acc6:_6]]; \
+	} \
+	return [FKOption none]; \
 } \
 @end \
 @implementation NSDictionaryTo##newtype \
 - (id):(id)dict { \
-if (![dict isKindOfClass:[NSDictionary class]]) { \
-return [FKOption none]; \
-} \
-NSArray *keys = NSARRAY([NSString stringWithCString:#acc1], [NSString stringWithCString:#acc2], [NSString stringWithCString:#acc3], [NSString stringWithCString:#acc4], [NSString stringWithCString:#acc5], [NSString stringWithCString:#acc6]);\
-NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
-id <FKFunction> arrayToType = [NSArrayTo##newtype new]; \
-FKOption *result = [arrayToType :values]; \
-[arrayToType release]; \
-return result; \
+	if (![dict isKindOfClass:[NSDictionary class]]) { \
+		return [FKOption none]; \
+	} \
+	NSArray *keys = NSARRAY([NSString stringWithCString:#acc1], [NSString stringWithCString:#acc2], [NSString stringWithCString:#acc3], [NSString stringWithCString:#acc4], [NSString stringWithCString:#acc5], [NSString stringWithCString:#acc6]);\
+	NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
+	id <FKFunction> arrayToType = [NSArrayTo##newtype new]; \
+	FKOption *result = [arrayToType :values]; \
+	[arrayToType release]; \
+	return result; \
 } \
 @end
 
@@ -326,33 +326,33 @@ return result; \
 @end \
 @implementation NSArrayTo##newtype \
 - (id):(id)arg { \
-if (![arg isKindOfClass:[NSArray class]] || ([arg count] != 7)) { \
-return [FKOption none]; \
-} \
-id _1 = [arg objectAtIndex:0]; \
-id _2 = [arg objectAtIndex:1]; \
-id _3 = [arg objectAtIndex:2]; \
-id _4 = [arg objectAtIndex:3]; \
-id _5 = [arg objectAtIndex:4]; \
-id _6 = [arg objectAtIndex:5]; \
-id _7 = [arg objectAtIndex:6]; \
-if ( [_1 isKindOfClass:[wrappedtype1 class]] && [_2 isKindOfClass:[wrappedtype2 class]] && [_3 isKindOfClass:[wrappedtype3 class]] && [_4 isKindOfClass:[wrappedtype4 class]] && [_5 isKindOfClass:[wrappedtype5 class]] && [_6 isKindOfClass:[wrappedtype6 class]] && [_7 isKindOfClass:[wrappedtype7 class]] ) { \
-return [FKOption some:[newtype acc1:_1 acc2:_2 acc3:_3 acc4:_4 acc5:_5 acc6:_6 acc7:_7]]; \
-} \
-return [FKOption none]; \
+	if (![arg isKindOfClass:[NSArray class]] || ([arg count] != 7)) { \
+		return [FKOption none]; \
+	} \
+    id _1 = [arg objectAtIndex:0]; \
+    id _2 = [arg objectAtIndex:1]; \
+    id _3 = [arg objectAtIndex:2]; \
+    id _4 = [arg objectAtIndex:3]; \
+    id _5 = [arg objectAtIndex:4]; \
+    id _6 = [arg objectAtIndex:5]; \
+    id _7 = [arg objectAtIndex:6]; \
+    if ( [_1 isKindOfClass:[wrappedtype1 class]] && [_2 isKindOfClass:[wrappedtype2 class]] && [_3 isKindOfClass:[wrappedtype3 class]] && [_4 isKindOfClass:[wrappedtype4 class]] && [_5 isKindOfClass:[wrappedtype5 class]] && [_6 isKindOfClass:[wrappedtype6 class]] && [_7 isKindOfClass:[wrappedtype7 class]] ) { \
+		return [FKOption some:[newtype acc1:_1 acc2:_2 acc3:_3 acc4:_4 acc5:_5 acc6:_6 acc7:_7]]; \
+	} \
+	return [FKOption none]; \
 } \
 @end \
 @implementation NSDictionaryTo##newtype \
 - (id):(id)dict { \
-if (![dict isKindOfClass:[NSDictionary class]]) { \
-return [FKOption none]; \
-} \
-NSArray *keys = NSARRAY([NSString stringWithCString:#acc1], [NSString stringWithCString:#acc2], [NSString stringWithCString:#acc3], [NSString stringWithCString:#acc4], [NSString stringWithCString:#acc5], [NSString stringWithCString:#acc6], [NSString stringWithCString:#acc7]);\
-NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
-id <FKFunction> arrayToType = [NSArrayTo##newtype new]; \
-FKOption *result = [arrayToType :values]; \
-[arrayToType release]; \
-return result; \
+	if (![dict isKindOfClass:[NSDictionary class]]) { \
+		return [FKOption none]; \
+	} \
+	NSArray *keys = NSARRAY([NSString stringWithCString:#acc1], [NSString stringWithCString:#acc2], [NSString stringWithCString:#acc3], [NSString stringWithCString:#acc4], [NSString stringWithCString:#acc5], [NSString stringWithCString:#acc6], [NSString stringWithCString:#acc7]);\
+	NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
+	id <FKFunction> arrayToType = [NSArrayTo##newtype new]; \
+	FKOption *result = [arrayToType :values]; \
+	[arrayToType release]; \
+	return result; \
 } \
 @end
 
@@ -380,34 +380,34 @@ return result; \
 @end \
 @implementation NSArrayTo##newtype \
 - (id):(id)arg { \
-if (![arg isKindOfClass:[NSArray class]] || ([arg count] != 8)) { \
-return [FKOption none]; \
-} \
-id _1 = [arg objectAtIndex:0]; \
-id _2 = [arg objectAtIndex:1]; \
-id _3 = [arg objectAtIndex:2]; \
-id _4 = [arg objectAtIndex:3]; \
-id _5 = [arg objectAtIndex:4]; \
-id _6 = [arg objectAtIndex:5]; \
-id _7 = [arg objectAtIndex:6]; \
-id _8 = [arg objectAtIndex:7]; \
-if ( [_1 isKindOfClass:[wrappedtype1 class]] && [_2 isKindOfClass:[wrappedtype2 class]] && [_3 isKindOfClass:[wrappedtype3 class]] && [_4 isKindOfClass:[wrappedtype4 class]] && [_5 isKindOfClass:[wrappedtype5 class]] && [_6 isKindOfClass:[wrappedtype6 class]] && [_7 isKindOfClass:[wrappedtype7 class]] && [_8 isKindOfClass:[wrappedtype8 class]] ) { \
-return [FKOption some:[newtype acc1:_1 acc2:_2 acc3:_3 acc4:_4 acc5:_5 acc6:_6 acc7:_7 acc8:_8]]; \
-} \
-return [FKOption none]; \
+	if (![arg isKindOfClass:[NSArray class]] || ([arg count] != 8)) { \
+		return [FKOption none]; \
+	} \
+    id _1 = [arg objectAtIndex:0]; \
+    id _2 = [arg objectAtIndex:1]; \
+    id _3 = [arg objectAtIndex:2]; \
+    id _4 = [arg objectAtIndex:3]; \
+    id _5 = [arg objectAtIndex:4]; \
+    id _6 = [arg objectAtIndex:5]; \
+    id _7 = [arg objectAtIndex:6]; \
+    id _8 = [arg objectAtIndex:7]; \
+    if ( [_1 isKindOfClass:[wrappedtype1 class]] && [_2 isKindOfClass:[wrappedtype2 class]] && [_3 isKindOfClass:[wrappedtype3 class]] && [_4 isKindOfClass:[wrappedtype4 class]] && [_5 isKindOfClass:[wrappedtype5 class]] && [_6 isKindOfClass:[wrappedtype6 class]] && [_7 isKindOfClass:[wrappedtype7 class]] && [_8 isKindOfClass:[wrappedtype8 class]] ) { \
+		return [FKOption some:[newtype acc1:_1 acc2:_2 acc3:_3 acc4:_4 acc5:_5 acc6:_6 acc7:_7 acc8:_8]]; \
+	} \
+	return [FKOption none]; \
 } \
 @end \
 @implementation NSDictionaryTo##newtype \
 - (id):(id)dict { \
-if (![dict isKindOfClass:[NSDictionary class]]) { \
-return [FKOption none]; \
-} \
-NSArray *keys = NSARRAY([NSString stringWithCString:#acc1], [NSString stringWithCString:#acc2], [NSString stringWithCString:#acc3], [NSString stringWithCString:#acc4], [NSString stringWithCString:#acc5], [NSString stringWithCString:#acc6], [NSString stringWithCString:#acc7], [NSString stringWithCString:#acc8]);\
-NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
-id <FKFunction> arrayToType = [NSArrayTo##newtype new]; \
-FKOption *result = [arrayToType :values]; \
-[arrayToType release]; \
-return result; \
+	if (![dict isKindOfClass:[NSDictionary class]]) { \
+		return [FKOption none]; \
+	} \
+	NSArray *keys = NSARRAY([NSString stringWithCString:#acc1], [NSString stringWithCString:#acc2], [NSString stringWithCString:#acc3], [NSString stringWithCString:#acc4], [NSString stringWithCString:#acc5], [NSString stringWithCString:#acc6], [NSString stringWithCString:#acc7], [NSString stringWithCString:#acc8]);\
+	NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
+	id <FKFunction> arrayToType = [NSArrayTo##newtype new]; \
+	FKOption *result = [arrayToType :values]; \
+	[arrayToType release]; \
+	return result; \
 } \
 @end
 

@@ -125,4 +125,8 @@
 	return self.isSome ? [FKEither rightWithValue:self.some] : [FKEither leftWithValue:left];
 }
 
+- (FKEither *)toEitherWithError:(NSString *)reason {
+	return self.isSome ? [FKEither rightWithValue:self.some] : [FKEither errorWithReason:reason];
+}
+
 @end

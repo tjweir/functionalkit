@@ -42,6 +42,9 @@ READ BOOL isSome;
 // Returns an either projection of this optional value; |left| in a Left if this optional holds no value, or this optional's value in Right.
 - (FKEither *)toEither:(id)left;
 
+// Returns an either projection of this optional value; an NSError in the Left if this optional holds no value, or this optional's value in Right.
+- (FKEither *)toEitherWithError:(NSString *)reason;
+
 @end
 
 @interface FKNone : FKOption

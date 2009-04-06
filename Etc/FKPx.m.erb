@@ -38,7 +38,7 @@ cls = "FKP#{n}"
     if (object == nil || ![[object class] isEqual:[self class]]) {
         return NO;
     } else {
-        <%= cls %> *other = (<%= cls %> *) object;
+        <%= cls %> *other = (<%= cls %> *)object;
 		return <%= varnames.map { |i| "[#{i} isEqual:other.#{i}]"}.join(" && ") %>;
     }
 }

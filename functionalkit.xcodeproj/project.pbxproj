@@ -70,10 +70,6 @@
 		47B07DE60F96E38500503E8B /* NSObject+FunctionalKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B07DAA0F96E38500503E8B /* NSObject+FunctionalKit.m */; };
 		E2065A910F8078AB0034E426 /* NSDictionaryExtensionsUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E2065A900F8078AB0034E426 /* NSDictionaryExtensionsUnitTest.m */; };
 		E23431720F6E72C90018BE5D /* functionalkit_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = E23431560F6E72C90018BE5D /* functionalkit_Prefix.pch */; };
-		E23431730F6E72C90018BE5D /* FKEitherUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E23431590F6E72C90018BE5D /* FKEitherUnitTest.m */; };
-		E23431740F6E72C90018BE5D /* FKOptionUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E234315A0F6E72C90018BE5D /* FKOptionUnitTest.m */; };
-		E23431750F6E72C90018BE5D /* FKFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E234315B0F6E72C90018BE5D /* FKFunctionTests.m */; };
-		E23431760F6E72C90018BE5D /* FKNewtypeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E234315C0F6E72C90018BE5D /* FKNewtypeTests.m */; };
 		E23431790F6E72F20018BE5D /* FKEitherUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E23431590F6E72C90018BE5D /* FKEitherUnitTest.m */; };
 		E234317A0F6E72F30018BE5D /* FKFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E234315B0F6E72C90018BE5D /* FKFunctionTests.m */; };
 		E234317B0F6E72F40018BE5D /* FKNewtypeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E234315C0F6E72C90018BE5D /* FKNewtypeTests.m */; };
@@ -482,10 +478,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E23431730F6E72C90018BE5D /* FKEitherUnitTest.m in Sources */,
-				E23431740F6E72C90018BE5D /* FKOptionUnitTest.m in Sources */,
-				E23431750F6E72C90018BE5D /* FKFunctionTests.m in Sources */,
-				E23431760F6E72C90018BE5D /* FKNewtypeTests.m in Sources */,
 				47B07DBF0F96E38500503E8B /* FKEffect.m in Sources */,
 				47B07DC10F96E38500503E8B /* FKEither.m in Sources */,
 				47B07DC30F96E38500503E8B /* FKFunction+Common.m in Sources */,

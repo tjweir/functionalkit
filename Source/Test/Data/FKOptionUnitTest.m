@@ -1,7 +1,7 @@
 #import "GTMSenTestCase.h"
-#import "Data/FKOption.h"
-#import "FKMacros.h"
-#import "FKFunction.h"
+#import "FK/FKOption.h"
+#import "FK/FKMacros.h"
+#import "FK/FKFunction.h"
 
 @interface FKOptionUnitTest : GTMTestCase {
     NSObject *object;

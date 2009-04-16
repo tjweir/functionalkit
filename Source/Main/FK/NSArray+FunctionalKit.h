@@ -1,8 +1,8 @@
 #import <Foundation/Foundation.h>
-#import "FKFunction.h"
-#import "FKMacros.h"
-#import "FKP2.h"
-#import "FKOption.h"
+#import "FK/FKFunction.h"
+#import "FK/FKMacros.h"
+#import "FK/FKP2.h"
+#import "FK/FKOption.h"
 
 @interface NSArray (FunctionalKitExtensions)
 

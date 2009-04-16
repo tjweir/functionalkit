@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
-#import "FKFunction.h"
-#import "FKEither.h"
-#import "FKMacros.h"
+#import "FK/FKFunction.h"
+#import "FK/FKEither.h"
+#import "FK/FKMacros.h"
 
 // An optional value that may be none (no value) or some (a value). This type is a replacement for the use of nil to denote non-existence.
 @interface FKOption : NSObject

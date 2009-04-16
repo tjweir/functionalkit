@@ -1,6 +1,6 @@
 #import "GTMSenTestCase.h"
-#import "FKEither.h"
-#import "FKOption.h"
+#import "FK/Data/FKEither.h"
+#import "FK/Data/FKOption.h"
 #import "FKFunction.h"
 
 @interface FKEitherUnitTest : GTMTestCase {

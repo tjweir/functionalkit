@@ -7,47 +7,68 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		474BA4E60F898AC100E41262 /* FKP4.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA4DD0F898AC100E41262 /* FKP4.m */; };
-		474BA4E70F898AC100E41262 /* FKP5.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA4DF0F898AC100E41262 /* FKP5.m */; };
-		474BA4E80F898AC100E41262 /* FKP6.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA4E10F898AC100E41262 /* FKP6.m */; };
-		474BA4E90F898AC100E41262 /* FKP7.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA4E30F898AC100E41262 /* FKP7.m */; };
-		474BA4EA0F898AC100E41262 /* FKP8.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA4E50F898AC100E41262 /* FKP8.m */; };
-		474BA4EB0F898AC100E41262 /* FKP4.h in Headers */ = {isa = PBXBuildFile; fileRef = 474BA4DC0F898AC100E41262 /* FKP4.h */; };
-		474BA4EC0F898AC100E41262 /* FKP4.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA4DD0F898AC100E41262 /* FKP4.m */; };
-		474BA4ED0F898AC100E41262 /* FKP5.h in Headers */ = {isa = PBXBuildFile; fileRef = 474BA4DE0F898AC100E41262 /* FKP5.h */; };
-		474BA4EE0F898AC100E41262 /* FKP5.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA4DF0F898AC100E41262 /* FKP5.m */; };
-		474BA4EF0F898AC100E41262 /* FKP6.h in Headers */ = {isa = PBXBuildFile; fileRef = 474BA4E00F898AC100E41262 /* FKP6.h */; };
-		474BA4F00F898AC100E41262 /* FKP6.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA4E10F898AC100E41262 /* FKP6.m */; };
-		474BA4F10F898AC100E41262 /* FKP7.h in Headers */ = {isa = PBXBuildFile; fileRef = 474BA4E20F898AC100E41262 /* FKP7.h */; };
-		474BA4F20F898AC100E41262 /* FKP7.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA4E30F898AC100E41262 /* FKP7.m */; };
-		474BA4F30F898AC100E41262 /* FKP8.h in Headers */ = {isa = PBXBuildFile; fileRef = 474BA4E40F898AC100E41262 /* FKP8.h */; };
-		474BA4F40F898AC100E41262 /* FKP8.m in Sources */ = {isa = PBXBuildFile; fileRef = 474BA4E50F898AC100E41262 /* FKP8.m */; };
-		4770AB5D0F82DAEA00F287B3 /* FKFunction+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 4770AB5C0F82DAEA00F287B3 /* FKFunction+Common.m */; };
 		4770AB670F82DCDE00F287B3 /* FKFunctionCommonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4770AB660F82DCDE00F287B3 /* FKFunctionCommonTests.m */; };
-		47F1FA0E0F81E1C800239B9F /* NSInvocation+FunctionalKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F1FA0D0F81E1C800239B9F /* NSInvocation+FunctionalKit.m */; };
-		47F1FA0F0F81E1CF00239B9F /* NSInvocation+FunctionalKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 47F1FA0C0F81E1C800239B9F /* NSInvocation+FunctionalKit.h */; };
-		47F1FA100F81E1CF00239B9F /* NSInvocation+FunctionalKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F1FA0D0F81E1C800239B9F /* NSInvocation+FunctionalKit.m */; };
+		47B07DAB0F96E38500503E8B /* FKEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B07D830F96E38500503E8B /* FKEffect.m */; };
+		47B07DAC0F96E38500503E8B /* FKEither.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B07D850F96E38500503E8B /* FKEither.m */; };
+		47B07DAD0F96E38500503E8B /* FKFunction+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B07D870F96E38500503E8B /* FKFunction+Common.m */; };
+		47B07DAE0F96E38500503E8B /* FKFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B07D890F96E38500503E8B /* FKFunction.m */; };
+		47B07DAF0F96E38500503E8B /* FKOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B07D8D0F96E38500503E8B /* FKOption.m */; };
+		47B07DB00F96E38500503E8B /* FKP1.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B07D8F0F96E38500503E8B /* FKP1.m */; };
+		47B07DB10F96E38500503E8B /* FKP2.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B07D910F96E38500503E8B /* FKP2.m */; };
+		47B07DB20F96E38500503E8B /* FKP3.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B07D930F96E38500503E8B /* FKP3.m */; };
+		47B07DB30F96E38500503E8B /* FKP4.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B07D950F96E38500503E8B /* FKP4.m */; };
+		47B07DB40F96E38500503E8B /* FKP5.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B07D970F96E38500503E8B /* FKP5.m */; };
+		47B07DB50F96E38500503E8B /* FKP6.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B07D990F96E38500503E8B /* FKP6.m */; };
+		47B07DB60F96E38500503E8B /* FKP7.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B07D9B0F96E38500503E8B /* FKP7.m */; };
+		47B07DB70F96E38500503E8B /* FKP8.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B07D9D0F96E38500503E8B /* FKP8.m */; };
+		47B07DB80F96E38500503E8B /* FKPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B07DA00F96E38500503E8B /* FKPromise.m */; };
+		47B07DB90F96E38500503E8B /* FKUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B07DA20F96E38500503E8B /* FKUnit.m */; };
+		47B07DBA0F96E38500503E8B /* NSArray+FunctionalKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B07DA40F96E38500503E8B /* NSArray+FunctionalKit.m */; };
+		47B07DBB0F96E38500503E8B /* NSDictionary+FunctionalKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B07DA60F96E38500503E8B /* NSDictionary+FunctionalKit.m */; };
+		47B07DBC0F96E38500503E8B /* NSInvocation+FunctionalKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B07DA80F96E38500503E8B /* NSInvocation+FunctionalKit.m */; };
+		47B07DBD0F96E38500503E8B /* NSObject+FunctionalKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B07DAA0F96E38500503E8B /* NSObject+FunctionalKit.m */; };
+		47B07DBE0F96E38500503E8B /* FKEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B07D820F96E38500503E8B /* FKEffect.h */; };
+		47B07DBF0F96E38500503E8B /* FKEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B07D830F96E38500503E8B /* FKEffect.m */; };
+		47B07DC00F96E38500503E8B /* FKEither.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B07D840F96E38500503E8B /* FKEither.h */; };
+		47B07DC10F96E38500503E8B /* FKEither.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B07D850F96E38500503E8B /* FKEither.m */; };
+		47B07DC20F96E38500503E8B /* FKFunction+Common.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B07D860F96E38500503E8B /* FKFunction+Common.h */; };
+		47B07DC30F96E38500503E8B /* FKFunction+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B07D870F96E38500503E8B /* FKFunction+Common.m */; };
+		47B07DC40F96E38500503E8B /* FKFunction.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B07D880F96E38500503E8B /* FKFunction.h */; };
+		47B07DC50F96E38500503E8B /* FKFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B07D890F96E38500503E8B /* FKFunction.m */; };
+		47B07DC60F96E38500503E8B /* FKMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B07D8A0F96E38500503E8B /* FKMacros.h */; };
+		47B07DC70F96E38500503E8B /* FKNewtype.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B07D8B0F96E38500503E8B /* FKNewtype.h */; };
+		47B07DC80F96E38500503E8B /* FKOption.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B07D8C0F96E38500503E8B /* FKOption.h */; };
+		47B07DC90F96E38500503E8B /* FKOption.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B07D8D0F96E38500503E8B /* FKOption.m */; };
+		47B07DCA0F96E38500503E8B /* FKP1.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B07D8E0F96E38500503E8B /* FKP1.h */; };
+		47B07DCB0F96E38500503E8B /* FKP1.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B07D8F0F96E38500503E8B /* FKP1.m */; };
+		47B07DCC0F96E38500503E8B /* FKP2.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B07D900F96E38500503E8B /* FKP2.h */; };
+		47B07DCD0F96E38500503E8B /* FKP2.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B07D910F96E38500503E8B /* FKP2.m */; };
+		47B07DCE0F96E38500503E8B /* FKP3.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B07D920F96E38500503E8B /* FKP3.h */; };
+		47B07DCF0F96E38500503E8B /* FKP3.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B07D930F96E38500503E8B /* FKP3.m */; };
+		47B07DD00F96E38500503E8B /* FKP4.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B07D940F96E38500503E8B /* FKP4.h */; };
+		47B07DD10F96E38500503E8B /* FKP4.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B07D950F96E38500503E8B /* FKP4.m */; };
+		47B07DD20F96E38500503E8B /* FKP5.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B07D960F96E38500503E8B /* FKP5.h */; };
+		47B07DD30F96E38500503E8B /* FKP5.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B07D970F96E38500503E8B /* FKP5.m */; };
+		47B07DD40F96E38500503E8B /* FKP6.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B07D980F96E38500503E8B /* FKP6.h */; };
+		47B07DD50F96E38500503E8B /* FKP6.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B07D990F96E38500503E8B /* FKP6.m */; };
+		47B07DD60F96E38500503E8B /* FKP7.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B07D9A0F96E38500503E8B /* FKP7.h */; };
+		47B07DD70F96E38500503E8B /* FKP7.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B07D9B0F96E38500503E8B /* FKP7.m */; };
+		47B07DD80F96E38500503E8B /* FKP8.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B07D9C0F96E38500503E8B /* FKP8.h */; };
+		47B07DD90F96E38500503E8B /* FKP8.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B07D9D0F96E38500503E8B /* FKP8.m */; };
+		47B07DDA0F96E38500503E8B /* FKPrelude.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B07D9E0F96E38500503E8B /* FKPrelude.h */; };
+		47B07DDB0F96E38500503E8B /* FKPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B07D9F0F96E38500503E8B /* FKPromise.h */; };
+		47B07DDC0F96E38500503E8B /* FKPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B07DA00F96E38500503E8B /* FKPromise.m */; };
+		47B07DDD0F96E38500503E8B /* FKUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B07DA10F96E38500503E8B /* FKUnit.h */; };
+		47B07DDE0F96E38500503E8B /* FKUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B07DA20F96E38500503E8B /* FKUnit.m */; };
+		47B07DDF0F96E38500503E8B /* NSArray+FunctionalKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B07DA30F96E38500503E8B /* NSArray+FunctionalKit.h */; };
+		47B07DE00F96E38500503E8B /* NSArray+FunctionalKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B07DA40F96E38500503E8B /* NSArray+FunctionalKit.m */; };
+		47B07DE10F96E38500503E8B /* NSDictionary+FunctionalKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B07DA50F96E38500503E8B /* NSDictionary+FunctionalKit.h */; };
+		47B07DE20F96E38500503E8B /* NSDictionary+FunctionalKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B07DA60F96E38500503E8B /* NSDictionary+FunctionalKit.m */; };
+		47B07DE30F96E38500503E8B /* NSInvocation+FunctionalKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B07DA70F96E38500503E8B /* NSInvocation+FunctionalKit.h */; };
+		47B07DE40F96E38500503E8B /* NSInvocation+FunctionalKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B07DA80F96E38500503E8B /* NSInvocation+FunctionalKit.m */; };
+		47B07DE50F96E38500503E8B /* NSObject+FunctionalKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B07DA90F96E38500503E8B /* NSObject+FunctionalKit.h */; };
+		47B07DE60F96E38500503E8B /* NSObject+FunctionalKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 47B07DAA0F96E38500503E8B /* NSObject+FunctionalKit.m */; };
 		E2065A910F8078AB0034E426 /* NSDictionaryExtensionsUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E2065A900F8078AB0034E426 /* NSDictionaryExtensionsUnitTest.m */; };
-		E2065A940F8078EA0034E426 /* NSDictionary+FunctionalKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E2065A930F8078EA0034E426 /* NSDictionary+FunctionalKit.m */; };
-		E234315F0F6E72C90018BE5D /* FKPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = E23431420F6E72C90018BE5D /* FKPromise.h */; };
-		E23431600F6E72C90018BE5D /* FKPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = E23431430F6E72C90018BE5D /* FKPromise.m */; };
-		E23431610F6E72C90018BE5D /* FKEither.h in Headers */ = {isa = PBXBuildFile; fileRef = E23431450F6E72C90018BE5D /* FKEither.h */; };
-		E23431620F6E72C90018BE5D /* FKEither.m in Sources */ = {isa = PBXBuildFile; fileRef = E23431460F6E72C90018BE5D /* FKEither.m */; };
-		E23431630F6E72C90018BE5D /* FKOption.h in Headers */ = {isa = PBXBuildFile; fileRef = E23431470F6E72C90018BE5D /* FKOption.h */; };
-		E23431640F6E72C90018BE5D /* FKOption.m in Sources */ = {isa = PBXBuildFile; fileRef = E23431480F6E72C90018BE5D /* FKOption.m */; };
-		E23431650F6E72C90018BE5D /* FKEffect.h in Headers */ = {isa = PBXBuildFile; fileRef = E23431490F6E72C90018BE5D /* FKEffect.h */; };
-		E23431660F6E72C90018BE5D /* FKEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = E234314A0F6E72C90018BE5D /* FKEffect.m */; };
-		E23431670F6E72C90018BE5D /* FKFunction.h in Headers */ = {isa = PBXBuildFile; fileRef = E234314B0F6E72C90018BE5D /* FKFunction.h */; };
-		E23431680F6E72C90018BE5D /* FKFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = E234314C0F6E72C90018BE5D /* FKFunction.m */; };
-		E23431690F6E72C90018BE5D /* FKNewtype.h in Headers */ = {isa = PBXBuildFile; fileRef = E234314D0F6E72C90018BE5D /* FKNewtype.h */; };
-		E234316A0F6E72C90018BE5D /* FKP1.h in Headers */ = {isa = PBXBuildFile; fileRef = E234314E0F6E72C90018BE5D /* FKP1.h */; };
-		E234316B0F6E72C90018BE5D /* FKP1.m in Sources */ = {isa = PBXBuildFile; fileRef = E234314F0F6E72C90018BE5D /* FKP1.m */; };
-		E234316C0F6E72C90018BE5D /* FKP2.h in Headers */ = {isa = PBXBuildFile; fileRef = E23431500F6E72C90018BE5D /* FKP2.h */; };
-		E234316D0F6E72C90018BE5D /* FKP2.m in Sources */ = {isa = PBXBuildFile; fileRef = E23431510F6E72C90018BE5D /* FKP2.m */; };
-		E234316E0F6E72C90018BE5D /* FKP3.h in Headers */ = {isa = PBXBuildFile; fileRef = E23431520F6E72C90018BE5D /* FKP3.h */; };
-		E234316F0F6E72C90018BE5D /* FKP3.m in Sources */ = {isa = PBXBuildFile; fileRef = E23431530F6E72C90018BE5D /* FKP3.m */; };
-		E23431700F6E72C90018BE5D /* FKUnit.h in Headers */ = {isa = PBXBuildFile; fileRef = E23431540F6E72C90018BE5D /* FKUnit.h */; };
-		E23431710F6E72C90018BE5D /* FKUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = E23431550F6E72C90018BE5D /* FKUnit.m */; };
 		E23431720F6E72C90018BE5D /* functionalkit_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = E23431560F6E72C90018BE5D /* functionalkit_Prefix.pch */; };
 		E23431730F6E72C90018BE5D /* FKEitherUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E23431590F6E72C90018BE5D /* FKEitherUnitTest.m */; };
 		E23431740F6E72C90018BE5D /* FKOptionUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E234315A0F6E72C90018BE5D /* FKOptionUnitTest.m */; };
@@ -57,16 +78,6 @@
 		E234317A0F6E72F30018BE5D /* FKFunctionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E234315B0F6E72C90018BE5D /* FKFunctionTests.m */; };
 		E234317B0F6E72F40018BE5D /* FKNewtypeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E234315C0F6E72C90018BE5D /* FKNewtypeTests.m */; };
 		E234317C0F6E72F50018BE5D /* FKOptionUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E234315A0F6E72C90018BE5D /* FKOptionUnitTest.m */; };
-		E23431820F6E73A50018BE5D /* FKMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = E23431800F6E73A50018BE5D /* FKMacros.h */; };
-		E23431E10F6F0DE00018BE5D /* FKEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = E234314A0F6E72C90018BE5D /* FKEffect.m */; };
-		E23431E20F6F0DE00018BE5D /* FKEither.m in Sources */ = {isa = PBXBuildFile; fileRef = E23431460F6E72C90018BE5D /* FKEither.m */; };
-		E23431E30F6F0DE10018BE5D /* FKFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = E234314C0F6E72C90018BE5D /* FKFunction.m */; };
-		E23431E40F6F0DE20018BE5D /* FKOption.m in Sources */ = {isa = PBXBuildFile; fileRef = E23431480F6E72C90018BE5D /* FKOption.m */; };
-		E23431E50F6F0DE30018BE5D /* FKP1.m in Sources */ = {isa = PBXBuildFile; fileRef = E234314F0F6E72C90018BE5D /* FKP1.m */; };
-		E23431E60F6F0DE40018BE5D /* FKP2.m in Sources */ = {isa = PBXBuildFile; fileRef = E23431510F6E72C90018BE5D /* FKP2.m */; };
-		E23431E70F6F0DE50018BE5D /* FKP3.m in Sources */ = {isa = PBXBuildFile; fileRef = E23431530F6E72C90018BE5D /* FKP3.m */; };
-		E23431E80F6F0DE60018BE5D /* FKPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = E23431430F6E72C90018BE5D /* FKPromise.m */; };
-		E23431E90F6F0DE70018BE5D /* FKUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = E23431550F6E72C90018BE5D /* FKUnit.m */; };
 		E23DB6E90F4D0263005C8EDA /* GTMDebugSelectorValidation.h in Headers */ = {isa = PBXBuildFile; fileRef = E23DB5F90F4D0262005C8EDA /* GTMDebugSelectorValidation.h */; };
 		E23DB7310F4D0263005C8EDA /* GTM_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = E23DB6490F4D0262005C8EDA /* GTM_Prefix.pch */; };
 		E23DB7320F4D0263005C8EDA /* GTMDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = E23DB64A0F4D0262005C8EDA /* GTMDefines.h */; };
@@ -78,13 +89,7 @@
 		E23DBF6D0F4E2817005C8EDA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E23DBF6C0F4E2817005C8EDA /* UIKit.framework */; };
 		E23DBF6E0F4E2817005C8EDA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E23DBF6C0F4E2817005C8EDA /* UIKit.framework */; };
 		E23DC0050F4E2852005C8EDA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0867D69BFE84028FC02AAC07 /* Foundation.framework */; };
-		E2843E650F7C6433004D8369 /* NSObject+FunctionalKit.h in Headers */ = {isa = PBXBuildFile; fileRef = E2843E630F7C6433004D8369 /* NSObject+FunctionalKit.h */; };
-		E2843E660F7C6433004D8369 /* NSObject+FunctionalKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E2843E640F7C6433004D8369 /* NSObject+FunctionalKit.m */; };
-		E2843E670F7C6433004D8369 /* NSObject+FunctionalKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E2843E640F7C6433004D8369 /* NSObject+FunctionalKit.m */; };
 		E2843EB60F7C6FFC004D8369 /* NSArrayExtensionsUnitTest.m in Sources */ = {isa = PBXBuildFile; fileRef = E2843EB50F7C6FFC004D8369 /* NSArrayExtensionsUnitTest.m */; };
-		E2843EB90F7C7004004D8369 /* NSArray+FunctionalKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E2843EB80F7C7004004D8369 /* NSArray+FunctionalKit.m */; };
-		E2843EBA0F7C7004004D8369 /* NSArray+FunctionalKit.h in Headers */ = {isa = PBXBuildFile; fileRef = E2843EB70F7C7004004D8369 /* NSArray+FunctionalKit.h */; };
-		E2843EBB0F7C7004004D8369 /* NSArray+FunctionalKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E2843EB80F7C7004004D8369 /* NSArray+FunctionalKit.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -100,51 +105,55 @@
 
 /* Begin PBXFileReference section */
 		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		474BA4DC0F898AC100E41262 /* FKP4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKP4.h; sourceTree = "<group>"; };
-		474BA4DD0F898AC100E41262 /* FKP4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKP4.m; sourceTree = "<group>"; };
-		474BA4DE0F898AC100E41262 /* FKP5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKP5.h; sourceTree = "<group>"; };
-		474BA4DF0F898AC100E41262 /* FKP5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKP5.m; sourceTree = "<group>"; };
-		474BA4E00F898AC100E41262 /* FKP6.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKP6.h; sourceTree = "<group>"; };
-		474BA4E10F898AC100E41262 /* FKP6.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKP6.m; sourceTree = "<group>"; };
-		474BA4E20F898AC100E41262 /* FKP7.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKP7.h; sourceTree = "<group>"; };
-		474BA4E30F898AC100E41262 /* FKP7.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKP7.m; sourceTree = "<group>"; };
-		474BA4E40F898AC100E41262 /* FKP8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKP8.h; sourceTree = "<group>"; };
-		474BA4E50F898AC100E41262 /* FKP8.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKP8.m; sourceTree = "<group>"; };
-		4770AB5B0F82DAEA00F287B3 /* FKFunction+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FKFunction+Common.h"; sourceTree = "<group>"; };
-		4770AB5C0F82DAEA00F287B3 /* FKFunction+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FKFunction+Common.m"; sourceTree = "<group>"; };
 		4770AB660F82DCDE00F287B3 /* FKFunctionCommonTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKFunctionCommonTests.m; sourceTree = "<group>"; };
-		47F1FA0C0F81E1C800239B9F /* NSInvocation+FunctionalKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+FunctionalKit.h"; sourceTree = "<group>"; };
-		47F1FA0D0F81E1C800239B9F /* NSInvocation+FunctionalKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+FunctionalKit.m"; sourceTree = "<group>"; };
+		47B07D820F96E38500503E8B /* FKEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKEffect.h; path = Source/Main/FK/FKEffect.h; sourceTree = SOURCE_ROOT; };
+		47B07D830F96E38500503E8B /* FKEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKEffect.m; path = Source/Main/FK/FKEffect.m; sourceTree = SOURCE_ROOT; };
+		47B07D840F96E38500503E8B /* FKEither.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKEither.h; path = Source/Main/FK/FKEither.h; sourceTree = SOURCE_ROOT; };
+		47B07D850F96E38500503E8B /* FKEither.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKEither.m; path = Source/Main/FK/FKEither.m; sourceTree = SOURCE_ROOT; };
+		47B07D860F96E38500503E8B /* FKFunction+Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FKFunction+Common.h"; path = "Source/Main/FK/FKFunction+Common.h"; sourceTree = SOURCE_ROOT; };
+		47B07D870F96E38500503E8B /* FKFunction+Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "FKFunction+Common.m"; path = "Source/Main/FK/FKFunction+Common.m"; sourceTree = SOURCE_ROOT; };
+		47B07D880F96E38500503E8B /* FKFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKFunction.h; path = Source/Main/FK/FKFunction.h; sourceTree = SOURCE_ROOT; };
+		47B07D890F96E38500503E8B /* FKFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKFunction.m; path = Source/Main/FK/FKFunction.m; sourceTree = SOURCE_ROOT; };
+		47B07D8A0F96E38500503E8B /* FKMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKMacros.h; path = Source/Main/FK/FKMacros.h; sourceTree = SOURCE_ROOT; };
+		47B07D8B0F96E38500503E8B /* FKNewtype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKNewtype.h; path = Source/Main/FK/FKNewtype.h; sourceTree = SOURCE_ROOT; };
+		47B07D8C0F96E38500503E8B /* FKOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKOption.h; path = Source/Main/FK/FKOption.h; sourceTree = SOURCE_ROOT; };
+		47B07D8D0F96E38500503E8B /* FKOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKOption.m; path = Source/Main/FK/FKOption.m; sourceTree = SOURCE_ROOT; };
+		47B07D8E0F96E38500503E8B /* FKP1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKP1.h; path = Source/Main/FK/FKP1.h; sourceTree = SOURCE_ROOT; };
+		47B07D8F0F96E38500503E8B /* FKP1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKP1.m; path = Source/Main/FK/FKP1.m; sourceTree = SOURCE_ROOT; };
+		47B07D900F96E38500503E8B /* FKP2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKP2.h; path = Source/Main/FK/FKP2.h; sourceTree = SOURCE_ROOT; };
+		47B07D910F96E38500503E8B /* FKP2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKP2.m; path = Source/Main/FK/FKP2.m; sourceTree = SOURCE_ROOT; };
+		47B07D920F96E38500503E8B /* FKP3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKP3.h; path = Source/Main/FK/FKP3.h; sourceTree = SOURCE_ROOT; };
+		47B07D930F96E38500503E8B /* FKP3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKP3.m; path = Source/Main/FK/FKP3.m; sourceTree = SOURCE_ROOT; };
+		47B07D940F96E38500503E8B /* FKP4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKP4.h; path = Source/Main/FK/FKP4.h; sourceTree = SOURCE_ROOT; };
+		47B07D950F96E38500503E8B /* FKP4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKP4.m; path = Source/Main/FK/FKP4.m; sourceTree = SOURCE_ROOT; };
+		47B07D960F96E38500503E8B /* FKP5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKP5.h; path = Source/Main/FK/FKP5.h; sourceTree = SOURCE_ROOT; };
+		47B07D970F96E38500503E8B /* FKP5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKP5.m; path = Source/Main/FK/FKP5.m; sourceTree = SOURCE_ROOT; };
+		47B07D980F96E38500503E8B /* FKP6.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKP6.h; path = Source/Main/FK/FKP6.h; sourceTree = SOURCE_ROOT; };
+		47B07D990F96E38500503E8B /* FKP6.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKP6.m; path = Source/Main/FK/FKP6.m; sourceTree = SOURCE_ROOT; };
+		47B07D9A0F96E38500503E8B /* FKP7.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKP7.h; path = Source/Main/FK/FKP7.h; sourceTree = SOURCE_ROOT; };
+		47B07D9B0F96E38500503E8B /* FKP7.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKP7.m; path = Source/Main/FK/FKP7.m; sourceTree = SOURCE_ROOT; };
+		47B07D9C0F96E38500503E8B /* FKP8.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKP8.h; path = Source/Main/FK/FKP8.h; sourceTree = SOURCE_ROOT; };
+		47B07D9D0F96E38500503E8B /* FKP8.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKP8.m; path = Source/Main/FK/FKP8.m; sourceTree = SOURCE_ROOT; };
+		47B07D9E0F96E38500503E8B /* FKPrelude.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKPrelude.h; path = Source/Main/FK/FKPrelude.h; sourceTree = SOURCE_ROOT; };
+		47B07D9F0F96E38500503E8B /* FKPromise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKPromise.h; path = Source/Main/FK/FKPromise.h; sourceTree = SOURCE_ROOT; };
+		47B07DA00F96E38500503E8B /* FKPromise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKPromise.m; path = Source/Main/FK/FKPromise.m; sourceTree = SOURCE_ROOT; };
+		47B07DA10F96E38500503E8B /* FKUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FKUnit.h; path = Source/Main/FK/FKUnit.h; sourceTree = SOURCE_ROOT; };
+		47B07DA20F96E38500503E8B /* FKUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FKUnit.m; path = Source/Main/FK/FKUnit.m; sourceTree = SOURCE_ROOT; };
+		47B07DA30F96E38500503E8B /* NSArray+FunctionalKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSArray+FunctionalKit.h"; path = "Source/Main/FK/NSArray+FunctionalKit.h"; sourceTree = SOURCE_ROOT; };
+		47B07DA40F96E38500503E8B /* NSArray+FunctionalKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSArray+FunctionalKit.m"; path = "Source/Main/FK/NSArray+FunctionalKit.m"; sourceTree = SOURCE_ROOT; };
+		47B07DA50F96E38500503E8B /* NSDictionary+FunctionalKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+FunctionalKit.h"; path = "Source/Main/FK/NSDictionary+FunctionalKit.h"; sourceTree = SOURCE_ROOT; };
+		47B07DA60F96E38500503E8B /* NSDictionary+FunctionalKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+FunctionalKit.m"; path = "Source/Main/FK/NSDictionary+FunctionalKit.m"; sourceTree = SOURCE_ROOT; };
+		47B07DA70F96E38500503E8B /* NSInvocation+FunctionalKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSInvocation+FunctionalKit.h"; path = "Source/Main/FK/NSInvocation+FunctionalKit.h"; sourceTree = SOURCE_ROOT; };
+		47B07DA80F96E38500503E8B /* NSInvocation+FunctionalKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSInvocation+FunctionalKit.m"; path = "Source/Main/FK/NSInvocation+FunctionalKit.m"; sourceTree = SOURCE_ROOT; };
+		47B07DA90F96E38500503E8B /* NSObject+FunctionalKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSObject+FunctionalKit.h"; path = "Source/Main/FK/NSObject+FunctionalKit.h"; sourceTree = SOURCE_ROOT; };
+		47B07DAA0F96E38500503E8B /* NSObject+FunctionalKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSObject+FunctionalKit.m"; path = "Source/Main/FK/NSObject+FunctionalKit.m"; sourceTree = SOURCE_ROOT; };
 		D2AAC07E0554694100DB518D /* libfunctionalkit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libfunctionalkit.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2065A900F8078AB0034E426 /* NSDictionaryExtensionsUnitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDictionaryExtensionsUnitTest.m; sourceTree = "<group>"; };
-		E2065A920F8078EA0034E426 /* NSDictionary+FunctionalKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+FunctionalKit.h"; sourceTree = "<group>"; };
-		E2065A930F8078EA0034E426 /* NSDictionary+FunctionalKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+FunctionalKit.m"; sourceTree = "<group>"; };
-		E2065A960F807C1B0034E426 /* FKPrelude.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKPrelude.h; sourceTree = "<group>"; };
-		E23431420F6E72C90018BE5D /* FKPromise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKPromise.h; sourceTree = "<group>"; };
-		E23431430F6E72C90018BE5D /* FKPromise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKPromise.m; sourceTree = "<group>"; };
-		E23431450F6E72C90018BE5D /* FKEither.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKEither.h; sourceTree = "<group>"; };
-		E23431460F6E72C90018BE5D /* FKEither.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKEither.m; sourceTree = "<group>"; };
-		E23431470F6E72C90018BE5D /* FKOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKOption.h; sourceTree = "<group>"; };
-		E23431480F6E72C90018BE5D /* FKOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKOption.m; sourceTree = "<group>"; };
-		E23431490F6E72C90018BE5D /* FKEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKEffect.h; sourceTree = "<group>"; };
-		E234314A0F6E72C90018BE5D /* FKEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKEffect.m; sourceTree = "<group>"; };
-		E234314B0F6E72C90018BE5D /* FKFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKFunction.h; sourceTree = "<group>"; };
-		E234314C0F6E72C90018BE5D /* FKFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKFunction.m; sourceTree = "<group>"; };
-		E234314D0F6E72C90018BE5D /* FKNewtype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKNewtype.h; sourceTree = "<group>"; };
-		E234314E0F6E72C90018BE5D /* FKP1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKP1.h; sourceTree = "<group>"; };
-		E234314F0F6E72C90018BE5D /* FKP1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKP1.m; sourceTree = "<group>"; };
-		E23431500F6E72C90018BE5D /* FKP2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKP2.h; sourceTree = "<group>"; };
-		E23431510F6E72C90018BE5D /* FKP2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKP2.m; sourceTree = "<group>"; };
-		E23431520F6E72C90018BE5D /* FKP3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKP3.h; sourceTree = "<group>"; };
-		E23431530F6E72C90018BE5D /* FKP3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKP3.m; sourceTree = "<group>"; };
-		E23431540F6E72C90018BE5D /* FKUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKUnit.h; sourceTree = "<group>"; };
-		E23431550F6E72C90018BE5D /* FKUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKUnit.m; sourceTree = "<group>"; };
 		E23431560F6E72C90018BE5D /* functionalkit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = functionalkit_Prefix.pch; sourceTree = "<group>"; };
 		E23431590F6E72C90018BE5D /* FKEitherUnitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKEitherUnitTest.m; sourceTree = "<group>"; };
 		E234315A0F6E72C90018BE5D /* FKOptionUnitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKOptionUnitTest.m; sourceTree = "<group>"; };
 		E234315B0F6E72C90018BE5D /* FKFunctionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKFunctionTests.m; sourceTree = "<group>"; };
 		E234315C0F6E72C90018BE5D /* FKNewtypeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FKNewtypeTests.m; sourceTree = "<group>"; };
-		E23431800F6E73A50018BE5D /* FKMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FKMacros.h; sourceTree = "<group>"; };
 		E234361C0F6F38B10018BE5D /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
 		E23DB5F90F4D0262005C8EDA /* GTMDebugSelectorValidation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDebugSelectorValidation.h; sourceTree = "<group>"; };
 		E23DB6490F4D0262005C8EDA /* GTM_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTM_Prefix.pch; sourceTree = "<group>"; };
@@ -156,11 +165,7 @@
 		E23DB6610F4D0262005C8EDA /* GTMSenTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMSenTestCase.m; sourceTree = "<group>"; };
 		E23DBE720F4E2549005C8EDA /* Unit Tests.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Unit Tests.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E23DBF6C0F4E2817005C8EDA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		E2843E630F7C6433004D8369 /* NSObject+FunctionalKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+FunctionalKit.h"; sourceTree = "<group>"; };
-		E2843E640F7C6433004D8369 /* NSObject+FunctionalKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FunctionalKit.m"; sourceTree = "<group>"; };
 		E2843EB50F7C6FFC004D8369 /* NSArrayExtensionsUnitTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayExtensionsUnitTest.m; sourceTree = "<group>"; };
-		E2843EB70F7C7004004D8369 /* NSArray+FunctionalKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+FunctionalKit.h"; sourceTree = "<group>"; };
-		E2843EB80F7C7004004D8369 /* NSArray+FunctionalKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+FunctionalKit.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,70 +228,62 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
+		47B07D810F96E38500503E8B /* FK */ = {
+			isa = PBXGroup;
+			children = (
+				47B07D820F96E38500503E8B /* FKEffect.h */,
+				47B07D830F96E38500503E8B /* FKEffect.m */,
+				47B07D840F96E38500503E8B /* FKEither.h */,
+				47B07D850F96E38500503E8B /* FKEither.m */,
+				47B07D860F96E38500503E8B /* FKFunction+Common.h */,
+				47B07D870F96E38500503E8B /* FKFunction+Common.m */,
+				47B07D880F96E38500503E8B /* FKFunction.h */,
+				47B07D890F96E38500503E8B /* FKFunction.m */,
+				47B07D8A0F96E38500503E8B /* FKMacros.h */,
+				47B07D8B0F96E38500503E8B /* FKNewtype.h */,
+				47B07D8C0F96E38500503E8B /* FKOption.h */,
+				47B07D8D0F96E38500503E8B /* FKOption.m */,
+				47B07D8E0F96E38500503E8B /* FKP1.h */,
+				47B07D8F0F96E38500503E8B /* FKP1.m */,
+				47B07D900F96E38500503E8B /* FKP2.h */,
+				47B07D910F96E38500503E8B /* FKP2.m */,
+				47B07D920F96E38500503E8B /* FKP3.h */,
+				47B07D930F96E38500503E8B /* FKP3.m */,
+				47B07D940F96E38500503E8B /* FKP4.h */,
+				47B07D950F96E38500503E8B /* FKP4.m */,
+				47B07D960F96E38500503E8B /* FKP5.h */,
+				47B07D970F96E38500503E8B /* FKP5.m */,
+				47B07D980F96E38500503E8B /* FKP6.h */,
+				47B07D990F96E38500503E8B /* FKP6.m */,
+				47B07D9A0F96E38500503E8B /* FKP7.h */,
+				47B07D9B0F96E38500503E8B /* FKP7.m */,
+				47B07D9C0F96E38500503E8B /* FKP8.h */,
+				47B07D9D0F96E38500503E8B /* FKP8.m */,
+				47B07D9E0F96E38500503E8B /* FKPrelude.h */,
+				47B07D9F0F96E38500503E8B /* FKPromise.h */,
+				47B07DA00F96E38500503E8B /* FKPromise.m */,
+				47B07DA10F96E38500503E8B /* FKUnit.h */,
+				47B07DA20F96E38500503E8B /* FKUnit.m */,
+				47B07DA30F96E38500503E8B /* NSArray+FunctionalKit.h */,
+				47B07DA40F96E38500503E8B /* NSArray+FunctionalKit.m */,
+				47B07DA50F96E38500503E8B /* NSDictionary+FunctionalKit.h */,
+				47B07DA60F96E38500503E8B /* NSDictionary+FunctionalKit.m */,
+				47B07DA70F96E38500503E8B /* NSInvocation+FunctionalKit.h */,
+				47B07DA80F96E38500503E8B /* NSInvocation+FunctionalKit.m */,
+				47B07DA90F96E38500503E8B /* NSObject+FunctionalKit.h */,
+				47B07DAA0F96E38500503E8B /* NSObject+FunctionalKit.m */,
+			);
+			name = FK;
+			path = Source/Main/FK;
+			sourceTree = SOURCE_ROOT;
+		};
 		E234313F0F6E72C90018BE5D /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				E23431400F6E72C90018BE5D /* Control */,
-				E23431440F6E72C90018BE5D /* Data */,
-				E23431D30F6E75770018BE5D /* Extensions */,
-				E23431490F6E72C90018BE5D /* FKEffect.h */,
-				E234314A0F6E72C90018BE5D /* FKEffect.m */,
-				E234314B0F6E72C90018BE5D /* FKFunction.h */,
-				E234314C0F6E72C90018BE5D /* FKFunction.m */,
-				4770AB5B0F82DAEA00F287B3 /* FKFunction+Common.h */,
-				4770AB5C0F82DAEA00F287B3 /* FKFunction+Common.m */,
-				E23431800F6E73A50018BE5D /* FKMacros.h */,
-				E234314D0F6E72C90018BE5D /* FKNewtype.h */,
-				E234314E0F6E72C90018BE5D /* FKP1.h */,
-				E234314F0F6E72C90018BE5D /* FKP1.m */,
-				E23431500F6E72C90018BE5D /* FKP2.h */,
-				E23431510F6E72C90018BE5D /* FKP2.m */,
-				E23431520F6E72C90018BE5D /* FKP3.h */,
-				E23431530F6E72C90018BE5D /* FKP3.m */,
-				474BA4DC0F898AC100E41262 /* FKP4.h */,
-				474BA4DD0F898AC100E41262 /* FKP4.m */,
-				474BA4DE0F898AC100E41262 /* FKP5.h */,
-				474BA4DF0F898AC100E41262 /* FKP5.m */,
-				474BA4E00F898AC100E41262 /* FKP6.h */,
-				474BA4E10F898AC100E41262 /* FKP6.m */,
-				474BA4E20F898AC100E41262 /* FKP7.h */,
-				474BA4E30F898AC100E41262 /* FKP7.m */,
-				474BA4E40F898AC100E41262 /* FKP8.h */,
-				474BA4E50F898AC100E41262 /* FKP8.m */,
-				E2065A960F807C1B0034E426 /* FKPrelude.h */,
-				E23431540F6E72C90018BE5D /* FKUnit.h */,
-				E23431550F6E72C90018BE5D /* FKUnit.m */,
+				47B07D810F96E38500503E8B /* FK */,
 				E23431560F6E72C90018BE5D /* functionalkit_Prefix.pch */,
 			);
 			path = Main;
-			sourceTree = "<group>";
-		};
-		E23431400F6E72C90018BE5D /* Control */ = {
-			isa = PBXGroup;
-			children = (
-				E23431410F6E72C90018BE5D /* Parallel */,
-			);
-			path = Control;
-			sourceTree = "<group>";
-		};
-		E23431410F6E72C90018BE5D /* Parallel */ = {
-			isa = PBXGroup;
-			children = (
-				E23431420F6E72C90018BE5D /* FKPromise.h */,
-				E23431430F6E72C90018BE5D /* FKPromise.m */,
-			);
-			path = Parallel;
-			sourceTree = "<group>";
-		};
-		E23431440F6E72C90018BE5D /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				E23431450F6E72C90018BE5D /* FKEither.h */,
-				E23431460F6E72C90018BE5D /* FKEither.m */,
-				E23431470F6E72C90018BE5D /* FKOption.h */,
-				E23431480F6E72C90018BE5D /* FKOption.m */,
-			);
-			path = Data;
 			sourceTree = "<group>";
 		};
 		E23431570F6E72C90018BE5D /* Test */ = {
@@ -308,21 +305,6 @@
 				E234315A0F6E72C90018BE5D /* FKOptionUnitTest.m */,
 			);
 			path = Data;
-			sourceTree = "<group>";
-		};
-		E23431D30F6E75770018BE5D /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				E2843EB70F7C7004004D8369 /* NSArray+FunctionalKit.h */,
-				E2843EB80F7C7004004D8369 /* NSArray+FunctionalKit.m */,
-				E2065A920F8078EA0034E426 /* NSDictionary+FunctionalKit.h */,
-				E2065A930F8078EA0034E426 /* NSDictionary+FunctionalKit.m */,
-				47F1FA0C0F81E1C800239B9F /* NSInvocation+FunctionalKit.h */,
-				47F1FA0D0F81E1C800239B9F /* NSInvocation+FunctionalKit.m */,
-				E2843E630F7C6433004D8369 /* NSObject+FunctionalKit.h */,
-				E2843E640F7C6433004D8369 /* NSObject+FunctionalKit.m */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		E23DB5C30F4D0262005C8EDA /* External */ = {
@@ -385,26 +367,29 @@
 				E23DB7320F4D0263005C8EDA /* GTMDefines.h in Headers */,
 				E23DB7380F4D0263005C8EDA /* GTMIPhoneUnitTestDelegate.h in Headers */,
 				E23DB73F0F4D0263005C8EDA /* GTMSenTestCase.h in Headers */,
-				E234315F0F6E72C90018BE5D /* FKPromise.h in Headers */,
-				E23431610F6E72C90018BE5D /* FKEither.h in Headers */,
-				E23431630F6E72C90018BE5D /* FKOption.h in Headers */,
-				E23431650F6E72C90018BE5D /* FKEffect.h in Headers */,
-				E23431670F6E72C90018BE5D /* FKFunction.h in Headers */,
-				E23431690F6E72C90018BE5D /* FKNewtype.h in Headers */,
-				E234316A0F6E72C90018BE5D /* FKP1.h in Headers */,
-				E234316C0F6E72C90018BE5D /* FKP2.h in Headers */,
-				E234316E0F6E72C90018BE5D /* FKP3.h in Headers */,
-				E23431700F6E72C90018BE5D /* FKUnit.h in Headers */,
 				E23431720F6E72C90018BE5D /* functionalkit_Prefix.pch in Headers */,
-				E23431820F6E73A50018BE5D /* FKMacros.h in Headers */,
-				E2843E650F7C6433004D8369 /* NSObject+FunctionalKit.h in Headers */,
-				E2843EBA0F7C7004004D8369 /* NSArray+FunctionalKit.h in Headers */,
-				47F1FA0F0F81E1CF00239B9F /* NSInvocation+FunctionalKit.h in Headers */,
-				474BA4EB0F898AC100E41262 /* FKP4.h in Headers */,
-				474BA4ED0F898AC100E41262 /* FKP5.h in Headers */,
-				474BA4EF0F898AC100E41262 /* FKP6.h in Headers */,
-				474BA4F10F898AC100E41262 /* FKP7.h in Headers */,
-				474BA4F30F898AC100E41262 /* FKP8.h in Headers */,
+				47B07DBE0F96E38500503E8B /* FKEffect.h in Headers */,
+				47B07DC00F96E38500503E8B /* FKEither.h in Headers */,
+				47B07DC20F96E38500503E8B /* FKFunction+Common.h in Headers */,
+				47B07DC40F96E38500503E8B /* FKFunction.h in Headers */,
+				47B07DC60F96E38500503E8B /* FKMacros.h in Headers */,
+				47B07DC70F96E38500503E8B /* FKNewtype.h in Headers */,
+				47B07DC80F96E38500503E8B /* FKOption.h in Headers */,
+				47B07DCA0F96E38500503E8B /* FKP1.h in Headers */,
+				47B07DCC0F96E38500503E8B /* FKP2.h in Headers */,
+				47B07DCE0F96E38500503E8B /* FKP3.h in Headers */,
+				47B07DD00F96E38500503E8B /* FKP4.h in Headers */,
+				47B07DD20F96E38500503E8B /* FKP5.h in Headers */,
+				47B07DD40F96E38500503E8B /* FKP6.h in Headers */,
+				47B07DD60F96E38500503E8B /* FKP7.h in Headers */,
+				47B07DD80F96E38500503E8B /* FKP8.h in Headers */,
+				47B07DDA0F96E38500503E8B /* FKPrelude.h in Headers */,
+				47B07DDB0F96E38500503E8B /* FKPromise.h in Headers */,
+				47B07DDD0F96E38500503E8B /* FKUnit.h in Headers */,
+				47B07DDF0F96E38500503E8B /* NSArray+FunctionalKit.h in Headers */,
+				47B07DE10F96E38500503E8B /* NSDictionary+FunctionalKit.h in Headers */,
+				47B07DE30F96E38500503E8B /* NSInvocation+FunctionalKit.h in Headers */,
+				47B07DE50F96E38500503E8B /* NSObject+FunctionalKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,27 +482,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E23431600F6E72C90018BE5D /* FKPromise.m in Sources */,
-				E23431620F6E72C90018BE5D /* FKEither.m in Sources */,
-				E23431640F6E72C90018BE5D /* FKOption.m in Sources */,
-				E23431660F6E72C90018BE5D /* FKEffect.m in Sources */,
-				E23431680F6E72C90018BE5D /* FKFunction.m in Sources */,
-				E234316B0F6E72C90018BE5D /* FKP1.m in Sources */,
-				E234316D0F6E72C90018BE5D /* FKP2.m in Sources */,
-				E234316F0F6E72C90018BE5D /* FKP3.m in Sources */,
-				E23431710F6E72C90018BE5D /* FKUnit.m in Sources */,
 				E23431730F6E72C90018BE5D /* FKEitherUnitTest.m in Sources */,
 				E23431740F6E72C90018BE5D /* FKOptionUnitTest.m in Sources */,
 				E23431750F6E72C90018BE5D /* FKFunctionTests.m in Sources */,
 				E23431760F6E72C90018BE5D /* FKNewtypeTests.m in Sources */,
-				E2843E660F7C6433004D8369 /* NSObject+FunctionalKit.m in Sources */,
-				E2843EBB0F7C7004004D8369 /* NSArray+FunctionalKit.m in Sources */,
-				47F1FA100F81E1CF00239B9F /* NSInvocation+FunctionalKit.m in Sources */,
-				474BA4EC0F898AC100E41262 /* FKP4.m in Sources */,
-				474BA4EE0F898AC100E41262 /* FKP5.m in Sources */,
-				474BA4F00F898AC100E41262 /* FKP6.m in Sources */,
-				474BA4F20F898AC100E41262 /* FKP7.m in Sources */,
-				474BA4F40F898AC100E41262 /* FKP8.m in Sources */,
+				47B07DBF0F96E38500503E8B /* FKEffect.m in Sources */,
+				47B07DC10F96E38500503E8B /* FKEither.m in Sources */,
+				47B07DC30F96E38500503E8B /* FKFunction+Common.m in Sources */,
+				47B07DC50F96E38500503E8B /* FKFunction.m in Sources */,
+				47B07DC90F96E38500503E8B /* FKOption.m in Sources */,
+				47B07DCB0F96E38500503E8B /* FKP1.m in Sources */,
+				47B07DCD0F96E38500503E8B /* FKP2.m in Sources */,
+				47B07DCF0F96E38500503E8B /* FKP3.m in Sources */,
+				47B07DD10F96E38500503E8B /* FKP4.m in Sources */,
+				47B07DD30F96E38500503E8B /* FKP5.m in Sources */,
+				47B07DD50F96E38500503E8B /* FKP6.m in Sources */,
+				47B07DD70F96E38500503E8B /* FKP7.m in Sources */,
+				47B07DD90F96E38500503E8B /* FKP8.m in Sources */,
+				47B07DDC0F96E38500503E8B /* FKPromise.m in Sources */,
+				47B07DDE0F96E38500503E8B /* FKUnit.m in Sources */,
+				47B07DE00F96E38500503E8B /* NSArray+FunctionalKit.m in Sources */,
+				47B07DE20F96E38500503E8B /* NSDictionary+FunctionalKit.m in Sources */,
+				47B07DE40F96E38500503E8B /* NSInvocation+FunctionalKit.m in Sources */,
+				47B07DE60F96E38500503E8B /* NSObject+FunctionalKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,28 +519,28 @@
 				E234317A0F6E72F30018BE5D /* FKFunctionTests.m in Sources */,
 				E234317B0F6E72F40018BE5D /* FKNewtypeTests.m in Sources */,
 				E234317C0F6E72F50018BE5D /* FKOptionUnitTest.m in Sources */,
-				E23431E10F6F0DE00018BE5D /* FKEffect.m in Sources */,
-				E23431E20F6F0DE00018BE5D /* FKEither.m in Sources */,
-				E23431E30F6F0DE10018BE5D /* FKFunction.m in Sources */,
-				E23431E40F6F0DE20018BE5D /* FKOption.m in Sources */,
-				E23431E50F6F0DE30018BE5D /* FKP1.m in Sources */,
-				E23431E60F6F0DE40018BE5D /* FKP2.m in Sources */,
-				E23431E70F6F0DE50018BE5D /* FKP3.m in Sources */,
-				E23431E80F6F0DE60018BE5D /* FKPromise.m in Sources */,
-				E23431E90F6F0DE70018BE5D /* FKUnit.m in Sources */,
-				E2843E670F7C6433004D8369 /* NSObject+FunctionalKit.m in Sources */,
 				E2843EB60F7C6FFC004D8369 /* NSArrayExtensionsUnitTest.m in Sources */,
-				E2843EB90F7C7004004D8369 /* NSArray+FunctionalKit.m in Sources */,
 				E2065A910F8078AB0034E426 /* NSDictionaryExtensionsUnitTest.m in Sources */,
-				E2065A940F8078EA0034E426 /* NSDictionary+FunctionalKit.m in Sources */,
-				47F1FA0E0F81E1C800239B9F /* NSInvocation+FunctionalKit.m in Sources */,
-				4770AB5D0F82DAEA00F287B3 /* FKFunction+Common.m in Sources */,
 				4770AB670F82DCDE00F287B3 /* FKFunctionCommonTests.m in Sources */,
-				474BA4E60F898AC100E41262 /* FKP4.m in Sources */,
-				474BA4E70F898AC100E41262 /* FKP5.m in Sources */,
-				474BA4E80F898AC100E41262 /* FKP6.m in Sources */,
-				474BA4E90F898AC100E41262 /* FKP7.m in Sources */,
-				474BA4EA0F898AC100E41262 /* FKP8.m in Sources */,
+				47B07DAB0F96E38500503E8B /* FKEffect.m in Sources */,
+				47B07DAC0F96E38500503E8B /* FKEither.m in Sources */,
+				47B07DAD0F96E38500503E8B /* FKFunction+Common.m in Sources */,
+				47B07DAE0F96E38500503E8B /* FKFunction.m in Sources */,
+				47B07DAF0F96E38500503E8B /* FKOption.m in Sources */,
+				47B07DB00F96E38500503E8B /* FKP1.m in Sources */,
+				47B07DB10F96E38500503E8B /* FKP2.m in Sources */,
+				47B07DB20F96E38500503E8B /* FKP3.m in Sources */,
+				47B07DB30F96E38500503E8B /* FKP4.m in Sources */,
+				47B07DB40F96E38500503E8B /* FKP5.m in Sources */,
+				47B07DB50F96E38500503E8B /* FKP6.m in Sources */,
+				47B07DB60F96E38500503E8B /* FKP7.m in Sources */,
+				47B07DB70F96E38500503E8B /* FKP8.m in Sources */,
+				47B07DB80F96E38500503E8B /* FKPromise.m in Sources */,
+				47B07DB90F96E38500503E8B /* FKUnit.m in Sources */,
+				47B07DBA0F96E38500503E8B /* NSArray+FunctionalKit.m in Sources */,
+				47B07DBB0F96E38500503E8B /* NSDictionary+FunctionalKit.m in Sources */,
+				47B07DBC0F96E38500503E8B /* NSInvocation+FunctionalKit.m in Sources */,
+				47B07DBD0F96E38500503E8B /* NSObject+FunctionalKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,6 +595,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = Source/Main;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
@@ -622,6 +610,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = Source/Main;
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
 				SDKROOT = iphoneos2.2;

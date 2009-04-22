@@ -23,6 +23,16 @@ Create a function from a selector.
 
     id <FKFunction> doSomethingFunction = [FKFunction functionFromSelector:@selector(doSomething:) target:self];
 
+Use a nested function (requires -fnested-functions):
+
+  // With -fnested-functions enabled.
+  - (void)testDummy {
+    NSString *f(NSString *a) {
+        return [a substringToIndex:1];
+    }
+    NSDictionary *d = [NSARRAY(@"one", @"two", @"three") groupByKey:functionP(f)];
+  }
+
 ### Mapping
 
 Map across the elements of an array of names and turn them into people.

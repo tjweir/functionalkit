@@ -32,6 +32,7 @@ READ id value;
 
 // Returns Some value if either is of this projection, else returns None
 - (FKOption *)toOption;
+
 @end
 
 // A left projection of an either value.
@@ -85,4 +86,7 @@ READ FKRightProjection *right;
 // If this is a left, then return the left value in right, or vice versa.
 - (FKEither *)swap;
 
+// Joins across the right side: E<A, E<A, B>> -> E<A, B>
+// Note: requires that the right side is an either. Currently not enforced.
++ (FKEither *)joinRight:(FKEither *)either;
 @end

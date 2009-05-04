@@ -173,6 +173,10 @@ NSString *FKFunctionalKitErrorDomain = @"FunctionalKit";
     return [FKEither leftWithValue:[NSError errorWithDomain:FKFunctionalKitErrorDomain code:0 userInfo:userInfo]];
 }
 
++ (FKEither *)joinRight:(FKEither *)either {
+    return (either.isLeft) ? either : either.right.value;
+}
+
 - (BOOL)isRight {
     return !isLeft;
 }

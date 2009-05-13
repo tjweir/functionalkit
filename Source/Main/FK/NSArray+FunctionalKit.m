@@ -134,10 +134,11 @@ READ id <FKFunction> wrappedF;
     NSMutableDictionary *grouped = [NSMutableDictionary dictionary];
 	for (id item in self) {
         id key = [f :item];
-        NSMutableArray *values = [grouped objectForKey:key];
+        id nilsafeKey = key == nil ? [NSNull null] : key;
+        NSMutableArray *values = [grouped objectForKey:nilsafeKey];
         if (values == nil) {
             values = [NSMutableArray array];
-            [grouped setObject:values forKey:key];
+            [grouped setObject:values forKey:nilsafeKey];
         }
         [values addObject:item];
 	}   

@@ -15,7 +15,7 @@ FunctionalKit is loosely modelled on Functional Java.
 1. For each of your targets, add FunctionalKit's <code>functionalkit</code> target as a direct dependency of the target (Target -> Command-I -> General -> Direct Dependencies).
 1. For each of your targets, ensure <code>libfunctionalkit.a</code> is included (linked against).
 1. In your project, add FunctionalKit's main directory to your Header Search Paths (<code>HEADER_SEARCH_PATHS</code>), e.g. <code>$(SRCROOT)/Source/External/functionalkit/Source/Main</code>.
-1. Import <code>MV/MVPrelude.h</code> where you want to use FunctionalKit, your prefix header is a good spot.
+1. Import <code>FK/FKPrelude.h</code> where you want to use FunctionalKit, your prefix header is a good spot.
 
 ## Usage
 

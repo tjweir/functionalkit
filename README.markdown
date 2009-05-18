@@ -19,8 +19,7 @@ FunctionalKit is loosely modelled on Functional Java.
 
 ## Usage
 
-* [Simplifying JSON Parsing Using FunctionalKit](http://adams.id.au/blog/2009/04/simplifying-json-parsing-using-functionalkit/),
-or see the examples below.
+* [Simplifying JSON Parsing Using FunctionalKit](http://adams.id.au/blog/2009/04/simplifying-json-parsing-using-functionalkit/)
 * [Taming Errors with FunctionalKit](http://www.slideshare.net/nkpart/taming-errors-with-functionalkit)
 
 ## Examples

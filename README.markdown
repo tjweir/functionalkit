@@ -10,12 +10,12 @@ FunctionalKit is loosely modelled on Functional Java.
 
 ## Setup/Installation
 
-1. Bring this project's structure into your project's structure, a git submodule is a good start. We use: <code>Source/External/functionalkit</code>.
-1. Add functionalkit.xcodeproj to your project.
-1. For each of your targets, add FunctionalKit's "functionalkit" target as a direct dependency of the target (Target -> Command-I -> General -> Direct Dependencies).
-1. For each of your targets, ensure libfunctionalkit.a is included (linked against).
-1. In your project, add FunctionalKit's main directory to your Header Search Paths (HEADER_SEARCH_PATHS), e.g. $(SRCROOT)/Source/External/functionalkit/Source/Main
-1. Import MV/MVPrelude.h where you want to use Motive, your prefix header is a good spot.
+1. Bring this project's structure into your project's structure, a git submodule is a good start. We place it into <code>Source/External/functionalkit</code>.
+1. Add <code>functionalkit.xcodeproj</code> to your project.
+1. For each of your targets, add FunctionalKit's <code>functionalkit<code> target as a direct dependency of the target (Target -> Command-I -> General -> Direct Dependencies).
+1. For each of your targets, ensure <code>libfunctionalkit.a</code> is included (linked against).
+1. In your project, add FunctionalKit's main directory to your Header Search Paths (<code>HEADER_SEARCH_PATHS</code>), e.g. <code>$(SRCROOT)/Source/External/functionalkit/Source/Main</code>.
+1. Import <code>MV/MVPrelude.h</code> where you want to use FunctionalKit, your prefix header is a good spot.
 
 ## Usage
 

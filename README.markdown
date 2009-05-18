@@ -8,11 +8,19 @@ concepts such as lifting functions into monads.
 FunctionalKit is loosely modelled on Functional Java.
 
 
-## Setup
+## Setup/Installation
 
-1. Clone the project into your project somewhere, we use Source/External/functionalkit.
-1. Add the Source/Main directory into your Xcode project.
-1. Rock!
+1. Bring this project's structure into your project's structure, a git submodule is a good start. We use: Source/External/functionalkit.
+1. Add functionalkit.xcodeproj to your project.
+1. For each of your targets, add FunctionalKit's "functionalkit" target as a direct dependency of the target (Target -> Command-I -> General -> Direct Dependencies).
+1. For each of your targets, ensure libfunctionalkit.a is included (linked against).
+1. In your project, add FunctionalKit's main directory to your Header Search Paths (HEADER_SEARCH_PATHS), e.g. $(SRCROOT)/Source/External/functionalkit/Source/Main
+1. Import MV/MVPrelude.h where you want to use Motive, your prefix header is a good spot.
+
+## Usage
+
+For example usage see [Simplifying JSON Parsing Using FunctionalKit](http://adams.id.au/blog/2009/04/simplifying-json-parsing-using-functionalkit/),
+or see the examples below.
 
 
 ## Examples

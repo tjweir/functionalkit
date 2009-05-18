@@ -69,6 +69,11 @@
     STAssertEqualObjects(NSARRAY(@"A", @"B", @"C"), [liftedF :array], nil);
 }
 
+- (void)testCanIntersperseAnObjectWithinAnArray {
+    NSArray *array = NSARRAY(@"A", @"B", @"C");
+    STAssertEqualObjects(NSARRAY(@"A", @",", @"B", @",", @"C"), [array intersperse:@","], nil);
+}
+
 - (BOOL)isStringContainingOne:(id)string {
     return [string isEqual:@"1"];
 }

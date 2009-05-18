@@ -4,6 +4,10 @@
 #import "FK/FKP2.h"
 #import "FK/FKOption.h"
 
+// TODO Add:
+// - foldL, foldR
+// - intersperse
+
 @interface NSArray (FunctionalKitExtensions)
 
 // Lifts the given function into this array monad, returning a new function that applies the given function to each item in the array (aka. map).
@@ -49,6 +53,9 @@ READ NSArray *tail;
 // Applies to given function to each item in this array. If the function returns a value it is ignored, it is assumed to be side-effecting.
 // f :: id -> void
 - (void)foreach:(id <FKFunction>)f;
+
+// Intersperses the |object| in bewtween the elements of this array.
+- (NSArray *)intersperse:(id)object;
 
 // Returns an option projection of this array; None if empty, or the first element in Some.
 - (FKOption *)toOption;

@@ -159,6 +159,15 @@ READ id <FKFunction> wrappedF;
 	}
 }
 
+- (NSArray *)intersperse:(id)object {
+    NSMutableArray *interspersed = [NSMutableArray array];
+    for (int i = 0; i < [self count]; i++) {
+        [interspersed addObject:[self objectAtIndex:i]];
+        if (i != [self count] - 1) [interspersed addObject:object];
+    }    
+    return interspersed;
+}
+
 - (FKOption *)toOption {
     return  [self count] == 0 ? [FKOption none] : [FKOption some:[self objectAtIndex:0]];
 }

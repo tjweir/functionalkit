@@ -80,6 +80,11 @@
     STAssertEqualObjects(@"ABC", [array foldLeft:@"" f:[NSString concatF]], nil);
 }
 
+- (void)testCanReverseAnArray {
+    NSArray *array = NSARRAY(@"A", @"B", @"C");
+    STAssertEqualObjects(NSARRAY(@"C", @"B", @"A"), [array reverse], nil);
+}
+
 - (BOOL)isStringContainingOne:(id)string {
     return [string isEqual:@"1"];
 }

@@ -176,6 +176,14 @@ READ id <FKFunction> wrappedF;
     return interspersed;
 }
 
+- (NSArray *)reverse {
+    NSMutableArray *reversed = [NSMutableArray array];
+    for (int i = [self count] - 1; i >= 0; i--) {
+        [reversed addObject:[self objectAtIndex:i]];
+    }
+    return reversed;
+}
+
 - (FKOption *)toOption {
     return  [self count] == 0 ? [FKOption none] : [FKOption some:[self objectAtIndex:0]];
 }

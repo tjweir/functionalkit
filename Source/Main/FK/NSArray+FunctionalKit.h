@@ -63,6 +63,9 @@ READ NSArray *tail;
 // Intersperses the |object| in bewtween the elements of this array.
 - (NSArray *)intersperse:(id)object;
 
+// Reverses this array.
+- (NSArray *)reverse;
+
 // Returns an option projection of this array; None if empty, or the first element in Some.
 - (FKOption *)toOption;
 

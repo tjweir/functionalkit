@@ -145,6 +145,13 @@ READ id <FKFunction> wrappedF;
     return [NSDictionary dictionaryWithDictionary:grouped];
 }
 
+- (id)foldLeft:(id)acc f:(id <FKFunction2>)f {
+    for (id item in self) {
+        [f :acc :item];
+    }
+    return acc;
+}
+
 - (NSArray *)map:(id <FKFunction>)f {
 	NSMutableArray *r = [NSMutableArray arrayWithCapacity:[self count]];
 	for (id item in self) {

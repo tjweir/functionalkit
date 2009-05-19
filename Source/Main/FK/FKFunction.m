@@ -218,7 +218,6 @@ READ NSObject *target;
 }
 - (FKFunction *)initWithPointer:(fkFunction)fp;
 @end
-
 @implementation FKFunctionFromPointer
 - (FKFunction *)initWithPointer:(fkFunction)fp {
 	if ((self = [super init])) {
@@ -228,6 +227,23 @@ READ NSObject *target;
 }
 - (id):(id)arg {
 	return (*theFunction)(arg);
+}
+@end
+
+@interface FKFunction2FromPointer : FKFunction2 {
+	fkFunction2 theFunction;
+}
+- (FKFunction2 *)initWithPointer:(fkFunction2)fp;
+@end
+@implementation FKFunction2FromPointer
+- (FKFunction2 *)initWithPointer:(fkFunction2)fp {
+	if ((self = [super init])) {
+		theFunction = fp;
+	}
+	return self;
+}
+- (id):(id)arg1 :(id)arg2 {
+	return (*theFunction)(arg1, arg2);
 }
 @end
 
@@ -301,6 +317,10 @@ READ NSObject *target;
 
 + (FKFunction2 *)functionFromSelector:(SEL)s {
 	return [[[FKFunction2FromSelector alloc] initWithSelector:s] autorelease];
+}
+
++ (FKFunction2 *)functionFromPointer:(fkFunction2)f {
+	return [[[FKFunction2FromPointer alloc] initWithPointer:f] autorelease];
 }
 
 - (id):(id)arg1 :(id)arg2 {

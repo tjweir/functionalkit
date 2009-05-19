@@ -589,6 +589,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = Source/Main;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "-fnested-functions";
+				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
 				OTHER_LDFLAGS = "-ObjC";
 				PREBINDING = NO;
 				SDKROOT = iphoneos2.2;

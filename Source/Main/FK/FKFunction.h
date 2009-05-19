@@ -6,10 +6,12 @@
 #define FKSA(sel, arg) [FKFunction functionFromSelector:@selector(sel) withArgument:arg]
 #define FKTS(tgt, sel) [FKFunction functionFromSelector:@selector(sel) target:tgt]
 #define FKP(fp) [FKFunction functionFromPointer:fp]
+#define FKP2(fp) [FKFunction2 functionFromPointer:fp]
 
 #define functionS(sel) FKS(sel)
 #define functionSA(sel, arg) FKSA(sel, arg)
 #define functionP(fp) FKP(fp)
+#define functionP2(fp) FKP2(fp)
 #define functionTS(tgt, sel) FKTS(tgt, sel)
 
 // TODO Add in F2, F3, etc.
@@ -24,7 +26,9 @@
 - (id):(id)arg1 :(id)arg2;
 @end
 
+// C function types, for function pointer-based function application.
 typedef id (*fkFunction)(id);
+typedef id (*fkFunction2)(id, id);
 
 @interface FKFunction : NSObject <FKFunction>
 
@@ -58,5 +62,7 @@ typedef id (*fkFunction)(id);
 // eg. [arg1 selector:arg2]
 // s :: id -> id
 + (FKFunction2 *)functionFromSelector:(SEL)s;
+
++ (FKFunction2 *)functionFromPointer:(fkFunction2)f;
 
 @end

@@ -46,6 +46,13 @@ READ NSArray *tail;
 // f :: id -> id
 - (NSDictionary *)groupByKey:(id <FKFunction>)f;
 
+// Folds across this array using |acc| as the start acumulator (of type a), a function given an a & a b that returns an a, and an a which is the 
+// result of the fold.
+// It takes the second argument and the first item of the list and applies the function to them, then feeds the function with this result and the 
+// second argument and so on. 
+// foldLeft :: a -> (a -> b -> a) -> a
+- (id)foldLeft:(id)acc f:(id <FKFunction2>)f;
+
 // Maps the given function across every item in this array. You should ensure that you return an autoreleased object from |f|.
 // f :: id -> id
 - (NSArray *)map:(id <FKFunction>)f;

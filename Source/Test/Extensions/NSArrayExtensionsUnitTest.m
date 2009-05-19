@@ -74,6 +74,15 @@
     STAssertEqualObjects(NSARRAY(@"A", @",", @"B", @",", @"C"), [array intersperse:@","], nil);
 }
 
+- (void)testCanFoldAcrossAnArray {
+    NSString *concat(NSMutableString *base, NSString *suffix) {
+        [base appendString:suffix];
+        return base;
+    }    
+    NSArray *array = NSARRAY(@"A", @"B", @"C");
+    STAssertEqualObjects(@"ABC", [array foldLeft:[NSMutableString string] f:functionP2(concat)], nil);
+}
+
 - (BOOL)isStringContainingOne:(id)string {
     return [string isEqual:@"1"];
 }

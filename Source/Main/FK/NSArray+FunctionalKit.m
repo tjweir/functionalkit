@@ -146,10 +146,11 @@ READ id <FKFunction> wrappedF;
 }
 
 - (id)foldLeft:(id)acc f:(id <FKFunction2>)f {
+    id accC = [[acc copy] autorelease];
     for (id item in self) {
-        [f :acc :item];
+        accC = [f :accC :item];
     }
-    return acc;
+    return accC;
 }
 
 - (NSArray *)map:(id <FKFunction>)f {

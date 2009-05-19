@@ -96,6 +96,15 @@ Comap a function with an effect, to have the function execute then perform a sid
     id <FKFunction> getPhotosF = [FKFunction functionFromSelector:@selector(photos)];
     id <FKEffect> galleriesOp = [FKEffect comap:[self effectThatDoesSomethingWithPhotos] :getPhotosF];
 
+### Fold and intersperse
+
+    // Declare some distinct search terms.
+    NSArray *searchTerms = NSARRAY(@"foo", @"bar", @"baz");
+
+    // Intersperse "OR" between each term, and flatten into a single string.
+    NSString *term = [[searchTerms intersperse:@" OR "] foldLeft:@"" f:[NSString concatF]];
+    NSLog(term);  // @"foo OR bar OR baz"
+
 ### Lifting
 
 The following example lifts a function into the array monad, applying the function to each element of the array.

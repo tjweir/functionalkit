@@ -25,3 +25,4 @@
 #import "FK/NSArray+FunctionalKit.h"
 #import "FK/NSDictionary+FunctionalKit.h"
 #import "FK/NSObject+FunctionalKit.h"
+#import "NSString+FunctionalKit.h"

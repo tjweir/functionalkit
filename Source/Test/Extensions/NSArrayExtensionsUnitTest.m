@@ -3,6 +3,7 @@
 #import "FKFunction.h"
 #import "NSArray+FunctionalKit.h"
 #import "FKP2.h"
+#import "NSString+FunctionalKit.h"
 
 @interface NSArrayExtensionsUnitTest : GTMTestCase
 @end
@@ -75,12 +76,8 @@
 }
 
 - (void)testCanFoldAcrossAnArray {
-    NSString *concat(NSMutableString *base, NSString *suffix) {
-        [base appendString:suffix];
-        return base;
-    }    
     NSArray *array = NSARRAY(@"A", @"B", @"C");
-    STAssertEqualObjects(@"ABC", [array foldLeft:[NSMutableString string] f:functionP2(concat)], nil);
+    STAssertEqualObjects(@"ABC", [array foldLeft:[NSMutableString string] f:[NSString concat]], nil);
 }
 
 - (BOOL)isStringContainingOne:(id)string {

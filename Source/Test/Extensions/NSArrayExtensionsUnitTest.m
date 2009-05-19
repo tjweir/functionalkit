@@ -77,7 +77,8 @@
 
 - (void)testCanFoldAcrossAnArray {
     NSArray *array = NSARRAY(@"A", @"B", @"C");
-    STAssertEqualObjects(@"ABC", [array foldLeft:[NSMutableString string] f:[NSString concat]], nil);
+    //STAssertEqualObjects(@"ABC", [array foldLeft:[NSMutableString string] f:[NSString concatF]], nil);
+    STAssertEqualObjects(@"ABC", [array foldLeft:[NSMutableString string] f:[NSString concatF]], nil);
 }
 
 - (BOOL)isStringContainingOne:(id)string {

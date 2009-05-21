@@ -2,7 +2,9 @@
 #import "FKMacros.h"
 #import "FKFunction.h"
 
-// TODO Move this somewhere better.
+// TODO Add foreach.
+
+// TODO Move this into the prelude.
 extern NSString *FKFunctionalKitErrorDomain;
 
 @class FKEither;

@@ -66,6 +66,12 @@ READ NSArray *tail;
 // Reverses this array.
 - (NSArray *)reverse;
 
+// Returns the unique items in this array, according to the |isEqual:| selector. Items in the returned array may not be in the same order as this 
+// array.
+- (NSArray *)unique;
+
+// TODO Add unique
+
 // Returns an option projection of this array; None if empty, or the first element in Some.
 - (FKOption *)toOption;
 

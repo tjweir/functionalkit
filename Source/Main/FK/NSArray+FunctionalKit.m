@@ -184,6 +184,18 @@ READ id <FKFunction> wrappedF;
     return reversed;
 }
 
+// TODO This is innefficient, consider writing it manually.
+- (NSArray *)unique {
+    NSSet *unique = [NSSet setWithArray:self];
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    for (id item in unique) {
+        [array addObject:item];
+    }
+    NSArray *copy = [array copy];
+    [array release];
+    return [copy autorelease];
+}
+
 - (FKOption *)toOption {
     return  [self count] == 0 ? [FKOption none] : [FKOption some:[self objectAtIndex:0]];
 }

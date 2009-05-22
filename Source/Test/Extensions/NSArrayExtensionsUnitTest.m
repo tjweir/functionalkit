@@ -85,6 +85,11 @@
     STAssertEqualObjects(NSARRAY(@"C", @"B", @"A"), [array reverse], nil);
 }
 
+- (void)testCanUniquifyAnArray {
+    NSArray *array = NSARRAY(@"A", @"B", @"C", @"C", @"A", @"A", @"B");
+    STAssertEqualObjects(NSARRAY(@"B", @"A", @"C"), [array unique], nil);
+}
+
 - (BOOL)isStringContainingOne:(id)string {
     return [string isEqual:@"1"];
 }

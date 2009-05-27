@@ -129,4 +129,10 @@
 	return self.isSome ? [FKEither rightWithValue:self.some] : [FKEither errorWithReason:reason];
 }
 
+- (void)foreach:(id <FKEffect>)effect {
+    if (self.isSome) {
+        [effect e:self.some];
+    }
+}
+
 @end

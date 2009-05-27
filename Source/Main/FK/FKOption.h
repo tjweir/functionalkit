@@ -1,4 +1,5 @@
 #import <Foundation/Foundation.h>
+#import "FK/FKEffect.h"
 #import "FK/FKFunction.h"
 #import "FK/FKEither.h"
 #import "FK/FKMacros.h"
@@ -44,6 +45,9 @@ READ BOOL isSome;
 
 // Returns an either projection of this optional value; an NSError in the Left if this optional holds no value, or this optional's value in Right.
 - (FKEither *)toEitherWithError:(NSString *)reason;
+
+// Side-effects on some if some;
+- (void)foreach:(id <FKEffect>)effect;
 
 @end
 

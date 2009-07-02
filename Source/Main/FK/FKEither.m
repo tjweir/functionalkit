@@ -164,12 +164,12 @@ NSString *FKFunctionalKitErrorDomain = @"FunctionalKit";
 }
 
 + (FKEither *)errorWithReason:(NSString *)reason description:(NSString *)description {
-    NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:reason, NSLocalizedFailureReasonErrorKey, description, NSLocalizedDescriptionKey];
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:reason, NSLocalizedFailureReasonErrorKey, description, NSLocalizedDescriptionKey, nil];
     return [FKEither leftWithValue:[NSError errorWithDomain:FKFunctionalKitErrorDomain code:0 userInfo:userInfo]];
 }
 
 + (FKEither *)errorWithReason:(NSString *)reason underlyingError:(NSError *)error {
-    NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:reason, NSLocalizedFailureReasonErrorKey, error, NSUnderlyingErrorKey];
+    NSDictionary *userInfo = [NSDictionary dictionaryWithObjectsAndKeys:reason, NSLocalizedFailureReasonErrorKey, error, NSUnderlyingErrorKey, nil];
     return [FKEither leftWithValue:[NSError errorWithDomain:FKFunctionalKitErrorDomain code:0 userInfo:userInfo]];
 }
 

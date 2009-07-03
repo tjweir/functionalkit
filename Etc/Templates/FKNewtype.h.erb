@@ -24,7 +24,7 @@
 #define NewType<%= (dim == 1) ? "" : dim %>Interface(newtype, <%= macro_arg_list %>) \
 @interface newtype : FKP<%= dim %> \
 + (newtype *)<%= (1..dim).map { |i| "acc#{i}:(wrappedtype#{i} *)acc#{i}" }.join(' ') %>; \
-<%= (1..dim).map { |i| "@property (readonly) wrappedtype#{i} *acc#{i}; \\" }.join("\n") %>
+<%= (1..dim).map { |i| "- (wrappedtype#{i} *)acc#{i}; \\" }.join("\n") %>
 @end \
 FKOption *NSArrayTo##newtype(NSArray *a); \
 FKOption *NSDictionaryTo##newtype(NSDictionary *d); \

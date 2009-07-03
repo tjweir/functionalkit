@@ -31,7 +31,7 @@
 #define NewTypeInterface(newtype, wrappedtype1, acc1) \
 @interface newtype : FKP1 \
 + (newtype *)acc1:(wrappedtype1 *)acc1; \
-@property (readonly) wrappedtype1 *acc1; \
+- (wrappedtype1 *)acc1; \
 @end \
 FKOption *NSArrayTo##newtype(NSArray *a); \
 FKOption *NSDictionaryTo##newtype(NSDictionary *d); \
@@ -69,8 +69,8 @@ FKOption *NSDictionaryTo##newtype(NSDictionary *dict) {\
 #define NewType2Interface(newtype, wrappedtype1, acc1, wrappedtype2, acc2) \
 @interface newtype : FKP2 \
 + (newtype *)acc1:(wrappedtype1 *)acc1 acc2:(wrappedtype2 *)acc2; \
-@property (readonly) wrappedtype1 *acc1; \
-@property (readonly) wrappedtype2 *acc2; \
+- (wrappedtype1 *)acc1; \
+- (wrappedtype2 *)acc2; \
 @end \
 FKOption *NSArrayTo##newtype(NSArray *a); \
 FKOption *NSDictionaryTo##newtype(NSDictionary *d); \
@@ -109,9 +109,9 @@ FKOption *NSDictionaryTo##newtype(NSDictionary *dict) {\
 #define NewType3Interface(newtype, wrappedtype1, acc1, wrappedtype2, acc2, wrappedtype3, acc3) \
 @interface newtype : FKP3 \
 + (newtype *)acc1:(wrappedtype1 *)acc1 acc2:(wrappedtype2 *)acc2 acc3:(wrappedtype3 *)acc3; \
-@property (readonly) wrappedtype1 *acc1; \
-@property (readonly) wrappedtype2 *acc2; \
-@property (readonly) wrappedtype3 *acc3; \
+- (wrappedtype1 *)acc1; \
+- (wrappedtype2 *)acc2; \
+- (wrappedtype3 *)acc3; \
 @end \
 FKOption *NSArrayTo##newtype(NSArray *a); \
 FKOption *NSDictionaryTo##newtype(NSDictionary *d); \
@@ -151,10 +151,10 @@ FKOption *NSDictionaryTo##newtype(NSDictionary *dict) {\
 #define NewType4Interface(newtype, wrappedtype1, acc1, wrappedtype2, acc2, wrappedtype3, acc3, wrappedtype4, acc4) \
 @interface newtype : FKP4 \
 + (newtype *)acc1:(wrappedtype1 *)acc1 acc2:(wrappedtype2 *)acc2 acc3:(wrappedtype3 *)acc3 acc4:(wrappedtype4 *)acc4; \
-@property (readonly) wrappedtype1 *acc1; \
-@property (readonly) wrappedtype2 *acc2; \
-@property (readonly) wrappedtype3 *acc3; \
-@property (readonly) wrappedtype4 *acc4; \
+- (wrappedtype1 *)acc1; \
+- (wrappedtype2 *)acc2; \
+- (wrappedtype3 *)acc3; \
+- (wrappedtype4 *)acc4; \
 @end \
 FKOption *NSArrayTo##newtype(NSArray *a); \
 FKOption *NSDictionaryTo##newtype(NSDictionary *d); \
@@ -195,11 +195,11 @@ FKOption *NSDictionaryTo##newtype(NSDictionary *dict) {\
 #define NewType5Interface(newtype, wrappedtype1, acc1, wrappedtype2, acc2, wrappedtype3, acc3, wrappedtype4, acc4, wrappedtype5, acc5) \
 @interface newtype : FKP5 \
 + (newtype *)acc1:(wrappedtype1 *)acc1 acc2:(wrappedtype2 *)acc2 acc3:(wrappedtype3 *)acc3 acc4:(wrappedtype4 *)acc4 acc5:(wrappedtype5 *)acc5; \
-@property (readonly) wrappedtype1 *acc1; \
-@property (readonly) wrappedtype2 *acc2; \
-@property (readonly) wrappedtype3 *acc3; \
-@property (readonly) wrappedtype4 *acc4; \
-@property (readonly) wrappedtype5 *acc5; \
+- (wrappedtype1 *)acc1; \
+- (wrappedtype2 *)acc2; \
+- (wrappedtype3 *)acc3; \
+- (wrappedtype4 *)acc4; \
+- (wrappedtype5 *)acc5; \
 @end \
 FKOption *NSArrayTo##newtype(NSArray *a); \
 FKOption *NSDictionaryTo##newtype(NSDictionary *d); \
@@ -241,12 +241,12 @@ FKOption *NSDictionaryTo##newtype(NSDictionary *dict) {\
 #define NewType6Interface(newtype, wrappedtype1, acc1, wrappedtype2, acc2, wrappedtype3, acc3, wrappedtype4, acc4, wrappedtype5, acc5, wrappedtype6, acc6) \
 @interface newtype : FKP6 \
 + (newtype *)acc1:(wrappedtype1 *)acc1 acc2:(wrappedtype2 *)acc2 acc3:(wrappedtype3 *)acc3 acc4:(wrappedtype4 *)acc4 acc5:(wrappedtype5 *)acc5 acc6:(wrappedtype6 *)acc6; \
-@property (readonly) wrappedtype1 *acc1; \
-@property (readonly) wrappedtype2 *acc2; \
-@property (readonly) wrappedtype3 *acc3; \
-@property (readonly) wrappedtype4 *acc4; \
-@property (readonly) wrappedtype5 *acc5; \
-@property (readonly) wrappedtype6 *acc6; \
+- (wrappedtype1 *)acc1; \
+- (wrappedtype2 *)acc2; \
+- (wrappedtype3 *)acc3; \
+- (wrappedtype4 *)acc4; \
+- (wrappedtype5 *)acc5; \
+- (wrappedtype6 *)acc6; \
 @end \
 FKOption *NSArrayTo##newtype(NSArray *a); \
 FKOption *NSDictionaryTo##newtype(NSDictionary *d); \
@@ -289,13 +289,13 @@ FKOption *NSDictionaryTo##newtype(NSDictionary *dict) {\
 #define NewType7Interface(newtype, wrappedtype1, acc1, wrappedtype2, acc2, wrappedtype3, acc3, wrappedtype4, acc4, wrappedtype5, acc5, wrappedtype6, acc6, wrappedtype7, acc7) \
 @interface newtype : FKP7 \
 + (newtype *)acc1:(wrappedtype1 *)acc1 acc2:(wrappedtype2 *)acc2 acc3:(wrappedtype3 *)acc3 acc4:(wrappedtype4 *)acc4 acc5:(wrappedtype5 *)acc5 acc6:(wrappedtype6 *)acc6 acc7:(wrappedtype7 *)acc7; \
-@property (readonly) wrappedtype1 *acc1; \
-@property (readonly) wrappedtype2 *acc2; \
-@property (readonly) wrappedtype3 *acc3; \
-@property (readonly) wrappedtype4 *acc4; \
-@property (readonly) wrappedtype5 *acc5; \
-@property (readonly) wrappedtype6 *acc6; \
-@property (readonly) wrappedtype7 *acc7; \
+- (wrappedtype1 *)acc1; \
+- (wrappedtype2 *)acc2; \
+- (wrappedtype3 *)acc3; \
+- (wrappedtype4 *)acc4; \
+- (wrappedtype5 *)acc5; \
+- (wrappedtype6 *)acc6; \
+- (wrappedtype7 *)acc7; \
 @end \
 FKOption *NSArrayTo##newtype(NSArray *a); \
 FKOption *NSDictionaryTo##newtype(NSDictionary *d); \
@@ -339,14 +339,14 @@ FKOption *NSDictionaryTo##newtype(NSDictionary *dict) {\
 #define NewType8Interface(newtype, wrappedtype1, acc1, wrappedtype2, acc2, wrappedtype3, acc3, wrappedtype4, acc4, wrappedtype5, acc5, wrappedtype6, acc6, wrappedtype7, acc7, wrappedtype8, acc8) \
 @interface newtype : FKP8 \
 + (newtype *)acc1:(wrappedtype1 *)acc1 acc2:(wrappedtype2 *)acc2 acc3:(wrappedtype3 *)acc3 acc4:(wrappedtype4 *)acc4 acc5:(wrappedtype5 *)acc5 acc6:(wrappedtype6 *)acc6 acc7:(wrappedtype7 *)acc7 acc8:(wrappedtype8 *)acc8; \
-@property (readonly) wrappedtype1 *acc1; \
-@property (readonly) wrappedtype2 *acc2; \
-@property (readonly) wrappedtype3 *acc3; \
-@property (readonly) wrappedtype4 *acc4; \
-@property (readonly) wrappedtype5 *acc5; \
-@property (readonly) wrappedtype6 *acc6; \
-@property (readonly) wrappedtype7 *acc7; \
-@property (readonly) wrappedtype8 *acc8; \
+- (wrappedtype1 *)acc1; \
+- (wrappedtype2 *)acc2; \
+- (wrappedtype3 *)acc3; \
+- (wrappedtype4 *)acc4; \
+- (wrappedtype5 *)acc5; \
+- (wrappedtype6 *)acc6; \
+- (wrappedtype7 *)acc7; \
+- (wrappedtype8 *)acc8; \
 @end \
 FKOption *NSArrayTo##newtype(NSArray *a); \
 FKOption *NSDictionaryTo##newtype(NSDictionary *d); \

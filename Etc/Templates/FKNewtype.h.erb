@@ -26,17 +26,18 @@
 + (newtype *)<%= (1..dim).map { |i| "acc#{i}:(wrappedtype#{i} *)acc#{i}" }.join(' ') %>; \
 <%= (1..dim).map { |i| "@property (readonly) wrappedtype#{i} *acc#{i}; \\" }.join("\n") %>
 @end \
-@interface NSArrayTo##newtype : FKFunction @end \
-@interface NSDictionaryTo##newtype : FKFunction @end
+FKOption *NSArrayTo##newtype(NSArray *a); \
+FKOption *NSDictionaryTo##newtype(NSDictionary *d); \
 
 #define NewType<%= (dim == 1) ? "" : dim %>Implementation(newtype, <%= macro_arg_list %>) \
 @implementation newtype \
-@synthesize <%= (1..dim).map { |i| "acc#{i}=_#{i}" }.join(', ') %>; \
+\
+<%= (1..dim).map do |i| "- (wrappedtype#{i} *)acc#{i} { return _#{i}; } " end.join(' ') %> \
 - (newtype *)initWith<%= (1..dim).map { |i| "_#{i}:(wrappedtype#{i} *)acc#{i}" }.join(' ') %> { return ((self = [super initWith<%= (1..dim).map { |i| "_#{i}:acc#{i}" }.join(' ') %>])); } \
 + (newtype *)<%= (1..dim).map { |i| "acc#{i}:(wrappedtype#{i} *)acc#{i}" }.join(' ') %> { return [[[self alloc] initWith<%= (1..dim).map { |i| "_#{i}:acc#{i}" }.join(' ') %>] autorelease]; } \
 @end \
-@implementation NSArrayTo##newtype \
-- (id):(id)arg { \
+\
+FKOption *NSArrayTo##newtype(NSArray *arg) {\
 	if (![arg isKindOfClass:[NSArray class]] || ([arg count] != <%= dim %>)) { \
 		return [FKOption none]; \
 	} \
@@ -46,20 +47,16 @@
 	} \
 	return [FKOption none]; \
 } \
-@end \
-@implementation NSDictionaryTo##newtype \
-- (id):(id)dict { \
+\
+FKOption *NSDictionaryTo##newtype(NSDictionary *dict) {\
 	if (![dict isKindOfClass:[NSDictionary class]]) { \
 		return [FKOption none]; \
 	} \
 	NSArray *keys = NSARRAY(<%= (1..dim).map { |i| "[NSString stringWithCString:\#acc#{i}]" }.join(', ')%>);\
 	NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
-	id <FKFunction> arrayToType = [NSArrayTo##newtype new]; \
-	FKOption *result = [arrayToType :values]; \
-	[arrayToType release]; \
+	FKOption *result = NSArrayTo##newtype(values); \
 	return result; \
 } \
-@end
 <% end %>
 
 // Do both. This won't work most of the time, duplicate symbols abound

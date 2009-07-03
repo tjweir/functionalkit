@@ -33,17 +33,18 @@
 + (newtype *)acc1:(wrappedtype1 *)acc1; \
 @property (readonly) wrappedtype1 *acc1; \
 @end \
-@interface NSArrayTo##newtype : FKFunction @end \
-@interface NSDictionaryTo##newtype : FKFunction @end
+FKOption *NSArrayTo##newtype(NSArray *a); \
+FKOption *NSDictionaryTo##newtype(NSDictionary *d); \
 
 #define NewTypeImplementation(newtype, wrappedtype1, acc1) \
 @implementation newtype \
-@synthesize acc1=_1; \
+\
+- (wrappedtype1 *)acc1 { return _1; }  \
 - (newtype *)initWith_1:(wrappedtype1 *)acc1 { return ((self = [super initWith_1:acc1])); } \
 + (newtype *)acc1:(wrappedtype1 *)acc1 { return [[[self alloc] initWith_1:acc1] autorelease]; } \
 @end \
-@implementation NSArrayTo##newtype \
-- (id):(id)arg { \
+\
+FKOption *NSArrayTo##newtype(NSArray *arg) {\
 	if (![arg isKindOfClass:[NSArray class]] || ([arg count] != 1)) { \
 		return [FKOption none]; \
 	} \
@@ -53,20 +54,16 @@
 	} \
 	return [FKOption none]; \
 } \
-@end \
-@implementation NSDictionaryTo##newtype \
-- (id):(id)dict { \
+\
+FKOption *NSDictionaryTo##newtype(NSDictionary *dict) {\
 	if (![dict isKindOfClass:[NSDictionary class]]) { \
 		return [FKOption none]; \
 	} \
 	NSArray *keys = NSARRAY([NSString stringWithCString:#acc1]);\
 	NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
-	id <FKFunction> arrayToType = [NSArrayTo##newtype new]; \
-	FKOption *result = [arrayToType :values]; \
-	[arrayToType release]; \
+	FKOption *result = NSArrayTo##newtype(values); \
 	return result; \
 } \
-@end
 
 // P2 newtype
 #define NewType2Interface(newtype, wrappedtype1, acc1, wrappedtype2, acc2) \
@@ -75,17 +72,18 @@
 @property (readonly) wrappedtype1 *acc1; \
 @property (readonly) wrappedtype2 *acc2; \
 @end \
-@interface NSArrayTo##newtype : FKFunction @end \
-@interface NSDictionaryTo##newtype : FKFunction @end
+FKOption *NSArrayTo##newtype(NSArray *a); \
+FKOption *NSDictionaryTo##newtype(NSDictionary *d); \
 
 #define NewType2Implementation(newtype, wrappedtype1, acc1, wrappedtype2, acc2) \
 @implementation newtype \
-@synthesize acc1=_1, acc2=_2; \
+\
+- (wrappedtype1 *)acc1 { return _1; }  - (wrappedtype2 *)acc2 { return _2; }  \
 - (newtype *)initWith_1:(wrappedtype1 *)acc1 _2:(wrappedtype2 *)acc2 { return ((self = [super initWith_1:acc1 _2:acc2])); } \
 + (newtype *)acc1:(wrappedtype1 *)acc1 acc2:(wrappedtype2 *)acc2 { return [[[self alloc] initWith_1:acc1 _2:acc2] autorelease]; } \
 @end \
-@implementation NSArrayTo##newtype \
-- (id):(id)arg { \
+\
+FKOption *NSArrayTo##newtype(NSArray *arg) {\
 	if (![arg isKindOfClass:[NSArray class]] || ([arg count] != 2)) { \
 		return [FKOption none]; \
 	} \
@@ -96,20 +94,16 @@
 	} \
 	return [FKOption none]; \
 } \
-@end \
-@implementation NSDictionaryTo##newtype \
-- (id):(id)dict { \
+\
+FKOption *NSDictionaryTo##newtype(NSDictionary *dict) {\
 	if (![dict isKindOfClass:[NSDictionary class]]) { \
 		return [FKOption none]; \
 	} \
 	NSArray *keys = NSARRAY([NSString stringWithCString:#acc1], [NSString stringWithCString:#acc2]);\
 	NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
-	id <FKFunction> arrayToType = [NSArrayTo##newtype new]; \
-	FKOption *result = [arrayToType :values]; \
-	[arrayToType release]; \
+	FKOption *result = NSArrayTo##newtype(values); \
 	return result; \
 } \
-@end
 
 // P3 newtype
 #define NewType3Interface(newtype, wrappedtype1, acc1, wrappedtype2, acc2, wrappedtype3, acc3) \
@@ -119,17 +113,18 @@
 @property (readonly) wrappedtype2 *acc2; \
 @property (readonly) wrappedtype3 *acc3; \
 @end \
-@interface NSArrayTo##newtype : FKFunction @end \
-@interface NSDictionaryTo##newtype : FKFunction @end
+FKOption *NSArrayTo##newtype(NSArray *a); \
+FKOption *NSDictionaryTo##newtype(NSDictionary *d); \
 
 #define NewType3Implementation(newtype, wrappedtype1, acc1, wrappedtype2, acc2, wrappedtype3, acc3) \
 @implementation newtype \
-@synthesize acc1=_1, acc2=_2, acc3=_3; \
+\
+- (wrappedtype1 *)acc1 { return _1; }  - (wrappedtype2 *)acc2 { return _2; }  - (wrappedtype3 *)acc3 { return _3; }  \
 - (newtype *)initWith_1:(wrappedtype1 *)acc1 _2:(wrappedtype2 *)acc2 _3:(wrappedtype3 *)acc3 { return ((self = [super initWith_1:acc1 _2:acc2 _3:acc3])); } \
 + (newtype *)acc1:(wrappedtype1 *)acc1 acc2:(wrappedtype2 *)acc2 acc3:(wrappedtype3 *)acc3 { return [[[self alloc] initWith_1:acc1 _2:acc2 _3:acc3] autorelease]; } \
 @end \
-@implementation NSArrayTo##newtype \
-- (id):(id)arg { \
+\
+FKOption *NSArrayTo##newtype(NSArray *arg) {\
 	if (![arg isKindOfClass:[NSArray class]] || ([arg count] != 3)) { \
 		return [FKOption none]; \
 	} \
@@ -141,20 +136,16 @@
 	} \
 	return [FKOption none]; \
 } \
-@end \
-@implementation NSDictionaryTo##newtype \
-- (id):(id)dict { \
+\
+FKOption *NSDictionaryTo##newtype(NSDictionary *dict) {\
 	if (![dict isKindOfClass:[NSDictionary class]]) { \
 		return [FKOption none]; \
 	} \
 	NSArray *keys = NSARRAY([NSString stringWithCString:#acc1], [NSString stringWithCString:#acc2], [NSString stringWithCString:#acc3]);\
 	NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
-	id <FKFunction> arrayToType = [NSArrayTo##newtype new]; \
-	FKOption *result = [arrayToType :values]; \
-	[arrayToType release]; \
+	FKOption *result = NSArrayTo##newtype(values); \
 	return result; \
 } \
-@end
 
 // P4 newtype
 #define NewType4Interface(newtype, wrappedtype1, acc1, wrappedtype2, acc2, wrappedtype3, acc3, wrappedtype4, acc4) \
@@ -165,17 +156,18 @@
 @property (readonly) wrappedtype3 *acc3; \
 @property (readonly) wrappedtype4 *acc4; \
 @end \
-@interface NSArrayTo##newtype : FKFunction @end \
-@interface NSDictionaryTo##newtype : FKFunction @end
+FKOption *NSArrayTo##newtype(NSArray *a); \
+FKOption *NSDictionaryTo##newtype(NSDictionary *d); \
 
 #define NewType4Implementation(newtype, wrappedtype1, acc1, wrappedtype2, acc2, wrappedtype3, acc3, wrappedtype4, acc4) \
 @implementation newtype \
-@synthesize acc1=_1, acc2=_2, acc3=_3, acc4=_4; \
+\
+- (wrappedtype1 *)acc1 { return _1; }  - (wrappedtype2 *)acc2 { return _2; }  - (wrappedtype3 *)acc3 { return _3; }  - (wrappedtype4 *)acc4 { return _4; }  \
 - (newtype *)initWith_1:(wrappedtype1 *)acc1 _2:(wrappedtype2 *)acc2 _3:(wrappedtype3 *)acc3 _4:(wrappedtype4 *)acc4 { return ((self = [super initWith_1:acc1 _2:acc2 _3:acc3 _4:acc4])); } \
 + (newtype *)acc1:(wrappedtype1 *)acc1 acc2:(wrappedtype2 *)acc2 acc3:(wrappedtype3 *)acc3 acc4:(wrappedtype4 *)acc4 { return [[[self alloc] initWith_1:acc1 _2:acc2 _3:acc3 _4:acc4] autorelease]; } \
 @end \
-@implementation NSArrayTo##newtype \
-- (id):(id)arg { \
+\
+FKOption *NSArrayTo##newtype(NSArray *arg) {\
 	if (![arg isKindOfClass:[NSArray class]] || ([arg count] != 4)) { \
 		return [FKOption none]; \
 	} \
@@ -188,20 +180,16 @@
 	} \
 	return [FKOption none]; \
 } \
-@end \
-@implementation NSDictionaryTo##newtype \
-- (id):(id)dict { \
+\
+FKOption *NSDictionaryTo##newtype(NSDictionary *dict) {\
 	if (![dict isKindOfClass:[NSDictionary class]]) { \
 		return [FKOption none]; \
 	} \
 	NSArray *keys = NSARRAY([NSString stringWithCString:#acc1], [NSString stringWithCString:#acc2], [NSString stringWithCString:#acc3], [NSString stringWithCString:#acc4]);\
 	NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
-	id <FKFunction> arrayToType = [NSArrayTo##newtype new]; \
-	FKOption *result = [arrayToType :values]; \
-	[arrayToType release]; \
+	FKOption *result = NSArrayTo##newtype(values); \
 	return result; \
 } \
-@end
 
 // P5 newtype
 #define NewType5Interface(newtype, wrappedtype1, acc1, wrappedtype2, acc2, wrappedtype3, acc3, wrappedtype4, acc4, wrappedtype5, acc5) \
@@ -213,17 +201,18 @@
 @property (readonly) wrappedtype4 *acc4; \
 @property (readonly) wrappedtype5 *acc5; \
 @end \
-@interface NSArrayTo##newtype : FKFunction @end \
-@interface NSDictionaryTo##newtype : FKFunction @end
+FKOption *NSArrayTo##newtype(NSArray *a); \
+FKOption *NSDictionaryTo##newtype(NSDictionary *d); \
 
 #define NewType5Implementation(newtype, wrappedtype1, acc1, wrappedtype2, acc2, wrappedtype3, acc3, wrappedtype4, acc4, wrappedtype5, acc5) \
 @implementation newtype \
-@synthesize acc1=_1, acc2=_2, acc3=_3, acc4=_4, acc5=_5; \
+\
+- (wrappedtype1 *)acc1 { return _1; }  - (wrappedtype2 *)acc2 { return _2; }  - (wrappedtype3 *)acc3 { return _3; }  - (wrappedtype4 *)acc4 { return _4; }  - (wrappedtype5 *)acc5 { return _5; }  \
 - (newtype *)initWith_1:(wrappedtype1 *)acc1 _2:(wrappedtype2 *)acc2 _3:(wrappedtype3 *)acc3 _4:(wrappedtype4 *)acc4 _5:(wrappedtype5 *)acc5 { return ((self = [super initWith_1:acc1 _2:acc2 _3:acc3 _4:acc4 _5:acc5])); } \
 + (newtype *)acc1:(wrappedtype1 *)acc1 acc2:(wrappedtype2 *)acc2 acc3:(wrappedtype3 *)acc3 acc4:(wrappedtype4 *)acc4 acc5:(wrappedtype5 *)acc5 { return [[[self alloc] initWith_1:acc1 _2:acc2 _3:acc3 _4:acc4 _5:acc5] autorelease]; } \
 @end \
-@implementation NSArrayTo##newtype \
-- (id):(id)arg { \
+\
+FKOption *NSArrayTo##newtype(NSArray *arg) {\
 	if (![arg isKindOfClass:[NSArray class]] || ([arg count] != 5)) { \
 		return [FKOption none]; \
 	} \
@@ -237,20 +226,16 @@
 	} \
 	return [FKOption none]; \
 } \
-@end \
-@implementation NSDictionaryTo##newtype \
-- (id):(id)dict { \
+\
+FKOption *NSDictionaryTo##newtype(NSDictionary *dict) {\
 	if (![dict isKindOfClass:[NSDictionary class]]) { \
 		return [FKOption none]; \
 	} \
 	NSArray *keys = NSARRAY([NSString stringWithCString:#acc1], [NSString stringWithCString:#acc2], [NSString stringWithCString:#acc3], [NSString stringWithCString:#acc4], [NSString stringWithCString:#acc5]);\
 	NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
-	id <FKFunction> arrayToType = [NSArrayTo##newtype new]; \
-	FKOption *result = [arrayToType :values]; \
-	[arrayToType release]; \
+	FKOption *result = NSArrayTo##newtype(values); \
 	return result; \
 } \
-@end
 
 // P6 newtype
 #define NewType6Interface(newtype, wrappedtype1, acc1, wrappedtype2, acc2, wrappedtype3, acc3, wrappedtype4, acc4, wrappedtype5, acc5, wrappedtype6, acc6) \
@@ -263,17 +248,18 @@
 @property (readonly) wrappedtype5 *acc5; \
 @property (readonly) wrappedtype6 *acc6; \
 @end \
-@interface NSArrayTo##newtype : FKFunction @end \
-@interface NSDictionaryTo##newtype : FKFunction @end
+FKOption *NSArrayTo##newtype(NSArray *a); \
+FKOption *NSDictionaryTo##newtype(NSDictionary *d); \
 
 #define NewType6Implementation(newtype, wrappedtype1, acc1, wrappedtype2, acc2, wrappedtype3, acc3, wrappedtype4, acc4, wrappedtype5, acc5, wrappedtype6, acc6) \
 @implementation newtype \
-@synthesize acc1=_1, acc2=_2, acc3=_3, acc4=_4, acc5=_5, acc6=_6; \
+\
+- (wrappedtype1 *)acc1 { return _1; }  - (wrappedtype2 *)acc2 { return _2; }  - (wrappedtype3 *)acc3 { return _3; }  - (wrappedtype4 *)acc4 { return _4; }  - (wrappedtype5 *)acc5 { return _5; }  - (wrappedtype6 *)acc6 { return _6; }  \
 - (newtype *)initWith_1:(wrappedtype1 *)acc1 _2:(wrappedtype2 *)acc2 _3:(wrappedtype3 *)acc3 _4:(wrappedtype4 *)acc4 _5:(wrappedtype5 *)acc5 _6:(wrappedtype6 *)acc6 { return ((self = [super initWith_1:acc1 _2:acc2 _3:acc3 _4:acc4 _5:acc5 _6:acc6])); } \
 + (newtype *)acc1:(wrappedtype1 *)acc1 acc2:(wrappedtype2 *)acc2 acc3:(wrappedtype3 *)acc3 acc4:(wrappedtype4 *)acc4 acc5:(wrappedtype5 *)acc5 acc6:(wrappedtype6 *)acc6 { return [[[self alloc] initWith_1:acc1 _2:acc2 _3:acc3 _4:acc4 _5:acc5 _6:acc6] autorelease]; } \
 @end \
-@implementation NSArrayTo##newtype \
-- (id):(id)arg { \
+\
+FKOption *NSArrayTo##newtype(NSArray *arg) {\
 	if (![arg isKindOfClass:[NSArray class]] || ([arg count] != 6)) { \
 		return [FKOption none]; \
 	} \
@@ -288,20 +274,16 @@
 	} \
 	return [FKOption none]; \
 } \
-@end \
-@implementation NSDictionaryTo##newtype \
-- (id):(id)dict { \
+\
+FKOption *NSDictionaryTo##newtype(NSDictionary *dict) {\
 	if (![dict isKindOfClass:[NSDictionary class]]) { \
 		return [FKOption none]; \
 	} \
 	NSArray *keys = NSARRAY([NSString stringWithCString:#acc1], [NSString stringWithCString:#acc2], [NSString stringWithCString:#acc3], [NSString stringWithCString:#acc4], [NSString stringWithCString:#acc5], [NSString stringWithCString:#acc6]);\
 	NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
-	id <FKFunction> arrayToType = [NSArrayTo##newtype new]; \
-	FKOption *result = [arrayToType :values]; \
-	[arrayToType release]; \
+	FKOption *result = NSArrayTo##newtype(values); \
 	return result; \
 } \
-@end
 
 // P7 newtype
 #define NewType7Interface(newtype, wrappedtype1, acc1, wrappedtype2, acc2, wrappedtype3, acc3, wrappedtype4, acc4, wrappedtype5, acc5, wrappedtype6, acc6, wrappedtype7, acc7) \
@@ -315,17 +297,18 @@
 @property (readonly) wrappedtype6 *acc6; \
 @property (readonly) wrappedtype7 *acc7; \
 @end \
-@interface NSArrayTo##newtype : FKFunction @end \
-@interface NSDictionaryTo##newtype : FKFunction @end
+FKOption *NSArrayTo##newtype(NSArray *a); \
+FKOption *NSDictionaryTo##newtype(NSDictionary *d); \
 
 #define NewType7Implementation(newtype, wrappedtype1, acc1, wrappedtype2, acc2, wrappedtype3, acc3, wrappedtype4, acc4, wrappedtype5, acc5, wrappedtype6, acc6, wrappedtype7, acc7) \
 @implementation newtype \
-@synthesize acc1=_1, acc2=_2, acc3=_3, acc4=_4, acc5=_5, acc6=_6, acc7=_7; \
+\
+- (wrappedtype1 *)acc1 { return _1; }  - (wrappedtype2 *)acc2 { return _2; }  - (wrappedtype3 *)acc3 { return _3; }  - (wrappedtype4 *)acc4 { return _4; }  - (wrappedtype5 *)acc5 { return _5; }  - (wrappedtype6 *)acc6 { return _6; }  - (wrappedtype7 *)acc7 { return _7; }  \
 - (newtype *)initWith_1:(wrappedtype1 *)acc1 _2:(wrappedtype2 *)acc2 _3:(wrappedtype3 *)acc3 _4:(wrappedtype4 *)acc4 _5:(wrappedtype5 *)acc5 _6:(wrappedtype6 *)acc6 _7:(wrappedtype7 *)acc7 { return ((self = [super initWith_1:acc1 _2:acc2 _3:acc3 _4:acc4 _5:acc5 _6:acc6 _7:acc7])); } \
 + (newtype *)acc1:(wrappedtype1 *)acc1 acc2:(wrappedtype2 *)acc2 acc3:(wrappedtype3 *)acc3 acc4:(wrappedtype4 *)acc4 acc5:(wrappedtype5 *)acc5 acc6:(wrappedtype6 *)acc6 acc7:(wrappedtype7 *)acc7 { return [[[self alloc] initWith_1:acc1 _2:acc2 _3:acc3 _4:acc4 _5:acc5 _6:acc6 _7:acc7] autorelease]; } \
 @end \
-@implementation NSArrayTo##newtype \
-- (id):(id)arg { \
+\
+FKOption *NSArrayTo##newtype(NSArray *arg) {\
 	if (![arg isKindOfClass:[NSArray class]] || ([arg count] != 7)) { \
 		return [FKOption none]; \
 	} \
@@ -341,20 +324,16 @@
 	} \
 	return [FKOption none]; \
 } \
-@end \
-@implementation NSDictionaryTo##newtype \
-- (id):(id)dict { \
+\
+FKOption *NSDictionaryTo##newtype(NSDictionary *dict) {\
 	if (![dict isKindOfClass:[NSDictionary class]]) { \
 		return [FKOption none]; \
 	} \
 	NSArray *keys = NSARRAY([NSString stringWithCString:#acc1], [NSString stringWithCString:#acc2], [NSString stringWithCString:#acc3], [NSString stringWithCString:#acc4], [NSString stringWithCString:#acc5], [NSString stringWithCString:#acc6], [NSString stringWithCString:#acc7]);\
 	NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
-	id <FKFunction> arrayToType = [NSArrayTo##newtype new]; \
-	FKOption *result = [arrayToType :values]; \
-	[arrayToType release]; \
+	FKOption *result = NSArrayTo##newtype(values); \
 	return result; \
 } \
-@end
 
 // P8 newtype
 #define NewType8Interface(newtype, wrappedtype1, acc1, wrappedtype2, acc2, wrappedtype3, acc3, wrappedtype4, acc4, wrappedtype5, acc5, wrappedtype6, acc6, wrappedtype7, acc7, wrappedtype8, acc8) \
@@ -369,17 +348,18 @@
 @property (readonly) wrappedtype7 *acc7; \
 @property (readonly) wrappedtype8 *acc8; \
 @end \
-@interface NSArrayTo##newtype : FKFunction @end \
-@interface NSDictionaryTo##newtype : FKFunction @end
+FKOption *NSArrayTo##newtype(NSArray *a); \
+FKOption *NSDictionaryTo##newtype(NSDictionary *d); \
 
 #define NewType8Implementation(newtype, wrappedtype1, acc1, wrappedtype2, acc2, wrappedtype3, acc3, wrappedtype4, acc4, wrappedtype5, acc5, wrappedtype6, acc6, wrappedtype7, acc7, wrappedtype8, acc8) \
 @implementation newtype \
-@synthesize acc1=_1, acc2=_2, acc3=_3, acc4=_4, acc5=_5, acc6=_6, acc7=_7, acc8=_8; \
+\
+- (wrappedtype1 *)acc1 { return _1; }  - (wrappedtype2 *)acc2 { return _2; }  - (wrappedtype3 *)acc3 { return _3; }  - (wrappedtype4 *)acc4 { return _4; }  - (wrappedtype5 *)acc5 { return _5; }  - (wrappedtype6 *)acc6 { return _6; }  - (wrappedtype7 *)acc7 { return _7; }  - (wrappedtype8 *)acc8 { return _8; }  \
 - (newtype *)initWith_1:(wrappedtype1 *)acc1 _2:(wrappedtype2 *)acc2 _3:(wrappedtype3 *)acc3 _4:(wrappedtype4 *)acc4 _5:(wrappedtype5 *)acc5 _6:(wrappedtype6 *)acc6 _7:(wrappedtype7 *)acc7 _8:(wrappedtype8 *)acc8 { return ((self = [super initWith_1:acc1 _2:acc2 _3:acc3 _4:acc4 _5:acc5 _6:acc6 _7:acc7 _8:acc8])); } \
 + (newtype *)acc1:(wrappedtype1 *)acc1 acc2:(wrappedtype2 *)acc2 acc3:(wrappedtype3 *)acc3 acc4:(wrappedtype4 *)acc4 acc5:(wrappedtype5 *)acc5 acc6:(wrappedtype6 *)acc6 acc7:(wrappedtype7 *)acc7 acc8:(wrappedtype8 *)acc8 { return [[[self alloc] initWith_1:acc1 _2:acc2 _3:acc3 _4:acc4 _5:acc5 _6:acc6 _7:acc7 _8:acc8] autorelease]; } \
 @end \
-@implementation NSArrayTo##newtype \
-- (id):(id)arg { \
+\
+FKOption *NSArrayTo##newtype(NSArray *arg) {\
 	if (![arg isKindOfClass:[NSArray class]] || ([arg count] != 8)) { \
 		return [FKOption none]; \
 	} \
@@ -396,20 +376,16 @@
 	} \
 	return [FKOption none]; \
 } \
-@end \
-@implementation NSDictionaryTo##newtype \
-- (id):(id)dict { \
+\
+FKOption *NSDictionaryTo##newtype(NSDictionary *dict) {\
 	if (![dict isKindOfClass:[NSDictionary class]]) { \
 		return [FKOption none]; \
 	} \
 	NSArray *keys = NSARRAY([NSString stringWithCString:#acc1], [NSString stringWithCString:#acc2], [NSString stringWithCString:#acc3], [NSString stringWithCString:#acc4], [NSString stringWithCString:#acc5], [NSString stringWithCString:#acc6], [NSString stringWithCString:#acc7], [NSString stringWithCString:#acc8]);\
 	NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
-	id <FKFunction> arrayToType = [NSArrayTo##newtype new]; \
-	FKOption *result = [arrayToType :values]; \
-	[arrayToType release]; \
+	FKOption *result = NSArrayTo##newtype(values); \
 	return result; \
 } \
-@end
 
 
 // Do both. This won't work most of the time, duplicate symbols abound

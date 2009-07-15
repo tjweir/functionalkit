@@ -16,7 +16,7 @@ NSString *concatF(NSString *base, NSString *suffix) {
 + (FKEither *)loadContentsOfFile:(NSString *)path {
     NSError *error;
     NSString *content = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
-    return error ? [FKEither leftWithValue:error] : [FKEither rightWithValue:content];
+    return content == nil ? [FKEither leftWithValue:error] : [FKEither rightWithValue:content];
 }
 
 @end

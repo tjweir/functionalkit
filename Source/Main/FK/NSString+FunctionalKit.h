@@ -6,4 +6,6 @@
 // String concatentation as a function.
 + (FKFunction2 *)concatF;
 
++ (FKEither *)loadContentsOfFile:(NSString *)path;
+
 @end

@@ -59,7 +59,7 @@ FKOption *NSDictionaryTo##newtype(NSDictionary *dict) {\
 	if (![dict isKindOfClass:[NSDictionary class]]) { \
 		return [FKOption none]; \
 	} \
-	NSArray *keys = NSARRAY([NSString stringWithCString:#acc1]);\
+	NSArray *keys = NSARRAY([NSString stringWithUTF8String:#acc1]);\
 	NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
 	FKOption *result = NSArrayTo##newtype(values); \
 	return result; \
@@ -99,7 +99,7 @@ FKOption *NSDictionaryTo##newtype(NSDictionary *dict) {\
 	if (![dict isKindOfClass:[NSDictionary class]]) { \
 		return [FKOption none]; \
 	} \
-	NSArray *keys = NSARRAY([NSString stringWithCString:#acc1], [NSString stringWithCString:#acc2]);\
+	NSArray *keys = NSARRAY([NSString stringWithUTF8String:#acc1], [NSString stringWithUTF8String:#acc2]);\
 	NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
 	FKOption *result = NSArrayTo##newtype(values); \
 	return result; \
@@ -141,7 +141,7 @@ FKOption *NSDictionaryTo##newtype(NSDictionary *dict) {\
 	if (![dict isKindOfClass:[NSDictionary class]]) { \
 		return [FKOption none]; \
 	} \
-	NSArray *keys = NSARRAY([NSString stringWithCString:#acc1], [NSString stringWithCString:#acc2], [NSString stringWithCString:#acc3]);\
+	NSArray *keys = NSARRAY([NSString stringWithUTF8String:#acc1], [NSString stringWithUTF8String:#acc2], [NSString stringWithUTF8String:#acc3]);\
 	NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
 	FKOption *result = NSArrayTo##newtype(values); \
 	return result; \
@@ -185,7 +185,7 @@ FKOption *NSDictionaryTo##newtype(NSDictionary *dict) {\
 	if (![dict isKindOfClass:[NSDictionary class]]) { \
 		return [FKOption none]; \
 	} \
-	NSArray *keys = NSARRAY([NSString stringWithCString:#acc1], [NSString stringWithCString:#acc2], [NSString stringWithCString:#acc3], [NSString stringWithCString:#acc4]);\
+	NSArray *keys = NSARRAY([NSString stringWithUTF8String:#acc1], [NSString stringWithUTF8String:#acc2], [NSString stringWithUTF8String:#acc3], [NSString stringWithUTF8String:#acc4]);\
 	NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
 	FKOption *result = NSArrayTo##newtype(values); \
 	return result; \
@@ -231,7 +231,7 @@ FKOption *NSDictionaryTo##newtype(NSDictionary *dict) {\
 	if (![dict isKindOfClass:[NSDictionary class]]) { \
 		return [FKOption none]; \
 	} \
-	NSArray *keys = NSARRAY([NSString stringWithCString:#acc1], [NSString stringWithCString:#acc2], [NSString stringWithCString:#acc3], [NSString stringWithCString:#acc4], [NSString stringWithCString:#acc5]);\
+	NSArray *keys = NSARRAY([NSString stringWithUTF8String:#acc1], [NSString stringWithUTF8String:#acc2], [NSString stringWithUTF8String:#acc3], [NSString stringWithUTF8String:#acc4], [NSString stringWithUTF8String:#acc5]);\
 	NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
 	FKOption *result = NSArrayTo##newtype(values); \
 	return result; \
@@ -279,7 +279,7 @@ FKOption *NSDictionaryTo##newtype(NSDictionary *dict) {\
 	if (![dict isKindOfClass:[NSDictionary class]]) { \
 		return [FKOption none]; \
 	} \
-	NSArray *keys = NSARRAY([NSString stringWithCString:#acc1], [NSString stringWithCString:#acc2], [NSString stringWithCString:#acc3], [NSString stringWithCString:#acc4], [NSString stringWithCString:#acc5], [NSString stringWithCString:#acc6]);\
+	NSArray *keys = NSARRAY([NSString stringWithUTF8String:#acc1], [NSString stringWithUTF8String:#acc2], [NSString stringWithUTF8String:#acc3], [NSString stringWithUTF8String:#acc4], [NSString stringWithUTF8String:#acc5], [NSString stringWithUTF8String:#acc6]);\
 	NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
 	FKOption *result = NSArrayTo##newtype(values); \
 	return result; \
@@ -329,7 +329,7 @@ FKOption *NSDictionaryTo##newtype(NSDictionary *dict) {\
 	if (![dict isKindOfClass:[NSDictionary class]]) { \
 		return [FKOption none]; \
 	} \
-	NSArray *keys = NSARRAY([NSString stringWithCString:#acc1], [NSString stringWithCString:#acc2], [NSString stringWithCString:#acc3], [NSString stringWithCString:#acc4], [NSString stringWithCString:#acc5], [NSString stringWithCString:#acc6], [NSString stringWithCString:#acc7]);\
+	NSArray *keys = NSARRAY([NSString stringWithUTF8String:#acc1], [NSString stringWithUTF8String:#acc2], [NSString stringWithUTF8String:#acc3], [NSString stringWithUTF8String:#acc4], [NSString stringWithUTF8String:#acc5], [NSString stringWithUTF8String:#acc6], [NSString stringWithUTF8String:#acc7]);\
 	NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
 	FKOption *result = NSArrayTo##newtype(values); \
 	return result; \
@@ -381,7 +381,7 @@ FKOption *NSDictionaryTo##newtype(NSDictionary *dict) {\
 	if (![dict isKindOfClass:[NSDictionary class]]) { \
 		return [FKOption none]; \
 	} \
-	NSArray *keys = NSARRAY([NSString stringWithCString:#acc1], [NSString stringWithCString:#acc2], [NSString stringWithCString:#acc3], [NSString stringWithCString:#acc4], [NSString stringWithCString:#acc5], [NSString stringWithCString:#acc6], [NSString stringWithCString:#acc7], [NSString stringWithCString:#acc8]);\
+	NSArray *keys = NSARRAY([NSString stringWithUTF8String:#acc1], [NSString stringWithUTF8String:#acc2], [NSString stringWithUTF8String:#acc3], [NSString stringWithUTF8String:#acc4], [NSString stringWithUTF8String:#acc5], [NSString stringWithUTF8String:#acc6], [NSString stringWithUTF8String:#acc7], [NSString stringWithUTF8String:#acc8]);\
 	NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
 	FKOption *result = NSArrayTo##newtype(values); \
 	return result; \

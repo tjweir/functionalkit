@@ -233,10 +233,10 @@ READ NSObject *target;
 @interface FKFunction2FromPointer : FKFunction2 {
 	fkFunction2 theFunction;
 }
-- (FKFunction2 *)initWithPointer:(fkFunction2)fp;
+- (FKFunction2 *)initWithPointer2:(fkFunction2)fp;
 @end
 @implementation FKFunction2FromPointer
-- (FKFunction2 *)initWithPointer:(fkFunction2)fp {
+- (FKFunction2 *)initWithPointer2:(fkFunction2)fp {
 	if ((self = [super init])) {
 		theFunction = fp;
 	}
@@ -297,7 +297,7 @@ READ NSObject *target;
 }
 
 + (FKFunction *)functionFromInvocation:(NSInvocation *)invocation parameterIndex:(NSUInteger)index {
-	return [[FKFunctionFromInvocation alloc] initWithInvocation:invocation parameterIndex:index];	
+	return [[[FKFunctionFromInvocation alloc] initWithInvocation:invocation parameterIndex:index] autorelease];	
 }
 
 - (id):(id)arg {
@@ -309,7 +309,7 @@ READ NSObject *target;
 }
 
 - (FKFunction *)composeWith:(FKFunction *)other {
-	return [[FKFunctionComposition alloc] initWithF:self andG:other];
+	return [[[FKFunctionComposition alloc] initWithF:self andG:other] autorelease];
 }
 @end
 
@@ -320,7 +320,7 @@ READ NSObject *target;
 }
 
 + (FKFunction2 *)functionFromPointer:(fkFunction2)f {
-	return [[[FKFunction2FromPointer alloc] initWithPointer:f] autorelease];
+	return [[[FKFunction2FromPointer alloc] initWithPointer2:f] autorelease];
 }
 
 - (id):(id)arg1 :(id)arg2 {

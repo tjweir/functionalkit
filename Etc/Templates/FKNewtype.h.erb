@@ -52,7 +52,7 @@ FKOption *NSDictionaryTo##newtype(NSDictionary *dict) {\
 	if (![dict isKindOfClass:[NSDictionary class]]) { \
 		return [FKOption none]; \
 	} \
-	NSArray *keys = NSARRAY(<%= (1..dim).map { |i| "[NSString stringWithCString:\#acc#{i}]" }.join(', ')%>);\
+	NSArray *keys = NSARRAY(<%= (1..dim).map { |i| "[NSString stringWithUTF8String:\#acc#{i}]" }.join(', ')%>);\
 	NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
 	FKOption *result = NSArrayTo##newtype(values); \
 	return result; \

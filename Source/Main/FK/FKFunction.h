@@ -5,13 +5,13 @@
 #define FKS(sel) [FKFunction functionFromSelector:@selector(sel)]
 #define FKSA(sel, arg) [FKFunction functionFromSelector:@selector(sel) withArgument:arg]
 #define FKTS(tgt, sel) [FKFunction functionFromSelector:@selector(sel) target:tgt]
-#define FKP(fp) [FKFunction functionFromPointer:fp]
-#define FKP2(fp) [FKFunction2 functionFromPointer:fp]
+#define FKPtr(fp) [FKFunction functionFromPointer:fp]
+#define FKPtr2(fp) [FKFunction2 functionFromPointer:fp]
 
 #define functionS(sel) FKS(sel)
 #define functionSA(sel, arg) FKSA(sel, arg)
-#define functionP(fp) FKP(fp)
-#define functionP2(fp) FKP2(fp)
+#define functionP(fp) FKPtr(fp)
+#define functionP2(fp) FKPtr2(fp)
 #define functionTS(tgt, sel) FKTS(tgt, sel)
 
 // TODO Add in F2, F3, etc.

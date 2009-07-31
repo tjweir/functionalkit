@@ -31,7 +31,7 @@
 #define NewTypeInterface(newtype, wrappedtype1, acc1) \
 @interface newtype : FKP1 \
 + (newtype *)acc1:(wrappedtype1 *)acc1; \
-- (wrappedtype1 *)acc1; \
+@property (readonly) wrappedtype1 *acc1; \
 @end \
 FKOption *NSArrayTo##newtype(NSArray *a); \
 FKOption *NSDictionaryTo##newtype(NSDictionary *d); \
@@ -59,7 +59,7 @@ FKOption *NSDictionaryTo##newtype(NSDictionary *dict) {\
 	if (![dict isKindOfClass:[NSDictionary class]]) { \
 		return [FKOption none]; \
 	} \
-	NSArray *keys = NSARRAY([NSString stringWithCString:#acc1]);\
+	NSArray *keys = NSARRAY([NSString stringWithUTF8String:#acc1]);\
 	NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
 	FKOption *result = NSArrayTo##newtype(values); \
 	return result; \
@@ -69,8 +69,8 @@ FKOption *NSDictionaryTo##newtype(NSDictionary *dict) {\
 #define NewType2Interface(newtype, wrappedtype1, acc1, wrappedtype2, acc2) \
 @interface newtype : FKP2 \
 + (newtype *)acc1:(wrappedtype1 *)acc1 acc2:(wrappedtype2 *)acc2; \
-- (wrappedtype1 *)acc1; \
-- (wrappedtype2 *)acc2; \
+@property (readonly) wrappedtype1 *acc1; \
+@property (readonly) wrappedtype2 *acc2; \
 @end \
 FKOption *NSArrayTo##newtype(NSArray *a); \
 FKOption *NSDictionaryTo##newtype(NSDictionary *d); \
@@ -99,7 +99,7 @@ FKOption *NSDictionaryTo##newtype(NSDictionary *dict) {\
 	if (![dict isKindOfClass:[NSDictionary class]]) { \
 		return [FKOption none]; \
 	} \
-	NSArray *keys = NSARRAY([NSString stringWithCString:#acc1], [NSString stringWithCString:#acc2]);\
+	NSArray *keys = NSARRAY([NSString stringWithUTF8String:#acc1], [NSString stringWithUTF8String:#acc2]);\
 	NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
 	FKOption *result = NSArrayTo##newtype(values); \
 	return result; \
@@ -109,9 +109,9 @@ FKOption *NSDictionaryTo##newtype(NSDictionary *dict) {\
 #define NewType3Interface(newtype, wrappedtype1, acc1, wrappedtype2, acc2, wrappedtype3, acc3) \
 @interface newtype : FKP3 \
 + (newtype *)acc1:(wrappedtype1 *)acc1 acc2:(wrappedtype2 *)acc2 acc3:(wrappedtype3 *)acc3; \
-- (wrappedtype1 *)acc1; \
-- (wrappedtype2 *)acc2; \
-- (wrappedtype3 *)acc3; \
+@property (readonly) wrappedtype1 *acc1; \
+@property (readonly) wrappedtype2 *acc2; \
+@property (readonly) wrappedtype3 *acc3; \
 @end \
 FKOption *NSArrayTo##newtype(NSArray *a); \
 FKOption *NSDictionaryTo##newtype(NSDictionary *d); \
@@ -141,7 +141,7 @@ FKOption *NSDictionaryTo##newtype(NSDictionary *dict) {\
 	if (![dict isKindOfClass:[NSDictionary class]]) { \
 		return [FKOption none]; \
 	} \
-	NSArray *keys = NSARRAY([NSString stringWithCString:#acc1], [NSString stringWithCString:#acc2], [NSString stringWithCString:#acc3]);\
+	NSArray *keys = NSARRAY([NSString stringWithUTF8String:#acc1], [NSString stringWithUTF8String:#acc2], [NSString stringWithUTF8String:#acc3]);\
 	NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
 	FKOption *result = NSArrayTo##newtype(values); \
 	return result; \
@@ -151,10 +151,10 @@ FKOption *NSDictionaryTo##newtype(NSDictionary *dict) {\
 #define NewType4Interface(newtype, wrappedtype1, acc1, wrappedtype2, acc2, wrappedtype3, acc3, wrappedtype4, acc4) \
 @interface newtype : FKP4 \
 + (newtype *)acc1:(wrappedtype1 *)acc1 acc2:(wrappedtype2 *)acc2 acc3:(wrappedtype3 *)acc3 acc4:(wrappedtype4 *)acc4; \
-- (wrappedtype1 *)acc1; \
-- (wrappedtype2 *)acc2; \
-- (wrappedtype3 *)acc3; \
-- (wrappedtype4 *)acc4; \
+@property (readonly) wrappedtype1 *acc1; \
+@property (readonly) wrappedtype2 *acc2; \
+@property (readonly) wrappedtype3 *acc3; \
+@property (readonly) wrappedtype4 *acc4; \
 @end \
 FKOption *NSArrayTo##newtype(NSArray *a); \
 FKOption *NSDictionaryTo##newtype(NSDictionary *d); \
@@ -185,7 +185,7 @@ FKOption *NSDictionaryTo##newtype(NSDictionary *dict) {\
 	if (![dict isKindOfClass:[NSDictionary class]]) { \
 		return [FKOption none]; \
 	} \
-	NSArray *keys = NSARRAY([NSString stringWithCString:#acc1], [NSString stringWithCString:#acc2], [NSString stringWithCString:#acc3], [NSString stringWithCString:#acc4]);\
+	NSArray *keys = NSARRAY([NSString stringWithUTF8String:#acc1], [NSString stringWithUTF8String:#acc2], [NSString stringWithUTF8String:#acc3], [NSString stringWithUTF8String:#acc4]);\
 	NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
 	FKOption *result = NSArrayTo##newtype(values); \
 	return result; \
@@ -195,11 +195,11 @@ FKOption *NSDictionaryTo##newtype(NSDictionary *dict) {\
 #define NewType5Interface(newtype, wrappedtype1, acc1, wrappedtype2, acc2, wrappedtype3, acc3, wrappedtype4, acc4, wrappedtype5, acc5) \
 @interface newtype : FKP5 \
 + (newtype *)acc1:(wrappedtype1 *)acc1 acc2:(wrappedtype2 *)acc2 acc3:(wrappedtype3 *)acc3 acc4:(wrappedtype4 *)acc4 acc5:(wrappedtype5 *)acc5; \
-- (wrappedtype1 *)acc1; \
-- (wrappedtype2 *)acc2; \
-- (wrappedtype3 *)acc3; \
-- (wrappedtype4 *)acc4; \
-- (wrappedtype5 *)acc5; \
+@property (readonly) wrappedtype1 *acc1; \
+@property (readonly) wrappedtype2 *acc2; \
+@property (readonly) wrappedtype3 *acc3; \
+@property (readonly) wrappedtype4 *acc4; \
+@property (readonly) wrappedtype5 *acc5; \
 @end \
 FKOption *NSArrayTo##newtype(NSArray *a); \
 FKOption *NSDictionaryTo##newtype(NSDictionary *d); \
@@ -231,7 +231,7 @@ FKOption *NSDictionaryTo##newtype(NSDictionary *dict) {\
 	if (![dict isKindOfClass:[NSDictionary class]]) { \
 		return [FKOption none]; \
 	} \
-	NSArray *keys = NSARRAY([NSString stringWithCString:#acc1], [NSString stringWithCString:#acc2], [NSString stringWithCString:#acc3], [NSString stringWithCString:#acc4], [NSString stringWithCString:#acc5]);\
+	NSArray *keys = NSARRAY([NSString stringWithUTF8String:#acc1], [NSString stringWithUTF8String:#acc2], [NSString stringWithUTF8String:#acc3], [NSString stringWithUTF8String:#acc4], [NSString stringWithUTF8String:#acc5]);\
 	NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
 	FKOption *result = NSArrayTo##newtype(values); \
 	return result; \
@@ -241,12 +241,12 @@ FKOption *NSDictionaryTo##newtype(NSDictionary *dict) {\
 #define NewType6Interface(newtype, wrappedtype1, acc1, wrappedtype2, acc2, wrappedtype3, acc3, wrappedtype4, acc4, wrappedtype5, acc5, wrappedtype6, acc6) \
 @interface newtype : FKP6 \
 + (newtype *)acc1:(wrappedtype1 *)acc1 acc2:(wrappedtype2 *)acc2 acc3:(wrappedtype3 *)acc3 acc4:(wrappedtype4 *)acc4 acc5:(wrappedtype5 *)acc5 acc6:(wrappedtype6 *)acc6; \
-- (wrappedtype1 *)acc1; \
-- (wrappedtype2 *)acc2; \
-- (wrappedtype3 *)acc3; \
-- (wrappedtype4 *)acc4; \
-- (wrappedtype5 *)acc5; \
-- (wrappedtype6 *)acc6; \
+@property (readonly) wrappedtype1 *acc1; \
+@property (readonly) wrappedtype2 *acc2; \
+@property (readonly) wrappedtype3 *acc3; \
+@property (readonly) wrappedtype4 *acc4; \
+@property (readonly) wrappedtype5 *acc5; \
+@property (readonly) wrappedtype6 *acc6; \
 @end \
 FKOption *NSArrayTo##newtype(NSArray *a); \
 FKOption *NSDictionaryTo##newtype(NSDictionary *d); \
@@ -279,7 +279,7 @@ FKOption *NSDictionaryTo##newtype(NSDictionary *dict) {\
 	if (![dict isKindOfClass:[NSDictionary class]]) { \
 		return [FKOption none]; \
 	} \
-	NSArray *keys = NSARRAY([NSString stringWithCString:#acc1], [NSString stringWithCString:#acc2], [NSString stringWithCString:#acc3], [NSString stringWithCString:#acc4], [NSString stringWithCString:#acc5], [NSString stringWithCString:#acc6]);\
+	NSArray *keys = NSARRAY([NSString stringWithUTF8String:#acc1], [NSString stringWithUTF8String:#acc2], [NSString stringWithUTF8String:#acc3], [NSString stringWithUTF8String:#acc4], [NSString stringWithUTF8String:#acc5], [NSString stringWithUTF8String:#acc6]);\
 	NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
 	FKOption *result = NSArrayTo##newtype(values); \
 	return result; \
@@ -289,13 +289,13 @@ FKOption *NSDictionaryTo##newtype(NSDictionary *dict) {\
 #define NewType7Interface(newtype, wrappedtype1, acc1, wrappedtype2, acc2, wrappedtype3, acc3, wrappedtype4, acc4, wrappedtype5, acc5, wrappedtype6, acc6, wrappedtype7, acc7) \
 @interface newtype : FKP7 \
 + (newtype *)acc1:(wrappedtype1 *)acc1 acc2:(wrappedtype2 *)acc2 acc3:(wrappedtype3 *)acc3 acc4:(wrappedtype4 *)acc4 acc5:(wrappedtype5 *)acc5 acc6:(wrappedtype6 *)acc6 acc7:(wrappedtype7 *)acc7; \
-- (wrappedtype1 *)acc1; \
-- (wrappedtype2 *)acc2; \
-- (wrappedtype3 *)acc3; \
-- (wrappedtype4 *)acc4; \
-- (wrappedtype5 *)acc5; \
-- (wrappedtype6 *)acc6; \
-- (wrappedtype7 *)acc7; \
+@property (readonly) wrappedtype1 *acc1; \
+@property (readonly) wrappedtype2 *acc2; \
+@property (readonly) wrappedtype3 *acc3; \
+@property (readonly) wrappedtype4 *acc4; \
+@property (readonly) wrappedtype5 *acc5; \
+@property (readonly) wrappedtype6 *acc6; \
+@property (readonly) wrappedtype7 *acc7; \
 @end \
 FKOption *NSArrayTo##newtype(NSArray *a); \
 FKOption *NSDictionaryTo##newtype(NSDictionary *d); \
@@ -329,7 +329,7 @@ FKOption *NSDictionaryTo##newtype(NSDictionary *dict) {\
 	if (![dict isKindOfClass:[NSDictionary class]]) { \
 		return [FKOption none]; \
 	} \
-	NSArray *keys = NSARRAY([NSString stringWithCString:#acc1], [NSString stringWithCString:#acc2], [NSString stringWithCString:#acc3], [NSString stringWithCString:#acc4], [NSString stringWithCString:#acc5], [NSString stringWithCString:#acc6], [NSString stringWithCString:#acc7]);\
+	NSArray *keys = NSARRAY([NSString stringWithUTF8String:#acc1], [NSString stringWithUTF8String:#acc2], [NSString stringWithUTF8String:#acc3], [NSString stringWithUTF8String:#acc4], [NSString stringWithUTF8String:#acc5], [NSString stringWithUTF8String:#acc6], [NSString stringWithUTF8String:#acc7]);\
 	NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
 	FKOption *result = NSArrayTo##newtype(values); \
 	return result; \
@@ -339,14 +339,14 @@ FKOption *NSDictionaryTo##newtype(NSDictionary *dict) {\
 #define NewType8Interface(newtype, wrappedtype1, acc1, wrappedtype2, acc2, wrappedtype3, acc3, wrappedtype4, acc4, wrappedtype5, acc5, wrappedtype6, acc6, wrappedtype7, acc7, wrappedtype8, acc8) \
 @interface newtype : FKP8 \
 + (newtype *)acc1:(wrappedtype1 *)acc1 acc2:(wrappedtype2 *)acc2 acc3:(wrappedtype3 *)acc3 acc4:(wrappedtype4 *)acc4 acc5:(wrappedtype5 *)acc5 acc6:(wrappedtype6 *)acc6 acc7:(wrappedtype7 *)acc7 acc8:(wrappedtype8 *)acc8; \
-- (wrappedtype1 *)acc1; \
-- (wrappedtype2 *)acc2; \
-- (wrappedtype3 *)acc3; \
-- (wrappedtype4 *)acc4; \
-- (wrappedtype5 *)acc5; \
-- (wrappedtype6 *)acc6; \
-- (wrappedtype7 *)acc7; \
-- (wrappedtype8 *)acc8; \
+@property (readonly) wrappedtype1 *acc1; \
+@property (readonly) wrappedtype2 *acc2; \
+@property (readonly) wrappedtype3 *acc3; \
+@property (readonly) wrappedtype4 *acc4; \
+@property (readonly) wrappedtype5 *acc5; \
+@property (readonly) wrappedtype6 *acc6; \
+@property (readonly) wrappedtype7 *acc7; \
+@property (readonly) wrappedtype8 *acc8; \
 @end \
 FKOption *NSArrayTo##newtype(NSArray *a); \
 FKOption *NSDictionaryTo##newtype(NSDictionary *d); \
@@ -381,7 +381,7 @@ FKOption *NSDictionaryTo##newtype(NSDictionary *dict) {\
 	if (![dict isKindOfClass:[NSDictionary class]]) { \
 		return [FKOption none]; \
 	} \
-	NSArray *keys = NSARRAY([NSString stringWithCString:#acc1], [NSString stringWithCString:#acc2], [NSString stringWithCString:#acc3], [NSString stringWithCString:#acc4], [NSString stringWithCString:#acc5], [NSString stringWithCString:#acc6], [NSString stringWithCString:#acc7], [NSString stringWithCString:#acc8]);\
+	NSArray *keys = NSARRAY([NSString stringWithUTF8String:#acc1], [NSString stringWithUTF8String:#acc2], [NSString stringWithUTF8String:#acc3], [NSString stringWithUTF8String:#acc4], [NSString stringWithUTF8String:#acc5], [NSString stringWithUTF8String:#acc6], [NSString stringWithUTF8String:#acc7], [NSString stringWithUTF8String:#acc8]);\
 	NSArray *values = [dict objectsForKeys:keys notFoundMarker:[NSNull null]]; \
 	FKOption *result = NSArrayTo##newtype(values); \
 	return result; \

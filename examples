@@ -1,0 +1,25 @@
+// Before
+NSMutableArray *r = [NSMutableArray array];
+for (id contact in contacts) {
+    if ([contact matchesSearchString:text]) {
+        [r addObject:contact];
+    }
+}
+return r;
+
+// After
+return [contacts filter:^(id arg) {
+    return [arg matchesSearchString:text]; 
+}];
+
+// Before - nasty!
+id <FKEffect> callback = [FKEffect effectFromSelector:@selector(searcherDidReceiveResults:) target:delegate];
+id <FKEffect> e = [FKEffect comap:callback :[[functionTS(service, searchFor:) andThen:functionTS(text, pairWith:)] andThen:functionTS(service, tripleWith:)]];
+
+
+// After - Note: captures service from scope.
+Effect e = ^(id searchText) {
+  NSArray *results = [service searchFor:searchText];
+  // At this point we could easily refactor this selector to be more sane.
+  [delegate searcherDidReceiveResults:p3(service, text, results)];
+}

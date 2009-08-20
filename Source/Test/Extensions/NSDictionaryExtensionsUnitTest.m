@@ -1,6 +1,6 @@
 #import "GTMSenTestCase.h"
 #import "FKMacros.h"
-#import "FKFunction.h"
+#import "FKBlocks.h"
 #import "NSDictionary+FunctionalKit.h"
 #import "FKP2.h"
 

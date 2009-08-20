@@ -37,12 +37,12 @@ NSString *FKFunctionalKitErrorDomain = @"FunctionalKit";
     return either.isLeft && [object respondsToSelector:selector] ? [FKEither leftWithValue:[object performSelector:selector withObject:either.value]] : either;
 }
 
-- (FKEither *)map:(id <FKFunction>)f {
-	return either.isLeft ? [FKEither leftWithValue:[f :either.value]] : either;
+- (FKEither *)map:(Function)f {
+	return either.isLeft ? [FKEither leftWithValue:f(either.value)] : either;
 }
 
-- (FKEither *)bind:(id <FKFunction>)f {
-	return either.isLeft ? [f :either.value] : either;
+- (FKEither *)bind:(EitherKleisli)f {
+	return either.isLeft ? f(either.value) : either;
 }
 
 - (FKOption *)toOption {
@@ -101,12 +101,12 @@ NSString *FKFunctionalKitErrorDomain = @"FunctionalKit";
     }
 }
 
-- (FKEither *)map:(id <FKFunction>)f {
-	return either.isRight ? [FKEither rightWithValue:[f :either.value]] : either;
+- (FKEither *)map:(Function)f {
+	return either.isRight ? [FKEither rightWithValue:f(either.value)] : either;
 }
 
-- (FKEither *)bind:(id <FKFunction>)f {
-	return either.isRight ? [f :either.value] : either;
+- (FKEither *)bind:(EitherKleisli)f {
+	return either.isRight ? f(either.value) : either;
 }
 
 - (FKOption *)toOption {

@@ -1,14 +1,15 @@
 #import <Foundation/Foundation.h>
+#import <FK/FKBlocks.h>
 #import "FKMacros.h"
-#import "FKFunction.h"
 
 // TODO Add foreach.
-
 // TODO Move this into the prelude.
 extern NSString *FKFunctionalKitErrorDomain;
 
 @class FKEither;
 @class FKOption;
+
+typedef FKEither *(^EitherKleisli)(id arg);
 
 @protocol FKEitherProjection <NSObject>
 
@@ -26,11 +27,11 @@ READ id value;
 
 // Maps the given function across the value of the projection.
 // f should be a fucntion with the following type: a -> b.
-- (FKEither *)map:(id <FKFunction>)f;
+- (FKEither *)map:(Function)f;
 
 // Binds the given function across the projection.
 // f :: a -> FKEither b.
-- (FKEither *)bind:(id <FKFunction>)f;
+- (FKEither *)bind:(EitherKleisli)f;
 
 // Returns Some value if either is of this projection, else returns None
 - (FKOption *)toOption;

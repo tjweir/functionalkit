@@ -1,8 +1,11 @@
 #import <Foundation/Foundation.h>
-#import "FK/FKEffect.h"
-#import "FK/FKFunction.h"
+#import <FK/FKBlocks.h>
 #import "FK/FKEither.h"
 #import "FK/FKMacros.h"
+
+@class FKOption;
+
+typedef FKOption *(^OptionKleisli)(id arg);
 
 // An optional value that may be none (no value) or some (a value). This type is a replacement for the use of nil to denote non-existence.
 @interface FKOption : NSObject
@@ -34,20 +37,20 @@ READ BOOL isSome;
 - (id)orSome:(id)some;
 
 // Maps the given function across the option
-- (FKOption *)map:(id <FKFunction>)f;
+- (FKOption *)map:(Function)f;
 
 // Binds the given function across the projection.
 // f should be a fucntion with the following type: a -> FKOption[b].
-- (FKOption *)bind:(id <FKFunction>)f;
+- (FKOption *)bind:(OptionKleisli)f;
 
 // Returns an either projection of this optional value; |left| in a Left if this optional holds no value, or this optional's value in Right.
-- (FKEither *)toEither:(id)left;
+- (FKEither *)toEither:(id)left; // TODO
 
 // Returns an either projection of this optional value; an NSError in the Left if this optional holds no value, or this optional's value in Right.
-- (FKEither *)toEitherWithError:(NSString *)reason;
+- (FKEither *)toEitherWithError:(NSString *)reason; // TODO
 
 // Side-effects on some if some;
-- (void)foreach:(id <FKEffect>)effect;
+- (void)foreach:(Effect)effect;
 
 @end
 

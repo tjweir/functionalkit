@@ -1,9 +1,7 @@
 // FunctionalKit Prelude.
 
 // Core
-#import "FK/FKEffect.h"
-#import "FK/FKFunction.h"
-#import "FK/FKFunction+Common.h"
+#import "FK/FKBlocks.h"
 #import "FK/FKMacros.h"
 #import "FK/FKNewtype.h"
 #import "FK/FKP1.h"

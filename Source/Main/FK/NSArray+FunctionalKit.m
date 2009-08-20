@@ -17,56 +17,14 @@
 //}
 //@end
 
-@interface FKLiftedFunction : FKFunction {
-	id <FKFunction> wrappedF;
-}
-
-READ id <FKFunction> wrappedF;
-
-- (FKLiftedFunction *)initWithF:(FKFunction *)wrappedF;
-
-@end
-
-@implementation FKLiftedFunction
-
-@synthesize wrappedF;
-
-- (FKLiftedFunction *)initWithF:(FKFunction *)inWrappedF {
-	if ((self = [super init])) {
-		wrappedF = [inWrappedF retain];
-	}
-	return self;
-}
-
-- (id):(id)arg {
-	assert([arg isKindOfClass:[NSArray class]]);
-    return [((NSArray *) arg) map:wrappedF];
-}
-
-#pragma mark NSObject methods.
-- (void) dealloc {
-    [wrappedF release];
-    [super dealloc];
-}
-
-- (BOOL)isEqual:(id)object {
-    return object == nil || ![[object class] isEqual:[self class]] ? NO : [wrappedF isEqual:((FKLiftedFunction *) object).wrappedF];
-}
-
-- (NSUInteger)hash {
-    return 42;
-}
-
-- (NSString *)description {
-    return [NSString stringWithFormat:@"<%s wrappedF: %@>", class_getName([self class]), wrappedF];
-}
-
-@end
-
 @implementation NSArray (FunctionalKitExtensions)
 
-+ (id <FKFunction>)liftFunction:(id <FKFunction>)f {
-	return [[[FKLiftedFunction alloc] initWithF:f] autorelease];
++ (Function)liftFunction:(Function)f {
+    Function lifted = ^(id arg) {
+        NSArray *array = arg;
+        return (id)[array map:f];
+    };
+    return [[lifted copy] autorelease];
 }
 
 + (NSArray *)concat:(NSArray *)nested {
@@ -98,11 +56,11 @@ READ id <FKFunction> wrappedF;
     }
 }
 
-- (FKP2 *)span:(id <FKFunction>)f {
+- (FKP2 *)span:(Predicate)pred {
     NSMutableArray *matching = [NSMutableArray array];
     NSMutableArray *rest = [NSMutableArray array];
 	for (id item in self) {
-		if ([f :item]) {
+		if (pred(item)) {
             [matching addObject:item];
 		} else {
             [rest addObject:item];
@@ -111,29 +69,29 @@ READ id <FKFunction> wrappedF;
     return [FKP2 p2With_1:[NSArray arrayWithArray:matching] _2:[NSArray arrayWithArray:rest]];
 }
 
-- (BOOL)all:(id <FKFunction>)f {
+- (BOOL)all:(Predicate)pred {
 	for (id item in self) {
-		if (![f :item]) {
+		if (!pred(item)) {
 			return NO;
 		}
 	}
 	return YES;
 }
 
-- (NSArray *)filter:(id <FKFunction>)f {
+- (NSArray *)filter:(Predicate)pred {
     NSMutableArray *filtered = [NSMutableArray arrayWithCapacity:[self count]];
 	for (id item in self) {
-		if ([f :item]) {
+		if (pred(item)) {
             [filtered addObject:item];
 		}
 	}
     return [NSArray arrayWithArray:filtered];
 }
 
-- (NSDictionary *)groupByKey:(id <FKFunction>)f {
+- (NSDictionary *)groupByKey:(Function)keyFunction {
     NSMutableDictionary *grouped = [NSMutableDictionary dictionary];
 	for (id item in self) {
-        id key = [f :item];
+        id key = keyFunction(item);
         id nilsafeKey = key == nil ? [NSNull null] : key;
         NSMutableArray *values = [grouped objectForKey:nilsafeKey];
         if (values == nil) {
@@ -145,25 +103,25 @@ READ id <FKFunction> wrappedF;
     return [NSDictionary dictionaryWithDictionary:grouped];
 }
 
-- (id)foldLeft:(id)acc f:(id <FKFunction2>)f {
+- (id)foldLeft:(id)acc f:(Function2)f {
     id accC = [[acc copy] autorelease];
     for (id item in self) {
-        accC = [f :accC :item];
+        accC = f(accC,item);
     }
     return accC;
 }
 
-- (NSArray *)map:(id <FKFunction>)f {
+- (NSArray *)map:(Function)f {
 	NSMutableArray *r = [NSMutableArray arrayWithCapacity:[self count]];
 	for (id item in self) {
-		[r addObject:[f :item]];
+		[r addObject:f(item)];
 	}
 	return [NSArray arrayWithArray:r];
 }
 
-- (void)foreach:(id <FKFunction>)f {
+- (void)foreach:(Effect)f {
 	for (id item in self) {
-		[f :item];
+		f(item);
 	}
 }
 

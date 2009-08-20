@@ -113,12 +113,12 @@
     return self.isSome ? [self some] : some;
 }
 
-- (FKOption *)map:(id <FKFunction>)f {
-	return self.isSome ? [FKOption some:[f :self.some]] : self;
+- (FKOption *)map:(Function)f {
+	return self.isSome ? [FKOption some:f(self.some)] : self;
 }
 
-- (FKOption *)bind:(id <FKFunction>)f {
-	return self.isSome ? [f :self.some] : self;
+- (FKOption *)bind:(OptionKleisli)f {
+	return self.isSome ? f(self.some) : self;
 }
 
 - (FKEither *)toEither:(id)left {
@@ -129,9 +129,9 @@
 	return self.isSome ? [FKEither rightWithValue:self.some] : [FKEither errorWithReason:reason];
 }
 
-- (void)foreach:(id <FKEffect>)effect {
+- (void)foreach:(Effect)effect {
     if (self.isSome) {
-        [effect e:self.some];
+        effect(self.some);
     }
 }
 

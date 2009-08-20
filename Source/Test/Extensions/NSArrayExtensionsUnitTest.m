@@ -1,6 +1,6 @@
 #import "GTMSenTestCase.h"
 #import "FKMacros.h"
-#import "FKFunction.h"
+#import "FKBlocks.h"
 #import "NSArray+FunctionalKit.h"
 #import "FKP2.h"
 #import "NSString+FunctionalKit.h"
@@ -20,21 +20,26 @@
     STAssertEqualObjects(NSARRAY(@"2", @"3", @"4"), source.tail, nil);
 }
 
+
+- (BOOL)isStringContainingOne:(id)string {
+    return [string isEqual:@"1"];
+}
+
 - (void)testCanGetASpanMatchingAPredicate {
     NSArray *source = NSARRAY(@"1", @"1", @"2", @"4");
-    FKP2 *span = [source span:functionTS(self, isStringContainingOne:)];
+    FKP2 *span = [source span:pureTS(self, isStringContainingOne:)];
     STAssertEqualObjects([FKP2 p2With_1:NSARRAY(@"1", @"1") _2:NSARRAY(@"2", @"4")], span, nil);
 }
 
 - (void)testCanTestAPredicateAgainstAllItems {
     NSArray *source = NSARRAY(@"1", @"1");
-    BOOL allOnes = [source all:functionTS(self, isStringContainingOne:)];
+    BOOL allOnes = [source all:pureTS(self, isStringContainingOne:)];
     STAssertTrue(allOnes, nil);
 }
 
 - (void)testCanFilterUsingAPredicate {
     NSArray *source = NSARRAY(@"1", @"1", @"2", @"1");
-    NSArray *onlyOnes = [source filter:functionTS(self, isStringContainingOne:)];
+    NSArray *onlyOnes = [source filter:pureTS(self, isStringContainingOne:)];
     STAssertEqualObjects(NSARRAY(@"1", @"1", @"1"), onlyOnes, nil);
 }
 
@@ -66,8 +71,8 @@
 
 - (void)testCanLiftAFunctionIntoAnArray {
     NSArray *array = NSARRAY(@"a", @"b", @"c");
-    id <FKFunction> liftedF = [NSArray liftFunction:functionS(uppercaseString)];
-    STAssertEqualObjects(NSARRAY(@"A", @"B", @"C"), [liftedF :array], nil);
+    Function liftedF = [NSArray liftFunction:functionS(uppercaseString)];
+    STAssertEqualObjects(NSARRAY(@"A", @"B", @"C"), liftedF(array), nil);
 }
 
 - (void)testCanIntersperseAnObjectWithinAnArray {
@@ -76,8 +81,9 @@
 }
 
 - (void)testCanFoldAcrossAnArray {
+    Function2 concatF = function2S(stringByAppendingString:);
     NSArray *array = NSARRAY(@"A", @"B", @"C");
-    STAssertEqualObjects(@"ABC", [array foldLeft:@"" f:[NSString concatF]], nil);
+    STAssertEqualObjects(@"ABC", [array foldLeft:@"" f:concatF], nil);
 }
 
 - (void)testCanReverseAnArray {
@@ -88,10 +94,6 @@
 - (void)testCanUniquifyAnArray {
     NSArray *array = NSARRAY(@"A", @"B", @"C", @"C", @"A", @"A", @"B");
     STAssertEqualObjects(NSARRAY(@"B", @"A", @"C"), [array unique], nil);
-}
-
-- (BOOL)isStringContainingOne:(id)string {
-    return [string isEqual:@"1"];
 }
 
 @end

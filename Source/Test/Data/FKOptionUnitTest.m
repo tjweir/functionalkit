@@ -1,7 +1,7 @@
 #import "GTMSenTestCase.h"
 #import "FK/FKOption.h"
 #import "FK/FKMacros.h"
-#import "FK/FKFunction.h"
+#import "FK/FKBlocks.h"
 
 @interface FKOptionUnitTest : GTMTestCase {
     NSObject *object;
@@ -47,20 +47,37 @@
 	STAssertTrue([[FKOption fromNil:@"54" ofType:[NSArray class]] isNone], nil);
 }
 
+
+- (FKOption *)givesANone:(NSString *)str {
+    return [FKOption none];
+}
+
+- (FKOption *)givesASome:(NSString *)str {
+    return [FKOption some:str];
+}
+
 - (void)testBindingAcrossANoneGivesANone {
-    id result = [[FKOption none] bind:functionTS(self, givesANone:)];
+    id result = [[FKOption none] bind:^(id foo) {
+        return [self givesANone:foo];
+    }];
     STAssertTrue([result isKindOfClass:[FKOption class]], nil);
     STAssertTrue([result isNone], nil);
 }
 
 - (void)testBindingAcrossASomeWithANoneGivesANone {
-    id result = [[FKOption some:@"foo"] bind:functionTS(self, givesANone:)];
+    id result = [[FKOption some:@"foo"] bind:^(id foo) {
+        return [self givesANone:foo];
+    }];
     STAssertTrue([result isKindOfClass:[FKOption class]], nil);
     STAssertTrue([result isNone], nil);
 }
 
 - (void)testBindingAcrossASomeWithASomeGivesANone {
-    id result = [[FKOption some:@"foo"] bind:functionTS(self, givesASome:)];
+//    id result = [[FKOption some:@"foo"] bind:functionTS(self, givesASome:)];
+    id result = [[FKOption some:@"foo"] bind:^(id foo) {
+        return [FKOption some:foo];
+    }];
+    
     STAssertTrue([result isKindOfClass:[FKOption class]], nil);
     STAssertTrue([result isSome], nil);
     STAssertEqualObjects(@"foo", [result some], nil);
@@ -72,12 +89,5 @@
 	STAssertEqualObjects(NSARRAY(@"54"), somes, nil);
 }
 
-- (FKOption *)givesANone:(NSString *)str {
-    return [FKOption none];
-}
-
-- (FKOption *)givesASome:(NSString *)str {
-    return [FKOption some:str];
-}
 
 @end

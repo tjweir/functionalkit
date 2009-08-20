@@ -1,7 +1,7 @@
 #import "GTMSenTestCase.h"
 #import "FK/FKEither.h"
 #import "FK/FKOption.h"
-#import "FKFunction.h"
+#import <FK/FKBlocks.h>
 
 @interface FKEitherUnitTest : GTMTestCase {
     NSObject *o1;
@@ -119,7 +119,7 @@
 
 - (void)testMappingUsingF {
 	FKEither *either = [FKEither rightWithValue:[NSNumber numberWithInt:54]];
-	FKEither *mapped = [either.right map:[FKFunction functionFromSelector:@selector(description)]];
+	FKEither *mapped = [either.right map:functionS(description)];
 	STAssertEqualObjects(mapped.right.value, @"54", nil);
 }
 
@@ -129,15 +129,27 @@
 	STAssertTrue([[either.left toOption] isNone], nil);
 }
 
+- (FKEither *)toLeft:(NSString *)string {
+    return [FKEither leftWithValue:string];
+}
+
+- (FKEither *)toRight:(NSString *)string {
+    return [FKEither rightWithValue:string];
+}
+
 - (void)testBindLeftConcatentatesToProduceASingleEither {
 	FKEither *either = [FKEither leftWithValue:@"v"];
-    FKEither *afterBind = [either.left bind:functionTS(self, toLeft:)];
+    FKEither *afterBind = [either.left bind:^(id arg) {
+        return [self toLeft:arg];
+    }];
     STAssertEqualObjects(either, afterBind, nil);
 }
 
 - (void)testBindRightConcatentatesToProduceASingleEither {
 	FKEither *either = [FKEither rightWithValue:@"v"];
-    FKEither *afterBind = [either.right bind:functionTS(self, toRight:)];
+    FKEither *afterBind = [either.right bind:^(id arg) {
+        return [self toRight:arg];
+    }];
     STAssertEqualObjects(either, afterBind, nil);
 }
 
@@ -149,14 +161,6 @@
     STAssertEqualObjects([FKEither joinRight:fullRight], [FKEither rightWithValue:@"right"], nil);
     STAssertEqualObjects([FKEither joinRight:firstLeft], [FKEither leftWithValue:@"left"], nil);
     STAssertEqualObjects([FKEither joinRight:secondLeft], [FKEither leftWithValue:@"left"], nil);
-}
-
-- (FKEither *)toLeft:(NSString *)string {
-    return [FKEither leftWithValue:string];
-}
-
-- (FKEither *)toRight:(NSString *)string {
-    return [FKEither rightWithValue:string];
 }
 
 @end

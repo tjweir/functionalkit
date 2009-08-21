@@ -23,3 +23,70 @@ Effect e = ^(id searchText) {
   // At this point we could easily refactor this selector to be more sane.
   [delegate searcherDidReceiveResults:p3(service, text, results)];
 }
+
+
+////////
+// NSOperation Sub-class to handle delayed execution
+
+@implementation DelayedEffectOperation
+- (void)dealloc {
+    [argument release];
+    [effect release];
+    [super dealloc];
+}
+
+- (id)initWithEffect:(id <FKEffect>)e argument:(id)arg delay:(NSUInteger)d {
+    if ((self = [super init])) {
+        effect = [e retain];
+        delay = d;
+        argument = [arg retain];
+    }
+    return self;
+}
+
++ (NSOperation *)operationWithEffect:(id <FKEffect>)effect argument:(id)argument delay:(NSUInteger)delay {
+    return [[[self alloc] initWithEffect:effect argument:argument delay:delay] autorelease];
+}
+
+- (void)main {
+    usleep(delay);
+    if (![self isCancelled]) {
+        [effect e:argument];
+    }
+}
+@end
+
+
+// Block version. No need to sub-class just for delay.
+typedef void (^Operation)(NSOperation *baseOp);
+@interface BlockOperation : NSOperation {
+    Operation block;
+}
++ (BlockOperation *)operationWithBlock:(Operation)op;
+@end
+
+@implementation BlockOperation
+- (void)dealloc {
+    [block release];
+    [super dealloc];
+}
+
+- (BlockOperation *)initWithBlock:(Operation)op {
+    if ((self = [super init]))
+        block = [op copy];
+    return self;
+}
+
++ (BlockOperation *)operationWithBlock:(Operation)op {
+    return [[[self alloc] initWithBlock:op] autorelease];
+}
+
+- (void)main { block(self); }
+@end
+
+
+NSOperation *op = [BlockOperation operationWithBlock:^(NSOperation *op) {
+  usleep(someDelay);
+  if ([op isCancelled]) return;
+  // Do something.
+}];

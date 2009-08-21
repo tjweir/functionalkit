@@ -96,4 +96,14 @@
     STAssertEqualObjects(NSARRAY(@"B", @"A", @"C"), [array unique], nil);
 }
 
+
+- (void)testFold {
+    NSArray *arrays = NSARRAY(NSARRAY(@"A"), NSARRAY(@"B",@"C"));
+    NSNumber *count = [arrays foldLeft:[NSNumber numberWithInt:0] f:^(id sum, id elem) {
+        return (id)[NSNumber numberWithInt:[sum intValue] + [elem count]];
+    }];
+    
+    STAssertTrue([count intValue] == 3, nil);
+}
+
 @end

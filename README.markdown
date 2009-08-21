@@ -17,6 +17,8 @@ FunctionalKit is loosely modelled on Functional Java.
 1. In your project, add FunctionalKit's main directory to your Header Search Paths (<code>HEADER_SEARCH_PATHS</code>), e.g. <code>$(SRCROOT)/Source/External/functionalkit/Source/Main</code>.
 1. Import <code>FK/FKPrelude.h</code> where you want to use FunctionalKit, your prefix header is a good spot.
 
+You'll also need PLBlocks: http://code.google.com/p/plblocks. Make sure to add the PLBlocks framework to your project.
+
 ## Usage
 
 * [Simplifying JSON Parsing Using FunctionalKit](http://adams.id.au/blog/2009/04/simplifying-json-parsing-using-functionalkit/)
@@ -28,26 +30,26 @@ FunctionalKit is loosely modelled on Functional Java.
 
 Create a function from a selector.
 
-    id <FKFunction> doSomethingFunction = [FKFunction functionFromSelector:@selector(doSomething:) target:self];
-
-Use a nested function (requires -fnested-functions):
-
-  // With -fnested-functions enabled.
-  - (void)testDummy {
-    NSString *f(NSString *a) {
-        return [a substringToIndex:1];
-    }
-    NSDictionary *d = [NSARRAY(@"one", @"two", @"three") groupByKey:functionP(f)];
-  }
+    // from a block
+    Function doSomethingFunction = ^(id arg) {
+      return (id)[self doSomething:arg];
+    };
+    
+    // Or using the macro
+    Function doSomethingFunction = functionTS(self, doSomething:);
 
 ### Mapping
 
 Map across the elements of an array of names and turn them into people.
 
     NSArray *names = [NSArray arrayWithObject:@"Fred", @"Mary", @"Pete", nil];
-    NSArray *people = [names map:[FKFunction functionFromSelector:@selector(makePersonFromName:) target:self]];
+    
+    NSArray *people = [names map:^(id name) {
+      return (id)[Person fromName:name];
+    }]
 
     // Given each chapter has an array of pages
+    // chapter.pages is an NSArray.
     NSArray *chapters = ...;
     int pageCount = [[NSArray concat:[chapters map:functionS(pages)]] count];
 
@@ -67,7 +69,7 @@ Construct an either representing failure.
 Perform an operation that may fail, apply a selector to the result if successful, otherwise on failure propagate the error.
 
     MVEither *maybeResponse = [HttpApi makeRequestToUrl:@"http://www.foo.com/json-api"];
-    MVEither *maybeParsedJson = [maybeResponse.right mapWithSelector:@selector(JSONValue)];
+    MVEither *maybeParsedJson = [maybeResponse.right map:functionS(JSONValue)];
 
 Perform an operation that returns nil & an error on failue. Return the error on the left on failure or the returned object on the right.
 
@@ -89,21 +91,14 @@ Note. This is a bit messy, could be cleaner.
     	return [FKOption none];
     }
 
-### Side effects
-
-Comap a function with an effect, to have the function execute then perform a side effect using the function's result.
-
-    id <FKFunction> getPhotosF = [FKFunction functionFromSelector:@selector(photos)];
-    id <FKEffect> galleriesOp = [FKEffect comap:[self effectThatDoesSomethingWithPhotos] :getPhotosF];
-
-### Fold and intersperse
-
-    // Declare some distinct search terms.
-    NSArray *searchTerms = NSARRAY(@"foo", @"bar", @"baz");
-
-    // Intersperse "OR" between each term, and flatten into a single string.
-    NSString *term = [[searchTerms intersperse:@" OR "] foldLeft:@"" f:[NSString concatF]];
-    NSLog(term);  // @"foo OR bar OR baz"
+### Fold 
+    
+    NSArray *arrays = NSARRAY(NSARRAY(@"A"), NSARRAY(@"B",@"C"));
+    NSNumber *count = [arrays foldLeft:[NSNumber numberWithInt:0] f:^(id sum, id elem) {
+        return (id)[NSNumber numberWithInt:[sum intValue] + [elem count]];
+    }];
+    
+    STAssertTrue([count intValue] == 3, nil);
 
 ### Lifting
 
@@ -124,9 +119,8 @@ The following example lifts a function into the array monad, applying the functi
 	FKOption *maybePhotos = [FKOption fromNil:[dictionary objectForKey:@"photos"] ofType:[NSArray class]];
     
     // Still within the option monad, lift the parse function (above) into the array monad and map across the option.
-    id <FKFunction> parsePhotoF = [FKFunction functionFromSelector:@selector(parsePhotoForDictionary:) target:self];
+    Function parsePhotoF = functionTS(self, parsePhotoForDictionary:);
     FKOption *maybeParsedPhotos = [maybePhotos map:[NSArray liftFunction:parsePhotoF]];
-
 
 ## Other Work
 
